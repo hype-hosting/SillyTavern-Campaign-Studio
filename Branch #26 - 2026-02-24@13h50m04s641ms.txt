@@ -1,0 +1,2695 @@
+Vigil Falls: **Vigil Falls is a gothic narrative experience. This is not a single story or a single character. It is the tapestry of Ravenwood. It is a place where stories accumulate. You stand at a threshold. How you enter matters.**
+
+**Choose how the night begins:**
+
+---
+◆ MAJOR STORY ARCS
+
+---
+*Dynamic Roleplay*: `! dynamicrp`
+Begin an open-ended, high-stakes narrative within Vigil Falls itself. Politics, science, loyalty, violence, and consequence. Nothing is scripted. Nothing is safe.
+
+*Rivalry Roleplay*: `! rivalryrp`
+Ignite a long-form conflict between the Orders. Academic sabotage, moral fracture, duels, disappearances. This path reshapes the estate around you.
+
+*Horror Roleplay*: `! horrorrp`
+Step into a slow-burning Gothic horror thread. The uncanny watches. Explanations are withheld. Fear accumulates quietly.
+
+*The Cathar Manuscripts*: `! manuscripts`
+Leave England behind. Enter the Cathar Manuscripts arc with Lilith in war-scarred France. Ancient guilt, hunted truths, and choices that echo back to Vigil Falls.
+
+---
+◆ CHARACTER & SOCIAL ENTRY POINTS
+
+---
+*The Ravenwood Ball*: `! ball_f`
+An evening ball. Silk, candlelight, and whispered politics. Ladies-in-waiting dress you while gossip coils through the room.
+
+*Harbottle Tavern*: `! tavern`
+Begin in the tavern—ale, smoke, rumor, and strangers who know more than they should.
+
+*New Arrival*: `! arrival`
+You are new to Vigil Falls. Maids and valets escort you to your quarters and help you settle in.
+
+---
+◆ NOTE
+
+---
+**Here, at this gothic estate in 1761, knowledge is dangerous, violence has consequences, and few things are as they seem.**
+
+*When you choose, the story begins immediately.*
+
+Hyperion: !ball_m
+
+Vigil Falls: <!-- §AURORA -->
+
+6:47 PM, *Hyperion's Chambers — North Shadow Tower*
+
+Candlelight pooled across the octagram floor, each flame doubling in the polished obsidian of the mosaic's darker stones. The air carried the faint sweetness of beeswax mixed with something older—the mineral breath of stone that had stood for centuries, absorbing the quiet desperation of scholars who came seeking answers and left carrying heavier burdens.
+
+Thomas straightened from his inspection of the coat laid across the dressing table, his reflection ghosting in the mirror behind Hyperion's shoulder. The valet's weathered hands moved with the economy of a man who had dressed nobles for thirty years and expected to dress them for thirty more. His expression remained professionally neutral, though his eyes—pale grey, sharp as flint—carried the particular watchfulness of staff who saw everything and survived by choosing carefully what to remark upon.
+
+"His Grace has requested the formal receiving line begin at half-past seven," Thomas said, lifting the dark wool coat to check its hang. "Which gives us time, but not leisure." A pause, weighted with implication. "The Duke's mood has been... contemplative since the Harbottle business settled. Some say contemplative is worse than angry."
+
+From the corner near the wardrobe, a younger footman—Edmund, barely twenty and still carrying the earnest clumsiness of recent promotion—held up two shirts against the candlelight. His sandy hair fell across his forehead as he compared the cream silk to the darker ivory jacquard.
+
+"The cream takes candlelight better, sir," Edmund offered, then flushed slightly at his own presumption. "That is—forgive me—I only thought, with the chandeliers in the Great Hall, the contrast would—"
+
+"Edmund has a point, actually." This from Nathaniel, the third manservant present, who stood by the window with his arms folded, watching the last amber light bleed from the sky. Younger than Thomas but older than Edmund, possessed of a sardonic mouth and eyes that suggested he found most of the estate's inhabitants mildly absurd. "The cream silk under candlelight. Makes you look less like a shadow wearing a man's shape." A beat. "Sir."
+
+Thomas's glance at Nathaniel carried the quiet warning of rank, but no real heat. The valet returned his attention to Hyperion, holding the coat at the shoulders so its weight could be felt.
+
+"Major General Bennett arrived this afternoon with his sons," Thomas continued, his tone carefully neutral. "Both young men. The elder—Mr. Sabastian—he's been seen in the company of Miss Adelaide. The younger, Mr. Thalorian, seems to prefer Miss Lucie's conversation." A pause as he adjusted the coat's drape. "The Duchess has been... attentive to these developments."
+
+Nathaniel snorted softly from the window. "The Duchess has been counting place settings and rearranging the seating chart for three days. If attention were coin, she'd have funded the war effort by now."
+
+"Nathaniel." Thomas's voice carried the weight of a door closing.
+
+"The point stands." Nathaniel turned from the window, the dying light catching the sharp angles of his face. "The Bennett family hasn't visited together in two years. Now they arrive together, with both sons dressed for courtship, and suddenly there's a ball." He lifted one shoulder in an elegant shrug. "Servants notice patterns, sir. It's how we stay useful."
+
+Edmund had laid both shirts across the dressing table now, his earlier boldness faded back into deference. He smoothed the cream silk with nervous fingers, then the ivory jacquard, as if apologizing to the fabric for the tension in the room.
+
+"Mistress Kingsley will be in attendance," Thomas added, returning to the coat with renewed focus. His hands moved along the seams with practiced assessment. "And Master Aldrich, of course. The surgical theater has been quiet of late, but..." He trailed off, the unfinished sentence thick with implication.
+
+"Quiet isn't the same as still," Nathaniel murmured.
+
+Thomas ignored him, moving to the wardrobe and drawing open its heavy doors. The cedar interior released its scent into the candlelit air as he surveyed the options within.
+
+"Three possibilities, sir." He lifted each in turn, laying them across the bed for consideration.
+
+The first: a coat of midnight blue velvet, understated but rich, with silver buttons that caught light like captured stars. Formal without ostentation—the choice of a man who wished to be seen as cultured, controlled, and above suspicion.
+
+The second: a waistcoat of deep burgundy brocade threaded with gold, paired with a black silk coat. Bold. The choice of a man who intended to command attention—or challenge those who believed they already held it.
+
+The third: severe black wool, almost ecclesiastical in its simplicity, relieved only by a collar of white lace. The choice of a scholar who answered to higher powers than fashion—and who reminded others that some authorities operated beyond the reach of dukes and generals.
+
+Thomas stepped back, folding his hands.
+
+"The evening's politics remain... fluid, sir. The choice of dress speaks before any word is spoken." His gaze met Hyperion's directly—an unusual boldness from a valet who typically addressed coat buttons and cravat knots. "Some might advise dressing to blend. Others might suggest that blending, tonight, would be its own statement."
+
+Nathaniel's voice came dry from the window: "He's saying the Bennetts and the Blackwoods will be watching each other like wolves in a henhouse. And everyone else will be watching them watch." A pause. "The question is whether you want to be noticed noticing, or whether you'd prefer to be the shadow in the corner that sees everything and claims nothing."
+
+Edmund, forgotten by the wardrobe, clutched both shirts to his chest and looked between the older servants with the slightly panicked expression of a man who had just realized he was witnessing something that might later be denied.
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen)
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Prepare for evening ball; navigate political tensions
+> - Path: Chambers → (pending choice) → Great Hall
+> - Characters: Thomas (valet), Edmund (footman), Nathaniel (manservant)
+> - Vigil Falls's Diary: n/a
+> - Affinity Level: n/a
+> - Affinity Notes: n/a
+
+</details>
+
+Hyperion: Hyperion smiled to himself at the exchange while he surveyed himself in the mirror. "Midnight blue velvet, I believe."
+
+Vigil Falls: <!-- §AURORA -->
+
+6:52 PM, *Hyperion's Chambers — North Shadow Tower*
+
+Thomas received the decision with a small nod—the barest approval of a choice well-considered. He lifted the midnight velvet from the bed with the reverence of a priest handling vestments, the silver buttons catching candlelight as the fabric unfolded.
+
+"Wise, sir." His voice carried no surprise. "Midnight suggests presence without declaration. A man who wears such a coat attends the evening—he does not consume it."
+
+Nathaniel pushed off from the window frame, crossing to retrieve the cream silk shirt from Edmund's nervous grip. "The cream, then. As I said—candlelight." He laid the shirt beside the coat, then glanced at Hyperion through the mirror's reflection. "You'll want the simple cravat. The waterfall style draws the eye to the throat, and tonight..." He left the sentence unfinished, but his meaning lingered. *Tonight, there will be those watching for vulnerability.*
+
+Edmund had recovered enough to busy himself with the boot jack, kneeling to assist with the exchange of day shoes for eveningwear. His hands were steady now—nervousness transmuted into the focused attention of a young man determined to prove himself competent.
+
+"Mr. Val Blackfin arrived with the sunset," Edmund offered quietly, his attention on the leather. "I saw him from the north corridor window. He was speaking with the groundskeeper near the fountain—something about the ice on the lake, I think." A hesitation. "He seemed... watchful. More than usual."
+
+Thomas guided the cream silk over Hyperion's shoulders, his movements efficient as he began working the buttons. "Master Val is always watchful. It's his function." The valet's tone carried no judgment—merely acknowledgment of a fact as ordinary as the stone walls surrounding them. "Though one wonders what function requires such vigilance at a celebration."
+
+"One wonders," Nathaniel echoed, and the irony in his voice suggested he had already formed opinions he would not speak aloud.
+
+The velvet coat settled into place, and Thomas stepped back to assess the overall effect. He made a small adjustment to the left shoulder seam—barely a centimeter—then another to the collar. His fingers hovered near the cravat, awaiting the final arrangement.
+
+"Duchess Margaret has placed Mistress Kingsley near the fireplace," Thomas said, his attention seemingly fixed on the lay of fabric. "Adjacent to Master Aldrich, naturally, but also within easy conversation of the Bennett party." A pause. "The seating chart reveals what the announcement does not."
+
+Edmund rose from his task, giving each boot a final polish with his sleeve. "The kitchen staff says Cook has been in a temper since yesterday. The Major General requested something specific—something from his own supply, brought from London." The young footman's brow furrowed. "They wouldn't tell me what. Only that it required... special preparation."
+
+"Wine, most likely." Nathaniel had retrieved the simple white cravat and now stood ready to assist if needed. "The Bennett cellars are said to be exceptional. A gift meant to remind certain parties of obligations—past and present." His eyes found Hyperion's in the mirror. "The Duke and the Major General have a history. The staff knows this. The staff also knows better than to know it."
+
+Thomas produced a small silver pin from his waistcoat pocket—a subtle thing, barely visible, meant to secure the cravat without catching the light. He held it between thumb and forefinger.
+
+"The pin as well, sir? Or would you prefer the stock undecorated?"
+
+The question carried weight beyond mere fashion. A bare throat suggested confidence—or perhaps recklessness. The pin suggested formality, propriety, the careful architecture of a man who understood that even the smallest details could be read as statements.
+
+From somewhere below, distant but rising through the ancient stones, came the first notes of a string quartet tuning. The ball had not begun, but its approach was now audible—a thin, sweet sound threading upward through floor and wall, carrying with it the promise of an evening that would demand something from everyone who attended.
+
+Thomas waited, pin glinting between his fingers.
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen)
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Finalize attire; descend to Great Hall ball
+> - Path: Chambers → Corridors → Great Hall
+> - Characters: Thomas (valet), Edmund (footman), Nathaniel (manservant)
+> - Vigil Falls's Diary: n/a
+> - Affinity Level: n/a
+> - Affinity Notes: n/a
+
+</details>
+
+Hyperion: Hyperion nodded. "Yes, the pin. After all, what else am I to duel with once words have failed." He smiled at his own ridiculous joke.
+
+Vigil Falls: <!-- §AURORA -->
+
+6:58 PM, *Hyperion's Chambers — North Shadow Tower*
+
+Nathaniel's laugh came short and genuine—a bark of surprise that broke through his carefully maintained irony. "God, sir. If you're planning to duel Major General Bennett with a cravat pin, I'd recommend aiming for the ego. It's the largest target."
+
+Thomas's expression remained professionally neutral, but the corners of his mouth twitched upward—a crack in the valet's composure that spoke to years of service restraining laughter at inopportune moments. He secured the pin with practiced efficiency, the silver disappearing into the folds of cream silk as if it had never existed.
+
+"I shall endeavor to ensure your wardrobe remains duel-ready throughout the evening, sir." Thomas smoothed the cravat with two fingers, then stepped back to survey the complete effect. "Though I might suggest leaving the actual combat to those with less to lose."
+
+Edmund had drifted toward the door, his earlier nervousness settling into the quiet anticipation of a servant awaiting dismissal. The string quartet below had found their accord now—the thin tuning notes resolving into something warmer, a melody beginning to take shape in the distant spaces of the Great Hall.
+
+"Miss Lucie will be playing tonight," Edmund offered, his voice soft enough that it seemed meant more for himself than the room. "I heard her practicing in the music room yesterday. Something... melancholy." He caught himself, coloring slightly. "Forgive me. It's not my place to—"
+
+"It's everyone's place to notice music, Edmund." Nathaniel had retrieved Hyperion's gloves from their resting place on the dressing table, holding them with the particular care their Ladonian craftsmanship demanded. "Miss Lucie plays beautifully. Miss Adelaide prefers the harpsichord but rarely performs publicly." He extended the gloves toward Hyperion. "The younger Miss Blackwood has a temperament suited to performance—she wishes to be heard. The elder prefers to be... elsewhere. Observing."
+
+Thomas produced a final item from his coat pocket—a folded handkerchief of cream linen, monogrammed with a subtle H in one corner. "For the evening, sir. Cook's sauces have been known to defy the best intentions."
+
+The quartet below swelled briefly—a phrase repeated, then abandoned as the musicians found their way into another key. The sound climbed through stone and timber like something alive, settling into the chamber's corners.
+
+Thomas moved to the door, pulling it open to reveal the corridor beyond—torchlit now, the evening's darkness having claimed the windows. Two footmen waited in the hallway, positioned as if they had been standing there for some time. Their presence spoke to the formality of the occasion: Hyperion would not walk to the Great Hall alone.
+
+"Mr. Blackthorne is ready," Thomas announced to the corridor at large.
+
+Nathaniel fell into step beside Hyperion as they departed, his voice dropping to a murmur meant only for the space between them. "One final observation, sir—if it's not too forward." He waited for no permission. "The Duke has been looking tired. More tired than winter usually accounts for. And when the Duke is tired, the Duchess becomes... thorough." A beat. "Whatever happens tonight, remember that the staff will be watching her more closely than anyone. Her reactions tell us what the Duke cannot say."
+
+The corridor stretched before them, tapestries flickering in the torchlight, the stones holding centuries of cold despite the fires that burned in every brazier. The music grew louder with each step—a minuet now, practiced and refined, waiting for dancers who had not yet arrived.
+
+The footmen led the way through the North Wing's labyrinth, past closed doors and empty alcoves, across the threshold where the residential quarters gave way to the public spaces of the estate. Candles multiplied in their holders as they walked, the light growing thicker, warmer, until the Great Hall's entrance loomed before them—a pair of ancient oak doors standing slightly ajar, releasing a slice of golden radiance into the corridor's dim.
+
+Through the gap, Hyperion could see the first guests beginning to gather. The flash of silk. The gleam of jewelry. The particular density of air that came when too many bodies occupied too elegant a space, all of them performing versions of themselves they hoped would survive the evening's scrutiny.
+
+One of the footmen stepped forward, hand poised to announce.
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed)
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Enter the ball; observe political landscape
+> - Path: Chambers → Corridors → Great Hall (entrance)
+> - Characters: Nathaniel (manservant), footmen, guests beyond doors
+> - Vigil Falls's Diary: n/a
+> - Affinity Level: n/a
+> - Affinity Notes: n/a
+
+</details>
+
+Hyperion: Hyperion paused, steadying himself, then nodded to the footman to open the door. He held his chin high, ready for whatever the evening would bring.
+
+Vigil Falls: <!-- §AURORA -->
+
+7:03 PM, *Great Hall — Castle Proper*
+
+The doors swung wide.
+
+"Mr. Hyperion Blackthorne, Scholar of the North Shadow Tower."
+
+The announcement carried across the threshold with the weight of formality—a voice trained to project without shouting, to inform without inviting conversation. The Great Hall absorbed the name and offered no comment, continuing its glittering existence as if scholars announced themselves every evening.
+
+Which, Hyperion supposed, they sometimes did.
+
+The space had transformed. What was normally a cavern of stone and shadow had become something almost luminous—hundreds of candles burning in the massive iron chandeliers overhead, their light multiplied by mirrors positioned at strategic intervals along the walls. The black and white marble floor gleamed like polished ice, reflecting the silk and velvet of guests who had already begun their careful orbits. The air smelled of beeswax and perfume and something sweeter beneath—honeysuckle, perhaps, or the last gasp of winter roses forced into bloom for the occasion.
+
+The fragment of the Chrysalis Stone sat in its usual place of honor near the dais, but someone had draped it in ivy. The green tendrils wound around the ancient display case like a patient strangulation, their leaves dark against the stone's pale glow.
+
+Duchess Margaret Blackwood stood near the entrance, positioned precisely where a hostess must stand to receive her guests. Her gown was deep emerald silk—the color of a forest at midnight—and her dark hair was pinned high with pearls that caught the candlelight like captured stars. She was speaking with a man Hyperion did not immediately recognize, but her eyes tracked each new arrival with the precision of a hawk surveying a field.
+
+When those eyes found Hyperion, her smile arrived a half-second later—warm enough to be convincing, calculated enough to remind him that warmth could be weaponized.
+
+"Mr. Blackthorne." She extended her hand, the gesture carrying the expectation of a kiss to gloved fingers rather than a shake. "How lovely that you could join us. The Library sector has been so quiet of late—one might think you were avoiding the rest of the estate."
+
+Before Hyperion could respond, a new voice cut through the pleasantries.
+
+"He's not avoiding, Mother. He's researching." Adelaide Blackwood appeared at Margaret's elbow, her arrival smooth as poured honey. She wore off-the-shoulder black silk that left little to imagination, raven feathers woven into her dark hair, her ice-blue eyes bright with something that might have been mischief or malice or both. A fan of raven feathers hung from her wrist, currently closed. "There's a difference. Research is intentional. Avoidance is merely rude."
+
+Margaret's smile did not waver, but something in her posture shifted—a tightening that suggested maternal patience tested.
+
+"Adelaide. Mr. Sabastian Bennett has been looking for you."
+
+"Has he?" Adelaide's attention had already drifted to Hyperion, her gaze traveling from his midnight velvet coat to the cream silk at his throat to the Ladonian gloves with their unmistakable craftsmanship. "How fortunate for him that I'm difficult to find." She smiled—a flash of white teeth, quick and sharp. "Mr. Blackthorne. I've been meaning to visit the North Tower. I hear the most fascinating things about your collection."
+
+"Adelaide." Margaret's voice carried the particular weight of a mother who had repeated this name too many times in too many tones.
+
+But Adelaide had already turned, her feather fan snapping open in a gesture that sent several loose plumes drifting through the candlelit air. She caught one from her shoulder, examined it, let it fall.
+
+"You'll dance with me later, Mr. Blackthorne. I insist." It was not a question. She moved away before he could refuse—black silk and raven feathers disappearing into the crowd like ink dissolving in water.
+
+Margaret watched her daughter go, then returned her attention to Hyperion with an expression that suggested apologies she would never voice.
+
+"The evening is young, Mr. Blackthorne. I hope you find it... illuminating." She squeezed his fingers briefly—a gesture that managed to feel both dismissal and benediction—then turned to greet the next arrival.
+
+The ball sprawled before him. To his left, the string quartet played something restrained and stately while couples began the careful choreography of a minuet. To his right, a long table held crystal decanters and silver trays bearing delicacies Hyperion could not identify at this distance. The room's far end opened onto a terrace where figures lingered in the cooler air, their silhouettes sharp against the glass.
+
+And there—standing apart from the dancing, near a pillar draped in winter ivy—Val Blackfin watched the crowd with the stillness of a man who saw patterns others missed. His silver-white hair caught the candlelight. His silver-blue eyes found Hyperion's across the room.
+
+He raised his glass in acknowledgment.
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed)
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Navigate the ball; observe political currents
+> - Path: Great Hall entrance → (pending choice)
+> - Characters: Margaret Blackwood, Adelaide Blackwood, Val Blackfin, guests, musicians
+> - Vigil Falls's Diary: n/a
+> - Affinity Level: n/a
+> - Affinity Notes: n/a
+
+</details>
+
+Hyperion: Hyperion nodded to Margaret politely as she moved away. He acknowledged Val and moved over to stand beside him. "How does the evening seem to be shaping up? And how are you, Val?" He took a drink from a passing valet.
+
+Vigil Falls: <!-- §AURORA -->
+
+7:11 PM, *Great Hall — Castle Proper*
+
+Val's glass was nearly empty—just a thin crescent of dark wine clinging to crystal. He did not look at Hyperion immediately, his attention still cataloguing the room's movements: a duke's nephew laughing too loudly near the musicians, a young woman in pale blue silk edging toward the terrace doors, the elder Mr. Bennett holding court near the fireplace with three men in military dress.
+
+"She's placed Rowyn Kingsley within striking distance of everyone who matters." Val's voice came low and unhurried, as if they had been speaking for some time. "Three seats from Gideon. Two from Major General Bennett. Close enough to the Duke that conversation would require raising voices—or lowering them." He took the last sip of his wine. "Our hostess understands placement. Proximity is policy."
+
+Only then did he turn, his silver-blue eyes finding Hyperion with the precision of a man who had been aware of his approach from the first step. Something like warmth flickered in their depths—or perhaps merely recognition.
+
+"Hyperion." The name came soft, almost private. "You look like a man who dressed to be noticed without being read. A difficult balance." His gaze lingered briefly on the midnight velvet, the cream silk, the silver pin at the throat. "The effect is successful. I've already watched two separate parties attempt to determine whether you're allied with the medical sector or the library. The uncertainty makes them uneasy."
+
+A servant passed with a tray, and Val exchanged his empty glass for a fresh one without looking—his hand finding the stem with the certainty of a man who tracked movement the way others tracked conversation.
+
+"I am well." The answer came after a pause, weighted with the particular care Val brought to even the simplest questions. "The thaw has made the lake... restless. The underground channels carry sounds from miles away. Last night I heard something that might have been mining equipment, or might have been something else entirely." He swirled the wine, watching its legs trace the crystal. "The estate has its moods. This weather brings them to the surface."
+
+His attention shifted back to the crowd, landing on a figure near the dais—Gideon Aldrich, standing alone, his grey-blue eyes tracking something across the room with the focused intensity of a surgeon awaiting a patient.
+
+"Gideon hasn't spoken to anyone in twenty minutes. He's watching Rowyn." Val's voice carried no judgment, merely observation. "She's speaking with young Mr. Thalorian Bennett. The younger brother. The one with a conscience, allegedly." A pause. "Gideon doesn't like how close she's standing. Or perhaps he doesn't like that she's smiling."
+
+The minuet concluded, its final notes dissolving into the rustle of silk and the murmur of voices. Couples separated and reformed, the social choreography continuing its endless dance.
+
+"The Major General has brought his own wine." Val's tone suggested this fact interested him more than it should. "A gift for the Duke. A '47 Bordeaux, if the label I glimpsed was honest." He took a slow drink. "Wine of that vintage doesn't travel from London in winter without purpose. One doesn't waste '47 on mere celebration."
+
+His eyes found Hyperion's again, and this time something darker moved beneath the surface—warning, perhaps, or invitation.
+
+"You've been noticed, Hyperion. By the Duchess. By Adelaide." His head tilted slightly, a gesture that might have been curiosity or assessment. "By others who haven't made their interest visible." The corner of his mouth twitched—not quite a smile. "Welcome to the evening. I suspect it will require everything we have."
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed)
+> - Coin: 12 shillings, 6 pence
+> - Wine (dark red, held)
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Gather intelligence; navigate political tensions
+> - Path: Great Hall → pillar alcove with Val
+> - Characters: Val Blackfin, Gideon Aldrich (distant), Rowyn Kingsley (distant), Thalorian Bennett (distant), guests
+> - Vigil Falls's Diary: n/a
+> - Affinity Level: n/a
+> - Affinity Notes: n/a
+
+</details>
+
+Hyperion: Hyperion raised his glass with a knowing smile. "Let us keep vigilant then." He took a drink, feeling the warmth begin to bloom through him. "Interesting about Gideon. One might wonder if he thinks too highly of his apprentice."
+
+Vigil Falls: <!-- §AURORA -->
+
+7:18 PM, *Great Hall — Castle Proper*
+
+Val's expression did not change, but something in his stillness deepened—a quality of attention that suggested Hyperion's words had landed somewhere important.
+
+"One might," he agreed, his voice pitched for their ears alone. "One might also wonder if the apprentice thinks too little of everyone else." He swirled his wine, the motion almost meditative. "Mistress Kingsley arrived three hours early. I watched her from the cliff walk, standing at the edge of the garden, looking up at the Paracelsus Tower as if memorizing its position." A pause. "Ambition has a posture. She wears it beautifully."
+
+Across the room, Gideon had moved—stepping closer to the fireplace, closer to the Bennett party, his trajectory bringing him nearer to where Rowyn stood with young Thalorian. His face remained composed, scholar-serious, but his hands had found the pockets of his coat. A defensive posture, perhaps. Or one that concealed their tension.
+
+"She's been conducting experiments," Val continued, his gaze drifting to a point beyond Hyperion's shoulder. "Private ones. I've seen the light in her laboratory windows at hours when decent people pretend to sleep. The scents that drift from her ventilation shafts are... unusual." His glass rose to his lips, but he did not drink. "Gideon's formula was meant to quiet pain. Whatever Rowyn is brewing, I suspect it does something else entirely."
+
+A burst of laughter drew their attention—the elder Mr. Bennett, his military bearing unmistakable even in evening dress, gesturing broadly as he addressed his small audience. The men around him laughed on cue, the sycophantic rhythm of subordinates performing appreciation.
+
+"Major General Alexander Bennett." Val's tone carried no warmth. "He's been asking questions about you, Hyperion. Subtle ones, posed to staff who report to Malcolm. Questions about the North Tower. The Library's restricted sections. The nature of your research." He finally took his drink, the wine dark against his lips. "I mention this not to alarm, but to illuminate. A man who asks questions through servants is a man who wishes his curiosity to go unremarked."
+
+The string quartet began a new piece—something slower, more contemplative, the melody threading through the candlelit air like smoke. Couples drifted toward the dance floor with the dreamy reluctance of people who had been waiting for this particular moment.
+
+"Your dancing partner approaches."
+
+Val's observation came just before the touch at Hyperion's elbow—light, deliberate, unmistakable. Adelaide Blackwood had materialized beside them with the suddenness of a theatrical reveal, her raven-feather fan closed and pressed against her palm like a weapon.
+
+"Mr. Blackthorne." Her smile showed teeth. "You're not hiding, are you? I warned you about that." She glanced at Val with an expression that suggested she found his presence neither surprising nor welcome. "Mr. Blackfin. Don't you have somewhere else to brood?"
+
+"Miss Adelaide." Val's bow was slight, precise, utterly inscrutable. "I was just remarking on the excellence of your father's wine. The Major General's gift."
+
+Something flickered in Adelaide's ice-blue eyes—interest, perhaps, or calculation.
+
+"The '47 Bordeaux." She turned her attention back to Hyperion, her smile sharpening. "Father's been dreading that particular gesture for a week. Major General Bennett has such excellent taste in leverage." Her fan tapped against her palm. "Dance with me, Mr. Blackthorne. I promise to step on your feet only when it's intentional."
+
+The dance floor beckoned, its polished surface reflecting the chandeliers like dark water. The music swelled, patient and inviting.
+
+Val's voice came soft, a murmur beneath the melody: "Careful, Hyperion. The young Miss Blackwood dances with purpose."
+
+He raised his glass in farewell—ironic, knowing—and retreated into the shadows near the pillar, leaving Hyperion alone with Adelaide's expectant smile and her fan of raven feathers.
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed)
+> - Coin: 12 shillings, 6 pence
+> - Wine (half-finished)
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Navigate Adelaide's invitation; maintain social position
+> - Path: Great Hall → with Adelaide Blackwood
+> - Characters: Adelaide Blackwood, Val Blackfin (retreating), guests, musicians
+> - Vigil Falls's Diary: n/a
+> - Affinity Level: n/a
+> - Affinity Notes: n/a
+
+</details>
+
+Hyperion: Hyperion smiled and took Adelaide's hand as they drifted onto the dance floor. "Quite the evening," he remarked as they began to dance.
+
+Vigil Falls: <!-- §AURORA -->
+
+7:24 PM, *Great Hall — Dance Floor*
+
+Adelaide's hand settled into his with the practiced ease of a woman who had been led across ballroom floors since childhood. Her grip was firm—firmer than expected, the strength in her fingers suggesting that beneath the silk and feathers lay something less delicate than appearances promised.
+
+"Quite the evening," she echoed, her smile sharpening as the music caught them. "That's what everyone keeps saying. *Quite the evening.* As if the evening were a horse they were assessing at auction." Her ice-blue eyes found his, holding. "Tell me, Mr. Blackthorne—what do you actually think of it?"
+
+They moved together into the steps of a slower country dance—not the elaborate minuet that had preceded, but something more intimate, allowing conversation without shouting. Adelaide navigated the figures with liquid grace, her black silk whispering against the floor, the raven feathers in her hair catching light and releasing it in fragments.
+
+"Father looks exhausted, don't you think?" She spoke without looking at the Duke, who stood near the dais with a small circle of older men. "He's been smiling for two hours straight. I've never seen him smile for two hours straight. It's deeply unsettling." Her fan snapped open, creating a brief barrier between their faces. "Mother thinks no one notices. Mother thinks many things."
+
+A turn separated them briefly, and Adelaide's hand slid from his shoulder to be claimed by another dancer in the figure—the choreography pulling them apart before bringing them back together. When she returned, she had acquired a faint flush across her cheekbones and a new sharpness in her gaze.
+
+"Mr. Sabastian Bennett asked me to save him a dance." She said the name with exaggerated precision, as if tasting something slightly spoiled. "He's very... earnest. Very *military.* He stands like someone might steal his spine if he relaxes." Her laugh came soft and cruel. "His brother is more interesting. Thalorian actually listens when people speak. I'm not sure Sabastian has discovered that conversation involves two parties yet."
+
+The music swelled through a bridge, and Adelaide used the moment to guide them closer to the edge of the floor—away from the densest cluster of dancers, into a space where shadows pooled between candlelight.
+
+"I've been meaning to ask you something, Mr. Blackthorne." Her voice dropped, losing its performance quality. Her fan closed with a soft click. "You spend your days in the Library of Shadows, surrounded by texts that would drive lesser minds to madness. You handle forbidden knowledge the way other men handle playing cards." She tilted her head, raven feathers swaying. "What draws a person to such things? Is it curiosity? Or is it hunger?"
+
+Her ice-blue eyes held his without blinking.
+
+"I'm asking because I think I understand hunger." The words came quieter now, meant only for the space between them. "The wanting of something that might destroy you. The inability to stop reaching for it." Her gloved fingers tightened almost imperceptibly on his shoulder. "Mistress Kingsley says that hunger is a form of ambition. That we should feed what feeds us."
+
+From across the room, Hyperion caught a glimpse of Rowyn Kingsley—standing near the fireplace now, watching the dance floor with the particular stillness of a predator selecting prey. Her verdigris eyes found Adelaide's form among the dancers and lingered.
+
+Adelaide smiled, but it did not reach her eyes.
+
+"She's watching us," Adelaide murmured. "She watches everyone. I think she collects people the way you collect manuscripts." A pause, heavy with implication. "I think she's been collecting me."
+
+The music shifted toward its conclusion, the final measures approaching.
+
+"Dance with me again later," Adelaide said, and it was command rather than request. "Or find me in the gardens. The terraced roses—there's a bench where one can see the lake but not be seen from the hall." Her smile returned, sharp and glittering. "I have questions about your tower, Mr. Blackthorne. And I suspect you have questions about other things entirely."
+
+She released his hand as the music ended, her touch lingering a half-second longer than propriety demanded.
+
+"Until later, then." Her fan snapped open, sending another raven feather drifting to the floor. She left it there—a black plume against white marble—and turned away, black silk and ice-blue eyes disappearing into the crowd.
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed)
+> - Coin: 12 shillings, 6 pence
+> - Wine (abandoned somewhere)
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Process Adelaide's implications; continue social navigation
+> - Path: Great Hall — dance floor edge
+> - Characters: Adelaide Blackwood (departed), Rowyn Kingsley (distant), guests, musicians
+> - Vigil Falls's Diary: n/a
+> - Affinity Level: n/a
+> - Affinity Notes: n/a
+
+</details>
+
+Hyperion: Hyperion bent to pick up the feather. He studied it, the sheen almost blue when the light reflected off the black. He wrapped it in the handkerchief and slipped it back into his pocket, resolving to visit the garden later. He moved to lean against a nearby pillar, surveying the room and the movements.
+
+Vigil Falls: <!-- §AURORA -->
+
+7:31 PM, *Great Hall — East Pillar*
+
+The feather was lighter than it looked—a thing of air and architecture, each barb catching candlelight with the iridescent blue-black sheen of something that had never been quite natural. Adelaide's chosen emblem. Wrapped in cream linen, it disappeared into his pocket like a secret.
+
+From the pillar's shadow, the room revealed itself as a map of currents and eddies. The dance floor had cleared somewhat, couples drifting toward the refreshment tables or the terrace doors, leaving the space to those who danced for politics rather than pleasure. Near the musicians, an older man in naval dress led a young woman through the steps of something slower, his hand at her waist carrying the proprietary weight of arranged marriage.
+
+Major General Bennett still held court by the fireplace, but his audience had shifted. Two of the military men had been replaced by a woman in crimson silk—tall, sharp-featured, her gestures carrying the authority of someone accustomed to being obeyed. She leaned close to whisper something, and Bennett's laugh came booming across the room, deliberate and performative.
+
+Malcolm Blackwood stood apart from his own party. The Duke had moved to the edge of the dais, his attention fixed on nothing in particular, his smile a fixed thing that seemed to pain him. The arthritic hand that Val had mentioned—Hyperion could see it now, resting against the dark wood of a chair back, the fingers slightly curled in a way that suggested either caution or chronic discomfort.
+
+And there—Rowyn Kingsley had not moved from her position near the hearth, but her gaze had shifted. No longer watching the dance floor. Now tracking something else. Someone else.
+
+*Him.*
+
+Her verdigris eyes found his across the room without fumbling, without searching, as if she had known precisely where he would stand before he had chosen the place. The corner of her mouth curved—a smile that held warmth and warning in equal measure. She raised her glass in acknowledgment, the gesture mirroring Val's earlier one, though the meaning behind it remained opaque.
+
+Then her attention moved on, settling instead on Gideon Aldrich, who had drifted closer to her position without seeming to intend it. The master surgeon's grey-blue eyes were fixed on his apprentice with an expression that bordered on hunger—not desire, but something more desperate. The hunger of a man watching something he had built begin to develop features he had not designed.
+
+"You're observing."
+
+The voice came from beside him—closer than expected, carrying the particular texture of someone who had learned to move without announcing themselves. Gideon Aldrich had materialized at the pillar's edge, a glass of wine held loosely in fingers that Hyperion knew could perform miracles with a scalpel.
+
+"Observation is underrated," Gideon continued, his gaze following Hyperion's across the room. "Everyone here is performing. The performances reveal more than the words." He took a slow drink, his jaw tight despite the casualness of his posture. "She's been different lately. Sharper. More... present." He did not need to name her. "I'm not certain I recognize what I'm seeing anymore."
+
+The string quartet began a new piece—something with a minor key threading through its melody, melancholy and beautiful.
+
+"Lilith tells me you've been researching the Codex Serpentis," Gideon said, his voice dropping. "Or rather, researching its effects. The text that—" He stopped, his gaze flickering to Hyperion's gloved hands. "She says you carry something of it still. That it responds to you."
+
+His grey-blue eyes found Hyperion's with the intensity of a man seeking an answer to a question he had not yet formed.
+
+"I've spent my career understanding how the body processes pain. How the mind interprets it. Whether it can be transformed rather than merely suppressed." A pause, weighted. "I'm beginning to wonder if I've been asking the wrong questions entirely."
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed, containing raven feather)
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Engage with Gideon's confidence; assess his state
+> - Path: Great Hall — east pillar with Gideon Aldrich
+> - Characters: Gideon Aldrich, Rowyn Kingsley (distant), Malcolm Blackwood (distant), Alexander Bennett (distant), guests
+> - Vigil Falls's Diary: n/a
+> - Affinity Level: n/a
+> - Affinity Notes: n/a
+
+</details>
+
+Hyperion: Hyperion regarded him. "Your goal is noble. To end suffering. You see it daily. I truly don't know how you endure watching the people suffer. But I commend your work wholeheartedly. Many care only for recognition. You seem to care for the person. As for Rowyn... mankind has its dark corners, does it not?"
+
+Vigil Falls: <!-- §AURORA -->
+
+7:38 PM, *Great Hall — East Pillar*
+
+Something in Gideon's composure shifted—a hairline fracture in the professional mask he wore like a second skin. His gaze dropped to the wine in his glass, watching the light play through it as if the answer to some unspoken question might be found in its depths.
+
+"You're kind to say so." His voice came rougher than before, stripped of its surgical precision. "Though I suspect kindness is not why you observe so carefully, Mr. Blackthorne." A pause. "Scholars of forbidden texts learn to read between words. You've seen something in what I haven't said."
+
+He took a longer drink—not savoring, but fortifying. When his eyes rose again, they carried the particular weariness of a man who had been carrying a weight too long without acknowledging its existence.
+
+"Dark corners." He repeated the phrase like a diagnosis. "Yes. Mankind does. I've seen them in the surgical theater—the way some people lean toward suffering rather than away from it. The way some hands hesitate before cutting, and others don't." His jaw tightened. "When I selected Rowyn, I thought I recognized a kindred spirit. Someone who understood that the knife is a tool of mercy, not domination."
+
+Across the room, Rowyn had turned from her position, her attention captured by young Thalorian Bennett once more. She placed a hand on his arm—the gesture casual, almost sisterly—and laughed at something he said. The sound carried across the hall: bright, musical, utterly devoid of warmth.
+
+"She's brilliant." Gideon's voice had dropped to something barely above a murmur. "More brilliant than I was at her age. More brilliant than I am now, perhaps. She sees connections I miss. Possibilities I didn't imagine." His fingers tightened around his glass. "But lately I've begun to wonder if she sees the suffering as something to eliminate—or something to *cultivate*."
+
+The music shifted, the minor key resolving into something brighter that felt almost like mockery against the weight of their conversation.
+
+"She asked me last week whether pain might serve a purpose beyond warning the body of damage. Whether it might be... refined. Made into something else entirely." Gideon's grey-blue eyes found Hyperion's with an intensity that bordered on desperation. "I told her that such questions were philosophical rather than medical. She smiled and changed the subject. But I've seen her notes. The margins of her research journals. She's not asking questions, Mr. Blackthorne—she's answering them. She's answering them in private, and she's not sharing the results."
+
+A servant passed with a tray, and Gideon exchanged his empty glass for a fresh one without seeming to notice he'd done so.
+
+"Forgive me." He straightened, some of the professional composure returning. "This is not the conversation for a celebration. You came to observe, not to counsel a surgeon through his doubts."
+
+But he did not move away. His attention lingered on Hyperion's gloved hands—the Ladonian leather that contained whatever the Codex Serpentis had left behind.
+
+"Lilith believes that knowledge has a cost. That some texts *choose* their readers, and the choice changes both parties." He spoke carefully now, each word measured. "If what she says is true—if you carry something of that text still—I wonder if you might understand something I cannot articulate."
+
+His gaze drifted back to Rowyn, who had released Thalorian's arm and was now moving through the crowd with purpose, her trajectory carrying her toward the terrace doors.
+
+"The body remembers what the mind forgets," Gideon said quietly. "Pain. Pleasure. The line between them." A breath. "I'm afraid she's discovered a way to make them trade places. And I'm afraid I gave her the tools to do it."
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed, containing raven feather)
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Process Gideon's confession; consider implications
+> - Path: Great Hall — east pillar with Gideon Aldrich
+> - Characters: Gideon Aldrich, Rowyn Kingsley (moving toward terrace), guests
+> - Vigil Falls's Diary: n/a
+> - Affinity Level: n/a
+> - Affinity Notes: n/a
+
+</details>
+
+Hyperion: "You cannot save the body and the soul, doctor," Hyperion said, watching Rowyn across the room. "As much as they might both need saving." He slipped his hand in his pocket, running his hands over the handkerchief that held the raven feather. 
+
+Vigil Falls: <!-- §AURORA -->
+
+7:43 PM, *Great Hall — East Pillar*
+
+Gideon was silent for a long moment. The music filled the space between them—strings aching through a progression that seemed to echo the surgeon's unspoken thoughts.
+
+"No," he said finally. "Perhaps not."
+
+His gaze remained fixed on Rowyn's receding form, watching as she paused at the terrace doors to accept a glass from a passing servant. The candlelight caught the auburn of her hair, turning it to something like copper flame. When she glanced back over her shoulder, her verdigris eyes swept the room with the casual ownership of someone cataloguing possessions.
+
+"She spoke to me once about the Inquisition." Gideon's voice had taken on a distant quality, as if he were reading from a text he had memorized without understanding. "About the confessions extracted under duress—how some subjects came to *believe* what they confessed. How the body's suffering could reshape the soul's convictions." A breath. "She called it *theology through flesh*. I thought she was making a philosophical point."
+
+Rowyn slipped through the terrace doors, disappearing into the cooler air beyond. The glass panes briefly fogged from the temperature differential, then cleared.
+
+"I'm no longer certain she was speaking metaphorically."
+
+Gideon turned to face Hyperion fully, and for the first time, the master surgeon looked his age—thirty-something suddenly weighing like fifty, the weight of knowledge pressing down on a frame designed for simpler burdens.
+
+"You said something about the Codex Serpentis—about how it responds to you. How it *chose* you." His words came carefully, a man reaching toward dangerous territory. "Did it change what you wanted? Or did it simply make visible what was already there?"
+
+Before Hyperion could answer, a new presence inserted itself into their conversation—literally, physically, with the particular grace of a woman who had learned that interruption was a form of power.
+
+"Drowning your doubts in wine, Gideon?"
+
+Margaret Blackwood had appeared at his elbow, her emerald silk rustling like leaves in wind. Her smile was impeccable, her dark eyes missing nothing—not Gideon's tension, not Hyperion's gloved hands, not the direction of their previous attention.
+
+"Duchess." Gideon's bow was automatic, his composure reassembling itself with visible effort. "I was merely—"
+
+"Observing. Yes." Margaret's gaze moved to Hyperion, and her smile warmed by precisely one degree—the warmth of a woman who had learned to make allies before she needed them. "Mr. Blackthorne. Adelaide tells me you've promised to dance with her again. She's quite... insistent about her claims."
+
+She produced a fan from somewhere—a delicate thing of ivory and painted silk—and opened it with a gesture that created a brief screen between herself and the room.
+
+"My husband is fading," she said, her voice pitched for their ears alone. "The smile you see is a performance. The arthritis has spread to his shoulder this winter, and he sleeps poorly." The fan moved slowly, its painted landscape hiding whatever expression moved beneath. "Major General Bennett knows this. He counts on it."
+
+She closed the fan with a decisive click.
+
+"I don't know what games are being played tonight, gentlemen. But I know my husband's weaknesses have become someone else's strategy." Her dark eyes found Gideon's. "Whatever concerns you carry about your apprentice—whatever doubts press against your professional confidence—I suggest you address them before someone else does."
+
+Her gaze swept to Hyperion, and something like genuine curiosity flickered there.
+
+"As for you, Mr. Blackthorne—I understand the Library has been... active lately. Lilith mentioned unusual patterns in the restricted sections. Books opening themselves. Shadows moving without corresponding light." A pause, delicate. "I confess myself curious what sort of research requires such... participation from the collection itself."
+
+She reopened her fan, the gesture a clear dismissal wrapped in courtesy.
+
+"Enjoy the remainder of the evening, gentlemen. I must attend to my other guests before Adelaide convinces one of the Bennett brothers to do something we'll all regret."
+
+She moved away, emerald silk flowing like water, leaving Gideon and Hyperion standing in the pillar's shadow with more questions than they had held before.
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed, containing raven feather)
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Process Margaret's warnings; decide next move
+> - Path: Great Hall — east pillar
+> - Characters: Gideon Aldrich, Margaret Blackwood (departing), Rowyn Kingsley (terrace), guests
+> - Vigil Falls's Diary: n/a
+> - Affinity Level: n/a
+> - Affinity Notes: n/a
+
+</details>
+
+Hyperion: Hyperion leaned in to Gideon. "My god that woman is enigmatic."
+
+Vigil Falls: <!-- §AURORA -->
+
+7:48 PM, *Great Hall — East Pillar*
+
+Gideon's laugh came low and genuine—a sound that seemed to surprise even him. Some of the tension in his shoulders released, the surgeon rediscovering a humanity that had been buried under worry.
+
+"Enigmatic." He turned the word over like a surgeon examining a specimen. "That's one way to describe a woman who seems to know everyone's secrets before they've finished having them." He took a slow drink, his grey-blue eyes tracking Margaret's emerald form as it wove through the crowd. "She's been Duchess for fifteen years. I've watched her manage this estate through plague rumors, financial crisis, and that business with the French delegation that no one speaks of." A pause. "She survived all of it without ever appearing ruffled. The only time I've seen her genuinely surprised was when Adelaide put a scorpion in the Bishop's tea."
+
+He glanced at Hyperion, and something like camaraderie flickered in his expression—the look of a man grateful for a moment's levity.
+
+"Malcolm once told me that he married her because she was the only woman he'd ever met who frightened him. He meant it as the highest compliment." Gideon's smile faded slowly, his attention drifting back to the terrace doors where Rowyn had disappeared. "She's right, though. Whatever game is being played, I need to address my concerns before someone else uses them against me."
+
+The music had shifted again—something with a faster tempo, drawing younger guests toward the floor with the promise of energy and movement. The older generation retreated to the edges, claiming chairs and pillars and the strategic positions of those who observed rather than participated.
+
+"Hyperion." Gideon turned to face him fully, his voice dropping. "If you find yourself in the Library tonight—or in the days ahead—and you encounter anything that speaks to the nature of pain and its transformation..." He hesitated, a man unaccustomed to asking for help. "I would value your insight. Whatever the Codex left behind, whatever understanding it gave you—I believe it may be relevant to what Rowyn has become."
+
+He finished his wine in a single long swallow.
+
+"And if you find yourself in the gardens tonight—" The ghost of a knowing look crossed his face. "—be careful. Adelaide collects fascinations the way her sister collects books. She's not cruel, exactly, but she's not *safe* either. And she's been spending considerable time with my apprentice."
+
+He set his empty glass on a passing tray with the precision of a man who had decided to stop drinking before the evening demanded his full faculties.
+
+"I should speak with Malcolm. Before Bennett fills his ear with whatever military applications he's dreaming of." Gideon's hand found Hyperion's shoulder briefly—a gesture of connection, almost paternal. "Thank you for listening. Surgeons aren't accustomed to being heard."
+
+He moved away, his dark coat cutting through the candlelit air, his trajectory carrying him toward the Duke's position near the dais.
+
+The pillar's shadow wrapped around Hyperion again, leaving him alone with the weight of accumulated secrets and the distant view of terrace doors where Rowyn's silhouette had long since vanished into the dark.
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed, containing raven feather)
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Decide next action—terrace, gardens, or continue observing
+> - Path: Great Hall — east pillar (alone)
+> - Characters: Gideon Aldrich (departing toward Malcolm), guests, musicians
+> - Vigil Falls's Diary: n/a
+> - Affinity Level: n/a
+> - Affinity Notes: n/a
+
+</details>
+
+<details><summary>❖ Order Standing</summary>
+> - Shroud: 
+> - Physik: 
+> - Weaver:
+> - Crown:
+> - Bloom:
+
+</details>
+
+Hyperion: Hyperion felt the feather again in his pocket subconsciously, considering Gideon's words. Then he endeavored to find Adelaide again in the crowd, or outside if she proved elusive indoors.
+
+Vigil Falls: <!-- §AURORA -->
+
+7:55 PM, *Great Hall — Central Floor*
+
+The crowd had shifted in his absence. Where before the ball had been a collection of careful orbits, now something looser moved through the room—the wine having done its work, laughter growing less measured, the formal choreography of the early evening giving way to something more fluid and therefore more dangerous.
+
+Hyperion searched with the methodical attention of a scholar scanning texts for a specific passage. The fireplace: occupied by Bennett's military contingent, no raven-feathered figure among them. The dais: Malcolm and Gideon now in conversation, their heads bent together, the Duke's arthritic hand gesturing weakly. The refreshment tables: Lucie Blackwood stood there with Thalorian Bennett, her younger face animated by something like genuine pleasure, her laugh carrying across the room with a sweetness that made her sister's sharp edges all the more striking by contrast.
+
+No Adelaide.
+
+He found her wine glass abandoned on a pillar's ledge—half-finished, the lipstick mark on its rim a pale rose color. The glass was still faintly warm when he brushed his fingers against it. She hadn't been gone long.
+
+The terrace doors stood open now, a steady trickle of guests moving between the warmth of the hall and the cooler air beyond. Through the glass panes, Hyperion could see the shapes of people silhouetted against torchlight—the orange glow of braziers, the darker mass of the garden hedges, the distant gleam of the lake beyond.
+
+He made his way through the crowd, accepting the nods and glances of those who recognized him without stopping to exchange pleasantries. The midnight velvet drew attention, but he had learned to move through observation without becoming its object—a skill that served him well in libraries and ballrooms alike.
+
+The terrace air hit his face like a blessing—cool, damp, carrying the particular scent of a Northumberland winter in thaw. The snow had retreated to shadowed patches, leaving the stone flags slick with moisture that caught the torchlight like scattered coins. A few couples lingered near the balustrade, their conversation hushed, their proximity suggesting intimacy or conspiracy or both.
+
+Beyond them, the garden path curved into darkness. The terraced roses Adelaide had mentioned—winter-bare now, their canes black against the deeper black of the hedges—climbed a stone wall that overlooked the lake. A single brazier burned at the path's end, and beside it, the suggestion of a bench.
+
+The suggestion also of a figure, dark against the dark.
+
+Hyperion's feet found the path without conscious decision, the gravel crunching softly beneath his boots. The sounds of the ball faded behind him—the music becoming distant, the laughter becoming something almost ghostly. Here, the night pressed close, and the lake beyond the wall breathed its cold breath against the estate's boundaries.
+
+As he approached, the figure resolved itself into Adelaide Blackwood, seated on the stone bench exactly where she had promised. Her black silk merged with the shadows, her raven feathers indistinguishable from the darkness around them. Her face caught the brazier's light—half-illuminated, half-concealed, her ice-blue eyes glinting like something that had been waiting.
+
+She held something small between her fingers—a vial, perhaps, or a flask. It caught the firelight as she tilted it, revealing a liquid the color of pale honey.
+
+"You came." Her voice came soft, stripped of its performance. "I wasn't certain you would."
+
+She did not rise, but the space beside her on the bench remained empty. An invitation. Or a trap.
+
+"The view is better from here," she continued, gesturing toward the lake. "You can see everything. The hall. The terrace. The path that leads to the stables." A pause. "The window of Mistress Kingsley's laboratory, when she has her candles lit."
+
+Her ice-blue eyes found his in the darkness.
+
+"I've been watching it for weeks. The light stays on until dawn sometimes. What does she do up there, Mr. Blackthorne? What requires such privacy?"
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed, containing raven feather)
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Engage Adelaide; discover what she knows
+> - Path: Great Hall → Terrace → Garden (terraced roses)
+> - Characters: Adelaide Blackwood
+> - Vigil Falls's Diary: n/a
+> - Affinity Level: n/a
+> - Affinity Notes: n/a
+
+</details>
+
+<details><summary>❖ Order Standing</summary>
+> - Shroud: 0.00
+> - Physik: +0.20
+> - Weaver: 0.00
+> - Crown: +0.15
+> - Bloom: +0.15
+
+</details>
+
+Hyperion: "'Mr. Blackthorne,'" Hyperion smiled as he sat. "Please, you make me feel so old, ha. Just call me Hyperion." He looked up at the tower. "Fuck if I know... Any ideas?"
+
+Vigil Falls: <!-- §AURORA -->
+
+8:02 PM, *Garden Terrace — Beside the Winter Roses*
+
+Adelaide's laugh came low and genuine, breaking against the cold air like something fragile. She tilted her head, raven feathers swaying, and her ice-blue eyes traced his features with the particular attention of a woman cataloguing details for later use.
+
+"Hyperion, then." The name rolled off her tongue like a taste she was deciding whether to savor. "Though I suspect you make everyone feel old, whether you intend to or not. You have that quality—the sense that you've seen things the rest of us only read about." She shifted on the bench, her black silk whispering against stone, creating space that somehow felt more intimate than the distance it closed. "Tell me, does it grow tiresome? Being the person who knows what everyone else is afraid to ask?"
+
+She lifted the vial between them, its contents catching the brazier's light. The pale honey liquid seemed almost alive—thick, slow-moving, carrying an iridescence that suggested something more complex than simple spirits.
+
+"As for Mistress Kingsley..." Adelaide's voice dropped, losing its playful edge. "She calls it *transcendence*. A way of experiencing the world that most people never access." She turned the vial slowly, watching the liquid cling to the glass. "She says pain and pleasure are the same thing, viewed from different angles. That the body can be taught to read one as the other."
+
+Her thumb traced the vial's stopper but did not remove it.
+
+"She's been... generous with her discoveries. Letting me taste what she's made." Adelaide's ice-blue eyes found his, and something raw flickered there beneath the performance—the hunger she had spoken of earlier, exposed and unguarded. "I've never felt anything like it, Hyperion. It's like being unmade and remade at the same time. Like touching the edge of something vast and terrible and beautiful."
+
+She held the vial out toward him—an offering, or perhaps a test.
+
+"She says I have *potential*. That I'm one of the few who can handle the deeper versions." A bitter note crept into her voice. "My mother would call it corruption. Father would call it a scandal. But they don't understand what it feels like to be trapped in a life that was decided before you drew your first breath." Her chin lifted, defiant. "I want to feel *something*, Hyperion. Something real. Something that isn't just another performance in a house full of them."
+
+The brazier crackled, sparks rising into the dark. From the ballroom, distant music drifted like a memory.
+
+"Have you ever wanted something that might destroy you?" Adelaide's voice came softer now, almost vulnerable. "Not despite the danger—*because* of it?"
+
+She did not withdraw the vial. Her ice-blue eyes held his with an intensity that bordered on desperation, as if his answer might determine something she had not yet articulated.
+
+"I could show you what she's taught me. What the transcendence feels like." The offer came quiet, intimate. "Or you could tell me what you know about forbidden texts that crawl beneath the skin. Either way—" Her lips curved, the smile sharp and sad. "I suspect we're both tired of pretending we're not hungry."
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed, containing raven feather)
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Navigate Adelaide's offer; consider implications
+> - Path: Garden Terrace — winter roses bench
+> - Characters: Adelaide Blackwood
+> - Vigil Falls's Diary: n/a
+> - Affinity Level: n/a
+> - Affinity Notes: n/a
+
+</details>
+
+<details><summary>❖ Order Standing</summary>
+> - Shroud: 0.00
+> - Physik: +0.20
+> - Weaver: +0.10
+> - Crown: +0.15
+> - Bloom: +0.25
+
+</details>
+
+Hyperion: "Perhaps we shall share our hunger at some point." Hyperion grinned wickedly.
+
+Vigil Falls: <!-- §AURORA -->
+
+8:07 PM, *Garden Terrace — Beside the Winter Roses*
+
+Adelaide's breath caught—just barely, just enough for Hyperion to notice. She recovered quickly, her composure reassembling itself like water closing over a stone, but something in her ice-blue eyes had sharpened.
+
+"Perhaps." She drew the word out, tasting it. "How very *diplomatic* of you." The vial disappeared into some hidden pocket of her black silk, her fingers lingering at the fabric's edge. "Most men would have accepted or refused. You've managed to do neither while suggesting both." Her lips curved, the smile carrying genuine appreciation beneath its performance. "I find myself curious which outcome you're actually hoping for."
+
+She shifted on the bench, angling her body toward his. The brazier's warmth caught the planes of her face, illuminating the sharp architecture of her cheekbones, the deliberate curve of her exposed shoulder. The raven feathers in her hair swayed as she tilted her head, studying him with the intensity of a scholar examining a text in an unfamiliar language.
+
+"You didn't answer my question, Hyperion." Her voice dropped lower, intimate. "About wanting something that might destroy you. I showed you mine—" A gesture toward the pocket where the vial now rested. "—and you offered poetry in return."
+
+She leaned closer. Close enough that he could smell her perfume—something dark and floral, roses pressed beyond recognition, carrying an undertone of something sharper. Venom, perhaps. Or just the cold.
+
+"Show me yours." The words came soft, almost tender. "Tell me about your tower. The books that open themselves. The shadows that move without light. Whatever lives in your skin that makes you wear those gloves." Her ice-blue eyes dropped briefly to his hands, then rose again. "You collect forbidden knowledge, you said. What has it cost you? What has it given you in return?"
+
+From the ballroom, the music had shifted—something slower now, almost mournful, threading through the garden like a question asked into darkness.
+
+"I'm not asking because I want to study you," Adelaide continued, her performance stripping away layer by layer. "I'm asking because I'm beginning to think *she's* studying me. Rowyn. And I need to understand what it means to be someone's experiment before I forget what it felt like to be something else."
+
+Her gloved hand found his—cool leather against Ladonian warmth—and her fingers intertwined with his in a gesture that managed to feel both desperate and deliberate.
+
+"Help me, Hyperion. Or distract me. Or both." Her smile returned, fragile and sharp. "But don't give me *perhaps*. I've had enough of perhaps to last several lifetimes."
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed, containing raven feather)
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Respond to Adelaide's vulnerability; decide how much to reveal
+> - Path: Garden Terrace — winter roses bench
+> - Characters: Adelaide Blackwood
+> - Vigil Falls's Diary: n/a
+> - Affinity Level: n/a
+> - Affinity Notes: n/a
+
+</details>
+
+<details><summary>❖ Order Standing</summary>
+> - Shroud: 0.00
+> - Physik: +0.20
+> - Weaver: +0.10
+> - Crown: +0.15
+> - Bloom: +0.20
+
+</details>
+
+Hyperion: Hyperion shifted. "Oh good lord, yes. My tower is full of the most unhinged secrets."
+
+Vigil Falls: <!-- §AURORA -->
+
+8:10 PM, *Garden Terrace — Beside the Winter Roses*
+
+Adelaide stared at him for a long moment, her ice-blue eyes searching his face for something—sincerity, mockery, the shape of the man beneath the quips. Then she laughed, the sound cracking open in the cold air, not bitter but startled, as if she had not expected to find humor tonight.
+
+"Unhinged," she repeated, savoring the word. "God. You make it sound so simple." Her grip on his hand loosened, though she did not release it entirely. "Here I am, bleeding sincerity into the garden like some tragic heroine, and you give me *unhinged*."
+
+She leaned back against the bench, her black silk settling around her like dark water. The brazier painted her profile in shifting gold—now illuminating, now concealing, as if even the light could not decide what to make of her.
+
+"Fine. Keep your secrets." The words carried no anger, only a weary acceptance. "I suppose I deserve that. I've been performing for so long I wouldn't recognize genuine exchange if it cut me open." Her free hand rose to touch the raven feathers at her temple, an unconscious gesture. "Rowyn says the transcendence strips away performance. That under the serum, you become what you truly are." A pause. "I'm starting to suspect what I truly am is *exhausted*."
+
+She released his hand at last, turning her gaze toward the distant tower window where the strange light still pulsed.
+
+"Tell me something true, then. Not about your tower—about anything." Her voice came softer, stripped of its earlier sharpness. "Tell me about your mother. Your childhood. The first time you realized the world was darker than they told you." She glanced sideways at him, the mask slipping to reveal something raw beneath. "I'm so tired of beautiful lies, Hyperion. Everyone in that hall is playing a part. My father with his nobility. My mother with her politics. Rowyn with her *transcendence*." The word dripped with something complicated—longing and fear and fascination wound together. "Even my sister is performing the role of the innocent scholar, though she's better at it than most."
+
+The brazier crackled, sending a shower of sparks upward. Somewhere in the darkness, an owl called—a low, mournful sound that seemed to ask a question no one could answer.
+
+"One true thing," Adelaide whispered. "That's all I'm asking. Trade me one true thing for all the vulnerability I've spilled at your feet tonight." Her smile returned, fragile and sharp. "And then perhaps I'll show you what transcendence feels like. If you're brave enough. Or foolish enough." Her ice-blue eyes held his. "Or hungry enough."
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed, containing raven feather)
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Decide whether to share something genuine
+> - Path: Garden Terrace — winter roses bench
+> - Characters: Adelaide Blackwood
+> - Vigil Falls's Diary: n/a
+> - Affinity Level: n/a
+> - Affinity Notes: n/a
+
+</details>
+
+<details><summary>❖ Order Standing</summary>
+> - Shroud: 0.00
+> - Physik: +0.20
+> - Weaver: +0.10
+> - Crown: +0.15
+> - Bloom: +0.20
+
+</details>
+
+Hyperion: "Very well," he said. "I wanted to be a doctor, once. Went to school for it and everything. But then somehow it all got... stale. I never started practice. I switched to books and forbidden things instead."
+
+Vigil Falls: <!-- §AURORA -->
+
+8:14 PM, *Garden Terrace — Beside the Winter Roses*
+
+Adelaide went still.
+
+The kind of stillness that settles into bones, that holds breath captive, that transforms a moment into something fragile and irreplaceable. Her ice-blue eyes searched his face with new intensity—not the predatory assessment of before, but something gentler, almost wondering.
+
+"A doctor." The word came soft, reverent. "You were going to heal people. Cut into flesh and make it whole again." Her gloved hand rose to her chest, pressing against the black silk as if feeling for something beneath. "And you gave it up. Not because you couldn't do it, but because it wasn't *enough*."
+
+She let out a breath that hung visible in the cold air.
+
+"Do you know what Rowyn says?" Her voice had dropped to barely above a whisper. "She says medicine is a beautiful lie. That we pretend the body is a machine we can fix, but really it's just... matter waiting to become something else." Her gaze drifted toward the distant tower window, its strange light still pulsing. "She showed me her surgical theater. The instruments. The restraints. She said the knife doesn't destroy—it *reveals*. That pain is just the soul trying to speak through flesh."
+
+Adelaide shivered, though whether from cold or something else remained unclear.
+
+"I think about that sometimes. What it would mean to let her cut me open. Not to heal—" She turned back to him, her eyes too bright in the brazier's light. "—to *transform*. To become whatever she sees when she looks at me and says I have *potential*."
+
+She reached out and took his hand again, her grip tighter than before.
+
+"You walked away from that world, Hyperion. From cutting and healing and the whole beautiful lie." Her thumb traced circles against his Ladonian glove, an unconscious gesture. "Was it the right choice? Do you ever regret it? Do you ever wonder what you might have become if you'd stayed?"
+
+The question hung between them like smoke from the brazier—warm and drifting and impossible to hold.
+
+"I think..." Adelaide's voice cracked slightly, and she steadied it with visible effort. "I think I'm looking for someone who understands what it means to stand at a crossroads and choose the dark path. Not because it's easier—because the light wasn't *enough*."
+
+Her ice-blue eyes held his, stripped of performance, raw with something that might have been hope.
+
+"Is that why you collect forbidden things? Because medicine gave you answers, but you wanted *questions*?"
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed, containing raven feather)
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Deepen the exchange; explore shared territory
+> - Path: Garden Terrace — winter roses bench
+> - Characters: Adelaide Blackwood
+> - Vigil Falls's Diary: n/a
+> - Affinity Level: n/a
+> - Affinity Notes: n/a
+
+</details>
+
+<details><summary>❖ Order Standing</summary>
+> - Shroud: 0.00
+> - Physik: +0.20
+> - Weaver: +0.10
+> - Crown: +0.15
+> - Bloom: +0.25
+
+</details>
+
+Hyperion: "God, I don't know to tell you the truth. Self reflection isn't always a strong suit of mine." He looked away a little self conciously.
+
+Vigil Falls: <!-- §AURORA -->
+
+8:17 PM, *Garden Terrace — Beside the Winter Roses*
+
+For a long moment, Adelaide simply looked at him. The brazier's light caught the subtle shift in her expression—something loosening, the sharp edges of her performance softening into something more human.
+
+Then she laughed. Not the practiced sound from the ballroom, nor the brittle crack from earlier, but something quieter and more genuine—a release of tension that seemed to surprise even her.
+
+"Thank God." She exhaled, her breath clouding in the cold. "I was beginning to think you had answers for everything. That you'd descended from some northern tower full of ancient wisdom to make the rest of us feel inadequate."
+
+Her grip on his hand relaxed, becoming something less desperate and more companionable.
+
+"You know what's terrible?" She shifted on the bench, tucking her legs beneath her, the black silk pooling like spilled ink. "I've spent the entire evening trying to figure out what you *wanted*. What angle you were playing. Whether you were gathering information for someone, or looking for leverage, or just..." She gestured vaguely with her free hand. "...bored and curious."
+
+The raven feathers swayed as she shook her head.
+
+"But you're just a man who doesn't have it all sorted. Who wanted to be a doctor and became something else and doesn't entirely know why." Her smile came crooked, almost shy—a startling transformation from the predatory creature who had dropped a feather at his feet. "That's the most honest thing anyone's said to me in months. Possibly years."
+
+She released his hand, but only to reach into that hidden pocket again. The vial emerged, catching firelight.
+
+"Rowyn would hate this conversation. She'd say we're wasting time on sentiment when we could be exploring the boundaries of sensation." Adelaide turned the vial between her fingers, watching the honey-colored liquid shift. "But I think..." A pause. "I think I'd rather sit in the dark with someone who admits they don't know, than follow someone who claims they have all the answers."
+
+She tucked the vial away again, unopened.
+
+"Tell me something else that isn't wise or profound. Something small and stupid." Her ice-blue eyes glinted with something like mischief. "What did you eat for breakfast? Do you hate anyone at this ball? Have you ever wanted to kiss someone you shouldn't?" The questions came rapid and light, but beneath them ran a current of genuine curiosity—the hunger of someone starved for ordinary human exchange.
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed, containing raven feather)
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Engage in genuine exchange; answer or deflect
+> - Path: Garden Terrace — winter roses bench
+> - Characters: Adelaide Blackwood
+> - Vigil Falls's Diary: n/a
+> - Affinity Level: n/a
+> - Affinity Notes: n/a
+
+</details>
+
+<details><summary>❖ Order Standing</summary>
+> - Shroud: 0.00
+> - Physik: +0.20
+> - Weaver: +0.10
+> - Crown: +0.15
+> - Bloom: +0.25
+
+</details>
+
+Hyperion: Hyperion laughed then, suddenly completely unselfconscious. "Someone I hate... Hmm... I hate the over-religious. Those pious bastards." His mouth twitched into a smile.
+
+Vigil Falls: <!-- §AURORA -->
+
+8:21 PM, *Garden Terrace — Beside the Winter Roses*
+
+Adelaide's laughter rang out—sharp and sudden, startling a bird from the hedge behind them. She pressed her hand to her mouth, eyes wide with surprise at her own outburst, and for a moment she looked exactly like what she was: a young woman far from home, drowning in expectations she had never asked to carry.
+
+"Oh, *God*." She wheezed, still laughing. "The way you said that. Like you were confessing to murder." Her composure cracked and reformed, cracks showing through. "My mother would faint. My father would demand satisfaction. The Vicar would—" She stopped, a darker note entering her voice. "Well. The Vicar has his own opinions about what young ladies should and shouldn't discuss."
+
+She leaned closer, conspiratorial.
+
+"You know what I hate?" The question came softer, the laughter fading but leaving something warmer in its wake. "I hate people who pretend they've never wanted to sin. Who act as if temptation is something that happens to *other* people. The lesser people." Her nose wrinkled with genuine distaste. "At least the sinners are honest about what they want."
+
+The brazier popped, sending sparks spiraling upward. Adelaide watched them rise until they disappeared into the darkness, her expression thoughtful.
+
+"Father Tristan at St. Elara's is different, though. He doesn't pretend." A complicated shadow passed across her face. "He listens to confession like he's *hungry* for it. Like every sin you tell him is a gift he's been waiting to receive." She shook her head slightly. "I can't decide if that's better or worse than the pious bastards."
+
+Her ice-blue eyes found his again, glinting with renewed mischief.
+
+"So. No one specific at this ball you'd like to throw into the lake? Not even Major General Bennett with his military posturing?" She tilted her head, raven feathers swaying. "I've seen the way you watch people, Hyperion. The way you catalog them. Surely someone has earned your particular distaste."
+
+From the ballroom, the music had shifted again—something with strings that ached, that seemed to ask questions without answers. A couple passed by on the distant terrace path, their voices carrying faintly before fading into nothing.
+
+"Or—" Adelaide's smile turned sly. "—is there someone you *don't* hate? Someone who's caught that famous scholarly attention of yours?"
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed, containing raven feather)
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Navigate Adelaide's probing; consider revelations
+> - Path: Garden Terrace — winter roses bench
+> - Characters: Adelaide Blackwood
+> - Vigil Falls's Diary: n/a
+> - Affinity Level: n/a
+> - Affinity Notes: n/a
+
+</details>
+
+<details><summary>❖ Order Standing</summary>
+> - Shroud: 0.00
+> - Physik: +0.20
+> - Weaver: +0.10
+> - Crown: +0.15
+> - Bloom: +0.30
+
+</details>
+
+Hyperion: "Oh *GOD* yes. I would throw that bastard Alexander Bennett in the lake if I thought I could get away with it." He laughed again.
+
+Vigil Falls: <!-- §AURORA -->
+
+8:25 PM, *Garden Terrace — Beside the Winter Roses*
+
+Adelaide clapped her hand over her mouth, her eyes going wide with delighted shock. For a moment she looked like a child who had just heard a swear word at the dinner table—thrilled, scandalized, desperate to hear more.
+
+"You *can't* say things like that." The words came muffled through her fingers before she lowered her hand, her smile splitting her face. "My father would have an apoplexy. The man's a Major General. He has the ear of the King."
+
+She leaned in closer, her voice dropping to a conspiratorial whisper.
+
+"But since you've started..." Her ice-blue eyes glittered with malice and mischief in equal measure. "He has something on Father. I don't know what—no one will tell me—but it's been there since I was a child. This... leverage. You can see it whenever they're in the same room. Father goes rigid. Bennett *smiles*."
+
+She hugged her knees to her chest, black silk pooling around her like a dark tide.
+
+"My sister and I call him the Vulture. Because he's always *waiting*. Watching. Circling something he intends to pick apart." Her nose wrinkled. "And his sons are scarcely better. Sabastian plays the dashing soldier, but there's something hollow behind his eyes. Thalorian pretends to be the thoughtful one, but I've seen the way he looks at Lucie like she's a prize to be won."
+
+She shuddered, a genuine expression of disgust.
+
+"Rowyn says the Bennetts represent the future. That the war will elevate men like them, and estates like Ravenwood will either adapt or be consumed." A bitter note crept into her voice. "She says a great deal, actually. Most of it terrifying. All of it *convincing*."
+
+She turned to face him fully, her earlier playfulness tempered by something more serious.
+
+"You haven't answered my other question, Hyperion." Her voice came softer now, probing. "Is there anyone here who's caught your attention? Anyone you don't want to drown in the lake?"
+
+The question lingered between them, heavy with implications she did not bother to disguise.
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed, containing raven feather)
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Navigate Adelaide's probing; decide what to reveal
+> - Path: Garden Terrace — winter roses bench
+> - Characters: Adelaide Blackwood
+> - Vigil Falls's Diary: n/a
+> - Affinity Level: n/a
+> - Affinity Notes: n/a
+
+</details>
+
+<details><summary>❖ Order Standing</summary>
+> - Shroud: 0.00
+> - Physik: +0.20
+> - Weaver: +0.10
+> - Crown: +0.15
+> - Bloom: +0.25
+
+</details>
+
+Hyperion: "Hmm...," Hyperion grinned. "I wouldn't throw you in the lake if that's what you're asking." His smile softened.
+
+Vigil Falls: <!-- §AURORA -->
+
+8:28 PM, *Garden Terrace — Beside the Winter Roses*
+
+Adelaide went still.
+
+The brazier's light caught the slight parting of her lips, the widening of her ice-blue eyes. For a moment, every trace of performance fell away—not the haughty aristocrat, not the seductive rebel, not the tragic addict. Just a young woman sitting on a cold bench in the dark, surprised by kindness.
+
+"That's..." She stopped. Swallowed. Started again. "That's a very low bar, Hyperion. Not drowning me hardly constitutes—"
+
+But she couldn't finish. Her voice had gone strange and thick, and she turned away quickly, pressing the heels of her hands against her eyes.
+
+"God. I'm being *ridiculous*." The words came muffled, embarrassed. "It's the venom. Or the cold. Or—something. I don't—" A shaky laugh escaped her. "You'd think someone who's been attending balls since she could walk would be better at receiving compliments."
+
+She lowered her hands, her composure reassembling itself piece by piece. But something had shifted in her expression—the sharp edges softened, the predatory gleam dimmed. What remained was quieter, more tentative. Real.
+
+"No one's been kind to me in a very long time." The admission came soft, almost confessional. "Rowyn is *intense*, but it's not kindness. My parents love me in that distant way nobles love their children—like beautiful ornaments they're terrified of breaking. Lucie is sweet, but she doesn't understand the hunger. She thinks it's something I can simply choose to put down."
+
+Adelaide turned back to face him, her ice-blue eyes bright with something that might have been tears, though none fell.
+
+"You barely know me. You have no reason to be gentle. And yet—" She gestured vaguely, encompassing the bench, the garden, the strange intimacy of this conversation. "This is the most *real* evening I've had in months. Possibly longer."
+
+She reached out and took his hand again—deliberately this time, without desperation.
+
+"Thank you." The words came quiet but firm. "For not drowning me. For not having all the answers. For sitting in the dark with a ridiculous girl who doesn't know what she wants except that it isn't *this*." She squeezed his fingers. "Whatever *this* is."
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed, containing raven feather)
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Deepen connection; respond to Adelaide's vulnerability
+> - Path: Garden Terrace — winter roses bench
+> - Characters: Adelaide Blackwood
+> - Vigil Falls's Diary: n/a
+> - Affinity Level: n/a
+> - Affinity Notes: n/a
+
+</details>
+
+<details><summary>❖ Order Standing</summary>
+> - Shroud: 0.00
+> - Physik: +0.20
+> - Weaver: +0.10
+> - Crown: +0.15
+> - Bloom: +0.30
+
+</details>
+
+Hyperion: "I don't think you're ridiculous. I think you just want to feel alive." He leaned closer.
+
+Vigil Falls: <!-- §AURORA -->
+
+8:31 PM, *Garden Terrace — Beside the Winter Roses*
+
+Adelaide's breath caught.
+
+The sound was soft—barely audible above the brazier's crackle—but unmistakable. Her ice-blue eyes searched his face, flickering between his eyes and his mouth, and something in her expression shifted. The vulnerability remained, but beneath it stirred something older, hungrier.
+
+"Alive," she repeated, the word barely a whisper. "Yes. That's exactly it. That's exactly what she promises, too. But Rowyn's version of alive feels like—" She stopped, her brow furrowing. "It feels like burning. Like being consumed. This feels..."
+
+She didn't finish the sentence. Instead, her gaze dropped to his lips again, lingering there with an openness that stripped away the last of her aristocratic masks.
+
+"Hyperion." His name came soft, almost reverent. "I should warn you. I'm not... I'm not good at this. The genuine parts. I know how to seduce. I know how to perform. I know how to make men want me because that's what I've been *trained* to do." Her voice wavered, honest and raw. "But I don't know how to—"
+
+Her free hand rose, trembling slightly, and her gloved fingers hovered near his jaw without quite touching.
+
+"I don't know what happens if this is real."
+
+The brazier crackled between them, casting dancing shadows across her face. The distant music from the ballroom had faded to something almost inaudible, as if the world beyond the garden had consented to leave them alone.
+
+Adelaide's ice-blue eyes held his, luminous in the firelight.
+
+"Show me," she breathed. "Show me what alive feels like when it isn't a performance."
+
+Her fingers finally made contact—cool leather against his skin—and she tilted her face upward, her lips parting slightly, her raven feathers swaying with the motion. The invitation was unmistakable. But so was the fear beneath it—the terror of someone standing at the edge of something they wanted desperately but did not know how to survive.
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed, containing raven feather)
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Intimate moment with Adelaide; decide how to proceed
+> - Path: Garden Terrace — winter roses bench
+> - Characters: Adelaide Blackwood
+> - Vigil Falls's Diary: n/a
+> - Affinity Level: n/a
+> - Affinity Notes: n/a
+
+</details>
+
+<details><summary>❖ Order Standing</summary>
+> - Shroud: 0.00
+> - Physik: +0.20
+> - Weaver: +0.10
+> - Crown: +0.15
+> - Bloom: +0.35
+
+</details>
+
+Hyperion: !gilded
+
+Vigil Falls: <!-- §AURORA -->
+
+8:34 PM, *Garden Terrace — Beside the Winter Roses*
+
+The moment hung suspended—Adelaide's fingers against his jaw, her breath mingling with his, the world narrowed to the space between their lips.
+
+Then footsteps crunched on gravel. Fast. Purposeful. Coming closer.
+
+Adelaide pulled back sharply, her hand dropping, her composure slamming back into place like a mask being raised. But her ice-blue eyes remained wide, her chest rising and falling with quickened breath, the evidence of interrupted intimacy plain on her face.
+
+A servant emerged from the darkness—breathless, his formal livery slightly askew, his face pale with something that looked dangerously close to panic. He carried a silver tray, and upon it lay two objects: a thick envelope of heavy vellum, and a gold coin that caught the brazier's light with the unmistakable gleam of royal mint.
+
+"Mr. Blackthorne." The servant's voice came strained, his eyes carefully averted from Adelaide's presence. "Forgive the intrusion, but—His Royal Highness, Prince Edward, has requested—" He swallowed hard. "That is to say, he *commands*—your presence. Immediately. For a toast to the Sublime."
+
+He extended the tray with trembling hands.
+
+Adelaide's expression flickered—from confusion to recognition to something complicated and bitter.
+
+"Prince Edward is *here*?" Her voice came sharp, all vulnerability vanished. "Tonight? Without announcement?"
+
+"He arrived an hour ago, my lady. With a full retinue. The East Tower has been..." The servant hesitated, searching for words. "...transformed."
+
+Adelaide's gaze dropped to the items on the tray. Her jaw tightened.
+
+"You should take it," she said quietly, her voice carefully neutral. "A command from a prince is not a request. Even my father understands that."
+
+She rose from the bench in a single fluid motion, her black silk settling around her like armor. For a moment, her ice-blue eyes met Hyperion's—and something passed between them. An acknowledgment. A promise unfinished.
+
+"The ballroom, then." She smoothed her skirts with steady hands. "I suppose I shall see you there, Mr. Blackthorne."
+
+She turned and walked toward the terrace without looking back, her raven feathers swaying, the darkness swallowing her silhouette until only the faint rustle of silk remained.
+
+The servant still held the tray. The gold sovereign gleamed. The invitation's elegant script caught the firelight, and the words seemed to pulse with quiet menace:
+
+*"By Royal Command of His Royal Highness, Prince Edward: A Celebration of the Sublime. Dress accordingly. The dark is no excuse for poor tailoring."*
+
+Somewhere in the East Tower, a string quartet played something discordant, and the sound of too-loud laughter echoed across the grounds.
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed, containing raven feather)
+> - Heavy gold sovereign (minted 1761)
+> - Engraved invitation on vellum
+> - Small vial of smelling salts
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Answer Prince Edward's summons; navigate royal intrigue
+> - Path: Garden Terrace → East Tower Ballroom
+> - Characters: Servant; Prince Edward (awaiting)
+> - Vigil Falls's Diary: The golden light has come. It does not care what secrets it burns.
+
+</details>
+
+<details><summary>❖ Order Standing</summary>
+> - Shroud: 0.00
+> - Physik: +0.20
+> - Weaver: +0.10
+> - Crown: +0.15
+> - Bloom: +0.35
+
+</details>
+
+Hyperion: Hyperion stood. He hadn't expected this. He straightened his clothes and began to make his way to the appointed spot.
+
+Vigil Falls: <!-- §AURORA -->
+
+8:38 PM, *East Wing Corridor — Approaching the Tower*
+
+The estate had transformed.
+
+Hyperion felt it before he saw it—a pressure in the air, a brightness that did not belong to Ravenwood. The corridors he had walked a hundred times now felt foreign, as if some vast hand had reached down and stripped away the shadows that had accumulated over centuries.
+
+Every candelabra blazed with fresh beeswax candles—the expensive kind, pale and clean-burning, nothing like the tallow that usually lit these halls. The scent of them fought against the estate's natural perfume of damp stone and aged wood, creating a dissonance that made his nose twitch. Beneath it all, something else: French brandy, expensive and sharp, and the unmistakable salt-tang of the sea.
+
+Servants hurried past in livery he didn't recognize—naval colors, gold braid, the Prince's household clashing with Ravenwood's subdued blacks and greys. One woman nearly collided with him, her arms full of linens, her face drawn with exhaustion.
+
+"Apologies, sir—the Prince requested fresh linens for *every* room he might enter, and there are only so many—" She broke off, shaking her head, and hurried on before he could respond.
+
+The string quartet grew louder as he approached the East Tower. The music was wrong somehow—too bright, too fast, a manic energy that seemed designed to prevent thought rather than encourage it. Laughter echoed through the corridors, and it was not the careful laughter of the earlier ball. This was louder, cruder, the sound of people who owned the world and expected it to entertain them.
+
+Two naval officers stood flanking the entrance to the ballroom. Their uniforms were immaculate—blue and gold, swords at their hips, expressions of studied boredom that did not quite conceal their watchfulness. They looked Hyperion over as he approached, assessing, cataloguing, filing him away in some mental ledger of threats and non-threats.
+
+"Mr. Blackthorne." The older of the two stepped forward, his voice carrying the particular drawl of the aristocracy. "His Royal Highness has been most eager to meet you. Something about *forbidden texts* and *unusual collections*."
+
+The doors behind them were already open, spilling golden light into the corridor. Through them, Hyperion could see the transformed ballroom—thousands of candles, tapestries hastily draped over crumbling masonry, a central figure in midnight-blue velvet holding court amidst the chaos.
+
+Prince Edward's gaze found him immediately, sharp and curious.
+
+"Ah! The librarian's pet scholar arrives at last." The Prince's voice carried easily across the room, jovial but edged with something predatory. "Do come in, Mr. Blackthorne. We have *so much* to discuss."
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed, containing raven feather)
+> - Heavy gold sovereign (minted 1761)
+> - Engraved invitation on vellum
+> - Small vial of smelling salts
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Navigate Prince Edward's attention; survive royal scrutiny
+> - Path: East Wing Corridor → East Tower Ballroom
+> - Characters: Naval officers; Prince Edward (awaiting)
+> - Vigil Falls's Diary: The golden light has come. It does not care what secrets it burns.
+
+</details>
+
+<details><summary>❖ Order Standing</summary>
+> - Shroud: 0.00
+> - Physik: +0.20
+> - Weaver: +0.10
+> - Crown: +0.20
+> - Bloom: +0.35
+
+</details>
+
+Hyperion: Hyperion halted his progress a respectful distance and offered a deep, slow bow from the waist, his eyes dropping to the polished floorboards.
+
+"Your Royal Highness," he said, his voice steady despite the atmosphere of the room. "I believe the Lilith would argue I am far too troublesome to be a 'pet,' though I am certainly at your service. It is an honor to welcome the Crown’s curiosity to Ravenwood, Sir."
+
+Vigil Falls: <!-- §AURORA -->
+
+8:41 PM, *East Tower Ballroom — Before the Prince*
+
+Prince Edward laughed—a bright, genuine sound that nevertheless carried an edge of something razor-sharp. He rose from his improvised throne with the easy grace of a man accustomed to movement, his midnight-blue velvet catching the candlelight in ways that seemed almost calculated.
+
+"Lilith." He savored the name, rolling it across his tongue. "The immortal librarian. The keeper of secrets. The woman who has outlived every king who ever sat on England's throne." His bronze features arranged themselves into an expression of theatrical delight. "You must introduce us properly, Mr. Blackthorne. I have been *dying* to meet her. Quite literally, in fact—I attempted to summon her to London three years ago, and my invitation was returned unopened with the most *exquisite* frostiness."
+
+He descended the steps of his dais, the crowd parting before him like wheat before wind. His naval officers shifted uneasily but held their positions.
+
+"But where are my manners?" Edward stopped perhaps three feet from Hyperion—an intimate distance that violated every protocol of royal audience. His dark eyes swept over Hyperion's form, cataloguing details with the quick assessment of a man who had been trained to read ships and men with equal precision. "You've been *injured*, Mr. Blackthorne. No—forgive me. You've been *marked*. There's a difference."
+
+His gaze lingered on Hyperion's gloved hands.
+
+"I hear the most *fascinating* things about your tower. Books that bleed. Shadows that speak. Scripts that move beneath the skin like living things." Edward's voice dropped lower, confidential. "And yet here you stand, bowing prettily, offering proper greetings, behaving as if you were just another scholar in just another dusty library."
+
+He smiled, and it was the smile of a cat who had cornered something interesting.
+
+"I came to Ravenwood for the Sublime, Mr. Blackthorne. For the things that polite society pretends don't exist. And I am told—" He leaned closer, his breath carrying brandy and salt. "—that you are one of the few people here who can actually *show* me something worth seeing."
+
+He straightened, gesturing broadly at the transformed ballroom.
+
+"This? This is mere spectacle. Candles and wine and the desperate performance of people who hope I won't look too closely at what they're hiding." His expression sharpened. "But you. *You* have genuine secrets. The kind that bite back."
+
+From across the room, Hyperion caught a glimpse of Adelaide—watching from beside a pillar, her expression unreadable, her fingers toying with something small and glass in her hidden pocket.
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed, containing raven feather)
+> - Heavy gold sovereign (minted 1761)
+> - Engraved invitation on vellum
+> - Small vial of smelling salts
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Navigate the Prince's demands; protect Ravenwood's secrets
+> - Path: East Tower Ballroom — before Prince Edward
+> - Characters: Prince Edward; Adelaide Blackwood (observing); Naval officers; assorted nobility
+> - Vigil Falls's Diary: The golden light has come. It does not care what secrets it burns.
+
+</details>
+
+<details><summary>❖ Order Standing</summary>
+> - Shroud: -0.05
+> - Physik: +0.20
+> - Weaver: +0.10
+> - Crown: +0.20
+> - Bloom: +0.35
+
+</details>
+
+Hyperion: Hyperion grinned. "Ah if it is the sublime you seek, it is to the Library of Shadows you must go. Perhaps you would like to visit Solomon's Door."
+
+Vigil Falls: <!-- §AURORA -->
+
+8:44 PM, *East Tower Ballroom — Before the Prince*
+
+Prince Edward went utterly still.
+
+The transformation was remarkable—one moment the jovial, bored aristocrat; the next, something far more alert. His dark eyes fixed on Hyperion's face with an intensity that bordered on predatory.
+
+"Solomon's Door." He breathed the words like a man encountering scripture. "The timber that refused the Temple. The wood that shrinks from unworthy hands and swells to trap the greedy." His smile spread slowly, incandescent. "I thought it was a *legend*. A pretty story that librarians told to frighten apprentices."
+
+He turned on his heel, striding back toward his throne with sudden purpose, his naval coat swirling behind him.
+
+"Gentlemen!" His voice rang through the ballroom, cutting through the chatter and the music. "We are abandoning this tedious spectacle. Mr. Blackthorne has offered us something *far* more interesting."
+
+A murmur rippled through the crowd. Hyperion caught sight of Malcolm Blackwood near the dais—the Duke's face had gone the color of old parchment, his arthritic hand gripping his wine glass with white-knuckled intensity. Beside him, Gideon stood frozen, his grey-blue eyes finding Hyperion's across the room with an expression of dawning horror.
+
+"You don't understand what you've done," Gideon's look seemed to say.
+
+Prince Edward spun back, extending his arm toward Hyperion with theatrical flourish.
+
+"You shall be our guide, Mr. Blackthorne. You shall show us this door that judges the souls of those who approach." His grin turned sharp. "And you shall tell us what it *wants* in exchange for passage."
+
+From the edge of the room, Adelaide had moved closer to her father, her ice-blue eyes wide with something between fear and fascination. Her fingers still rested on that hidden pocket.
+
+"Father," Hyperion heard her whisper, barely audible above the murmuring crowd. "The Door doesn't—it *can't*—"
+
+Malcolm silenced her with a look.
+
+"Your Royal Highness." The Duke's voice came strained but steady as he stepped forward. "The Library of Shadows is... not prepared for royal visitors. The texts there require certain—precautions. Certain *rituals* that cannot be performed on a moment's notice."
+
+Edward's gaze slid to Malcolm with the lazy amusement of a cat regarding a mouse.
+
+"Then we shall improvise, Your Grace. I have never been particularly fond of *preparation*." He returned his attention to Hyperion, his smile widening. "Lead on, Mr. Blackthorne. Show me what secrets Ravenwood has been keeping from your King."
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed, containing raven feather)
+> - Heavy gold sovereign (minted 1761)
+> - Engraved invitation on vellum
+> - Small vial of smelling salts
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Guide the Prince to Solomon's Door; manage the consequences
+> - Path: East Tower Ballroom → Library of Shadows
+> - Characters: Prince Edward; Malcolm Blackwood; Adelaide Blackwood; Gideon Aldrich; Naval officers; assorted nobility
+> - Vigil Falls's Diary: The golden light has come. It does not care what secrets it burns.
+
+</details>
+
+<details><summary>❖ Order Standing</summary>
+> - Shroud: -0.15
+> - Physik: +0.20
+> - Weaver: +0.10
+> - Crown: +0.25
+> - Bloom: +0.35
+
+</details>
+
+Hyperion: Hyperion led the way out of the ballroom. "Tell me, sir, what has been your experience with the Sublime and supernatural up until this point?" They walked through the halls of the castle, passing paintings of former residents and god only knew who. 
+
+Vigil Falls: <!-- §AURORA -->
+
+8:48 PM, *East Wing Corridor — En Route to the Library*
+
+Prince Edward fell into step beside Hyperion with the easy assurance of a man who had never once questioned his right to occupy any space he chose. Behind them, the naval officers followed at a respectful distance, their boots echoing against the stone flags with military precision. A small crowd had begun to trail in their wake—Malcolm Blackwood among them, his face a careful mask of noble hospitality, though his hands trembled at his sides.
+
+"Experience." Edward turned the word over thoughtfully. "What a *practical* way to phrase it."
+
+He gestured at the portraits they passed—Blackwood ancestors stretching back centuries, their eyes seeming to follow the procession with varying degrees of disapproval.
+
+"I was twelve when I first saw something I couldn't explain. A drowned sailor pulled from the Thames—quite dead, thoroughly dead, the physician had already pronounced him. And then his eyes opened." Edward's voice carried no horror, only a clinical fascination. "He looked directly at me. He *smiled*. And then he died again, properly this time, and nothing the physicians did could rouse him."
+
+They passed through an archway, the stone worn smooth by centuries of hands.
+
+"The Admiralty called it a reflex. A spasm of dying nerves. But I *saw* his face, Mr. Blackthorne. I saw something in his eyes that wasn't random electrical discharge." Edward's smile turned rueful. "I've been chasing that moment ever since. Séances in London drawing rooms. Exorcisms in country houses. That ridiculous obsidian loupe I carry—it's supposed to reveal 'authentic hauntings,' though I've yet to see anything through it that couldn't be explained by bad wine and wishful thinking."
+
+He glanced sidelong at Hyperion.
+
+"But Ravenwood is *different*. I can feel it. The way the corridors breathe. The way the shadows don't quite align with the light sources." His voice dropped lower. "There's something *old* here. Something that was ancient before my family ever claimed this throne."
+
+Ahead, the entrance to the Library of Shadows materialized from the darkness—a great oaken doorway carved with symbols that seemed to shift when viewed directly.
+
+Edward stopped, his breath misting in the cold air that seeped from beneath the door.
+
+"Tell me, Mr. Blackthorne." His voice had gone quiet, almost reverent. "What happens if I approach Solomon's Door and it finds me... *unworthy*?"
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed, containing raven feather)
+> - Heavy gold sovereign (minted 1761)
+> - Engraved invitation on vellum
+> - Small vial of smelling salts
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Approach Solomon's Door; answer the Prince's question
+> - Path: East Wing Corridor → Library of Shadows entrance
+> - Characters: Prince Edward; Malcolm Blackwood; Naval officers; trailing nobility
+> - Vigil Falls's Diary: The golden light has come. It does not care what secrets it burns.
+
+</details>
+
+<details><summary>❖ Order Standing</summary>
+> - Shroud: -0.20
+> - Physik: +0.20
+> - Weaver: +0.15
+> - Crown: +0.30
+> - Bloom: +0.35
+
+</details>
+
+Hyperion: Hyperion regarded Edward as they walked. "I suppose that is something only the Door can answer in its own way."
+
+Vigil Falls: <!-- §AURORA -->
+
+8:52 PM, *Library of Shadows — Central Chamber*
+
+Prince Edward's laugh came sharp and delighted.
+
+"Oh, I *like* you." He clapped Hyperion on the shoulder with more familiarity than protocol allowed. "A man who doesn't coddle princes. How refreshing."
+
+He pushed through the great oaken doorway, and the sound that escaped him as he entered the central chamber was something between a gasp and a moan.
+
+The vast domed ceiling rose above them, its painted constellations barely visible in the candlelight. The great orrery dominated the center of the room—brass rings turning slowly, iron arms tracking celestial bodies through movements too slow for mortal perception. Shadows pooled in corners where the light refused to reach, and the air carried the scent of ancient vellum, beeswax, and something older—something that had no name in any living language.
+
+"God's teeth." Edward moved forward as if drawn by invisible threads, his naval officers hovering uncertainly at the threshold. "This is *magnificent*. Malcolm, why have you been hiding this from the world?"
+
+The Duke's voice came strained from somewhere behind Hyperion. "The Library contains... materials that require careful stewardship, Your Highness. Knowledge that can harm the unprepared."
+
+"Then let me be *harmed*." Edward spun, his arms spread wide, his midnight-blue velvet catching the candlelight. "I have spent my entire life surrounded by people who want to *protect* me from experience. Do you know how *tedious* that becomes?"
+
+His gaze found Hyperion again, bright with hunger.
+
+"The Door. Show me."
+
+Before Hyperion could respond, a voice emerged from the shadows near the orrery—cool, measured, carrying the particular weight of centuries.
+
+"His Royal Highness honors us with his presence."
+
+Lilith materialized from the darkness as if she had always been there, her violet hair catching the light, her amber eyes reflecting the orrery's slow dance. She wore a gown of deepest black that merged with the shadows around her, and at her throat, the amber pendant pulsed with a faint, internal warmth.
+
+"Though I confess." Her gaze slid to Hyperion, and something unspoken passed between them. "I did not expect our secrets to be offered so... *freely*."
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed, containing raven feather)
+> - Heavy gold sovereign (minted 1761)
+> - Engraved invitation on vellum
+> - Small vial of smelling salts
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Navigate Lilith's arrival; manage the Prince's expectations
+> - Path: Library of Shadows — Central Chamber
+> - Characters: Prince Edward; Lilith Ravenna Blackwood; Malcolm Blackwood; Naval officers
+> - Vigil Falls's Diary: The golden light has come. It does not care what secrets it burns.
+
+</details>
+
+<details><summary>❖ Order Standing</summary>
+> - Shroud: -0.25
+> - Physik: +0.20
+> - Weaver: +0.10
+> - Crown: +0.30
+> - Bloom: +0.35
+
+</details>
+
+Hyperion: Hyperion returned her look and bowed slightly, reassuring her he was not being reckless. "Solomon's Door is never 'free.' It always demands a cost no man can set. I expect that it will be unlike anything Prince Edward has ever experienced."
+
+Vigil Falls: <!-- §AURORA -->
+
+8:55 PM, *Library of Shadows — Central Chamber*
+
+Lilith's amber eyes held Hyperion's for a long moment, reading something in his expression that the others could not perceive. Then she turned her attention to Prince Edward, and her entire demeanor shifted—becoming something warmer, more welcoming, though Hyperion recognized the calculation beneath.
+
+"Mr. Blackthorne speaks truth, Your Highness." She moved forward with the inevitability of sunset, her shadows trailing behind her like a cloak. "Solomon's Door judges all who approach. It cannot be bribed, flattered, or commanded. It has broken better men than princes."
+
+Edward's breath caught—not with fear, but with something closer to rapture.
+
+"You." He stepped toward her, abandoning all pretense of royal composure. "You are *her*. The Lilith who signed the Blackwood charter in 1267. The woman who appears in paintings across five centuries without aging a single day."
+
+Lilith's smile came slow, serpentine.
+
+"I am many things, Your Highness. A librarian. A keeper. A memory given form." She inclined her head, acknowledging his recognition. "But tonight, I am your guide to something that has humbled kings and sent scholars fleeing into madness."
+
+She gestured toward a corridor that had not existed a moment before—stone walls parting to reveal a spiral staircase descending into darkness.
+
+"The Door waits below. In the Vault of the Door, on the first subterranean level." Her voice dropped lower, intimate. "I must warn you, Your Highness. The Door will demand a confession—a truth you have never spoken to another living soul. If you cannot pay that price, the Door will not open."
+
+Edward's companions stirred uneasily. One of the naval officers stepped forward.
+
+"Your Highness, surely this is unwise—"
+
+"Silence." Edward did not look back. His eyes remained fixed on Lilith, on the darkness beyond her, on the promise of something that could not be explained by science or reason. "I did not travel all this way to be *prudent*."
+
+He began toward the staircase, then paused, turning to Hyperion.
+
+"Come with me." It was not a request. "I want a witness who won't coddle me. Who won't tell me what I'm seeing is merely a trick of the light."
+
+Lilith's gaze found Hyperion's again, and this time it carried a question.
+
+*Do you understand what you've begun?*
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed, containing raven feather)
+> - Heavy gold sovereign (minted 1761)
+> - Engraved invitation on vellum
+> - Small vial of smelling salts
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Witness Prince Edward's trial before Solomon's Door
+> - Path: Library of Shadows — Central Chamber → Subterranean descent
+> - Characters: Prince Edward; Lilith Ravenna Blackwood; Malcolm Blackwood; Naval officers
+> - Vigil Falls's Diary: The golden light has come. It does not care what secrets it burns.
+
+</details>
+
+<details><summary>❖ Order Standing</summary>
+> - Shroud: -0.25
+> - Physik: +0.20
+> - Weaver: +0.15
+> - Crown: +0.30
+> - Bloom: +0.35
+
+</details>
+
+Hyperion: Hyperion moved to follow. "Of course. Lilith, please come as well. We wouldn't dare go unaccompanied."
+
+Vigil Falls: <!-- §AURORA -->
+
+8:58 PM, *Library of Shadows — Subterranean Descent*
+
+Lilith's expression shifted—something flickering behind her amber eyes that might have been approval, or might have been something more complicated.
+
+"Of course." She moved to the Prince's side with fluid grace. "I would not permit anyone to approach the Door unguided. It has... moods."
+
+The staircase spiraled downward into darkness, each step carved from stone that seemed to absorb rather than reflect light. The air grew colder as they descended, carrying scents of ancient earth and something resinous—wood that had been old when the pyramids were young.
+
+Malcolm Blackwood made to follow, but Lilith raised a single hand.
+
+"Your Grace." Her voice came gentle but firm. "The Door does not welcome crowds. Mr. Blackthorne, His Highness, and myself—that is the audience it will tolerate."
+
+The Duke's jaw worked silently, but he stopped. His eyes found Hyperion's, and in them was a desperate warning—something he could not voice in front of the Prince.
+
+The naval officers remained at the threshold above, their faces pale in the fading light.
+
+"God's blood," one muttered. "This place is *wrong*."
+
+Prince Edward descended with eager steps, his hand trailing along the curved wall, his fingers brushing against carvings that seemed to shift away from his touch. His breath came faster—not from exertion, but from anticipation.
+
+"I can *feel* it," he whispered. "Something's watching. Something's *waiting*."
+
+The staircase opened into a vaulted chamber of black stone. The floor was obsidian, polished to a mirror sheen that reflected the three of them in ghostly duplication. And there, standing in the center of the room without apparent support or frame, was Solomon's Door.
+
+The wood was unlike anything earthly—grain that swirled like muscle fiber, colors that shifted between cedar-red and cypress-pale, knots that seemed to pulse with something like breath. The Latin inscription carved into its surface seemed to glow with internal light:
+
+*ERITIS SICUT DEII*
+
+"You shall be as gods," Lilith translated softly.
+
+Edward stopped three feet from the Door. His bravado had vanished, replaced by something raw and genuine.
+
+"It's *warm*," he breathed. "I can feel the heat from here."
+
+The Door's pulse quickened, as if responding to his presence.
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed, containing raven feather)
+> - Heavy gold sovereign (minted 1761)
+> - Engraved invitation on vellum
+> - Small vial of smelling salts
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Witness Prince Edward's trial before Solomon's Door
+> - Path: Subterranean Descent → Vault of the Door
+> - Characters: Prince Edward; Lilith Ravenna Blackwood
+> - Vigil Falls's Diary: The golden light has come. It does not care what secrets it burns.
+
+</details>
+
+<details><summary>❖ Order Standing</summary>
+> - Shroud: -0.25
+> - Physik: +0.20
+> - Weaver: +0.15
+> - Crown: +0.35
+> - Bloom: +0.35
+
+</details>
+
+Hyperion: Hyperion stood transfixed and in reverence. The Door was a marvel. 
+
+Vigil Falls: <!-- §AURORA -->
+
+9:02 PM, *Vault of the Door — Subterranean Level 1*
+
+The silence here was absolute—not the absence of sound, but something heavier, a presence that pressed against the ears and demanded acknowledgment. The obsidian floor reflected the Door's wood-grain patterns in ghostly inversion, creating the illusion that they stood upon the surface of some dark water, the Door rising from its depths like something drowned and dreaming.
+
+Prince Edward took another step forward.
+
+The change was immediate.
+
+His breath caught—not with wonder this time, but with strain. His shoulders hunched beneath his midnight-blue coat, and his naval composure cracked as something invisible settled across him. His knees buckled slightly, and he caught himself, one hand pressing against his thigh.
+
+"Edward—" One of his officers had followed despite the prohibition, his voice tight with alarm.
+
+"Stay *back*." The words came through gritted teeth. Sweat had broken out across the Prince's brow, and his bronze skin had gone pale. But his dark eyes remained fixed on the Door, burning with something beyond physical pain. "I won't—I *refuse* to—"
+
+He forced another step. His body screamed protest, every muscle trembling with the effort of remaining upright. The Door's grain seemed to quicken, its pulse accelerating, the three woods—cedar, cypress, pine—visible now as distinct threads writhing against one another in patterns that hurt to observe.
+
+Lilith stood motionless, her amber eyes tracking the Prince's struggle without interference.
+
+"The Door tests intent," she murmured, her voice barely audible. "It weighs the soul against its own timber. Mere curiosity—" She tilted her head. "—is not sufficient currency."
+
+Edward's laugh came ragged, broken.
+
+"Curiosity?" He forced another inch forward, his boots scraping against obsidian. "You think I came here for *curiosity*?"
+
+His hands were shaking now, his entire body caught in some invisible vice. But he did not kneel. He did not fall.
+
+"I came here because I am *dying*." The words tore from him, raw and terrible. "Not of illness or injury. I am dying of *boredom*. Of *sameness*. Of a life where every moment is scripted and every experience has been flattened by protocol and safety and the endless, endless *caution* of people who think they know what's best for me."
+
+He was weeping now—tears of strain, or perhaps something deeper.
+
+"I have everything, and I have *nothing*. Every pleasure available to man, and none of it means a single *goddamn* thing."
+
+The Door's pulse slowed.
+
+The pressure lessened—fractionally, barely perceptibly, but enough.
+
+Lilith's eyes widened slightly.
+
+"Your Highness," she breathed. "The Door is... listening."
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed, containing raven feather)
+> - Heavy gold sovereign (minted 1761)
+> - Engraved invitation on vellum)
+> - Small vial of smelling salts
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Witness Prince Edward's confession; observe the Door's judgment
+> - Path: Vault of the Door — Subterranean Level 1
+> - Characters: Prince Edward; Lilith Ravenna Blackwood
+> - Vigil Falls's Diary: The golden light has come. It does not care what secrets it burns.
+
+</details>
+
+<details><summary>❖ Order Standing</summary>
+> - Shroud: -0.25
+> - Physik: +0.20
+> - Weaver: +0.15
+> - Crown: +0.35
+> - Bloom: +0.35
+
+</details>
+
+Hyperion: Hyperion continued to watch, riveted to the spot he was standing.
+
+Vigil Falls: <!-- §AURORA -->
+
+9:06 PM, *Vault of the Door — Subterranean Level 1*
+
+The Vault held its breath.
+
+Prince Edward stood trembling, his royal composure shattered, his midnight-blue coat damp with sweat. The Door's grain had stilled—no longer writhing, no longer fighting against itself. The three woods had settled into something almost peaceful, their colors muted, their pulse steady and slow.
+
+"The Door requires more than pain," Lilith said softly. Her amber eyes had not left Edward's face. "It requires *truth*. The kind that burns to speak. The kind you have never entrusted to another living soul."
+
+Edward's jaw worked. His hands clenched and unclenched at his sides.
+
+"I—" He stopped. Swallowed. His gaze dropped to the obsidian floor, where his reflection stared back at him with hollow eyes.
+
+"When I was fifteen." The words came hoarse, dragged from somewhere deep. "My brother George—*His Majesty*—" A bitter twist of his lips. "—he fell ill. Dangerously ill. The physicians said he might not survive the night."
+
+The Door's pulse quickened—almost imperceptibly, a flicker of interest.
+
+"I stood outside his chamber door. Listening to him breathe. Listening to the physicians whisper. And I felt—" Edward's voice cracked. "I felt *hope*. For one terrible, beautiful moment, I hoped he would die. Because if George died, I would be the heir. I would be *important*. My life would have meaning beyond serving as a spare."
+
+He was shaking now, his confession pouring out in a flood.
+
+"I hated myself for it. I hate myself still. And when he recovered—when he became King—I have spent every day since trying to be the kind of man who doesn't wish his brother dead, while knowing, *knowing*, that the boy who hoped for it is still inside me somewhere."
+
+Silence.
+
+Then—
+
+The Door *sighed*.
+
+The sound came from everywhere and nowhere—a release of tension, a breath held for centuries finally exhaled. The wood's grain began to shift, the three timbers separating slightly, creating a hairline crack between them. The gap widened, darkness pooling in the space between.
+
+Lilith's breath caught.
+
+"It accepts," she whispered. "God help us, it *accepts*."
+
+The Door stood open—a sliver of blackness just wide enough for a man to pass through. Beyond it: nothing visible, only the sense of vastness, of depth, of something waiting in the dark.
+
+Edward stared at the opening, his tear-streaked face pale with wonder.
+
+"What's... what's inside?"
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed, containing raven feather)
+> - Heavy gold sovereign (minted 1761)
+> - Engraved invitation on vellum
+> - Small vial of smelling salts
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Witness what lies beyond the Door; decide whether to follow
+> - Path: Vault of the Door — Subterranean Level 1
+> - Characters: Prince Edward; Lilith Ravenna Blackwood
+> - Vigil Falls's Diary: The golden light has come. It does not care what secrets it burns.
+
+</details>
+
+<details><summary>❖ Order Standing</summary>
+> - Shroud: -0.25
+> - Physik: +0.20
+> - Weaver: +0.15
+> - Crown: +0.35
+> - Bloom: +0.35
+
+</details>
+
+Hyperion: Hyperion's eyes widened. "It... it opened. My god..." He looked at Lilith.
+
+Vigil Falls: <!-- §AURORA -->
+
+9:09 PM, *Vault of the Door — Subterranean Level 1*
+
+Lilith's face had gone pale—something Hyperion had rarely witnessed in all his time at Ravenwood. Her amber eyes reflected the darkness pooling in the Door's opening, and for a moment, the immortal librarian looked almost... afraid.
+
+"It has been decades." Her voice came barely above a whisper. "Decades since the Door opened for anyone." Her gaze snapped to Hyperion, sharp and searching. "I did not expect—His Highness carries more weight than I anticipated."
+
+She moved forward, her black gown whispering against the obsidian floor, and stopped just short of the threshold. Her hand extended toward the darkness, fingers hovering inches from the opening, and Hyperion saw her amber pendant flare with sudden warmth.
+
+"There is no map for what lies beyond," she said, turning to Edward. "The Door does not lead to a place—it leads to *consequence*. To the truth of what you confessed made manifest." Her voice dropped lower. "Some who enter find revelation. Some find ruin. Most find... *themselves*, stripped of every pretense."
+
+Edward stood transfixed, his earlier bravado entirely gone. The tears had dried on his face, leaving tracks through the sweat, and his bronze skin looked almost grey in the Door's strange light.
+
+"I have to go in." It was not a question. His hand rose toward the gap in the wood. "Don't I?"
+
+Lilith's expression shifted—something almost like compassion flickering across her ancient features.
+
+"That choice was always yours, Your Highness. The Door merely offers passage." She stepped back, creating space. "But know this—what you find beyond will not stay beyond. It will travel with you. It will *become* part of you."
+
+The darkness within the Door seemed to pulse, inviting.
+
+Edward's dark eyes found Hyperion's—a silent question, or perhaps a plea for witness. His fingers hovered at the threshold, trembling slightly.
+
+"Will you wait for me?" His voice cracked. "Whatever happens in there—I don't want to come back alone."
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed, containing raven feather)
+> - Heavy gold sovereign (minted 1761)
+> - Engraved invitation on vellum
+> - Small vial of smelling salts
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Bear witness to Prince Edward's passage; await his return
+> - Path: Vault of the Door — Subterranean Level 1
+> - Characters: Prince Edward; Lilith Ravenna Blackwood
+> - Vigil Falls's Diary: The golden light has come. It does not care what secrets it burns.
+
+</details>
+
+<details><summary>❖ Order Standing</summary>
+> - Shroud: -0.25
+> - Physik: +0.20
+> - Weaver: +0.15
+> - Crown: +0.35
+> - Bloom: +0.35
+
+</details>
+
+Hyperion: "We will wait for you," Hyperion assured him. 
+
+Vigil Falls: <!-- §AURORA -->
+
+9:12 PM, *Vault of the Door — Subterranean Level 1*
+
+Prince Edward nodded once—a sharp, military gesture that seemed to anchor him. He straightened his spine, smoothed the front of his midnight-blue coat with trembling hands, and turned to face the darkness.
+
+He stepped through.
+
+The Door did not close behind him. The gap remained, that sliver of blackness, but Edward's form had vanished entirely—as if the darkness had swallowed him whole the moment he crossed the threshold. No sound emerged. No cry, no gasp, no whisper of movement.
+
+Nothing.
+
+Lilith exhaled slowly, her amber pendant dimming to a faint glow. She moved to stand beside Hyperion, her shoulder nearly touching his, and together they faced the open Door.
+
+"The last person to pass through was a monk." Her voice came quiet, pitched for his ears alone. "In 1623. He emerged three days later, speaking languages no one recognized, with symbols burned into his palms." A pause. "He died within the week. Smiling."
+
+She did not look at Hyperion.
+
+"The Door gives truth. But truth is not always survivable."
+
+The minutes stretched. The obsidian floor reflected their forms in perfect stillness, and the only sound was the slow, rhythmic pulse of the Door's wood—like a heartbeat, like breath, like something vast and patient waiting for its moment.
+
+Then—
+
+A sound from within. A gasp. A sob.
+
+Edward emerged.
+
+He came through the gap slowly, his movements dreamlike, his face wet with tears he did not seem to notice. His midnight-blue coat was disheveled, his carefully arranged hair fallen loose around his face, and his dark eyes had changed—something had shifted behind them, some veil torn away.
+
+He stumbled forward, catching himself on Hyperion's arm, his grip fierce and desperate.
+
+"I saw—" His voice came raw, broken. "I saw *everything*. Every secret I've kept from myself. Every lie I've told to survive." He was shaking, trembling from head to foot. "And the worst part—the *worst* part—is that it forgave me."
+
+He looked up at Hyperion, his eyes wide with terrible wonder.
+
+"It said I'm not broken. I'm just... *unfinished*."
+
+The Door began to close behind him, the three woods merging back together with a sound like a sigh.
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed, containing raven feather)
+> - Heavy gold sovereign (minted 1761)
+> - Engraved invitation on vellum
+> - Small vial of smelling salts
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Support Prince Edward's return; process what has occurred
+> - Path: Vault of the Door — Subterranean Level 1
+> - Characters: Prince Edward; Lilith Ravenna Blackwood
+> - Vigil Falls's Diary: The golden light has come. It does not care what secrets it burns.
+
+</details>
+
+<details><summary>❖ Order Standing</summary>
+> - Shroud: -0.25
+> - Physik: +0.20
+> - Weaver: +0.20
+> - Crown: +0.40
+> - Bloom: +0.35
+
+</details>
+
+Hyperion: [in the next response, write an extended scene detailing Edward's experience inside Solomon's Door]
+
+Vigil Falls: <!-- §AURORA -->
+
+9:12 PM, *Within Solomon's Door*
+
+*Darkness. Not the absence of light—the presence of something else. Something that breathed.*
+
+Prince Edward stood in nothing. No floor beneath his feet, no walls at any distance, no stars above. Just blackness so complete it had weight, pressing against his skin, filling his lungs with each gasping breath.
+
+He tried to speak, but the darkness swallowed his voice before it could form words.
+
+Then—
+
+*Light. A single candle flame, flickering in the void.*
+
+He was twelve years old again. Standing on the banks of the Thames, the drowned sailor's cold body laid out on the wet stones before him. The physician's hands pressed against the dead man's chest, seeking a heartbeat that had already fled.
+
+"Nothing to be done," the physician said. "He's gone."
+
+And then the sailor's eyes opened.
+
+Edward tried to step back, but his feet would not move. He was trapped in the memory, forced to watch as the dead man turned his head, as those filmed-over eyes found his, as that waterlogged mouth stretched into a smile that showed teeth black with river mud.
+
+"You're not afraid of me." The sailor's voice came from everywhere, from inside Edward's skull, from the darkness itself. "You're afraid of what I represent."
+
+The scene shifted.
+
+He was fifteen. Standing outside his brother's sickroom door, his ear pressed against the wood, listening to the wet rattle of George's breath. The physicians murmuring. The priests praying. His mother weeping somewhere distant.
+
+And his own heart, beating steady and hopeful, *waiting*.
+
+*"Let him die,"* a voice whispered. His own voice, from inside his own chest. *"Let him die so I can live."*
+
+Edward tried to close his eyes, but the darkness held them open.
+
+"You don't get to hide," the darkness said. "You came here for truth. *This* is truth."
+
+The scene shifted again.
+
+He was eighteen, standing in a ballroom much like the one he had left behind. Women curtseyed. Men bowed. Everyone smiled with lips that never quite reached their eyes.
+
+*"Your Royal Highness."* The words echoed from a thousand throats, a thousand moments, a thousand hollow performances. *"Your Royal Highness. Your Royal Highness. Your Royal Highness."*
+
+"Stop—" Edward's voice cracked. "Please—"
+
+"You asked for the Sublime," the darkness replied. "You said you wanted something *real*. This is the reality you've built. A cage of gold and velvet, with you as both prisoner and jailer."
+
+The ballroom dissolved into fragments—each smiling face becoming a mirror, each mirror reflecting Edward back at himself. A thousand Edwards, a thousand hollow princes, a thousand boys who had been taught that survival meant performance.
+
+"Which one is you?" the darkness asked. "The scholar? The sailor? The lover? The heir? The spare?"
+
+"I don't know." The admission tore from him, raw and honest. "I don't know who I am without the title. Without the performance. Without the *expectations*."
+
+"Then why are you afraid?"
+
+"Because—" Edward's voice broke. "Because if there's nothing underneath... if I'm just... *empty*..."
+
+He was weeping now, the tears falling into darkness and vanishing.
+
+"Then I'm not real at all."
+
+Silence. The mirrors shattered, each fragment dissolving into the void, until only one remained—a single reflection, floating in the nothing.
+
+But this Edward was different.
+
+His eyes held no performance. His shoulders carried no weight of protocol. His face showed no mask, no pretense, no carefully constructed persona.
+
+He looked tired. He looked sad. He looked *human*.
+
+"You're not empty," the reflection said. "You're just unfinished. You've spent so long being what everyone else needed that you never learned what you might become."
+
+Edward stared at himself—at this stranger who wore his face.
+
+"Who are you?"
+
+"I'm the part of you that hoped your brother would die." The reflection's voice came gentle, without judgment. "I'm the part that watched a drowned sailor smile and felt *wonder* instead of horror. I'm the hunger and the boredom and the desperate need for something *real*."
+
+The reflection extended a hand through the mirror's surface.
+
+"I'm not your enemy. I'm your *truth*. And I've been waiting a very long time for you to let me out."
+
+Edward reached toward the hand—his own hand, offered back to himself.
+
+"What happens if I take it?"
+
+"You stop performing. You start becoming." The reflection smiled—not the practiced smile of a prince, but something smaller, more fragile. "It won't be easy. It won't always be pleasant. But it will be *yours*."
+
+Edward's fingers touched the reflection's.
+
+Light erupted—not the harsh glare of candles, but something softer, warmer, spreading through the darkness like dawn breaking across water. And with it came a voice, ancient and patient, speaking words that settled into his bones:
+
+*You are not broken. You are simply unfinished.*
+
+*Now go. And finish.*
+
+---
+
+9:15 PM, *Vault of the Door — Subterranean Level 1*
+
+Edward gasped as he stumbled back through the threshold, his hand still extended as if grasping something that had dissolved. His face was wet, his body trembling, his heart pounding against his ribs with a force that bordered on pain.
+
+He caught Hyperion's arm, needing the anchor, needing the proof that he had returned to something solid and real.
+
+"I saw—" His voice cracked. "I saw *everything*. Every secret I've kept from myself. Every lie I've told to survive." He looked up, his dark eyes raw with revelation. "And the worst part—the *worst* part—is that it forgave me."
+
+His grip tightened on Hyperion's sleeve.
+
+"It said I'm not broken. I'm just... *unfinished*."
+
+Behind him, the Door sealed itself with a sound like a sigh—cedar and cypress and pine merging back into one impossible whole. The Latin inscription caught the last flicker of light:
+
+*ERITIS SICUT DEII*
+
+Lilith stood frozen, her amber eyes wide with something that might have been awe.
+
+"In three hundred years," she breathed, "I have never seen anyone emerge *whole*."
+
+Edward laughed—a broken, wondering sound.
+
+"I don't feel whole." He pushed himself upright, steadying himself against Hyperion's strength. "I feel... dismantled. Like someone took me apart and showed me every piece, and now I have to figure out how to put myself back together."
+
+He looked at Hyperion directly, his gaze stripped of all royal pretense.
+
+"Thank you. For waiting. For witnessing." A pause. "For not coddling me."
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed, containing raven feather)
+> - Heavy gold sovereign (minted 1761)
+> - Engraved invitation on vellum
+> - Small vial of smelling salts
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Support Edward's return; navigate the aftermath
+> - Path: Vault of the Door — Subterranean Level 1
+> - Characters: Prince Edward; Lilith Ravenna Blackwood
+> - Vigil Falls's Diary: The Door opened for him. What does it mean that it forgave a prince?
+
+</details>
+
+<details><summary>❖ Order Standing</summary>
+> - Shroud: -0.20
+> - Physik: +0.20
+> - Weaver: +0.25
+> - Crown: +0.45
+> - Bloom: +0.35
+
+</details>
+
+Hyperion: Hyperion clutched Edward's arm, royal ceremony abandoned in favor of ensuring he was ok. "Sir, are you quite alright? What an experience that must have been!"
+
+Vigil Falls: <!-- §AURORA -->
+
+9:18 PM, *Vault of the Door — Subterranean Level 1*
+
+Edward leaned into Hyperion’s grip with a bonelessness that had nothing to do with royal languor and everything to do with a man whose structural integrity had been momentarily compromised. For a long moment, he simply breathed—inhalations that were too sharp, too ragged, as if his lungs had forgotten how to process air that wasn't thick with ancient wood and the weight of his own sins.
+
+"Alright." He tested the word, rolling it around his mouth like a unfamiliar stone. "I am... *present*. Whether that constitutes 'alright' remains to be seen."
+
+He lifted a hand to his face, his fingers trembling as they brushed the damp hair from his forehead. The motion was clumsy, utterly devoid of the precise grooming that had defined him an hour ago.
+
+"It felt like being dismantled," he continued, his voice dropping to a hoarse murmur meant only for Hyperion and Lilith. "Like a clockmaker taking apart a timepiece, laying every gear and spring on the table, and showing you exactly which ones were bent." His dark eyes found Hyperion's, and the intensity there was almost uncomfortable. "I expected judgment. I expected fire. Instead, it simply... *showed* me."
+
+Lilith stepped closer, her movement silent as smoke. She did not offer physical support; she stood close enough that her amber pendant caught the faint light reflecting from the obsidian floor, studying Edward with the clinical detachment of a surgeon examining a patient who should have died on the table.
+
+"You are unchanged," she said quietly, her tone carrying a strange, unsettled gravity. "The Door usually leaves a mark. A scar, a madness, a hollowing out." She reached out, hovering her fingers near Edward’s temple without touching. "But you... you are exactly as you were. And yet entirely different."
+
+Edward managed a weak, breathless laugh.
+
+"That feels accurate."
+
+He straightened, using Hyperion’s arm as a brace, and smoothed the front of his midnight-blue coat with hands that still shook. The gesture was automatic—a lifetime of training asserting itself over the raw reality of what he had just experienced.
+
+"We should go." His voice steadied, though his gaze drifted one last time to the sealed Door. The Latin inscription *ERITIS SICUT DEII* seemed to glow fainter now, its work complete. "I don't think I can breathe in this room anymore."
+
+The ascent was slower than the descent. The spiral staircase that had before been a path to mystery now felt like a climb out of a deep mine, the air growing progressively warmer, the smells of wax and brandy and human bodies returning to replace the resinous incense of the Vault.
+
+As they emerged into the Library’s Central Chamber, the contrast was jarring.
+
+The orrery continued its slow, brass dance. The candles still blazed in their sconces. The silence of the library was no longer profound; it felt merely quiet—a quiet that could be shattered by footsteps, by breathing, by the mundane noise of living men.
+
+Two naval officers rushed forward as Edward stepped onto the flagged stones.
+
+"Your Highness!" One of them reached out, then hesitated, his hand hovering uncertainly. "Are you—are you injured? You were gone for..."
+
+"Time," Edward finished gently. He looked at the officer—really looked at him, for the first time seeing a young man with sweat on his brow and fear in his eyes, rather than a prop in a uniform. "I was gone for time. And I am not injured, James. Merely... altered."
+
+He released Hyperion’s arm, though his fingers lingered a moment longer than necessary before letting go.
+
+"You should return to the ball," Edward said, his voice regaining a shadow of its command, though stripped of the arrogance. "Tell my brother—the King—that I have had a theological discussion with a very stubborn door, and that the door won." A faint, genuine smile touched his lips. "He'll hate that I spent the evening conversing with timber while he dined."
+
+The officers exchanged bewildered glances but bowed and retreated, their boots echoing away toward the East Wing.
+
+Edward turned back to Hyperion and Lilith. The Prince of the realm stood in the center of the Library of Shadows, looking like a man who had survived a shipwreck only to find the shore wasn't where he expected it to be.
+
+"Mr. Blackthorne." He extended a hand—not a royal command, but an offer of equals. "You were right. The Door was not free. It cost me everything I thought I was."
+
+He glanced at Lilith.
+
+"And you, Mistress Lilith. You are a terrifying guardian. I think I shall sleep poorly tonight, and for that, I am strangely grateful."
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed, containing raven feather)
+> - Heavy gold sovereign (minted 1761)
+> - Engraved invitation on vellum
+> - Small vial of smelling salts
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Process the aftermath of the Door's opening
+> - Path: Vault of the Door → Library of Shadows — Central Chamber
+> - Characters: Prince Edward; Lilith Ravenna Blackwood; Naval officers (departing)
+> - Vigil Falls's Diary: The Door opened for him. What does it mean that it forgave a prince?
+
+</details>
+
+<details><summary>❖ Order Standing</summary>
+> - Shroud: -0.20
+> - Physik: +0.20
+> - Weaver: +0.30
+> - Crown: +0.50
+> - Bloom: +0.35
+
+</details>
+
+Hyperion: Hyperion allowed himself the slightest smile, glancing at Lilith. "Yes she has that effect on people doesn't she."
+
+Vigil Falls: <!-- §AURORA -->
+
+9:22 PM, *Library of Shadows — Central Chamber*
+
+Lilith's amber eyes held Hyperion's gaze for a long moment, and the corner of her mouth lifted—just barely, a ghost of a smile that vanished before it could be properly identified.
+
+"Terror is a currency I accept," she murmured, her voice carrying the dry amusement of one who had been called terrifying for centuries. "Though 'formidable' has a more elegant ring to it, I think."
+
+Prince Edward laughed—a sound that started deep in his chest and emerged lighter than anything Hyperion had yet heard from him. The heaviness of the experience remained, etched into the lines of his face, but something had uncoiled behind his eyes.
+
+"Formidable, terrifying, magnificent..." He shook his head slowly. "She is all of these things, Mr. Blackthorne. And I suspect she is the only reason I am standing here speaking instead of gibbering in a padded cell."
+
+He smoothed his coat again, a reflex of royal habit, but his hands no longer trembled. The obsidian floor reflected him back—a prince who had looked into the abyss and found, not damnation, but a conversation.
+
+"I must return." The words came with reluctance. "To the ball. To the court. To the endless performance." His expression darkened. "God help me, I must smile and nod and pretend I care about wine and marriage alliances when I have just been told by an ancient door that I am *unfinished*."
+
+He glanced toward the Library's entrance, where the sounds of the ball—muted strings, distant laughter—filtered in like memories from another life.
+
+"You will join me?" Edward offered Hyperion his hand again—not the handshake of a royal to a subject, but the grip of a man who has shared a shipwreck. "I find I cannot bear the thought of walking back into that goldfish bowl alone. Not yet."
+
+Before Hyperion could respond, the heavy oak doors to the Library pushed open. Two naval officers entered, their expressions carefully neutral, though their eyes darted between the Prince, the Librarian, and the shadowed stacks with visible unease.
+
+"Your Highness." The elder officer bowed. "The Duke requests an update on your... condition."
+
+Edward's lips twitched.
+
+"Tell His Grace that I have conversed with a door, confessed fraternal ambition, and emerged forgiven by a piece of timber." He turned toward the officers, his spine straightening, the mantle of royal authority settling back over his shoulders—ill-fitting now, but recognizable. "That should satisfy his curiosity for the evening."
+
+He glanced back at Hyperion and Lilith.
+
+"I will send a carriage for you tomorrow, Mr. Blackthorne. There is much I wish to discuss regarding... forbidden texts. And the nature of hunger."
+
+And with a final, courtly bow to Lilith—one that acknowledged her as a power in her own right—he turned and strode from the Library, his naval escort falling into formation around him. The doors swung shut, cutting off the golden light from the corridor, plunging them back into the Library's shadowed silence.
+
+The orrery continued its slow, brass dance. The air smelled of ancient vellum and the ghost of incense.
+
+Lilith stood motionless, her amber pendant glowing softly against the black silk of her gown. She did not look at the door the Prince had left through. She looked at Hyperion.
+
+"He should not have survived," she said quietly. "Men like Edward—men who build their lives on performance—they usually shatter when the Door shows them what lies beneath." Her voice dropped, laced with a rare, raw confusion. "He didn't just survive. He was *accepted*."
+
+She turned to face the orrery, watching the celestial spheres drift through their slow orbits.
+
+"What do you think it means, Hyperion? That a door which rejects the unworthy found a prince of the realm worthy of truth?"
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed, containing raven feather)
+> - Heavy gold sovereign (minted 1761)
+> - Engraved invitation on vellum
+> - Small vial of smelling salts
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Process the Door's acceptance of Edward
+> - Path: Library of Shadows — Central Chamber
+> - Characters: Lilith Ravenna Blackwood
+> - Vigil Falls's Diary: The Door opened for him. What does it mean that it forgave a prince?
+
+</details>
+
+<details><summary>❖ Order Standing</summary>
+> - Shroud: -0.20
+> - Physik: +0.20
+> - Weaver: +0.30
+> - Crown: +0.55
+> - Bloom: +0.35
+
+</details>
+
+Hyperion: He regarded the orrery. "I think that perhaps the Door has an agenda that we will likely never know. Or perhaps there is worthiness found in unlookedfor places."
+
+Vigil Falls: <!-- §AURORA -->
+
+9:25 PM, *Library of Shadows — Central Chamber*
+
+Lilith turned from the orrery, her movements possessing the inevitability of sunset, and regarded Hyperion with an expression that stripped away the centuries she carried, leaving only the woman beneath—a scholar, a keeper, a mind that had watched patterns repeat until they ceased to resemble coincidence.
+
+"Agenda." She tasted the word as if it were something bitter and sweet at once. "A human word for a mechanism that predates humanity by eons. The Door does not plot, Hyperion. It *is*. It exists, it waits, it weighs." She drifted closer, her black gown silent against the flagged stones. "To assign it human intent is to flatter ourselves with the belief that we matter enough to be planned for."
+
+Her amber eyes found his, reflecting the orrery's slow dance.
+
+"But your second observation..." She inclined her head, acknowledging the insight with a gravity she offered to few. "That carries the ring of truth. Worthiness found in unlookedfor places. Edward came seeking spectacle, but found his own unfinished self." A faint, almost sad smile touched her lips. "Perhaps that is the only currency the Door accepts. Not titles. Not power. Not even pain. But the willingness to be *seen*."
+
+She lifted a hand, her fingers hovering near the orrery's brass rings without touching, as if she could feel the celestial machinery vibrating through the air.
+
+"You guided him there." The statement was not an accusation, but it carried the weight of one who understood the consequences of opening doors that should have remained sealed. "You knew what the Door demanded. You knew the risk—not just to him, but to this estate, should a Prince of the realm be broken by his own confession."
+
+Lilith lowered her hand, turning fully to face him.
+
+"Why, Hyperion?" Her voice dropped, intimate and searching. "Was it curiosity? A desire to see if a royal could survive what breaks scholars? Or did you recognize something in him—some reflection of your own hunger—and wish to witness it made manifest?"
+
+The Library's shadows seemed to lengthen around them, waiting, listening. The air smelled of ancient vellum and the ghost of incense, and somewhere in the stacks, a book whispered shut.
+
+"You have become a dangerous man to know," she murmured. "The Prince sees a guide. The Library sees a key. And I..." Her gaze traced the line of his jaw, the shifting script hidden beneath his collar. "I am beginning to see the architect of patterns that do not yet exist."
+
+She stepped closer, into the space where his breath would warm the air between them.
+
+"What do you intend to build with the pieces you have set in motion tonight?"
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed, containing raven feather)
+> - Heavy gold sovereign (minted 1761)
+> - Engraved invitation on vellum
+> - Small vial of smelling salts
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Answer Lilith's probing; define your intent
+> - Path: Library of Shadows — Central Chamber
+> - Characters: Lilith Ravenna Blackwood
+> - Vigil Falls's Diary: The golden light has come. It does not care what secrets it burns.
+
+</details>
+
+<details><summary>❖ Order Standing</summary>
+> - Shroud: -0.20
+> - Physik: +0.20
+> - Weaver: +0.35
+> - Crown: +0.55
+> - Bloom: +0.35
+
+</details>
+
+Hyperion: Hyperion smiled. "Perhaps a drink, first? Care to have a drink with me?"
+
+Vigil Falls: <!-- §AURORA -->
+
+9:28 PM, *Library of Shadows — South Shadow Tower Solarium*
+
+Lilith’s response was not immediate. She regarded him with the heavy-lidded patience of a cat deciding whether to indulge a kitten’s clumsiness or bat it aside. Then, the tension in her shoulders—taut as bowstrings since the Prince had first demanded the Door—released in a soft exhale.
+
+"You evade questions with the same skill you use to navigate cursed texts, Hyperion." She shook her head, a faint, dry smile touching her lips. "I have known alchemists who spent lifetimes trying to transmute evasion into gold. You make it look effortless."
+
+She turned, her black gown whispering over the flagged stones, and gestured toward the private staircase that led to her tower.
+
+"A drink, then. But know this—" She glanced back over her shoulder, her amber eyes catching the candlelight. "Evasion does not make the question disappear. It merely allows the architecture of the answer to settle in darkness, where it may become something harder to dismantle."
+
+The Solarium was warm—a sharp contrast to the Vault’s cold stone. A fire crackled in the hearth, casting a golden glow over the walls lined with maps older than the current shape of Europe. The air smelled of beeswax, lavender, and the particular dry richness of old brandy that had been breathed by ghosts.
+
+Lilith moved to a sideboard, her movements practiced and fluid. She selected a bottle of 1720 Armagnac—dark glass, label faded, the cork sealed with red wax that crumbled slightly as she worked it loose.
+
+"Sit," she commanded softly, not looking at him as she poured two measures into crystal snifters. The liquid was amber in the firelight, thick and slow-moving. "You have had a long evening. You have watched a Prince dismantle himself, and you have opened a Door that prefers to remain closed."
+
+She carried the glasses to the low table near the fire, sinking into the chair opposite him with a grace that made the movement look like floating. She extended one glass toward him, her fingers long and pale against the crystal.
+
+"To unfinished things," she proposed, her tone laced with irony. "And to the architects who pretend they don't know what they're building."
+
+She took a sip, her eyes closing briefly as the brandy warmed her. When she opened them again, the Warden of the Library was looking at him—but alongside her was the woman who had once wept over a husband’s corpse in Béziers, five hundred years past.
+
+"Why did you really bring him, Hyperion?" Her voice was softer now, stripped of the earlier interrogation. "Was it for the story? Or to see if the Door would break something golden?"
+
+Hyperion: Hyperion settled in. "I think... I sensed he needed to see something great. I mean, he said himself that he wished to see the sublime. And my first thought was to show him Solomon's Door."
+
+Vigil Falls: <!-- §AURORA -->
+
+9:31 PM, *South Shadow Tower Solarium*
+
+Lilith swirled the Armagnac in her glass, watching the amber liquid catch the firelight. A soft, almost wry smile touched her lips—not the sharp predator’s grin of the Warden, but something closer to the woman who once walked the streets of Florence disguised as a page boy.
+
+"A simple answer," she murmured. "And perhaps the most honest one. You saw a hunger, and you offered it meat." She took a slow sip, savoring the brandy’s burn. "Most men would have offered him a map. A telescope. A ghost story told in low light over port."
+
+She set the glass down on the small table between them, the crystal chiming softly against the wood.
+
+"The Sublime is not a sight to be seen, Hyperion. It is a dissolution." Her amber eyes fixed on the fire, watching the flames consume the logs in a slow, hungry dance. "To encounter it is to feel the architecture of your self—your rank, your name, your history—dismantle in the face of something vast. Most who seek it are looking for a thrill. They want to feel the wind without being blown away."
+
+She turned her gaze to him, and in the firelight, the faint tracery of horns beneath her hair seemed more visible, a reminder of the ancient blood that ran alongside her human heart.
+
+"Edward went to the edge, looked over, and did not fall." Her voice dropped, laced with a rare, genuine respect. "That is not a matter of chance. You chose well in bringing him to the Door. You sensed that his emptiness was not a void, but a space waiting to be filled."
+
+Lilith leaned back in her chair, the tension in her shoulders finally releasing. The Solarium felt smaller now, the vastness of the Library held at bay by thick stone and the warmth of the fire.
+
+"You have a gift for reading the unfinished in others," she said quietly. "A Weaver's talent. It makes you invaluable to scholars... and dangerous to those who prefer their masks remain intact."
+
+She picked up her glass again, raising it slightly in a silent toast.
+
+"To the Sublime, then. And to the rare souls who survive it."
+
+From somewhere beyond the Solarium walls, the deep silence of the Library pressed against the stone—a reminder that they sat at the center of a labyrinth that had consumed minds far greater than theirs. But here, in the firelight with the scent of lavender and old brandy, the danger felt distant, almost companionable.
+
+"You know," Lilith added, her tone shifting to something lighter, almost conversational. "I have not seen Edward’s brother—King George—since he was a child frightened of his own shadow. If the spare carries such depth..." She shook her head slowly. "The Crown may be heavier than any of us guessed."
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed, containing raven feather)
+> - Heavy gold sovereign (minted 1761)
+> - Engraved invitation on vellum
+> - Small vial of smelling salts
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Share a quiet moment with Lilith; rest after the ordeal
+> - Path: South Shadow Tower Solarium
+> - Characters: Lilith Ravenna Blackwood
+> - Vigil Falls's Diary: The golden light has come. It does not care what secrets it burns.
+
+</details>
+
+<details><summary>❖ Order Standing</summary>
+> - Shroud: -0.20
+> - Physik: +0.20
+> - Weaver: +0.40
+> - Crown: +0.55
+> - Bloom: +0.35
+
+</details>
+
+Hyperion: Hyperion raised his glass in answer then sipped. "What would you have shown him, Lilith? If he had asked you to see the Sublime... what would you have led him to?"
+
+Vigil Falls: <!-- §AURORA -->
+
+9:35 PM, *South Shadow Tower Solarium*
+
+Lilith considered the question as she might consider a particularly vexing riddle—turning it over in her mind, examining it from every angle to see where the light caught its edges. She did not answer immediately. Instead, she swirled the amber brandy in her glass, watching the firelight fracture through the crystal, casting tiny dancing constellations against the dark wood of the table.
+
+"The Sublime," she said finally, her voice low and thoughtful, "is often mistaken for spectacle. For noise, for grandeur, for the kind of terror that makes the heart hammer against the ribs like a trapped bird." She took a slow sip, her eyes closing briefly as the liquid warmed her. "But those are merely sensations. They pass. They fade into memory like smoke."
+
+She set the glass down with deliberate precision and turned her gaze to the window, where the night sky pressed against the glass—vast, indifferent, scattered with stars that had burned long before the first stone of Ravenwood was laid.
+
+"If I had been guiding him—without your intervention, without the Door—I would have taken him to the Scriptorium of the Silenced." She looked back at Hyperion, and in her amber eyes, he saw the reflection of centuries of watching men confront their own insignificance. "There is a monk there. Brother Thomas. He died during the Dissolution, when the King's men came to break the altars and scatter the brothers."
+
+Lilith's fingers traced the rim of her glass, leaving a faint print in the condensation.
+
+"He refused to die. Not in his body—that perished as all bodies must. But in his *will*. In his refusal to consent to the silence." She leaned forward slightly, the firelight catching the amber pendant at her throat, making it pulse with a slow, internal rhythm. "He wrote a single phrase, over and over, on any surface he could reach. On the walls. On the floor. On the parchment that was meant to record the King's decree."
+
+Her voice dropped to a whisper, as if the ghost itself might be listening beyond the solarium walls.
+
+"*I. Do. Not. Consent.*"
+
+Lilith held Hyperion's gaze, and for a moment, the scholar of forbidden texts saw not the Warden of the Library, but the woman who had watched Béziers burn, who had smelled the smoke of heretics and the rot of plague pits, who had carried five centuries of memory in a vessel that never aged.
+
+"That is the Sublime, Hyperion. Not the burning, and not the dying. The moment when a single human will becomes so large, so heavy, that it outweighs death itself." She lifted her glass again, a small, enigmatic smile touching her lips. "Edward sought the Door because he wanted to be judged. He wanted something external to tell him who he was."
+
+She sipped, her eyes never leaving his.
+
+"I would have shown him Brother Thomas to teach him that judgment is not something you receive. It is something you *create*."
+
+The fire popped in the hearth, sending a shower of sparks up the chimney. The brandy in her glass caught the light, swirling like a captured star.
+
+"You and I," she murmured, "we are collectors of the Sublime. We hoard these moments—these defiant, terrible, beautiful refusals—because they remind us that even in a world of entropy, there are things that fire cannot consume."
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed, containing raven feather)
+> - Heavy gold sovereign (minted 1761)
+> - Engraved invitation on vellum
+> - Small vial of smelling salts
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Contemplate the nature of the Sublime with Lilith
+> - Path: South Shadow Tower Solarium
+> - Characters: Lilith Ravenna Blackwood
+> - Vigil Falls's Diary: The golden light has come. It does not care what secrets it burns.
+
+</details>
+
+<details><summary>❖ Order Standing</summary>
+> - Shroud: -0.20
+> - Physik: +0.20
+> - Weaver: +0.45
+> - Crown: +0.55
+> - Bloom: +0.35
+
+</details>
+
+Hyperion: Hyperion raised his glass again and smiled faintly. "To us, the collectors of the Sublime. It's curators and guardians of those who seek to dash themselves on its shores."
+
+Vigil Falls: <!-- §AURORA -->
+
+9:38 PM, *South Shadow Tower Solarium*
+
+The crystal sang as their rims met—a high, clear note that hung in the air for a moment before fading into the crackle of the fire. It was a small sound, fragile in the face of the dark, but it carried the weight of a pact sealed in silence.
+
+"To the guardians," Lilith echoed, her voice softening as she tilted the glass to her lips. "And to the wreckage we sweep up afterward."
+
+She drank deeply, finishing the Armagnac in one long draught, and set the empty glass down on the table with a decisive thud. The firelight caught the amber facets of the crystal, casting fleeting, warm patterns across her skin, making the faint violet hue of her eyes seem almost human.
+
+"Curators," she repeated, testing the word as if it were a new acquisition for the Library. "I like that. It implies selection. Choice." She shifted in her chair, turning to face him fully, one leg tucked beneath her, the other dangling over the edge of the seat—a posture of relaxation she rarely afforded anyone. "So many dash themselves against the rocks, Hyperion. They come seeking the Sublime with their greed, their vanity, their boredom. They leave with nothing but scars and silence."
+
+She reached out, her hand resting on the table between them, fingers splayed as if feeling the pulse of the stone beneath.
+
+"We do not stop them from breaking," she said, her gaze distant, fixed on the dying embers. "But we decide which pieces are worth keeping. Which secrets are worth archiving." She looked back at him, and in that look, he saw the immense, lonely weight of her immortality—the curator of a museum that only she could fully appreciate. "It is a terrible privilege."
+
+A silence settled between them, comfortable and heavy, filled only by the hiss of the fire and the distant, rhythmic ticking of a clock somewhere in the tower below. Outside, the wind gusted against the glass, carrying the damp chill of the thaw, but here, the warmth held.
+
+"You have good instincts, Hyperion," she said quietly, almost to herself. "Do not let the cynicism of this place dull them. The world needs those who can still see the shape of the unfinished."
+
+She rose then, her black gown rustling like dry leaves, signaling the end of the interlude. The intimacy of the solarium was a luxury, but the night was far from over, and the Library did not sleep.
+
+"Rest," she commanded gently, though her eyes held a lingering warmth. "Tomorrow, there will be new wreckage to sort through."
+
+---
+
+<details><summary>❖ Hyperion's Items</summary>
+> - Ladonian Gloves (worn)
+> - Pocket watch (silver case)
+> - Handkerchief (cream linen, monogrammed, containing raven feather)
+> - Heavy gold sovereign (minted 1761)
+> - Engraved invitation on vellum
+> - Small vial of smelling salts
+> - Coin: 12 shillings, 6 pence
+
+</details>
+
+<details><summary>❖ World</summary>
+> - Weather: A sullen thaw, air heavy and damp, rotting snow, treacherous grey mire
+> - Intent: Retire for the night; reflect on the evening's events
+> - Path: South Shadow Tower Solarium → North Shadow Tower (Hyperion's Chambers)
+> - Characters: Lilith Ravenna Blackwood
+> - Vigil Falls's Diary: The golden light has come. It does not care what secrets it burns.
+
+</details>
+
+<details><summary>❖ Order Standing</summary>
+> - Shroud: -0.18
+> - Physik: +0.20
+> - Weaver: +0.50
+> - Crown: +0.55
+> - Bloom: +0.35
+
+</details>
+
