@@ -59,6 +59,12 @@
             }
         }
     ],
+    "injection": {
+        "systemPrompt": "When updating game state (inventory changes, world state updates, faction standing shifts), output the current state inside <campaign_data> XML tags using YAML format. Include only sections that changed. Always include the full list for inventory, not just changes.",
+        "includeSchema": true,
+        "includeCurrentState": true,
+        "stateDepth": 1
+    },
     "theme": {
         "accentColor": "#7c6bde",
         "ambientEffect": "candlelight"

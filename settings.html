@@ -41,4 +41,35 @@
             <input type="checkbox" id="cs-settings-dice" />
         </div>
     </div>
+
+    <div class="cs-settings-section">
+        <div class="cs-settings-section-title">AI Integration</div>
+
+        <div class="cs-settings-row">
+            <label class="cs-settings-label" for="cs-settings-injection-system">Prompt Injection</label>
+            <input type="checkbox" id="cs-settings-injection-system" />
+            <small class="cs-settings-hint">Inject YAML schema instructions into the system prompt</small>
+        </div>
+
+        <div class="cs-settings-row">
+            <label class="cs-settings-label" for="cs-settings-injection-state">State Context</label>
+            <input type="checkbox" id="cs-settings-injection-state" />
+            <small class="cs-settings-hint">Send current game state to the AI before each message</small>
+        </div>
+
+        <div class="cs-settings-row">
+            <label class="cs-settings-label" for="cs-settings-output-format">Output Format</label>
+            <select id="cs-settings-output-format" class="cs-settings-select">
+                <option value="yaml">YAML Drawers</option>
+                <option value="details">Details Blocks (legacy)</option>
+                <option value="both">Both</option>
+            </select>
+        </div>
+
+        <div class="cs-settings-row cs-settings-row-full">
+            <label class="cs-settings-label" for="cs-settings-rules">Game Mechanics Rules</label>
+            <small class="cs-settings-hint">Campaign-specific rules injected into the AI prompt (e.g., faction standing update rules, inventory management)</small>
+            <textarea id="cs-settings-rules" class="cs-settings-textarea" rows="8" placeholder="Write campaign-specific rules here..."></textarea>
+        </div>
+    </div>
 </div>

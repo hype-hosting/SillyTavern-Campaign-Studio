@@ -10,8 +10,9 @@ import { sanitizeText } from '../../utils/sanitize.js';
  * @param {object[]} items - Array of { name, tags, quantity, note }
  * @param {object} sectionConfig - Section configuration from preset
  * @param {jQuery} $container - Target container
+ * @param {object[]|null} previousItems - Previous items for delta indicators
  */
-export function renderInventory(items, sectionConfig, $container) {
+export function renderInventory(items, sectionConfig, $container, previousItems = null) {
     $container.empty();
 
     if (!items || items.length === 0) {
@@ -19,14 +20,36 @@ export function renderInventory(items, sectionConfig, $container) {
         return;
     }
 
+    // Compute delta sets
+    const prevNames = new Set(previousItems?.map(i => i.name) || []);
+    const currNames = new Set(items.map(i => i.name));
+    const addedNames = new Set([...currNames].filter(n => !prevNames.has(n)));
+    const removedNames = [...prevNames].filter(n => !currNames.has(n));
+
     const $list = $('<div class="cs-inventory-list"></div>');
 
+    // Show removed items briefly (struck-through)
+    if (previousItems) {
+        for (const name of removedNames) {
+            const $removed = $(`<div class="cs-inventory-item cs-card cs-item-removed"></div>`);
+            $removed.append(`<span class="cs-item-name">${sanitizeText(name)}</span>`);
+            $removed.append('<span class="cs-delta-badge cs-delta-negative">removed</span>');
+            $list.append($removed);
+        }
+    }
+
     for (const item of items) {
-        const $item = $('<div class="cs-inventory-item cs-card"></div>');
+        const isNew = addedNames.has(item.name);
+        const $item = $(`<div class="cs-inventory-item cs-card${isNew ? ' cs-item-new' : ''}"></div>`);
 
         // Item name
         const $name = $(`<span class="cs-item-name">${sanitizeText(item.name)}</span>`);
         $item.append($name);
+
+        // New indicator
+        if (isNew) {
+            $item.append('<span class="cs-delta-badge cs-delta-positive">new</span>');
+        }
 
         // Tags as pills
         if (item.tags?.length) {

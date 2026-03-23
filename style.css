@@ -562,6 +562,47 @@
     color: var(--cs-color-negative);
 }
 
+/* Delta badges (inventory + generic) */
+.cs-delta-badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 1px 5px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    animation: cs-fade-in 0.3s ease;
+}
+
+.cs-delta-positive {
+    color: #4ade80;
+    background: rgba(74, 222, 128, 0.1);
+}
+
+.cs-delta-negative {
+    color: #f87171;
+    background: rgba(248, 113, 113, 0.1);
+}
+
+.cs-item-new {
+    border-left: 2px solid #4ade80;
+    animation: cs-fade-in 0.4s ease;
+}
+
+.cs-item-removed {
+    opacity: 0.4;
+    text-decoration: line-through;
+    animation: cs-fade-out 3s ease forwards;
+}
+
+@keyframes cs-fade-out {
+    0% { opacity: 0.4; }
+    70% { opacity: 0.4; }
+    100% { opacity: 0; height: 0; padding: 0; margin: 0; overflow: hidden; }
+}
+
 /* ============================================================
    MECHANICS BAR
    ============================================================ */
@@ -659,7 +700,27 @@
 .cs-dice-custom {
     display: flex;
     gap: 6px;
+    margin-bottom: 6px;
+}
+
+.cs-dice-context-row {
     margin-bottom: 10px;
+}
+
+.cs-dice-context {
+    width: 100%;
+    padding: 4px 8px;
+    border: 1px solid rgba(var(--cs-accent-rgb), 0.15);
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.15);
+    color: var(--cs-text);
+    font-size: 11px;
+    box-sizing: border-box;
+}
+
+.cs-dice-context::placeholder {
+    color: var(--cs-text-muted, #666);
+    opacity: 0.6;
 }
 
 .cs-dice-input {
@@ -809,6 +870,73 @@
     vertical-align: middle;
 }
 
+/* Campaign Data blocks (YAML drawers) */
+.cs-campaign-data-collapsed {
+    display: block;
+    margin: 4px 0;
+}
+
+.cs-campaign-data-collapsed > .cs-campaign-data-raw {
+    display: none;
+}
+
+.cs-campaign-data-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: rgba(var(--cs-accent-rgb, 124, 107, 222), 0.1);
+    border: 1px solid rgba(var(--cs-accent-rgb, 124, 107, 222), 0.2);
+    color: var(--cs-accent, #7c6bde);
+    font-size: 11px;
+    cursor: default;
+    opacity: 0.7;
+    transition: opacity var(--cs-transition, 0.2s);
+}
+
+.cs-campaign-data-badge:hover {
+    opacity: 1;
+}
+
+/* Hide campaign_data elements rendered as DOM elements */
+campaign_data {
+    display: none;
+}
+
+/* Settings hint text */
+.cs-settings-hint {
+    display: block;
+    color: var(--SmartThemeQuoteColor, #888);
+    font-size: 11px;
+    margin-top: 2px;
+    opacity: 0.7;
+}
+
+.cs-settings-row-full {
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.cs-settings-textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 8px;
+    margin-top: 4px;
+    border: 1px solid rgba(var(--cs-accent-rgb, 124, 107, 222), 0.2);
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.15);
+    color: var(--SmartThemeBodyColor, #ccc);
+    font-family: monospace;
+    font-size: 12px;
+    line-height: 1.5;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+.cs-settings-textarea:focus {
+    outline: none;
+    border-color: var(--cs-accent, #7c6bde);
+}
+
 /* ============================================================
    ANIMATIONS
    ============================================================ */
@@ -942,4 +1070,155 @@
     .cs-fab-left:hover {
         transform: scale(1.05);
     }
+}
+
+/* ============================================================
+   LOCATION TRACKER
+   ============================================================ */
+.cs-location-current {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 10px;
+    background: rgba(var(--cs-accent-rgb), 0.05);
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+.cs-location-segment {
+    font-size: 12px;
+    color: var(--cs-text-muted, #999);
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.cs-location-active {
+    color: var(--cs-accent, #7c6bde);
+    font-weight: 600;
+    background: rgba(var(--cs-accent-rgb), 0.12);
+}
+
+.cs-location-arrow {
+    color: var(--cs-text-muted, #666);
+    font-size: 10px;
+    opacity: 0.5;
+}
+
+.cs-location-history {
+    padding-left: 8px;
+    border-left: 2px solid rgba(var(--cs-accent-rgb), 0.15);
+}
+
+.cs-location-history-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--cs-text-muted, #666);
+    margin-bottom: 4px;
+}
+
+.cs-location-history-entry {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 0;
+    font-size: 11px;
+}
+
+.cs-location-history-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--cs-accent, #7c6bde);
+    flex-shrink: 0;
+    opacity: 0.5;
+}
+
+.cs-location-history-text {
+    color: var(--cs-text, #ccc);
+    flex: 1;
+}
+
+.cs-location-history-time {
+    color: var(--cs-text-muted, #666);
+    font-size: 10px;
+}
+
+/* ============================================================
+   SESSION TIMELINE
+   ============================================================ */
+.cs-timeline-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.cs-timeline-count {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--cs-text-muted, #666);
+}
+
+.cs-timeline-clear {
+    font-size: 10px;
+    padding: 2px 6px;
+    opacity: 0.6;
+}
+
+.cs-timeline-list {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.cs-timeline-entry {
+    padding: 6px 8px;
+    margin-bottom: 4px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 4px;
+    border-left: 2px solid rgba(var(--cs-accent-rgb), 0.2);
+}
+
+.cs-timeline-entry-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 3px;
+}
+
+.cs-timeline-icon {
+    font-size: 12px;
+}
+
+.cs-timeline-label {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--cs-text, #ccc);
+    flex: 1;
+}
+
+.cs-timeline-time {
+    font-size: 10px;
+    color: var(--cs-text-muted, #666);
+}
+
+.cs-timeline-changes {
+    padding-left: 22px;
+}
+
+.cs-timeline-change {
+    font-size: 11px;
+    padding: 1px 0;
+}
+
+.cs-timeline-modified {
+    color: var(--cs-text-muted, #aaa);
+}
+
+.cs-btn-sm {
+    font-size: 10px;
+    padding: 2px 8px;
 }

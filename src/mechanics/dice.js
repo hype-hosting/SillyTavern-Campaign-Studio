@@ -4,6 +4,25 @@
  */
 
 const rollHistory = [];
+const pendingRolls = [];
+
+/**
+ * Consume and clear all pending dice rolls (for injection into AI context).
+ * @returns {Array<{ notation: string, rolls: number[], modifier: number, total: number, context: string|null, timestamp: number }>}
+ */
+export function consumePendingRolls() {
+    const rolls = [...pendingRolls];
+    pendingRolls.length = 0;
+    return rolls;
+}
+
+/**
+ * Get pending rolls without clearing them.
+ * @returns {Array}
+ */
+export function getPendingRolls() {
+    return [...pendingRolls];
+}
 
 /**
  * Initialize dice roller UI event listeners.
@@ -12,20 +31,23 @@ export function initDice() {
     // Preset dice buttons
     $(document).on('click', '.cs-dice-preset', function () {
         const dice = $(this).data('dice');
-        rollFromNotation(`1${dice}`);
+        const context = $('#cs-dice-context').val().trim() || null;
+        rollFromNotation(`1${dice}`, context);
     });
 
     // Custom roll button
     $('#cs-dice-roll-btn').on('click', () => {
         const input = $('#cs-dice-input').val().trim();
-        if (input) rollFromNotation(input);
+        const context = $('#cs-dice-context').val().trim() || null;
+        if (input) rollFromNotation(input, context);
     });
 
     // Enter key on input
     $('#cs-dice-input').on('keydown', (e) => {
         if (e.key === 'Enter') {
             const input = $(e.target).val().trim();
-            if (input) rollFromNotation(input);
+            const context = $('#cs-dice-context').val().trim() || null;
+            if (input) rollFromNotation(input, context);
         }
     });
 
@@ -58,8 +80,10 @@ export function parseDiceNotation(notation) {
 
 /**
  * Roll dice from a notation string and display the result.
+ * @param {string} notation - Dice notation like "2d6+3"
+ * @param {string|null} rollContext - Optional context label (e.g., "Perception check")
  */
-export function rollFromNotation(notation) {
+export function rollFromNotation(notation, rollContext = null) {
     const parsed = parseDiceNotation(notation);
     if (!parsed) {
         showResult('?', `Invalid: ${notation}`);
@@ -86,10 +110,11 @@ export function rollFromNotation(notation) {
     // Animate result
     animateResult(total, notation, detail);
 
-    // Record in history
-    const entry = { notation, rolls, modifier, total, timestamp: Date.now() };
+    // Record in history and pending queue
+    const entry = { notation, rolls, modifier, total, context: rollContext, timestamp: Date.now() };
     rollHistory.unshift(entry);
     if (rollHistory.length > 20) rollHistory.pop();
+    pendingRolls.push(entry);
     updateHistory();
 
     return entry;
