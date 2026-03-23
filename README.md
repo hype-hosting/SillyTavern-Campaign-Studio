@@ -17,6 +17,7 @@ Campaign Studio creates a **bidirectional data loop** between you and your AI �
 - **Dice roller** — Standard RPG dice notation (2d6+3), preset buttons, roll history, context labels
 - **AI prompt injection** — Automatically injects YAML schema instructions and current game state into the AI's context
 - **Toggleable game rules** — Each preset ships with categorized rule snippet cards (combat, inventory, factions, tone, etc.) that you can toggle on/off. Add your own custom rules via a separate textarea
+- **Visual preset editor** — Full-screen modal for creating and editing presets. Paste a sample bot message to auto-detect fields, assign them to sections, and preview the result live — no JSON editing required
 - **Dark glass design** — TimelessTavern-inspired dark palette with serif typography (Cinzel Decorative headings, Cormorant Garamond body), customizable accent colors per preset
 
 ## Installation
@@ -44,6 +45,7 @@ Open the SillyTavern **Extensions** panel (puzzle piece icon) and find the **Cam
 |---------|-------------|
 | **Enable Extension** | Master toggle for the entire extension |
 | **Active Preset** | Which campaign preset to use for parsing and display |
+| **Edit / New / Import** | Buttons next to the preset dropdown — edit the active preset, create a new one, or import a `.json` preset file |
 | **Panel Position** | Right (default), Left, or Bottom |
 
 ### Appearance
@@ -119,7 +121,23 @@ When **State Context** is enabled, the extension sends the current game state (a
 
 ## Creating Custom Presets
 
-Presets are JSON files that define what data to extract and how to display it. Place custom presets in `src/presets/builtin/` or save them via the API.
+### Using the Preset Editor
+
+The easiest way to create or customize a preset is through the built-in visual editor:
+
+1. **Edit an existing preset**: Click the **pencil button** (✎) next to the preset dropdown. Built-in presets are automatically cloned as a "(Custom)" copy so the originals stay untouched.
+2. **Create from scratch**: Click the **+ button** to open a blank editor.
+3. **Import a file**: Click the **↑ button** to load a `.json` preset file.
+
+The editor has two columns:
+- **Left — Configuration**: Set the preset name, description, marker prefix, and accent color. Add/remove/reorder sections, configure their match patterns, types, and field renderers.
+- **Right — Field Mapper**: Paste a raw bot message (HTML or plain text) and click **Parse Sample**. The extension detects all trackable fields and lets you assign each one to a section with a dropdown. Fields are auto-assigned a renderer based on their name (e.g., "Location" gets breadcrumb, "Weather" gets atmospheric text). A **live preview** at the bottom shows how the data will render in the panel.
+
+Click **Save** to validate, persist, and activate the preset. Click **Export** to download the preset as a `.json` file you can share.
+
+### Preset JSON Reference
+
+For advanced users, presets are JSON files that define what data to extract and how to display it. Place custom presets in `src/presets/builtin/` or save them via the editor/API.
 
 ### Preset Structure
 
@@ -209,6 +227,15 @@ Presets are JSON files that define what data to extract and how to display it. P
 | `inventory` | Item/equipment lists | Array of items with optional tags in parentheses |
 | `key-value` | World state, character info | Key-value pairs with string values |
 | `numeric-bars` | Faction standings, skill scores | Key-value pairs with numeric values |
+
+### Parse Formats
+
+| Format | Purpose |
+|--------|---------|
+| `markdown-list` | Inventory items — `- Item Name (tag1, tag2)` |
+| `key-value` | Key-value pairs — `Key: Value` |
+| `key-value-numeric` | Numeric pairs — `Faction: 0.25` |
+| `stat-block` | Emoji-labeled stats — `❤️ HP: 25/30` or pipe-separated `⚔️ STR 14 | 🏃 DEX 16` |
 
 ### Match Modes
 
