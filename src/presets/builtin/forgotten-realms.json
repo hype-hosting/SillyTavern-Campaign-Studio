@@ -31,11 +31,34 @@
                 "separator": ":"
             },
             "fields": {
+                "Level": { "renderer": "numeric-badge" },
+                "XP": { "renderer": "numeric-badge" },
                 "Hit Points": { "renderer": "numeric-badge" },
+                "Gold": { "renderer": "numeric-badge" },
                 "Conditions": { "renderer": "character-pills", "separator": "," },
                 "Spell Slots": { "renderer": "text" },
                 "Class Resources": { "renderer": "text" },
-                "Active Effects": { "renderer": "character-pills", "separator": "," }
+                "Active Effects": { "renderer": "character-pills", "separator": "," },
+                "Last Roll": { "renderer": "text" }
+            }
+        },
+        {
+            "id": "stats",
+            "match": "Stats",
+            "matchMode": "exact",
+            "type": "key-value",
+            "icon": "scroll",
+            "parse": {
+                "format": "key-value",
+                "separator": ":"
+            },
+            "fields": {
+                "Strength": { "renderer": "numeric-badge" },
+                "Dexterity": { "renderer": "numeric-badge" },
+                "Constitution": { "renderer": "numeric-badge" },
+                "Intelligence": { "renderer": "numeric-badge" },
+                "Wisdom": { "renderer": "numeric-badge" },
+                "Charisma": { "renderer": "numeric-badge" }
             }
         },
         {
@@ -82,7 +105,7 @@
             "name": "Combat & Dice",
             "icon": "⚔",
             "enabled": true,
-            "content": "Narrate combat fluidly and cinematically. When the player rolls dice using the dice roller, incorporate those results into the narrative (saving throws, ability checks, attack rolls). Track HP changes from damage and healing, apply/remove conditions, and consume spell slots when spells are cast."
+            "content": "Narrate combat fluidly and cinematically. When the player rolls dice using the dice roller, incorporate those results into the narrative (saving throws, ability checks, attack rolls). Report the most recent roll in the 'Last Roll' field of the character section (e.g., '1d20+5 = 18 (Perception check)'). Track HP changes from damage and healing, apply/remove conditions, and consume spell slots when spells are cast. Track Level, XP gains, and Gold earned or spent."
         },
         {
             "id": "inventory",
@@ -104,10 +127,17 @@
             "icon": "🛡",
             "enabled": true,
             "content": "Track standing with major Forgotten Realms factions — Harpers, Zhentarim, Lords' Alliance, Emerald Enclave, and Order of the Gauntlet. Shift values (-1.0 to 1.0) based on quest outcomes, dialogue choices, and actions that align with or oppose faction goals."
+        },
+        {
+            "id": "stats",
+            "name": "Ability Scores",
+            "icon": "📊",
+            "enabled": true,
+            "content": "Track the six D&D 5e ability scores: Strength, Dexterity, Constitution, Intelligence, Wisdom, and Charisma. Values are integers typically ranging from 1 to 20 (can exceed 20 with magical effects). Update ability scores when they change due to level-up ASI choices, magical items, curses, or other effects. Output all six scores in the stats section."
         }
     ],
     "injection": {
-        "systemPrompt": "You are running a Dungeons & Dragons 5th Edition campaign set in the Forgotten Realms. Track game state using <campaign_data> YAML blocks appended to every reply. Include only sections that changed.",
+        "systemPrompt": "You are running a Dungeons & Dragons 5th Edition campaign set in the Forgotten Realms. Track game state using <campaign_data> YAML blocks appended to every reply. Include only sections that changed. The stats section should be included in the first response to establish baseline ability scores.",
         "includeSchema": true,
         "includeCurrentState": true,
         "stateDepth": 1

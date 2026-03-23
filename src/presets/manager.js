@@ -10,6 +10,7 @@ import { setActivePreset } from '../core/state.js';
 const presetRegistry = new Map();
 
 const BUILTIN_PRESETS = [
+    'universal',
     'vigil-falls',
     'forgotten-realms',
     'cyberpunk',

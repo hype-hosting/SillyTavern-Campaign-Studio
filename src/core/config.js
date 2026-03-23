@@ -7,7 +7,7 @@ export const EXTENSION_DISPLAY = 'Campaign Studio';
 
 export const DEFAULT_SETTINGS = {
     enabled: true,
-    activePreset: 'vigil-falls',
+    activePreset: 'universal',
     panelPosition: 'right',
     panelOpen: false,
     accentColor: '#7c6bde',
