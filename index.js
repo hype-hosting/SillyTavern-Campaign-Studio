@@ -7,6 +7,8 @@ import { EXTENSION_NAME, EXTENSION_DISPLAY } from './src/core/config.js';
 import { initSettings, getSettings, updateSettings, saveMessageSnapshot, rebuildStateFromChat } from './src/core/persistence.js';
 import { getState, updateSection, getAllSections, getSection } from './src/core/state.js';
 import { extractBlocks } from './src/parser/engine.js';
+import { extractCampaignData } from './src/parser/extractor.js';
+import { routeBlocks } from './src/parser/router.js';
 import { collapseParsedBlocks } from './src/parser/collapse.js';
 import { initPresets, getActivePreset, getAllPresets, activatePreset } from './src/presets/manager.js';
 import { initPanel, openPanel, closePanel, togglePanel, destroyPanel } from './src/ui/panel.js';
@@ -15,6 +17,8 @@ import { renderInventory } from './src/ui/renderers/inventory.js';
 import { renderWorld } from './src/ui/renderers/world.js';
 import { renderFactions } from './src/ui/renderers/factions.js';
 import { initDice, destroyDice } from './src/mechanics/dice.js';
+import { updateSystemPrompt, clearSystemPrompt } from './src/injection/prompt.js';
+import { registerStateInjection, unregisterStateInjection } from './src/injection/state.js';
 import { loadTemplate } from './src/utils/dom.js';
 import { on, CS_EVENTS } from './src/core/events.js';
 
@@ -22,6 +26,8 @@ const EXTENSION_PATH = `scripts/extensions/third-party/SillyTavern-Campaign-Stud
 
 // Track which summary texts were parsed per message for collapse
 let lastParsedSummaryTexts = [];
+// Track whether last message used campaign_data format
+let lastHadCampaignData = false;
 
 /**
  * Main initialization.
@@ -59,17 +65,20 @@ jQuery(async () => {
             initDice();
         }
 
-        // 8. Register SillyTavern event listeners
+        // 8. Initialize injection pipeline
+        initInjection(settings);
+
+        // 9. Register SillyTavern event listeners
         registerSTEvents();
 
-        // 9. If there's an active chat, rebuild state
+        // 10. If there's an active chat, rebuild state
         const context = SillyTavern.getContext();
         if (context.chat && context.chat.length > 0) {
             rebuildStateFromChat();
             renderAllSections();
         }
 
-        // 10. Listen for internal state changes to trigger re-renders
+        // 11. Listen for internal state changes to trigger re-renders
         on(CS_EVENTS.SECTION_UPDATED, ({ sectionId }) => {
             renderSection(sectionId);
         });
@@ -113,6 +122,8 @@ async function loadSettingsPanel() {
         if (preset) {
             initTabs(preset);
             $('#cs-active-preset-name').text(preset.name);
+            // Refresh injection with new preset schema
+            updateSystemPrompt();
             // Re-parse current chat with new preset
             reparseChat();
         }
@@ -145,6 +156,35 @@ async function loadSettingsPanel() {
             $('#cs-mechanics-bar').addClass('cs-hidden');
         }
     });
+
+    // Injection: system prompt toggle
+    const injection = settings.injection || {};
+    $('#cs-settings-injection-system').prop('checked', injection.systemPrompt !== false).on('change', function () {
+        const enabled = $(this).is(':checked');
+        updateSettings({ injection: { ...settings.injection, systemPrompt: enabled } });
+        if (enabled) {
+            updateSystemPrompt();
+        } else {
+            clearSystemPrompt();
+        }
+    });
+
+    // Injection: state context toggle
+    $('#cs-settings-injection-state').prop('checked', injection.stateContext !== false).on('change', function () {
+        const enabled = $(this).is(':checked');
+        updateSettings({ injection: { ...settings.injection, stateContext: enabled } });
+        if (enabled) {
+            registerStateInjection();
+        } else {
+            unregisterStateInjection();
+        }
+    });
+
+    // Injection: output format
+    $('#cs-settings-output-format').val(injection.outputFormat || 'yaml').on('change', function () {
+        updateSettings({ injection: { ...settings.injection, outputFormat: $(this).val() } });
+        updateSystemPrompt();
+    });
 }
 
 /**
@@ -173,6 +213,7 @@ function registerSTEvents() {
 
 /**
  * Handle a new bot message — extract and parse tracking data.
+ * Tries <campaign_data> YAML blocks first, falls back to <details><summary>.
  */
 function handleMessageReceived(messageId) {
     const settings = getSettings();
@@ -186,19 +227,35 @@ function handleMessageReceived(messageId) {
     if (!chat || !chat[messageId]) return;
 
     const message = chat[messageId];
-    const messageHtml = message.mes;
-    if (!messageHtml) return;
+    const messageText = message.mes;
+    if (!messageText) return;
 
-    // Extract and parse
-    const { matched } = extractBlocks(messageHtml, preset);
-    if (matched.size === 0) return;
-
-    // Track summary texts for collapse
+    let matched;
     lastParsedSummaryTexts = [];
+    lastHadCampaignData = false;
+
+    // Strategy 1: Try <campaign_data> YAML extraction
+    const { blocks, hasCampaignData } = extractCampaignData(messageText);
+    if (hasCampaignData) {
+        matched = routeBlocks(blocks, preset);
+        lastHadCampaignData = true;
+    }
+
+    // Strategy 2: Fall back to <details><summary> HTML extraction
+    if (!matched || matched.size === 0) {
+        const legacy = extractBlocks(messageText, preset);
+        matched = legacy.matched;
+
+        // Track summary texts for collapse (legacy only)
+        for (const [, result] of matched) {
+            lastParsedSummaryTexts.push(result.summaryText);
+        }
+    }
+
+    if (!matched || matched.size === 0) return;
 
     for (const [sectionId, result] of matched) {
         updateSection(sectionId, result.sectionConfig, result.data, messageId);
-        lastParsedSummaryTexts.push(result.summaryText);
     }
 
     // Persist snapshot
@@ -212,13 +269,14 @@ function handleMessageReceived(messageId) {
 }
 
 /**
- * Handle message rendering — collapse parsed <details> blocks in chat DOM.
+ * Handle message rendering — collapse parsed blocks in chat DOM.
  */
 function handleMessageRendered(messageId) {
     const settings = getSettings();
     if (!settings.enabled) return;
 
-    if (lastParsedSummaryTexts.length === 0) return;
+    const hasContent = lastParsedSummaryTexts.length > 0 || lastHadCampaignData;
+    if (!hasContent) return;
 
     // Find the rendered message element
     const $message = $(`.mes[mesid="${messageId}"] .mes_text`);
@@ -261,7 +319,17 @@ function reparseChat() {
         const message = chat[i];
         if (!message.mes) continue;
 
-        const { matched } = extractBlocks(message.mes, preset);
+        // Try YAML first, then fall back to details
+        let matched;
+        const { blocks, hasCampaignData } = extractCampaignData(message.mes);
+        if (hasCampaignData) {
+            matched = routeBlocks(blocks, preset);
+        }
+        if (!matched || matched.size === 0) {
+            const legacy = extractBlocks(message.mes, preset);
+            matched = legacy.matched;
+        }
+
         for (const [sectionId, result] of matched) {
             updateSection(sectionId, result.sectionConfig, result.data, i);
         }
@@ -314,6 +382,21 @@ function renderSection(sectionId) {
     // Hide empty state, show content
     $('#cs-empty-state').addClass('cs-hidden');
     $('#cs-section-container').removeClass('cs-hidden');
+}
+
+/**
+ * Initialize the injection pipeline based on settings.
+ */
+function initInjection(settings) {
+    const injection = settings.injection || {};
+
+    if (injection.systemPrompt) {
+        updateSystemPrompt();
+    }
+
+    if (injection.stateContext) {
+        registerStateInjection();
+    }
 }
 
 /**

@@ -19,6 +19,11 @@ export const DEFAULT_SETTINGS = {
         diceEnabled: true,
         encounterEnabled: false,
     },
+    injection: {
+        systemPrompt: true,
+        stateContext: true,
+        outputFormat: 'yaml',  // 'yaml' | 'details' | 'both'
+    },
 };
 
 export const PANEL_POSITIONS = ['right', 'left', 'bottom'];

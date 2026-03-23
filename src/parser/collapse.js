@@ -1,7 +1,6 @@
 /**
  * Campaign Studio — Collapse parsed blocks in chat DOM
- * Instead of stripping, we collapse the <details> elements
- * so they remain accessible but don't clutter the view.
+ * Handles both <details> blocks and <campaign_data> XML drawers.
  */
 
 /**
@@ -12,8 +11,21 @@
  * @param {string[]} matchedSummaryTexts - Summary texts that were successfully parsed
  */
 export function collapseParsedBlocks($messageElement, matchedSummaryTexts) {
-    if (!$messageElement || !matchedSummaryTexts?.length) return;
+    if (!$messageElement) return;
 
+    // Collapse <details> blocks (legacy / fallback format)
+    if (matchedSummaryTexts?.length) {
+        collapseDetailsBlocks($messageElement, matchedSummaryTexts);
+    }
+
+    // Collapse <campaign_data> blocks (new YAML format)
+    collapseCampaignDataBlocks($messageElement);
+}
+
+/**
+ * Collapse matched <details><summary> blocks.
+ */
+function collapseDetailsBlocks($messageElement, matchedSummaryTexts) {
     const detailsElements = $messageElement.find('details');
 
     detailsElements.each(function () {
@@ -23,22 +35,50 @@ export function collapseParsedBlocks($messageElement, matchedSummaryTexts) {
 
         const summaryText = $summary.text().trim();
 
-        // Check if this block's summary matches any of our parsed blocks
         const isMatched = matchedSummaryTexts.some(matchText =>
             summaryText === matchText || summaryText.includes(matchText),
         );
 
         if (isMatched) {
-            // Ensure it's collapsed
             $details.removeAttr('open');
-
-            // Add a CSS class for subtle styling
             $details.addClass('cs-tracked-block');
 
-            // Add a small indicator to the summary if not already present
             if (!$summary.find('.cs-tracked-badge').length) {
                 $summary.append('<span class="cs-tracked-badge" title="Tracked by Campaign Studio">⬡</span>');
             }
         }
     });
+}
+
+/**
+ * Collapse <campaign_data> blocks in the rendered message.
+ * These may appear as raw text or within pre/code blocks depending
+ * on how SillyTavern renders unrecognized XML tags.
+ */
+function collapseCampaignDataBlocks($messageElement) {
+    const messageHtml = $messageElement.html();
+    if (!messageHtml || !messageHtml.includes('campaign_data')) return;
+
+    // Strategy 1: If rendered as actual DOM elements, hide them
+    $messageElement.find('campaign_data').each(function () {
+        const $el = $(this);
+        if (!$el.hasClass('cs-campaign-data-collapsed')) {
+            $el.addClass('cs-campaign-data-collapsed');
+            $el.before(
+                '<span class="cs-tracked-badge cs-campaign-data-badge" title="Campaign data (tracked by Campaign Studio)">⬡ Campaign Data</span>',
+            );
+        }
+    });
+
+    // Strategy 2: If rendered as escaped text, wrap and hide the raw text
+    // This handles the case where <campaign_data> is escaped to &lt;campaign_data&gt;
+    const raw = $messageElement.html();
+    const pattern = /&lt;campaign_data(?:\s+type\s*=\s*"[^"]*")?\s*&gt;[\s\S]*?&lt;\/campaign_data&gt;/gi;
+
+    if (pattern.test(raw)) {
+        const replaced = raw.replace(pattern, (match) => {
+            return `<span class="cs-campaign-data-collapsed" title="Campaign data (tracked by Campaign Studio)"><span class="cs-tracked-badge cs-campaign-data-badge">⬡ Campaign Data</span><span class="cs-campaign-data-raw">${match}</span></span>`;
+        });
+        $messageElement.html(replaced);
+    }
 }
