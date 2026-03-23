@@ -2,14 +2,20 @@
  * Campaign Studio — World State Renderer
  * Renders key-value world data with specialized sub-renderers
  * for weather, path breadcrumbs, NPC pills, diary quotes, etc.
+ * Uses a 2-column grid for compact entries, full-width for longer ones.
  */
 
 import { sanitizeText } from '../../utils/sanitize.js';
 
 /**
- * Renderers that produce short, single-line output (suitable for inline label layout).
+ * Renderers that produce short, single-line output (suitable for compact grid).
  */
-const SHORT_RENDERERS = new Set(['text', 'numeric-badge']);
+const COMPACT_RENDERERS = new Set(['text', 'numeric-badge']);
+
+/**
+ * Renderers that always need full width.
+ */
+const WIDE_RENDERERS = new Set(['breadcrumb', 'character-pills', 'quote-block', 'text-atmosphere']);
 
 /**
  * Simple hash function for generating avatar colors from names.
@@ -46,9 +52,15 @@ export function renderWorld(data, sectionConfig, $container) {
         const fieldConfig = fields[key] || {};
         const renderer = fieldConfig.renderer || 'text';
 
-        // Determine if this entry should use inline layout
-        const isShort = SHORT_RENDERERS.has(renderer) && String(value).length < 40;
-        const $entry = $(`<div class="cs-world-entry${isShort ? ' cs-world-inline' : ''}"></div>`);
+        // Determine if this entry is compact (fits in grid) or wide (full-width)
+        const isCompact = COMPACT_RENDERERS.has(renderer) && String(value).length < 30;
+        const isWide = WIDE_RENDERERS.has(renderer) || String(value).length >= 50;
+
+        const entryClass = isWide ? 'cs-world-entry cs-world-wide' :
+            isCompact ? 'cs-world-entry cs-world-compact' :
+                'cs-world-entry cs-world-inline';
+
+        const $entry = $(`<div class="${entryClass}"></div>`);
         $entry.append(`<div class="cs-world-key">${sanitizeText(key)}</div>`);
 
         const $value = $('<div class="cs-world-value"></div>');

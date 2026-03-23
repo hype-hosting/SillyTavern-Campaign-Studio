@@ -5,7 +5,7 @@
    clean modern typography, atmospheric glass-morphism
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 /* --- Design Tokens --- */
 .cs-root {
@@ -58,7 +58,7 @@
     border: 1px solid var(--cs-border);
     box-shadow: var(--cs-shadow-lg), inset 0 0 40px rgba(var(--cs-accent-rgb), 0.02);
     color: var(--cs-text-primary);
-    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    font-family: 'Space Grotesk', -apple-system, system-ui, sans-serif;
     font-size: 13px;
     line-height: 1.5;
     transition: transform var(--cs-transition), opacity var(--cs-transition);
@@ -144,11 +144,12 @@
 }
 
 .cs-title-text {
-    font-family: 'Inter', -apple-system, system-ui, sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    color: var(--cs-text-primary);
+    font-family: 'Space Grotesk', -apple-system, system-ui, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--cs-text-secondary);
 }
 
 .cs-panel-controls {
@@ -185,10 +186,11 @@
 .cs-preset-bar {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 6px;
-    padding: 8px 16px;
+    padding: 6px 16px;
     border-bottom: none;
-    font-size: 11px;
+    font-size: 10px;
     flex-shrink: 0;
     position: relative;
 }
@@ -236,10 +238,10 @@
     border: none;
     border-bottom: 2px solid transparent;
     color: var(--cs-text-muted);
-    font-family: 'Inter', -apple-system, system-ui, sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
+    font-family: 'Space Grotesk', -apple-system, system-ui, sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
     cursor: pointer;
     transition: color var(--cs-transition-fast), border-color var(--cs-transition-fast);
 }
@@ -288,43 +290,70 @@
 
 /* --- Flow Sections (Overview tab — no collapse) --- */
 .cs-section-flow {
-    margin-bottom: 2px;
+    margin-bottom: 8px;
 }
 
+/* Centered decorative section header: ── LABEL ── */
 .cs-section-flow .cs-section-label {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 0;
     font-size: 9px;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.18em;
     color: var(--cs-text-muted);
-    padding: 14px 4px 4px;
+    padding: 16px 0 8px;
     font-weight: 600;
     font-family: 'JetBrains Mono', monospace;
-    opacity: 0.6;
+    opacity: 0.55;
+}
+
+/* Horizontal rules on either side of label */
+.cs-section-flow .cs-section-label::before,
+.cs-section-flow .cs-section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(var(--cs-accent-rgb), 0.2), transparent);
+}
+
+.cs-section-flow .cs-section-label::before {
+    margin-right: 10px;
+}
+
+.cs-section-flow .cs-section-label::after {
+    margin-left: 10px;
 }
 
 .cs-section-flow .cs-section-label .cs-section-icon {
-    font-size: 12px;
-    opacity: 0.7;
+    font-size: 11px;
+    margin-right: 6px;
+}
+
+.cs-section-flow .cs-section-label .cs-section-label-text {
+    white-space: nowrap;
 }
 
 .cs-section-flow .cs-section-label .cs-section-count {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
+    font-size: 8px;
     color: var(--cs-text-muted);
     opacity: 0.5;
-    margin-left: auto;
+    margin-left: 8px;
+    white-space: nowrap;
 }
 
+/* Bordered content group */
 .cs-section-flow .cs-section-body {
-    padding: 4px 4px 8px;
+    padding: 10px 12px 12px;
+    border: 1px solid rgba(var(--cs-accent-rgb), 0.08);
+    border-radius: var(--cs-radius-sm);
+    background: rgba(var(--cs-accent-rgb), 0.015);
 }
 
-/* First flow section doesn't need top padding on label */
+/* First flow section less top padding */
 .cs-tab-panel > .cs-section-flow:first-child .cs-section-label {
-    padding-top: 6px;
+    padding-top: 8px;
 }
 
 /* --- Stacked Sections (At-a-Glance) --- */
@@ -365,12 +394,12 @@
 }
 
 .cs-section-title {
-    font-family: 'Inter', -apple-system, system-ui, sans-serif;
-    font-size: 11px;
+    font-family: 'Space Grotesk', -apple-system, system-ui, sans-serif;
+    font-size: 10px;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.14em;
     color: var(--cs-text-secondary);
-    font-weight: 700;
+    font-weight: 600;
     flex: 1;
 }
 
@@ -411,7 +440,7 @@
 .cs-content {
     flex: 1;
     overflow-y: auto;
-    padding: 12px 10px 16px;
+    padding: 8px 14px 16px;
     scrollbar-width: thin;
     scrollbar-color: rgba(var(--cs-accent-rgb), 0.2) transparent;
 }
@@ -575,50 +604,60 @@
    WORLD RENDERER
    ============================================================ */
 .cs-world-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px 8px;
 }
 
+/* Base entry styles */
 .cs-world-entry {
     display: flex;
-    flex-direction: column;
-    gap: 2px;
-    padding: 6px 4px;
-    border-bottom: 1px solid rgba(180, 180, 210, 0.04);
+    flex-direction: row;
+    align-items: baseline;
+    gap: 8px;
+    padding: 5px 6px;
     transition: background var(--cs-transition-fast);
     border-radius: 4px;
-}
-
-.cs-world-entry:last-child {
-    border-bottom: none;
+    min-width: 0;
 }
 
 .cs-world-entry:hover {
     background: rgba(var(--cs-accent-rgb), 0.03);
 }
 
-/* Inline layout for short values */
+/* Compact entries: fit in 1 grid column */
+.cs-world-entry.cs-world-compact {
+    grid-column: span 1;
+}
+
+/* Inline entries: also fit in 1 grid column */
 .cs-world-entry.cs-world-inline {
-    flex-direction: row;
-    align-items: baseline;
-    gap: 8px;
+    grid-column: span 1;
+}
+
+/* Wide entries: span full width (2 columns) */
+.cs-world-entry.cs-world-wide {
+    grid-column: 1 / -1;
+    flex-direction: column;
+    gap: 3px;
 }
 
 .cs-world-key {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
+    font-size: 9px;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.08em;
     color: var(--cs-text-muted);
     font-weight: 600;
     flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .cs-world-value {
     color: var(--cs-text-primary);
-    font-size: 13.5px;
+    font-size: 13px;
     line-height: 1.5;
+    min-width: 0;
 }
 
 /* Breadcrumbs */
@@ -708,29 +747,39 @@
     font-style: italic;
     color: var(--cs-text-secondary);
     line-height: 1.5;
+    padding: 4px 10px;
+    border-left: 2px solid rgba(var(--cs-accent-rgb), 0.15);
+    background: linear-gradient(90deg, rgba(var(--cs-accent-rgb), 0.03), transparent 70%);
+    border-radius: 0 4px 4px 0;
 }
 
-/* Numeric Badge */
+/* Numeric Badge — stat card style */
 .cs-numeric-badge {
-    display: inline-block;
-    padding: 3px 12px;
-    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 10px;
+    border-radius: 4px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.05em;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    min-width: 32px;
+    text-align: center;
 }
 
 .cs-badge-positive {
     color: var(--cs-color-positive);
     background: rgba(90, 170, 106, 0.1);
     border: 1px solid rgba(90, 170, 106, 0.2);
+    text-shadow: 0 0 8px rgba(90, 170, 106, 0.25);
 }
 
 .cs-badge-negative {
     color: var(--cs-color-negative);
     background: rgba(192, 57, 43, 0.1);
     border: 1px solid rgba(192, 57, 43, 0.2);
+    text-shadow: 0 0 8px rgba(192, 57, 43, 0.25);
 }
 
 .cs-badge-neutral {
@@ -1796,7 +1845,7 @@ campaign_data {
     border-radius: var(--cs-radius);
     box-shadow: var(--cs-shadow-lg);
     color: var(--cs-text-primary);
-    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    font-family: 'Space Grotesk', -apple-system, system-ui, sans-serif;
     font-size: 14px;
     overflow: hidden;
     animation: cs-slide-up 0.25s ease;
@@ -1829,7 +1878,7 @@ campaign_data {
 }
 
 .cs-editor-title {
-    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    font-family: 'Space Grotesk', -apple-system, system-ui, sans-serif;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -1852,7 +1901,7 @@ campaign_data {
     border-radius: var(--cs-radius-xs);
     background: none;
     color: var(--cs-text-secondary);
-    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    font-family: 'Space Grotesk', -apple-system, system-ui, sans-serif;
     font-size: 13px;
     cursor: pointer;
     transition: all var(--cs-transition-fast);
@@ -1909,7 +1958,7 @@ campaign_data {
 
 /* --- Section Labels --- */
 .cs-editor-section-label {
-    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    font-family: 'Space Grotesk', -apple-system, system-ui, sans-serif;
     font-size: 10px;
     font-weight: 700;
     text-transform: uppercase;
@@ -1943,7 +1992,7 @@ campaign_data {
     border: 1px solid var(--cs-border);
     border-radius: var(--cs-radius-xs);
     color: var(--cs-text-primary);
-    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    font-family: 'Space Grotesk', -apple-system, system-ui, sans-serif;
     font-size: 13px;
     transition: border-color var(--cs-transition-fast);
     box-sizing: border-box;
@@ -2073,7 +2122,7 @@ campaign_data {
 }
 
 .cs-editor-detail-title {
-    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    font-family: 'Space Grotesk', -apple-system, system-ui, sans-serif;
     font-size: 10px;
     font-weight: 700;
     text-transform: uppercase;
@@ -2113,7 +2162,7 @@ campaign_data {
     border: 1px solid transparent;
     border-radius: 3px;
     color: var(--cs-text-primary);
-    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    font-family: 'Space Grotesk', -apple-system, system-ui, sans-serif;
     font-size: 13px;
 }
 .cs-editor-field-name input:focus {
@@ -2165,7 +2214,7 @@ campaign_data {
     border: 1px dashed var(--cs-border);
     border-radius: var(--cs-radius-xs);
     color: var(--cs-text-muted);
-    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    font-family: 'Space Grotesk', -apple-system, system-ui, sans-serif;
     font-size: 12px;
     cursor: pointer;
     transition: all var(--cs-transition-fast);
@@ -2222,7 +2271,7 @@ campaign_data {
     border: 1px solid rgba(var(--cs-accent-rgb), 0.3);
     border-radius: var(--cs-radius-xs);
     color: var(--cs-accent);
-    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    font-family: 'Space Grotesk', -apple-system, system-ui, sans-serif;
     font-size: 13px;
     font-weight: 600;
     cursor: pointer;
@@ -2245,7 +2294,7 @@ campaign_data {
 }
 
 .cs-editor-detected-header {
-    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    font-family: 'Space Grotesk', -apple-system, system-ui, sans-serif;
     font-size: 10px;
     font-weight: 700;
     text-transform: uppercase;
@@ -2337,7 +2386,7 @@ campaign_data {
 }
 
 .cs-editor-preview-title {
-    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    font-family: 'Space Grotesk', -apple-system, system-ui, sans-serif;
     font-size: 10px;
     font-weight: 700;
     text-transform: uppercase;
