@@ -67,9 +67,18 @@
         </div>
 
         <div class="cs-settings-row cs-settings-row-full">
-            <label class="cs-settings-label" for="cs-settings-rules">Game Mechanics Rules</label>
-            <small class="cs-settings-hint">Campaign-specific rules injected into the AI prompt (e.g., faction standing update rules, inventory management)</small>
-            <textarea id="cs-settings-rules" class="cs-settings-textarea" rows="8" placeholder="Write campaign-specific rules here..."></textarea>
+            <div class="cs-settings-rules-header">
+                <label class="cs-settings-label">Game Rules</label>
+                <small class="cs-settings-rules-count" id="cs-rules-count"></small>
+            </div>
+            <small class="cs-settings-hint">Toggle rules injected into the AI prompt. Each preset includes ready-to-use rules.</small>
+            <div id="cs-rules-container" class="cs-rules-container">
+                <!-- Dynamically populated with rule cards -->
+            </div>
+            <div class="cs-rules-custom-section">
+                <label class="cs-rules-custom-label">Your Rules</label>
+                <textarea id="cs-settings-rules-custom" class="cs-settings-textarea cs-settings-textarea-sm" rows="3" placeholder="Add extra rules specific to your campaign..."></textarea>
+            </div>
         </div>
     </div>
 </div>

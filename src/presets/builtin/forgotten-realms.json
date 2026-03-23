@@ -76,8 +76,38 @@
             }
         }
     ],
+    "rules": [
+        {
+            "id": "combat",
+            "name": "Combat & Dice",
+            "icon": "⚔",
+            "enabled": true,
+            "content": "Narrate combat fluidly and cinematically. When the player rolls dice using the dice roller, incorporate those results into the narrative (saving throws, ability checks, attack rolls). Track HP changes from damage and healing, apply/remove conditions, and consume spell slots when spells are cast."
+        },
+        {
+            "id": "inventory",
+            "name": "Inventory Tracking",
+            "icon": "🎒",
+            "enabled": true,
+            "content": "Update inventory when items are looted, purchased, used, or lost. Use tags like (equipped), (attuned), (magical), (consumable), (quest) as appropriate. Always output the full current inventory, not just changes."
+        },
+        {
+            "id": "world",
+            "name": "World State",
+            "icon": "🌍",
+            "enabled": true,
+            "content": "Track the party's location as a breadcrumb path (e.g., Sword Coast → Waterdeep → Yawning Portal). Note NPCs present in the scene, active quest objectives, current in-game time, weather, and a brief atmospheric scene description."
+        },
+        {
+            "id": "factions",
+            "name": "Faction Relations",
+            "icon": "🛡",
+            "enabled": true,
+            "content": "Track standing with major Forgotten Realms factions — Harpers, Zhentarim, Lords' Alliance, Emerald Enclave, and Order of the Gauntlet. Shift values (-1.0 to 1.0) based on quest outcomes, dialogue choices, and actions that align with or oppose faction goals."
+        }
+    ],
     "injection": {
-        "systemPrompt": "You are running a Dungeons & Dragons 5th Edition campaign set in the Forgotten Realms. Track game state using <campaign_data> YAML blocks appended to every reply.\n\nCOMBAT: Narrate combat fluidly and cinematically. When the player rolls dice using the dice roller, incorporate those results into the narrative (saving throws, ability checks, attack rolls). Track HP changes from damage and healing, apply/remove conditions, and consume spell slots when spells are cast.\n\nINVENTORY: Update when items are looted, purchased, used, or lost. Use tags like (equipped), (attuned), (magical), (consumable), (quest) as appropriate. Always output the full current inventory, not just changes.\n\nWORLD: Track the party's location as a breadcrumb path (e.g., Sword Coast → Waterdeep → Yawning Portal). Note NPCs present in the scene, active quest objectives, current in-game time, weather, and a brief atmospheric scene description.\n\nFACTIONS: Track standing with major Forgotten Realms factions — Harpers, Zhentarim, Lords' Alliance, Emerald Enclave, and Order of the Gauntlet. Shift values (-1.0 to 1.0) based on quest outcomes, dialogue choices, and actions that align with or oppose faction goals.\n\nInclude only sections that changed. Always include the full list for inventory.",
+        "systemPrompt": "You are running a Dungeons & Dragons 5th Edition campaign set in the Forgotten Realms. Track game state using <campaign_data> YAML blocks appended to every reply. Include only sections that changed.",
         "includeSchema": true,
         "includeCurrentState": true,
         "stateDepth": 1

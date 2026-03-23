@@ -64,6 +64,19 @@ function buildSystemPrompt(preset) {
         'The YAML inside <campaign_data> tags must follow the schema below.';
     parts.push(baseInstruction);
 
+    // Rule snippets from preset (new system) or fall through to legacy
+    const settings = getSettings();
+    if (preset.rules?.length) {
+        const overrides = settings.ruleOverrides?.[preset.id] || {};
+        const enabledRules = preset.rules.filter(rule => {
+            const override = overrides[rule.id];
+            return override !== undefined ? override : rule.enabled;
+        });
+        if (enabledRules.length) {
+            parts.push(enabledRules.map(r => r.content).join('\n\n'));
+        }
+    }
+
     // Schema from sections
     if (injection.includeSchema !== false) {
         const schema = buildSchemaBlock(preset);
@@ -73,8 +86,7 @@ function buildSystemPrompt(preset) {
     // Example
     parts.push(buildExampleBlock(preset));
 
-    // Game mechanics rules (user-defined per preset)
-    const settings = getSettings();
+    // Custom user rules (per preset)
     const rulesText = settings.presetRules?.[preset.id];
     if (rulesText?.trim()) {
         parts.push(rulesText.trim());
