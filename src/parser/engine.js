@@ -5,7 +5,7 @@
  */
 
 import { MATCH_MODES } from '../core/config.js';
-import { parseMarkdownList, parseKeyValue, parseKeyValueNumeric } from './adapters.js';
+import { parseMarkdownList, parseKeyValue, parseKeyValueNumeric, parseStatBlock } from './adapters.js';
 
 /**
  * Extract all matching <details><summary> blocks from message HTML.
@@ -130,6 +130,8 @@ function parseSection(rawLines, sectionConfig) {
         return parseKeyValue(rawLines, sectionConfig.parse);
     case 'key-value-numeric':
         return parseKeyValueNumeric(rawLines, sectionConfig.parse);
+    case 'stat-block':
+        return parseStatBlock(rawLines, sectionConfig.parse);
     default:
         return parseKeyValue(rawLines, sectionConfig.parse);
     }

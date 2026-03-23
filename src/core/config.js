@@ -39,6 +39,7 @@ export const PARSE_FORMATS = {
     MARKDOWN_LIST: 'markdown-list',
     KEY_VALUE: 'key-value',
     KEY_VALUE_NUMERIC: 'key-value-numeric',
+    STAT_BLOCK: 'stat-block',
 };
 
 export const MATCH_MODES = {
