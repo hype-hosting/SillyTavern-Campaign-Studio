@@ -10,7 +10,7 @@ import { extractBlocks } from './src/parser/engine.js';
 import { collapseParsedBlocks } from './src/parser/collapse.js';
 import { initPresets, getActivePreset, getAllPresets, activatePreset } from './src/presets/manager.js';
 import { initPanel, openPanel, closePanel, togglePanel, destroyPanel } from './src/ui/panel.js';
-import { initTabs, getPane, switchTab } from './src/ui/tabs.js';
+import { initTabs, getPane } from './src/ui/tabs.js';
 import { renderInventory } from './src/ui/renderers/inventory.js';
 import { renderWorld } from './src/ui/renderers/world.js';
 import { renderFactions } from './src/ui/renderers/factions.js';
