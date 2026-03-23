@@ -1,0 +1,66 @@
+{
+    "id": "vigil-falls",
+    "name": "Vigil Falls",
+    "version": "1.0.0",
+    "description": "Gothic estate campaign tracking for the Vigil Falls worldbuild. Tracks inventory, world state, and Order faction standings.",
+    "author": "hype-hosting",
+    "marker": {
+        "type": "details-summary",
+        "prefix": "❖"
+    },
+    "sections": [
+        {
+            "id": "items",
+            "match": "Items",
+            "matchMode": "endsWith",
+            "type": "inventory",
+            "icon": "backpack",
+            "parse": {
+                "format": "markdown-list",
+                "tagPattern": "\\(([^)]+)\\)"
+            }
+        },
+        {
+            "id": "world",
+            "match": "World",
+            "matchMode": "exact",
+            "type": "key-value",
+            "icon": "globe",
+            "parse": {
+                "format": "key-value",
+                "separator": ":"
+            },
+            "fields": {
+                "Weather": { "renderer": "text-atmosphere" },
+                "Intent": { "renderer": "text" },
+                "Path": { "renderer": "breadcrumb", "separator": "→" },
+                "Characters": { "renderer": "character-pills", "separator": "," },
+                "Vigil Falls's Diary": { "renderer": "quote-block" },
+                "Affinity Level": { "renderer": "numeric-badge" },
+                "Affinity Notes": { "renderer": "text" }
+            }
+        },
+        {
+            "id": "orders",
+            "match": "Order Standing",
+            "matchMode": "exact",
+            "type": "numeric-bars",
+            "icon": "shield",
+            "parse": {
+                "format": "key-value-numeric",
+                "separator": ":",
+                "range": [-1.0, 1.0]
+            },
+            "display": {
+                "colorNegative": "#e05555",
+                "colorNeutral": "#666666",
+                "colorPositive": "#7c6bde",
+                "showDelta": true
+            }
+        }
+    ],
+    "theme": {
+        "accentColor": "#7c6bde",
+        "ambientEffect": "candlelight"
+    }
+}

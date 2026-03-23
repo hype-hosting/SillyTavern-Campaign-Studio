@@ -1,0 +1,83 @@
+<div id="cs-panel" class="cs-root cs-panel cs-position-right cs-hidden">
+    <!-- Header -->
+    <div class="cs-panel-header">
+        <div class="cs-panel-title">
+            <span class="cs-title-icon">⬡</span>
+            <span class="cs-title-text">Campaign Studio</span>
+        </div>
+        <div class="cs-panel-controls">
+            <button class="cs-btn cs-btn-icon cs-btn-dock" title="Change panel position">
+                <span class="cs-icon-dock">⇄</span>
+            </button>
+            <button class="cs-btn cs-btn-icon cs-btn-close" title="Close panel">
+                <span class="cs-icon-close">✕</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Preset indicator -->
+    <div class="cs-preset-bar">
+        <span class="cs-preset-label">Preset:</span>
+        <span class="cs-preset-name" id="cs-active-preset-name">—</span>
+    </div>
+
+    <!-- Tab bar -->
+    <div class="cs-tab-bar" id="cs-tab-bar">
+        <!-- Tabs are dynamically generated from the active preset -->
+    </div>
+
+    <!-- Content area -->
+    <div class="cs-content" id="cs-content">
+        <!-- Empty state -->
+        <div class="cs-empty-state" id="cs-empty-state">
+            <div class="cs-empty-icon">⬡</div>
+            <div class="cs-empty-title">No campaign data yet</div>
+            <div class="cs-empty-subtitle">Campaign Studio will automatically track data from bot responses when a matching preset is active.</div>
+        </div>
+
+        <!-- Section containers (dynamically populated) -->
+        <div class="cs-section-container" id="cs-section-container">
+        </div>
+    </div>
+
+    <!-- Mechanics toolbar -->
+    <div class="cs-mechanics-bar" id="cs-mechanics-bar">
+        <button class="cs-btn cs-btn-mechanic cs-dice-btn" id="cs-dice-trigger" title="Roll dice">
+            <span class="cs-dice-icon">⚄</span>
+            <span class="cs-dice-label">Dice</span>
+        </button>
+    </div>
+
+    <!-- Dice roller overlay -->
+    <div class="cs-dice-overlay cs-hidden" id="cs-dice-overlay">
+        <div class="cs-dice-panel">
+            <div class="cs-dice-header">
+                <span>Dice Roller</span>
+                <button class="cs-btn cs-btn-icon cs-dice-close">✕</button>
+            </div>
+            <div class="cs-dice-presets">
+                <button class="cs-btn cs-dice-preset" data-dice="d4">d4</button>
+                <button class="cs-btn cs-dice-preset" data-dice="d6">d6</button>
+                <button class="cs-btn cs-dice-preset" data-dice="d8">d8</button>
+                <button class="cs-btn cs-dice-preset" data-dice="d10">d10</button>
+                <button class="cs-btn cs-dice-preset" data-dice="d12">d12</button>
+                <button class="cs-btn cs-dice-preset" data-dice="d20">d20</button>
+                <button class="cs-btn cs-dice-preset" data-dice="d100">d100</button>
+            </div>
+            <div class="cs-dice-custom">
+                <input type="text" class="cs-dice-input" id="cs-dice-input" placeholder="e.g. 2d6+3" />
+                <button class="cs-btn cs-dice-roll-btn" id="cs-dice-roll-btn">Roll</button>
+            </div>
+            <div class="cs-dice-result" id="cs-dice-result">
+                <span class="cs-dice-result-value"></span>
+            </div>
+            <div class="cs-dice-history" id="cs-dice-history">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FAB trigger button (for when panel is closed) -->
+<div id="cs-fab" class="cs-fab cs-hidden" title="Open Campaign Studio">
+    <span class="cs-fab-icon">⬡</span>
+</div>
