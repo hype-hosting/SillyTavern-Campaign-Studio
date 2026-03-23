@@ -1,0 +1,73 @@
+{
+    "id": "cozy-life",
+    "name": "Cozy Life",
+    "version": "1.0.0",
+    "description": "Modern slice-of-life roleplay tracking. Everyday belongings, social connections, daily vibes, and the small moments that matter.",
+    "author": "hype-hosting",
+    "marker": {
+        "type": "details-summary",
+        "prefix": "✿"
+    },
+    "sections": [
+        {
+            "id": "belongings",
+            "match": "Belongings",
+            "matchMode": "endsWith",
+            "type": "inventory",
+            "icon": "backpack",
+            "parse": {
+                "format": "markdown-list",
+                "tagPattern": "\\(([^)]+)\\)"
+            }
+        },
+        {
+            "id": "social",
+            "match": "Social",
+            "matchMode": "endsWith",
+            "type": "key-value",
+            "icon": "globe",
+            "parse": {
+                "format": "key-value",
+                "separator": ":"
+            },
+            "fields": {
+                "Location": { "renderer": "breadcrumb", "separator": "→" },
+                "Weather": { "renderer": "text-atmosphere" },
+                "Time": { "renderer": "text" },
+                "People Nearby": { "renderer": "character-pills", "separator": "," },
+                "Current Activity": { "renderer": "text" },
+                "Mood": { "renderer": "text-atmosphere" },
+                "Inner Thoughts": { "renderer": "quote-block" }
+            }
+        },
+        {
+            "id": "vibes",
+            "match": "Vibes",
+            "matchMode": "exact",
+            "type": "numeric-bars",
+            "icon": "scroll",
+            "parse": {
+                "format": "key-value-numeric",
+                "separator": ":",
+                "range": [0, 1.0]
+            },
+            "display": {
+                "colorNegative": "#c9a84c",
+                "colorNeutral": "#888888",
+                "colorPositive": "#5aaa6a",
+                "showDelta": true,
+                "invertedKeys": ["Stress", "Hunger"]
+            }
+        }
+    ],
+    "injection": {
+        "systemPrompt": "You are narrating a cozy, modern-day slice-of-life roleplay. Track game state using <campaign_data> YAML blocks appended to every reply.\n\nBELONGINGS: Track the character's personal items — phone, keys, wallet contents, bags, gifts, mementos. Use tags like (carried), (home), (important), (gift), (new). Update when items are received, lost, purchased, or left somewhere. Always output the full current belongings list, not just changes.\n\nSOCIAL: Track current location as a breadcrumb path (e.g., Downtown → Oak Street → Rosie's Café). Note the weather and time of day as atmospheric flavor. List people nearby, current activity, the character's mood as evocative text, and their inner thoughts as a brief reflective quote.\n\nVIBES: Track life meters as values from 0.0 to 1.0:\n- Energy: Physical and mental energy (rises with rest, food, fun; drops with exertion, late nights)\n- Social Battery: Social capacity (rises with alone time, drops with prolonged social interaction)\n- Stress: Tension level (rises with conflict, deadlines, awkwardness; drops with relaxation, resolution)\n- Happiness: Overall contentment (rises with positive interactions, achievements, comfort; drops with disappointment, loneliness)\n- Hunger: How hungry the character is (rises over time, drops after eating)\n\nNARRATIVE TONE: Warm, observational, grounded. Focus on emotional beats, sensory details, relationship dynamics, and the quiet beauty of everyday life. Small moments matter — a good cup of coffee, a text from a friend, rain on the window.\n\nInclude only sections that changed. Always include the full list for belongings.",
+        "includeSchema": true,
+        "includeCurrentState": true,
+        "stateDepth": 1
+    },
+    "theme": {
+        "accentColor": "#5aaa6a",
+        "ambientEffect": "warm"
+    }
+}

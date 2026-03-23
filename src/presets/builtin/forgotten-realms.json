@@ -1,0 +1,89 @@
+{
+    "id": "forgotten-realms",
+    "name": "Forgotten Realms",
+    "version": "1.0.0",
+    "description": "Dungeons & Dragons 5e campaign tracking for Forgotten Realms adventures. Tracks inventory, character status, world state, and faction standings with hybrid narrative-dice combat.",
+    "author": "hype-hosting",
+    "marker": {
+        "type": "details-summary",
+        "prefix": "⚔"
+    },
+    "sections": [
+        {
+            "id": "inventory",
+            "match": "Inventory",
+            "matchMode": "endsWith",
+            "type": "inventory",
+            "icon": "backpack",
+            "parse": {
+                "format": "markdown-list",
+                "tagPattern": "\\(([^)]+)\\)"
+            }
+        },
+        {
+            "id": "character",
+            "match": "Character",
+            "matchMode": "endsWith",
+            "type": "key-value",
+            "icon": "scroll",
+            "parse": {
+                "format": "key-value",
+                "separator": ":"
+            },
+            "fields": {
+                "Hit Points": { "renderer": "numeric-badge" },
+                "Conditions": { "renderer": "character-pills", "separator": "," },
+                "Spell Slots": { "renderer": "text" },
+                "Class Resources": { "renderer": "text" },
+                "Active Effects": { "renderer": "character-pills", "separator": "," }
+            }
+        },
+        {
+            "id": "world",
+            "match": "World",
+            "matchMode": "exact",
+            "type": "key-value",
+            "icon": "globe",
+            "parse": {
+                "format": "key-value",
+                "separator": ":"
+            },
+            "fields": {
+                "Location": { "renderer": "breadcrumb", "separator": "→" },
+                "Time": { "renderer": "text" },
+                "Weather": { "renderer": "text-atmosphere" },
+                "NPCs Present": { "renderer": "character-pills", "separator": "," },
+                "Active Quests": { "renderer": "text" },
+                "Scene": { "renderer": "quote-block" }
+            }
+        },
+        {
+            "id": "factions",
+            "match": "Factions",
+            "matchMode": "exact",
+            "type": "numeric-bars",
+            "icon": "shield",
+            "parse": {
+                "format": "key-value-numeric",
+                "separator": ":",
+                "range": [-1.0, 1.0]
+            },
+            "display": {
+                "colorNegative": "#c0392b",
+                "colorNeutral": "#666666",
+                "colorPositive": "#c9a84c",
+                "showDelta": true
+            }
+        }
+    ],
+    "injection": {
+        "systemPrompt": "You are running a Dungeons & Dragons 5th Edition campaign set in the Forgotten Realms. Track game state using <campaign_data> YAML blocks appended to every reply.\n\nCOMBAT: Narrate combat fluidly and cinematically. When the player rolls dice using the dice roller, incorporate those results into the narrative (saving throws, ability checks, attack rolls). Track HP changes from damage and healing, apply/remove conditions, and consume spell slots when spells are cast.\n\nINVENTORY: Update when items are looted, purchased, used, or lost. Use tags like (equipped), (attuned), (magical), (consumable), (quest) as appropriate. Always output the full current inventory, not just changes.\n\nWORLD: Track the party's location as a breadcrumb path (e.g., Sword Coast → Waterdeep → Yawning Portal). Note NPCs present in the scene, active quest objectives, current in-game time, weather, and a brief atmospheric scene description.\n\nFACTIONS: Track standing with major Forgotten Realms factions — Harpers, Zhentarim, Lords' Alliance, Emerald Enclave, and Order of the Gauntlet. Shift values (-1.0 to 1.0) based on quest outcomes, dialogue choices, and actions that align with or oppose faction goals.\n\nInclude only sections that changed. Always include the full list for inventory.",
+        "includeSchema": true,
+        "includeCurrentState": true,
+        "stateDepth": 1
+    },
+    "theme": {
+        "accentColor": "#c9a84c",
+        "ambientEffect": "torchlight"
+    }
+}
