@@ -1,11 +1,11 @@
 /* ============================================================
    Campaign Studio — Glassmorphism Design System
    Prefix: cs-
-   Aesthetic: TimelessTavern — deep darks, jewel-tone accents,
-   fantasy serif typography, atmospheric glass-morphism
+   Aesthetic: deep darks, jewel-tone accents,
+   clean modern typography, atmospheric glass-morphism
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 /* --- Design Tokens --- */
 .cs-root {
@@ -58,9 +58,9 @@
     border: 1px solid var(--cs-border);
     box-shadow: var(--cs-shadow-lg), inset 0 0 40px rgba(var(--cs-accent-rgb), 0.02);
     color: var(--cs-text-primary);
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 15px;
-    line-height: 1.6;
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
     transition: transform var(--cs-transition), opacity var(--cs-transition);
     overflow: hidden;
 }
@@ -144,10 +144,10 @@
 }
 
 .cs-title-text {
-    font-family: 'Cinzel Decorative', 'Cinzel', serif;
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
     font-size: 13px;
     font-weight: 700;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.02em;
     color: var(--cs-text-primary);
 }
 
@@ -204,7 +204,7 @@
 }
 
 .cs-preset-label {
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'JetBrains Mono', monospace;
     color: var(--cs-text-muted);
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -213,6 +213,118 @@
 .cs-preset-name {
     color: var(--cs-accent);
     font-weight: 500;
+}
+
+/* --- Tab Bar --- */
+.cs-tab-bar {
+    display: flex;
+    gap: 0;
+    padding: 0 10px;
+    border-bottom: 1px solid var(--cs-border);
+    background: transparent;
+    flex-shrink: 0;
+}
+
+.cs-tab-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px 4px 8px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--cs-text-muted);
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: color var(--cs-transition-fast), border-color var(--cs-transition-fast);
+}
+
+.cs-tab-btn:hover {
+    color: var(--cs-text-secondary);
+}
+
+.cs-tab-btn.cs-tab-active {
+    color: var(--cs-accent);
+    border-bottom-color: var(--cs-accent);
+}
+
+.cs-tab-btn-icon {
+    font-size: 13px;
+    line-height: 1;
+}
+
+.cs-tab-btn-label {
+    text-transform: uppercase;
+}
+
+.cs-tab-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: var(--cs-text-muted);
+    background: rgba(var(--cs-accent-rgb), 0.1);
+    padding: 1px 5px;
+    border-radius: 8px;
+    min-width: 14px;
+    text-align: center;
+}
+
+/* --- Tab Panels --- */
+.cs-tab-panels {
+    animation: cs-fade-in 0.2s ease;
+}
+
+.cs-tab-panel {
+    display: none;
+}
+
+.cs-tab-panel-active {
+    display: block;
+}
+
+/* --- Flow Sections (Overview tab — no collapse) --- */
+.cs-section-flow {
+    margin-bottom: 2px;
+}
+
+.cs-section-flow .cs-section-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--cs-text-muted);
+    padding: 14px 4px 4px;
+    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+    opacity: 0.6;
+}
+
+.cs-section-flow .cs-section-label .cs-section-icon {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.cs-section-flow .cs-section-label .cs-section-count {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: var(--cs-text-muted);
+    opacity: 0.5;
+    margin-left: auto;
+}
+
+.cs-section-flow .cs-section-body {
+    padding: 4px 4px 8px;
+}
+
+/* First flow section doesn't need top padding on label */
+.cs-tab-panel > .cs-section-flow:first-child .cs-section-label {
+    padding-top: 6px;
 }
 
 /* --- Stacked Sections (At-a-Glance) --- */
@@ -253,7 +365,7 @@
 }
 
 .cs-section-title {
-    font-family: 'Cinzel Decorative', 'Cinzel', serif;
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.06em;
@@ -263,7 +375,7 @@
 }
 
 .cs-section-count {
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
     color: var(--cs-text-muted);
     opacity: 0.7;
@@ -321,20 +433,17 @@
     background: rgba(var(--cs-accent-rgb), 0.35);
 }
 
-.cs-section-container {
-    animation: cs-fade-in 0.3s ease;
-}
-
-/* Stagger animation for sections */
-.cs-section {
+/* Stagger animation for sections within tab panels */
+.cs-section,
+.cs-section-flow {
     animation: cs-fade-in 0.3s ease both;
 }
-.cs-section:nth-child(1) { animation-delay: 0ms; }
-.cs-section:nth-child(2) { animation-delay: 40ms; }
-.cs-section:nth-child(3) { animation-delay: 80ms; }
-.cs-section:nth-child(4) { animation-delay: 120ms; }
-.cs-section:nth-child(5) { animation-delay: 160ms; }
-.cs-section:nth-child(6) { animation-delay: 200ms; }
+.cs-tab-panel > :nth-child(1) { animation-delay: 0ms; }
+.cs-tab-panel > :nth-child(2) { animation-delay: 40ms; }
+.cs-tab-panel > :nth-child(3) { animation-delay: 80ms; }
+.cs-tab-panel > :nth-child(4) { animation-delay: 120ms; }
+.cs-tab-panel > :nth-child(5) { animation-delay: 160ms; }
+.cs-tab-panel > :nth-child(6) { animation-delay: 200ms; }
 .cs-section:nth-child(7) { animation-delay: 240ms; }
 .cs-section:nth-child(8) { animation-delay: 280ms; }
 
@@ -440,7 +549,7 @@
 .cs-tag {
     display: inline-block;
     padding: 1px 7px;
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
     letter-spacing: 0.05em;
     color: var(--cs-accent);
@@ -459,7 +568,7 @@
 .cs-item-qty {
     color: var(--cs-text-muted);
     font-size: 11px;
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 /* ============================================================
@@ -497,7 +606,7 @@
 }
 
 .cs-world-key {
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 0.06em;
@@ -576,7 +685,7 @@
     border-radius: 50%;
     font-size: 10px;
     font-weight: 700;
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'JetBrains Mono', monospace;
     color: #fff;
     flex-shrink: 0;
 }
@@ -606,7 +715,7 @@
     display: inline-block;
     padding: 3px 12px;
     border-radius: 12px;
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'JetBrains Mono', monospace;
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 0.05em;
@@ -716,7 +825,7 @@
 }
 
 .cs-faction-score {
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'JetBrains Mono', monospace;
     font-size: 12px;
     font-weight: 600;
     font-variant-numeric: tabular-nums;
@@ -870,7 +979,7 @@
     border: 1px solid var(--cs-border);
     border-radius: var(--cs-radius-xs);
     color: var(--cs-text-secondary);
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'JetBrains Mono', monospace;
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 0.05em;
@@ -919,7 +1028,7 @@
     padding: 6px 10px;
     color: var(--cs-text-primary);
     font-size: 13px;
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'JetBrains Mono', monospace;
     outline: none;
     transition: border-color var(--cs-transition-fast);
 }
@@ -959,7 +1068,7 @@
 }
 
 .cs-dice-result-value {
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'JetBrains Mono', monospace;
     font-size: 28px;
     font-weight: 700;
     color: var(--cs-accent);
@@ -1243,7 +1352,7 @@ campaign_data {
 .cs-settings-rules-count {
     font-size: 11px;
     opacity: 0.5;
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 .cs-rules-container {
@@ -1499,7 +1608,7 @@ campaign_data {
 }
 
 .cs-location-history-label {
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 0.06em;
@@ -1547,7 +1656,7 @@ campaign_data {
 }
 
 .cs-timeline-count {
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 0.06em;
@@ -1633,7 +1742,7 @@ campaign_data {
 }
 
 .cs-timeline-time {
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
     color: var(--cs-text-muted, #666);
 }
@@ -1687,7 +1796,7 @@ campaign_data {
     border-radius: var(--cs-radius);
     box-shadow: var(--cs-shadow-lg);
     color: var(--cs-text-primary);
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
     font-size: 14px;
     overflow: hidden;
     animation: cs-slide-up 0.25s ease;
@@ -1720,7 +1829,7 @@ campaign_data {
 }
 
 .cs-editor-title {
-    font-family: 'Cinzel Decorative', serif;
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -1743,7 +1852,7 @@ campaign_data {
     border-radius: var(--cs-radius-xs);
     background: none;
     color: var(--cs-text-secondary);
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
     font-size: 13px;
     cursor: pointer;
     transition: all var(--cs-transition-fast);
@@ -1800,7 +1909,7 @@ campaign_data {
 
 /* --- Section Labels --- */
 .cs-editor-section-label {
-    font-family: 'Cinzel Decorative', serif;
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
     font-size: 10px;
     font-weight: 700;
     text-transform: uppercase;
@@ -1834,7 +1943,7 @@ campaign_data {
     border: 1px solid var(--cs-border);
     border-radius: var(--cs-radius-xs);
     color: var(--cs-text-primary);
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
     font-size: 13px;
     transition: border-color var(--cs-transition-fast);
     box-sizing: border-box;
@@ -1926,7 +2035,7 @@ campaign_data {
 .cs-editor-section-meta {
     font-size: 10px;
     color: var(--cs-text-muted);
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 .cs-editor-section-actions {
@@ -1964,7 +2073,7 @@ campaign_data {
 }
 
 .cs-editor-detail-title {
-    font-family: 'Cinzel Decorative', serif;
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
     font-size: 10px;
     font-weight: 700;
     text-transform: uppercase;
@@ -2004,7 +2113,7 @@ campaign_data {
     border: 1px solid transparent;
     border-radius: 3px;
     color: var(--cs-text-primary);
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
     font-size: 13px;
 }
 .cs-editor-field-name input:focus {
@@ -2025,7 +2134,7 @@ campaign_data {
     border-radius: 3px;
     color: var(--cs-text-secondary);
     font-size: 11px;
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'JetBrains Mono', monospace;
     cursor: pointer;
 }
 .cs-editor-field-renderer select option {
@@ -2056,7 +2165,7 @@ campaign_data {
     border: 1px dashed var(--cs-border);
     border-radius: var(--cs-radius-xs);
     color: var(--cs-text-muted);
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
     font-size: 12px;
     cursor: pointer;
     transition: all var(--cs-transition-fast);
@@ -2085,7 +2194,7 @@ campaign_data {
     border: 1px solid var(--cs-border);
     border-radius: var(--cs-radius-sm);
     color: var(--cs-text-secondary);
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
     line-height: 1.5;
     resize: vertical;
@@ -2113,7 +2222,7 @@ campaign_data {
     border: 1px solid rgba(var(--cs-accent-rgb), 0.3);
     border-radius: var(--cs-radius-xs);
     color: var(--cs-accent);
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
     font-size: 13px;
     font-weight: 600;
     cursor: pointer;
@@ -2127,7 +2236,7 @@ campaign_data {
 .cs-editor-parse-status {
     font-size: 11px;
     color: var(--cs-text-muted);
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 /* --- Detected Fields --- */
@@ -2136,7 +2245,7 @@ campaign_data {
 }
 
 .cs-editor-detected-header {
-    font-family: 'Cinzel Decorative', serif;
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
     font-size: 10px;
     font-weight: 700;
     text-transform: uppercase;
@@ -2148,7 +2257,7 @@ campaign_data {
 }
 
 .cs-editor-detected-count {
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'JetBrains Mono', monospace;
     color: var(--cs-accent);
 }
 
@@ -2189,7 +2298,7 @@ campaign_data {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 .cs-editor-mapper-arrow {
@@ -2210,7 +2319,7 @@ campaign_data {
     border-radius: 3px;
     color: var(--cs-text-secondary);
     font-size: 11px;
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'JetBrains Mono', monospace;
     cursor: pointer;
 }
 .cs-editor-mapper-assign select option {
@@ -2228,7 +2337,7 @@ campaign_data {
 }
 
 .cs-editor-preview-title {
-    font-family: 'Cinzel Decorative', serif;
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
     font-size: 10px;
     font-weight: 700;
     text-transform: uppercase;
@@ -2313,4 +2422,96 @@ campaign_data {
     .cs-editor-right {
         flex: 1;
     }
+
+    /* Tab bar responsive */
+    .cs-tab-btn-label {
+        font-size: 10px;
+    }
+}
+
+/* ============================================================
+   SECTION UPDATE PULSE
+   ============================================================ */
+.cs-section-updated {
+    animation: cs-section-pulse 0.6s ease-out;
+}
+
+@keyframes cs-section-pulse {
+    0% { box-shadow: inset 0 0 0 1px rgba(var(--cs-accent-rgb), 0.4); }
+    100% { box-shadow: inset 0 0 0 1px transparent; }
+}
+
+/* ============================================================
+   AMBIENT EFFECTS (preset-driven)
+   ============================================================ */
+
+/* Neon (Cyberpunk) — scanline overlay + deeper glass */
+.cs-ambient-neon {
+    --cs-bg-glass: rgba(5, 5, 15, 0.85);
+    --cs-border: rgba(var(--cs-accent-rgb), 0.1);
+}
+
+.cs-ambient-neon::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    border-radius: inherit;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(var(--cs-accent-rgb), 0.015) 2px,
+        rgba(var(--cs-accent-rgb), 0.015) 4px
+    );
+    opacity: 0.5;
+}
+
+.cs-ambient-neon .cs-section-title,
+.cs-ambient-neon .cs-section-label-text {
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.1em;
+}
+
+/* Candlelight (Gothic) — icon flicker */
+.cs-ambient-candlelight .cs-title-icon,
+.cs-ambient-candlelight .cs-section-icon {
+    animation: cs-candleflicker 3s ease-in-out infinite;
+}
+
+@keyframes cs-candleflicker {
+    0%, 100% { opacity: 0.8; filter: drop-shadow(0 0 4px rgba(var(--cs-accent-rgb), 0.3)); }
+    25% { opacity: 1; filter: drop-shadow(0 0 8px rgba(var(--cs-accent-rgb), 0.5)); }
+    50% { opacity: 0.7; filter: drop-shadow(0 0 3px rgba(var(--cs-accent-rgb), 0.2)); }
+    75% { opacity: 0.95; filter: drop-shadow(0 0 6px rgba(var(--cs-accent-rgb), 0.4)); }
+}
+
+/* Torchlight (High Fantasy) — warm gradient header */
+.cs-ambient-torchlight .cs-panel-header {
+    background: linear-gradient(
+        135deg,
+        rgba(201, 168, 76, 0.06) 0%,
+        transparent 60%
+    );
+}
+
+/* Warm (Cozy) — softer corners, warmer feel */
+.cs-ambient-warm {
+    --cs-radius: 16px;
+    --cs-radius-sm: 10px;
+    --cs-radius-xs: 6px;
+}
+
+.cs-ambient-warm .cs-section-header {
+    border-radius: var(--cs-radius-sm);
+    border-left: none;
+    border: 1px solid rgba(var(--cs-accent-rgb), 0.1);
+}
+
+.cs-ambient-warm .cs-section-title,
+.cs-ambient-warm .cs-section-label-text {
+    text-transform: none;
+    font-size: 13px;
+    letter-spacing: 0.01em;
 }
