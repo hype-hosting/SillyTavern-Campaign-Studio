@@ -13,7 +13,7 @@ import { collapseParsedBlocks } from './src/parser/collapse.js';
 import { initPresets, getActivePreset, getAllPresets, activatePreset, isBuiltinPreset } from './src/presets/manager.js';
 import { openPresetEditor, importPresetJSON } from './src/ui/preset-editor.js';
 import { initPanel, openPanel, closePanel, togglePanel, destroyPanel } from './src/ui/panel.js';
-import { initTabs, getPane } from './src/ui/tabs.js';
+import { initTabs, getPane, updateSectionCount } from './src/ui/tabs.js';
 import { renderInventory } from './src/ui/renderers/inventory.js';
 import { renderWorld } from './src/ui/renderers/world.js';
 import { renderFactions } from './src/ui/renderers/factions.js';
@@ -507,12 +507,14 @@ function renderBuiltinSections() {
         const pathField = preset?.sections?.find(s => s.type === 'key-value');
         const fieldConfig = pathField?.fields?.['Path'] || {};
         renderLocation(state.locationHistory, fieldConfig, $locationPane);
+        updateSectionCount('_location', state.locationHistory?.length ? `${state.locationHistory.length} stops` : '');
     }
 
     // Session timeline
     const $timelinePane = getPane('_timeline');
     if ($timelinePane?.length) {
         renderTimeline(state.history, preset, $timelinePane);
+        updateSectionCount('_timeline', state.history?.length ? `${state.history.length} events` : '');
     }
 }
 
@@ -536,15 +538,19 @@ function renderSection(sectionId) {
     switch (sectionData.type) {
     case 'inventory':
         renderInventory(sectionData.data, sectionConfig, $pane, previousData);
+        updateSectionCount(sectionId, sectionData.data?.length ? `${sectionData.data.length} items` : '');
         break;
     case 'key-value':
         renderWorld(sectionData.data, sectionConfig, $pane);
+        updateSectionCount(sectionId, sectionData.data ? `${Object.keys(sectionData.data).length} fields` : '');
         break;
     case 'numeric-bars':
         renderFactions(sectionData.data, sectionConfig, $pane, previousData);
+        updateSectionCount(sectionId, sectionData.data ? `${Object.keys(sectionData.data).length} factions` : '');
         break;
     default:
         renderWorld(sectionData.data, sectionConfig, $pane);
+        updateSectionCount(sectionId, sectionData.data ? `${Object.keys(sectionData.data).length} fields` : '');
         break;
     }
 

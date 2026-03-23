@@ -7,6 +7,23 @@
 import { sanitizeText } from '../../utils/sanitize.js';
 
 /**
+ * Renderers that produce short, single-line output (suitable for inline label layout).
+ */
+const SHORT_RENDERERS = new Set(['text', 'numeric-badge']);
+
+/**
+ * Simple hash function for generating avatar colors from names.
+ */
+function hashColor(str) {
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+        hash = str.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    const hue = Math.abs(hash) % 360;
+    return `hsl(${hue}, 55%, 45%)`;
+}
+
+/**
  * Render world/key-value data into a container.
  * @param {object} data - Key-value map
  * @param {object} sectionConfig - Section configuration from preset
@@ -29,7 +46,9 @@ export function renderWorld(data, sectionConfig, $container) {
         const fieldConfig = fields[key] || {};
         const renderer = fieldConfig.renderer || 'text';
 
-        const $entry = $('<div class="cs-world-entry cs-card"></div>');
+        // Determine if this entry should use inline layout
+        const isShort = SHORT_RENDERERS.has(renderer) && String(value).length < 40;
+        const $entry = $(`<div class="cs-world-entry${isShort ? ' cs-world-inline' : ''}"></div>`);
         $entry.append(`<div class="cs-world-key">${sanitizeText(key)}</div>`);
 
         const $value = $('<div class="cs-world-value"></div>');
@@ -84,7 +103,12 @@ function renderCharacterPills($container, value, separator) {
     const $pills = $('<div class="cs-character-pills"></div>');
 
     for (const character of characters) {
-        $pills.append(`<span class="cs-character-pill">${sanitizeText(character)}</span>`);
+        const initial = character.charAt(0).toUpperCase();
+        const bgColor = hashColor(character);
+        const $pill = $(`<span class="cs-character-pill"></span>`);
+        $pill.append(`<span class="cs-character-initial" style="background: ${bgColor}">${sanitizeText(initial)}</span>`);
+        $pill.append(sanitizeText(character));
+        $pills.append($pill);
     }
 
     $container.append($pills);
