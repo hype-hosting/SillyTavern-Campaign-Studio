@@ -35,9 +35,9 @@
 /* --- Panel Base --- */
 .cs-panel {
     position: fixed;
-    top: var(--topBarBlockSize, 45px);
+    top: calc(var(--topBarBlockSize, 45px) + 10px);
+    bottom: 10px;
     z-index: 1000;
-    height: calc(100vh - var(--topBarBlockSize, 45px) - 10px);
     min-width: 280px;
     max-width: 500px;
     display: flex;
@@ -56,8 +56,8 @@
 
 /* --- Panel Positions --- */
 .cs-position-right {
-    right: 6px;
-    width: calc(50vw - var(--sheldWidth, 50vw) / 2 - 12px);
+    right: 10px;
+    width: calc(50vw - var(--sheldWidth, 50vw) / 2 - 20px);
     border-radius: var(--cs-radius);
     transform: translateX(100%);
 }
@@ -67,8 +67,8 @@
 }
 
 .cs-position-left {
-    left: 6px;
-    width: calc(50vw - var(--sheldWidth, 50vw) / 2 - 12px);
+    left: 10px;
+    width: calc(50vw - var(--sheldWidth, 50vw) / 2 - 20px);
     border-radius: var(--cs-radius);
     transform: translateX(-100%);
 }
