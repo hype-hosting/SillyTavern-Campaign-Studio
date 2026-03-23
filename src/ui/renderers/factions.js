@@ -1,12 +1,13 @@
 /**
  * Campaign Studio — Faction/Standing Bars Renderer
- * Renders numeric scores as horizontal bars with color interpolation.
+ * Renders numeric scores as center-zero bidirectional bars.
+ * Negative values extend left from center, positive values extend right.
  */
 
 import { sanitizeText } from '../../utils/sanitize.js';
 
 /**
- * Render faction standing data as horizontal bars.
+ * Render faction standing data as center-zero bidirectional bars.
  * @param {object} data - Key-value map of faction → numeric score
  * @param {object} sectionConfig - Section configuration from preset
  * @param {jQuery} $container - Target container
@@ -28,6 +29,7 @@ export function renderFactions(data, sectionConfig, $container, previousData = n
     const showDelta = display.showDelta !== false;
 
     const $list = $('<div class="cs-faction-list"></div>');
+    const [min, max] = range;
 
     for (const [faction, score] of Object.entries(data)) {
         const $row = $('<div class="cs-faction-row cs-card"></div>');
@@ -35,23 +37,32 @@ export function renderFactions(data, sectionConfig, $container, previousData = n
         // Faction name
         $row.append(`<div class="cs-faction-name">${sanitizeText(faction)}</div>`);
 
-        // Bar container
+        // Bar container with center-zero layout
         const $barWrap = $('<div class="cs-faction-bar-wrap"></div>');
+        const $bar = $('<div class="cs-faction-bar"></div>');
 
-        // Calculate fill percentage (map range to 0-100%)
-        const [min, max] = range;
-        const normalized = ((score - min) / (max - min)) * 100;
-        const clampedPct = Math.max(0, Math.min(100, normalized));
+        // Center line (always at 50%)
+        $bar.append('<div class="cs-faction-bar-zero"></div>');
 
-        // Determine color based on score
+        // Calculate fill position relative to center
+        // Center is at 50%. Score mapped to 0-50% offset from center.
+        const absMax = Math.max(Math.abs(min), Math.abs(max));
+        const fillPct = Math.min(Math.abs(score) / absMax, 1.0) * 50;
+
         const color = score < 0 ? colorNeg : score > 0 ? colorPos : colorNeutral;
 
-        // Center line (represents 0 on the scale)
-        const zeroPos = ((0 - min) / (max - min)) * 100;
+        let fillLeft, fillWidth;
+        if (score >= 0) {
+            // Positive: fill from center (50%) rightward
+            fillLeft = 50;
+            fillWidth = fillPct;
+        } else {
+            // Negative: fill from (50% - fillPct) to center (50%)
+            fillLeft = 50 - fillPct;
+            fillWidth = fillPct;
+        }
 
-        const $bar = $('<div class="cs-faction-bar"></div>');
-        $bar.append(`<div class="cs-faction-bar-zero" style="left: ${zeroPos}%"></div>`);
-        $bar.append(`<div class="cs-faction-bar-fill" style="width: ${clampedPct}%; background: ${color}"></div>`);
+        $bar.append(`<div class="cs-faction-bar-fill" style="left: ${fillLeft}%; width: ${fillWidth}%; background: ${color}"></div>`);
         $barWrap.append($bar);
         $row.append($barWrap);
 
