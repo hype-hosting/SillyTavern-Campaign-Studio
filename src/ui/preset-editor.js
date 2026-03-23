@@ -657,7 +657,9 @@ function parsePreviewInput() {
             }
 
             const html = clone.innerHTML;
-            const text = html.replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]+>/g, '').trim();
+            const text = decodeHtmlEntities(
+                html.replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]+>/g, ''),
+            ).trim();
             const lines = text.split('\n').filter(l => l.trim());
 
             if (lines.length > 0) {
@@ -682,7 +684,8 @@ function parsePreviewInput() {
 
     // Strategy 3: Try parsing as plain text lines (no HTML wrapper)
     if (detectedFields.length === 0) {
-        const lines = rawInput.split('\n').filter(l => l.trim());
+        const decoded = decodeHtmlEntities(rawInput);
+        const lines = decoded.split('\n').filter(l => l.trim());
         const statResult = parseStatBlock(lines, {});
         for (const [key, value] of Object.entries(statResult)) {
             addDetectedField(key, value);
@@ -817,6 +820,12 @@ const RENDERER_PATTERNS = [
     { patterns: ['objectives', 'quests', 'goals', 'tasks', 'time', 'date', 'spell', 'slots',
         'resources', 'roll', 'dice', 'scene', 'note'], renderer: 'text' },
 ];
+
+function decodeHtmlEntities(str) {
+    const textarea = document.createElement('textarea');
+    textarea.innerHTML = str;
+    return textarea.value;
+}
 
 function guessRenderer(key, value) {
     const lower = key.toLowerCase();
