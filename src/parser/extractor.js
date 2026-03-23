@@ -14,6 +14,7 @@ import { parseYaml } from './yaml.js';
  */
 
 // Match <campaign_data> or <campaign_data type="something">
+// Works whether the tags are bare, inside code fences, or inside <details> wrappers
 const CAMPAIGN_DATA_REGEX = /<campaign_data(?:\s+type\s*=\s*"([^"]*)")?\s*>([\s\S]*?)<\/campaign_data>/gi;
 
 /**

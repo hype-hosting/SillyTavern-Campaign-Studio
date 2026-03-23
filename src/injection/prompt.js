@@ -59,7 +59,9 @@ function buildSystemPrompt(preset) {
 
     // Base instruction
     const baseInstruction = injection.systemPrompt ||
-        'When updating game state, output changes inside <campaign_data> XML tags using YAML format.';
+        'At the end of every reply, output game state inside a collapsed HTML drawer with a code block. Use this exact format:\n' +
+        '<details><summary>⬡</summary>\n\n```\n<campaign_data>\n...YAML content here...\n</campaign_data>\n```\n</details>\n\n' +
+        'The YAML inside <campaign_data> tags must follow the schema below.';
     parts.push(baseInstruction);
 
     // Schema from sections
@@ -120,35 +122,45 @@ function describeSection(section) {
  * Build an example output block for the AI.
  */
 function buildExampleBlock(preset) {
-    const lines = ['Example output format:', '<campaign_data>'];
+    const yamlLines = [];
 
     for (const section of (preset.sections || [])) {
         switch (section.type) {
         case 'inventory':
-            lines.push(`${section.id}:`);
-            lines.push('  - Example Item (tag)');
-            lines.push('  - Another Item');
+            yamlLines.push(`${section.id}:`);
+            yamlLines.push('  - Example Item (tag)');
+            yamlLines.push('  - Another Item');
             break;
         case 'key-value':
-            lines.push(`${section.id}:`);
+            yamlLines.push(`${section.id}:`);
             if (section.fields) {
                 const fields = Object.keys(section.fields);
                 for (const field of fields.slice(0, 3)) {
-                    lines.push(`  ${field}: example value`);
+                    yamlLines.push(`  ${field}: example value`);
                 }
-                if (fields.length > 3) lines.push('  ...');
+                if (fields.length > 3) yamlLines.push('  ...');
             } else {
-                lines.push('  Key: value');
+                yamlLines.push('  Key: value');
             }
             break;
         case 'numeric-bars':
-            lines.push(`${section.id}:`);
-            lines.push('  Faction Name: 0.25');
+            yamlLines.push(`${section.id}:`);
+            yamlLines.push('  Faction Name: 0.25');
             break;
         }
     }
 
-    lines.push('</campaign_data>');
+    const lines = [
+        'Example (append at end of every reply):',
+        '<details><summary>⬡</summary>',
+        '',
+        '```',
+        '<campaign_data>',
+        ...yamlLines,
+        '</campaign_data>',
+        '```',
+        '</details>',
+    ];
     return lines.join('\n');
 }
 

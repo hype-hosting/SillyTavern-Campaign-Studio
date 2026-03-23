@@ -35,15 +35,19 @@ function collapseDetailsBlocks($messageElement, matchedSummaryTexts) {
 
         const summaryText = $summary.text().trim();
 
+        // Match by summary text from parsed sections
         const isMatched = matchedSummaryTexts.some(matchText =>
             summaryText === matchText || summaryText.includes(matchText),
         );
 
-        if (isMatched) {
+        // Also match the ⬡ hexagon drawer (campaign_data wrapped in details)
+        const isHexDrawer = summaryText === '⬡' || summaryText.includes('⬡');
+
+        if (isMatched || isHexDrawer) {
             $details.removeAttr('open');
             $details.addClass('cs-tracked-block');
 
-            if (!$summary.find('.cs-tracked-badge').length) {
+            if (!$summary.find('.cs-tracked-badge').length && !isHexDrawer) {
                 $summary.append('<span class="cs-tracked-badge" title="Tracked by Campaign Studio">⬡</span>');
             }
         }
