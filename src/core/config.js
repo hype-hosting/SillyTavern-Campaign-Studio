@@ -50,3 +50,15 @@ export const MATCH_MODES = {
 };
 
 export const CSS_PREFIX = 'cs';
+
+export const TAB_TYPES = {
+    OVERVIEW: 'overview',
+    INVENTORY: 'inventory',
+    JOURNAL: 'journal',
+};
+
+export const DEFAULT_TABS = [
+    { id: TAB_TYPES.OVERVIEW, label: 'Overview', icon: '🧭' },
+    { id: TAB_TYPES.INVENTORY, label: 'Inventory', icon: '🎒' },
+    { id: TAB_TYPES.JOURNAL, label: 'Journal', icon: '📜' },
+];

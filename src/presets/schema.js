@@ -82,6 +82,25 @@ export function validatePreset(preset) {
                     errors.push(`${prefix}: invalid match regex: ${e.message}`);
                 }
             }
+
+            // Optional tab assignment
+            if (section.tab !== undefined && typeof section.tab !== 'string') {
+                errors.push(`${prefix}: "tab" must be a string if provided`);
+            }
+        }
+    }
+
+    // Optional top-level tabs array
+    if (preset.tabs !== undefined) {
+        if (!Array.isArray(preset.tabs)) {
+            errors.push('"tabs" must be an array if provided');
+        } else {
+            for (let i = 0; i < preset.tabs.length; i++) {
+                const tab = preset.tabs[i];
+                if (!tab.id || !tab.label) {
+                    errors.push(`tabs[${i}]: must have "id" and "label"`);
+                }
+            }
         }
     }
 

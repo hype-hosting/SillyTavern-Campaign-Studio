@@ -13,7 +13,7 @@ import { collapseParsedBlocks } from './src/parser/collapse.js';
 import { initPresets, getActivePreset, getAllPresets, activatePreset, isBuiltinPreset } from './src/presets/manager.js';
 import { openPresetEditor, importPresetJSON } from './src/ui/preset-editor.js';
 import { initPanel, openPanel, closePanel, togglePanel, destroyPanel } from './src/ui/panel.js';
-import { initTabs, getPane, updateSectionCount } from './src/ui/tabs.js';
+import { initTabs, getPane, updateSectionCount, switchTab, getTabForSection, updateTabBadge } from './src/ui/tabs.js';
 import { renderInventory } from './src/ui/renderers/inventory.js';
 import { renderWorld } from './src/ui/renderers/world.js';
 import { renderFactions } from './src/ui/renderers/factions.js';
@@ -61,6 +61,7 @@ jQuery(async () => {
         if (activePreset) {
             initTabs(activePreset);
             $('#cs-active-preset-name').text(activePreset.name);
+            applyAmbientEffect(activePreset);
         }
 
         // 7. Initialize dice roller
@@ -130,6 +131,8 @@ async function loadSettingsPanel() {
             renderRuleCards(preset);
             const customRules = getSettings().presetRules?.[presetId] || '';
             $('#cs-settings-rules-custom').val(customRules);
+            // Apply ambient effect
+            applyAmbientEffect(preset);
             // Refresh injection with new preset schema
             updateSystemPrompt();
             // Re-parse current chat with new preset
@@ -440,6 +443,7 @@ function handleChatChanged() {
     if (preset) {
         initTabs(preset);
         $('#cs-active-preset-name').text(preset.name);
+        applyAmbientEffect(preset);
     }
 
     renderAllSections();
@@ -556,7 +560,14 @@ function renderSection(sectionId) {
 
     // Hide empty state, show content
     $('#cs-empty-state').addClass('cs-hidden');
-    $('#cs-section-container').removeClass('cs-hidden');
+    $('#cs-tab-panels').removeClass('cs-hidden');
+
+    // Pulse animation on section update
+    const $sectionEl = $(`[data-section-id="${sectionId}"]`);
+    if ($sectionEl.length) {
+        $sectionEl.addClass('cs-section-updated');
+        $sectionEl.one('animationend', () => $sectionEl.removeClass('cs-section-updated'));
+    }
 }
 
 /**
@@ -628,9 +639,25 @@ function refreshAfterPresetEdit(savedPreset) {
             applyAccentColor(preset.theme.accentColor);
             $('#cs-settings-accent').val(preset.theme.accentColor);
         }
+
+        // Apply ambient effect
+        applyAmbientEffect(preset);
     }
 
     // Update injection and re-parse
     updateSystemPrompt();
     reparseChat();
+}
+
+/**
+ * Apply ambient visual effect from preset theme.
+ */
+function applyAmbientEffect(preset) {
+    const panel = document.getElementById('cs-panel');
+    if (!panel) return;
+    // Remove any existing ambient classes
+    panel.className = panel.className.replace(/\bcs-ambient-\w+/g, '').trim();
+    if (preset?.theme?.ambientEffect) {
+        panel.classList.add(`cs-ambient-${preset.theme.ambientEffect}`);
+    }
 }
