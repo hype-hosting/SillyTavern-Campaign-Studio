@@ -123,6 +123,13 @@ export function saveCustomPreset(preset) {
 }
 
 /**
+ * Check if a preset is a built-in (non-editable) preset.
+ */
+export function isBuiltinPreset(presetId) {
+    return BUILTIN_PRESETS.includes(presetId);
+}
+
+/**
  * Delete a custom preset.
  */
 export function deleteCustomPreset(presetId) {

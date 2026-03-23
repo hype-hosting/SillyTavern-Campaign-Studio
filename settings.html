@@ -9,9 +9,15 @@
 
         <div class="cs-settings-row">
             <label class="cs-settings-label" for="cs-settings-preset">Active Preset</label>
-            <select id="cs-settings-preset" class="cs-settings-select">
-                <!-- Populated dynamically -->
-            </select>
+            <div class="cs-settings-preset-row">
+                <select id="cs-settings-preset" class="cs-settings-select">
+                    <!-- Populated dynamically -->
+                </select>
+                <button id="cs-btn-edit-preset" class="cs-settings-preset-btn" title="Edit preset">&#9998;</button>
+                <button id="cs-btn-new-preset" class="cs-settings-preset-btn" title="New preset">+</button>
+                <button id="cs-btn-import-preset" class="cs-settings-preset-btn" title="Import preset JSON">&#8593;</button>
+            </div>
+            <input type="file" id="cs-import-file" accept=".json" style="display:none" />
         </div>
 
         <div class="cs-settings-row">

@@ -10,7 +10,8 @@ import { extractBlocks } from './src/parser/engine.js';
 import { extractCampaignData } from './src/parser/extractor.js';
 import { routeBlocks } from './src/parser/router.js';
 import { collapseParsedBlocks } from './src/parser/collapse.js';
-import { initPresets, getActivePreset, getAllPresets, activatePreset } from './src/presets/manager.js';
+import { initPresets, getActivePreset, getAllPresets, activatePreset, isBuiltinPreset } from './src/presets/manager.js';
+import { openPresetEditor, importPresetJSON } from './src/ui/preset-editor.js';
 import { initPanel, openPanel, closePanel, togglePanel, destroyPanel } from './src/ui/panel.js';
 import { initTabs, getPane } from './src/ui/tabs.js';
 import { renderInventory } from './src/ui/renderers/inventory.js';
@@ -133,6 +134,30 @@ async function loadSettingsPanel() {
             updateSystemPrompt();
             // Re-parse current chat with new preset
             reparseChat();
+        }
+    });
+
+    // Preset editor buttons
+    $('#cs-btn-edit-preset').on('click', () => {
+        const preset = getActivePreset();
+        if (!preset) return;
+        const needsClone = isBuiltinPreset(preset.id);
+        openPresetEditor(preset, { clone: needsClone, onSave: refreshAfterPresetEdit });
+    });
+
+    $('#cs-btn-new-preset').on('click', () => {
+        openPresetEditor(null, { onSave: refreshAfterPresetEdit });
+    });
+
+    $('#cs-btn-import-preset').on('click', () => {
+        $('#cs-import-file').trigger('click');
+    });
+
+    $('#cs-import-file').on('change', function () {
+        const file = this.files?.[0];
+        if (file) {
+            importPresetJSON(file);
+            $(this).val(''); // Reset for re-import
         }
     });
 
@@ -568,4 +593,38 @@ function applyAccentColor(color) {
     document.documentElement.style.setProperty('--cs-accent-rgb', `${r}, ${g}, ${b}`);
     document.documentElement.style.setProperty('--cs-accent-glow', `rgba(${r}, ${g}, ${b}, 0.15)`);
     document.documentElement.style.setProperty('--cs-accent-glow-strong', `rgba(${r}, ${g}, ${b}, 0.3)`);
+}
+
+/**
+ * Refresh everything after the preset editor saves a new/edited preset.
+ */
+function refreshAfterPresetEdit(savedPreset) {
+    // Activate the saved preset
+    activatePreset(savedPreset.id);
+
+    // Repopulate preset dropdown
+    const $presetSelect = $('#cs-settings-preset');
+    $presetSelect.empty();
+    for (const preset of getAllPresets()) {
+        $presetSelect.append(`<option value="${preset.id}">${preset.name}</option>`);
+    }
+    $presetSelect.val(savedPreset.id);
+
+    // Re-init tabs and panel
+    const preset = getActivePreset();
+    if (preset) {
+        initTabs(preset);
+        $('#cs-active-preset-name').text(preset.name);
+        renderRuleCards(preset);
+
+        // Apply theme accent if preset has one
+        if (preset.theme?.accentColor) {
+            applyAccentColor(preset.theme.accentColor);
+            $('#cs-settings-accent').val(preset.theme.accentColor);
+        }
+    }
+
+    // Update injection and re-parse
+    updateSystemPrompt();
+    reparseChat();
 }
