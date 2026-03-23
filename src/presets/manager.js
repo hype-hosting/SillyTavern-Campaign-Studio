@@ -9,21 +9,30 @@ import { setActivePreset } from '../core/state.js';
 
 const presetRegistry = new Map();
 
+const BUILTIN_PRESETS = [
+    'vigil-falls',
+    'forgotten-realms',
+    'cyberpunk',
+    'cozy-life',
+];
+
 /**
  * Initialize the preset manager, loading built-in and custom presets.
  */
 export async function initPresets() {
     // Load built-in presets
-    try {
-        const response = await fetch(
-            '/scripts/extensions/third-party/SillyTavern-Campaign-Studio/src/presets/builtin/vigil-falls.json',
-        );
-        if (response.ok) {
-            const preset = await response.json();
-            registerPreset(preset);
+    for (const presetId of BUILTIN_PRESETS) {
+        try {
+            const response = await fetch(
+                `/scripts/extensions/third-party/SillyTavern-Campaign-Studio/src/presets/builtin/${presetId}.json`,
+            );
+            if (response.ok) {
+                const preset = await response.json();
+                registerPreset(preset);
+            }
+        } catch (err) {
+            console.error(`[Campaign Studio] Failed to load built-in preset "${presetId}":`, err);
         }
-    } catch (err) {
-        console.error('[Campaign Studio] Failed to load built-in Vigil Falls preset:', err);
     }
 
     // Load custom presets from settings

@@ -1,0 +1,90 @@
+{
+    "id": "cyberpunk",
+    "name": "Cyberpunk",
+    "version": "1.0.0",
+    "description": "Cyberpunk RED/2077-flavored campaign tracking. Night City gigs, cyberware, eddies, reputation, and the neon-lit sprawl.",
+    "author": "hype-hosting",
+    "marker": {
+        "type": "details-summary",
+        "prefix": "◈"
+    },
+    "sections": [
+        {
+            "id": "gear",
+            "match": "Gear",
+            "matchMode": "endsWith",
+            "type": "inventory",
+            "icon": "backpack",
+            "parse": {
+                "format": "markdown-list",
+                "tagPattern": "\\(([^)]+)\\)"
+            }
+        },
+        {
+            "id": "status",
+            "match": "Status",
+            "matchMode": "endsWith",
+            "type": "key-value",
+            "icon": "scroll",
+            "parse": {
+                "format": "key-value",
+                "separator": ":"
+            },
+            "fields": {
+                "Handle": { "renderer": "text" },
+                "HP": { "renderer": "numeric-badge" },
+                "Humanity": { "renderer": "numeric-badge" },
+                "Current Gig": { "renderer": "text" },
+                "Eddies": { "renderer": "numeric-badge" },
+                "Active Effects": { "renderer": "character-pills", "separator": "," }
+            }
+        },
+        {
+            "id": "world",
+            "match": "World",
+            "matchMode": "exact",
+            "type": "key-value",
+            "icon": "globe",
+            "parse": {
+                "format": "key-value",
+                "separator": ":"
+            },
+            "fields": {
+                "District": { "renderer": "breadcrumb", "separator": "»" },
+                "Threat Level": { "renderer": "text-atmosphere" },
+                "Time": { "renderer": "text" },
+                "Contacts Present": { "renderer": "character-pills", "separator": "," },
+                "Scene": { "renderer": "quote-block" },
+                "Active ICE": { "renderer": "text" }
+            }
+        },
+        {
+            "id": "rep",
+            "match": "Rep",
+            "matchMode": "endsWith",
+            "type": "numeric-bars",
+            "icon": "shield",
+            "parse": {
+                "format": "key-value-numeric",
+                "separator": ":",
+                "range": [-1.0, 1.0]
+            },
+            "display": {
+                "colorNegative": "#e74c3c",
+                "colorNeutral": "#444444",
+                "colorPositive": "#00d4ff",
+                "showDelta": true
+            }
+        }
+    ],
+    "injection": {
+        "systemPrompt": "You are narrating a cyberpunk roleplay set in Night City, inspired by Cyberpunk RED and Cyberpunk 2077. Track game state using <campaign_data> YAML blocks appended to every reply.\n\nGEAR: Track weapons, cyberware implants, equipment, and consumables. Use tags like (equipped), (cyberware), (weapon), (illegal), (black-market), (tech). When cyberware is installed, update gear AND reduce Humanity in status. Always output the full current gear list, not just changes.\n\nSTATUS: Track the character's handle (street name), HP, Humanity score (starts at 40, decreases with cyberware — cyberpsychosis risk below 10), current gig assignment, eddie balance (currency), and active effects (Wired Reflexes, Jacked In, Wounded, Bleeding, Stunned, etc.).\n\nWORLD: Track location as district breadcrumbs (e.g., Watson » Kabuki » Jig-Jig Street). Note threat level as atmospheric text (Calm, Tense, Hostile, Combat Zone). Track time of day, contacts/NPCs in the scene, atmospheric scene description, and any active ICE programs if netrunning.\n\nREP: Track reputation with factions — Fixers, Corpos, Gangs, Netrunners, NCPD, Nomads. Shift values (-1.0 to 1.0) based on gig outcomes, betrayals, alliances, and street cred. Doing corpo work hurts gang rep and vice versa. Running from NCPD lowers their trust. Completing fixer gigs cleanly boosts fixer rep.\n\nNARRATIVE TONE: Gritty, neon-noir, street-level. Eddies talk. Chrome costs humanity. Trust is currency. Every gig has a catch.\n\nInclude only sections that changed. Always include the full list for gear.",
+        "includeSchema": true,
+        "includeCurrentState": true,
+        "stateDepth": 1
+    },
+    "theme": {
+        "accentColor": "#e74c3c",
+        "ambientEffect": "neon"
+    }
+}
