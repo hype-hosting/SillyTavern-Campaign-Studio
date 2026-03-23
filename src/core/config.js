@@ -9,7 +9,6 @@ export const DEFAULT_SETTINGS = {
     enabled: true,
     activePreset: 'vigil-falls',
     panelPosition: 'right',
-    panelWidth: 360,
     panelOpen: false,
     accentColor: '#7c6bde',
     showTimeline: true,

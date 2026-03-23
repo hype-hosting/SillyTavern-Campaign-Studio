@@ -30,11 +30,6 @@ export function initPanel() {
     // Apply saved position
     setPosition(settings.panelPosition || 'right');
 
-    // Apply saved width
-    if (settings.panelWidth) {
-        $panel.css('--cs-panel-width', `${settings.panelWidth}px`);
-    }
-
     // Close button
     $panel.find('.cs-btn-close').on('click', () => closePanel());
 
