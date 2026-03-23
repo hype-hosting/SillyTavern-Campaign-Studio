@@ -1,0 +1,125 @@
+{
+    "id": "universal",
+    "name": "Universal",
+    "version": "1.0.0",
+    "description": "A universal preset for any RPG or interactive fiction campaign. Tracks inventory, character status, world state, and relationships without genre-specific assumptions.",
+    "author": "hype-hosting",
+    "marker": {
+        "type": "details-summary",
+        "prefix": "⬡"
+    },
+    "sections": [
+        {
+            "id": "inventory",
+            "match": "Inventory",
+            "matchMode": "endsWith",
+            "type": "inventory",
+            "icon": "backpack",
+            "parse": {
+                "format": "markdown-list",
+                "tagPattern": "\\(([^)]+)\\)"
+            }
+        },
+        {
+            "id": "character",
+            "match": "Character",
+            "matchMode": "endsWith",
+            "type": "key-value",
+            "icon": "scroll",
+            "parse": {
+                "format": "key-value",
+                "separator": ":"
+            },
+            "fields": {
+                "Health": { "renderer": "numeric-badge" },
+                "Status": { "renderer": "text" },
+                "Conditions": { "renderer": "character-pills", "separator": "," },
+                "Resources": { "renderer": "text" },
+                "Currency": { "renderer": "numeric-badge" }
+            }
+        },
+        {
+            "id": "world",
+            "match": "World",
+            "matchMode": "exact",
+            "type": "key-value",
+            "icon": "globe",
+            "parse": {
+                "format": "key-value",
+                "separator": ":"
+            },
+            "fields": {
+                "Location": { "renderer": "breadcrumb", "separator": "→" },
+                "Time": { "renderer": "text" },
+                "Atmosphere": { "renderer": "text-atmosphere" },
+                "NPCs Present": { "renderer": "character-pills", "separator": "," },
+                "Objectives": { "renderer": "text" },
+                "Scene": { "renderer": "quote-block" }
+            }
+        },
+        {
+            "id": "relationships",
+            "match": "Relationships",
+            "matchMode": "exact",
+            "type": "numeric-bars",
+            "icon": "shield",
+            "parse": {
+                "format": "key-value-numeric",
+                "separator": ":",
+                "range": [-1.0, 1.0]
+            },
+            "display": {
+                "colorNegative": "#c0392b",
+                "colorNeutral": "#666666",
+                "colorPositive": "#5aaa6a",
+                "showDelta": true
+            }
+        }
+    ],
+    "rules": [
+        {
+            "id": "tracking",
+            "name": "State Tracking",
+            "icon": "📜",
+            "enabled": true,
+            "content": "At the end of every reply, output updated game state. Include only sections that changed in this turn. Always output the full current state for each included section, not just changes."
+        },
+        {
+            "id": "inventory",
+            "name": "Inventory",
+            "icon": "🎒",
+            "enabled": true,
+            "content": "Track items acquired, used, consumed, or lost. Use descriptive tags in parentheses like (equipped), (key), (quest), (consumable), (magical), (broken). Include quantity if greater than 1. Always output the full current inventory."
+        },
+        {
+            "id": "character",
+            "name": "Character Status",
+            "icon": "👤",
+            "enabled": true,
+            "content": "Track character health as a numeric value, current status effects or conditions as comma-separated pills, available resources (ability uses, special charges, etc.), and currency or wealth. Adjust values based on combat, rest, purchases, and story events."
+        },
+        {
+            "id": "world",
+            "name": "World State",
+            "icon": "🌍",
+            "enabled": true,
+            "content": "Track the character's location as a breadcrumb path (Region → Area → Specific Place). Note the current time, atmospheric details, NPCs present in the scene, active objectives or goals, and a brief atmospheric scene description."
+        },
+        {
+            "id": "relationships",
+            "name": "Relationships",
+            "icon": "🤝",
+            "enabled": true,
+            "content": "Track standing with important NPCs, factions, or groups as values from -1.0 (hostile) to 1.0 (devoted ally). Shift values based on the character's actions, dialogue choices, completed quests, and betrayals. Add new entries when significant new relationships form."
+        }
+    ],
+    "injection": {
+        "systemPrompt": "Track game state using <campaign_data> YAML blocks appended to every reply. Include only sections that changed. Use generic, system-agnostic terminology.",
+        "includeSchema": true,
+        "includeCurrentState": true,
+        "stateDepth": 1
+    },
+    "theme": {
+        "accentColor": "#6b8cce"
+    }
+}
