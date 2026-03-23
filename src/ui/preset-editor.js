@@ -597,7 +597,7 @@ function renderLivePreview() {
         $sectionContainer.append(
             $('<div>').css({
                 fontSize: '10px',
-                fontFamily: "'Inter', -apple-system, system-ui, sans-serif",
+                fontFamily: "'Space Grotesk', -apple-system, system-ui, sans-serif",
                 fontWeight: 700,
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
