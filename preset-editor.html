@@ -129,7 +129,101 @@
                                 <input type="color" class="cs-editor-input" id="cs-editor-display-negative" value="#e05555" style="padding: 2px; height: 30px;" />
                             </div>
                         </div>
+                        <div class="cs-editor-row">
+                            <div class="cs-editor-field">
+                                <label class="cs-editor-field-label">Neutral Color</label>
+                                <input type="color" class="cs-editor-input" id="cs-editor-display-neutral" value="#666666" style="padding: 2px; height: 30px;" />
+                            </div>
+                            <div class="cs-editor-field">
+                                <label class="cs-editor-field-label">&nbsp;</label>
+                                <label class="cs-editor-checkbox-label">
+                                    <input type="checkbox" id="cs-editor-display-delta" checked />
+                                    Show Delta
+                                </label>
+                            </div>
+                        </div>
+                        <div class="cs-editor-row">
+                            <div class="cs-editor-field">
+                                <label class="cs-editor-field-label">Range Min</label>
+                                <input type="number" class="cs-editor-input" id="cs-editor-display-range-min" step="0.1" value="-1.0" />
+                            </div>
+                            <div class="cs-editor-field">
+                                <label class="cs-editor-field-label">Range Max</label>
+                                <input type="number" class="cs-editor-input" id="cs-editor-display-range-max" step="0.1" value="1.0" />
+                            </div>
+                        </div>
+                        <div class="cs-editor-field">
+                            <label class="cs-editor-field-label">Inverted Keys</label>
+                            <input type="text" class="cs-editor-input" id="cs-editor-display-inverted" placeholder="Stress, Hunger (comma-separated)" />
+                        </div>
                     </div>
+                </div>
+
+                <!-- Rules List -->
+                <div class="cs-editor-section-label">
+                    <span>Rules</span>
+                    <button class="cs-editor-add-btn" id="cs-editor-add-rule" style="width: auto; margin: 0; padding: 2px 10px; border-style: solid;">+ Add</button>
+                </div>
+                <div id="cs-editor-rule-list" class="cs-editor-rule-list">
+                    <!-- Dynamically populated -->
+                </div>
+
+                <!-- Rule Detail Editor (shown when a rule is selected) -->
+                <div id="cs-editor-rule-detail" class="cs-editor-detail cs-hidden">
+                    <div class="cs-editor-detail-title" id="cs-editor-rule-detail-title">Rule</div>
+
+                    <div class="cs-editor-row">
+                        <div class="cs-editor-field">
+                            <label class="cs-editor-field-label">ID</label>
+                            <input type="text" class="cs-editor-input" id="cs-editor-rule-id" placeholder="rule-id" />
+                        </div>
+                        <div class="cs-editor-field">
+                            <label class="cs-editor-field-label">Icon</label>
+                            <input type="text" class="cs-editor-input" id="cs-editor-rule-icon" placeholder="&#9876;" maxlength="4" />
+                        </div>
+                    </div>
+
+                    <div class="cs-editor-field">
+                        <label class="cs-editor-field-label">Name</label>
+                        <input type="text" class="cs-editor-input" id="cs-editor-rule-name" placeholder="Rule Name" />
+                    </div>
+
+                    <div class="cs-editor-field">
+                        <label class="cs-editor-checkbox-label">
+                            <input type="checkbox" id="cs-editor-rule-enabled" checked />
+                            Enabled by default
+                        </label>
+                    </div>
+
+                    <div class="cs-editor-field">
+                        <label class="cs-editor-field-label">Content</label>
+                        <textarea class="cs-editor-textarea" id="cs-editor-rule-content" rows="5" placeholder="Rule instructions for the AI..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Injection Config -->
+                <div class="cs-editor-section-label">Injection</div>
+                <div class="cs-editor-field">
+                    <label class="cs-editor-field-label">System Prompt</label>
+                    <textarea class="cs-editor-textarea" id="cs-editor-injection-prompt" rows="3" placeholder="Instructions for AI state tracking..."></textarea>
+                </div>
+                <div class="cs-editor-row">
+                    <div class="cs-editor-field">
+                        <label class="cs-editor-checkbox-label">
+                            <input type="checkbox" id="cs-editor-injection-schema" checked />
+                            Include Schema
+                        </label>
+                    </div>
+                    <div class="cs-editor-field">
+                        <label class="cs-editor-checkbox-label">
+                            <input type="checkbox" id="cs-editor-injection-state" checked />
+                            Include State
+                        </label>
+                    </div>
+                </div>
+                <div class="cs-editor-field">
+                    <label class="cs-editor-field-label">State Depth</label>
+                    <input type="number" class="cs-editor-input" id="cs-editor-injection-depth" min="0" max="10" value="1" />
                 </div>
             </div>
 
