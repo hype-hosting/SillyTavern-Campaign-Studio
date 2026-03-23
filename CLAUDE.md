@@ -19,13 +19,14 @@ The extension is **bidirectional**: it parses AI output AND injects game state +
 SillyTavern-Campaign-Studio/
 ├── index.js                          # Entry point — bootstrap, ST event hooks, render orchestration
 ├── manifest.json                     # ST extension manifest (display_name, version, js/css refs)
-├── style.css                         # All styles — design tokens, panel layout, components (~1225 lines)
+├── style.css                         # All styles — design tokens, panel, components, editor (~2100 lines)
 ├── panel.html                        # Panel DOM template (injected into <body>)
 ├── settings.html                     # Settings panel template (injected into ST Extensions drawer)
+├── preset-editor.html                # Preset editor modal template (full-screen overlay)
 ├── assets/icons/                     # (empty — icons are inline Unicode/emoji)
 │
 ├── src/core/
-│   ├── config.js                     # Constants, DEFAULT_SETTINGS, enums (SECTION_TYPES, MATCH_MODES, etc.)
+│   ├── config.js                     # Constants, DEFAULT_SETTINGS, enums (SECTION_TYPES, MATCH_MODES, PARSE_FORMATS)
 │   ├── state.js                      # Centralized reactive state store (sections, history, locationHistory)
 │   ├── events.js                     # Internal event bus (on/off/emit) — decoupled from ST's eventSource
 │   └── persistence.js                # 3-layer persistence: extension settings, chat metadata, message extras
@@ -35,25 +36,29 @@ SillyTavern-Campaign-Studio/
 │   ├── yaml.js                       # Lightweight YAML parser + serializer (parseYaml / toYaml)
 │   ├── router.js                     # Routes parsed YAML data to preset sections by key matching
 │   ├── engine.js                     # LEGACY: Extracts <details><summary> blocks from message HTML
-│   ├── adapters.js                   # LEGACY: Converts raw text lines → structured data (markdown-list, key-value, key-value-numeric)
+│   ├── adapters.js                   # Format parsers: markdown-list, key-value, key-value-numeric, stat-block
 │   └── collapse.js                   # Collapses parsed blocks in chat DOM (both <campaign_data> and <details>)
 │
 ├── src/injection/
-│   ├── prompt.js                     # System prompt injection — YAML schema + format instructions + rules
+│   ├── prompt.js                     # System prompt injection — YAML schema + format instructions + rule snippets
 │   └── state.js                      # Message-level injection — current state snapshot + dice rolls
 │
 ├── src/mechanics/
 │   └── dice.js                       # Dice roller — notation parser, RNG, animation, pending rolls queue
 │
 ├── src/presets/
-│   ├── manager.js                    # Preset registry — load, register, activate, save custom presets
+│   ├── manager.js                    # Preset registry — load, register, activate, save, isBuiltinPreset()
 │   ├── schema.js                     # Preset JSON validation
 │   └── builtin/
-│       └── vigil-falls.json          # Built-in preset for the Vigil Falls campaign
+│       ├── vigil-falls.json          # Gothic estate mystery preset
+│       ├── forgotten-realms.json     # D&D 5e high fantasy preset
+│       ├── cyberpunk.json            # Neon-noir dystopia preset
+│       └── cozy-life.json            # Slice-of-life preset
 │
 ├── src/ui/
 │   ├── panel.js                      # Panel lifecycle — open/close/dock/position cycling
 │   ├── tabs.js                       # Stacked section controller — creates collapsible sections from preset
+│   ├── preset-editor.js              # Preset editor — full-screen modal with visual field mapper (~765 lines)
 │   └── renderers/
 │       ├── inventory.js              # Renders item lists with tags, currency, NEW/removed indicators
 │       ├── world.js                  # Renders key-value data with specialized sub-renderers (breadcrumb, pills, quote, etc.)
@@ -117,7 +122,7 @@ SillyTavern-Campaign-Studio/
 - `engine.js` parses rendered HTML to find `<details>` elements
 - Matches `<summary>` text against preset section `match` patterns
 - Inner content extracted as text lines, routed through `adapters.js` format parsers
-- Three formats: `markdown-list` (inventory), `key-value`, `key-value-numeric`
+- Four formats: `markdown-list` (inventory), `key-value`, `key-value-numeric`, `stat-block` (emoji-labeled stats)
 
 ### Collapse behavior
 - `collapse.js` handles both formats
@@ -175,11 +180,20 @@ Presets define what data to extract and how to display it. JSON format validated
             "type": "inventory",        // inventory | key-value | numeric-bars
             "icon": "backpack",         // backpack | globe | shield | scroll | clock | map
             "parse": {
-                "format": "markdown-list",
+                "format": "markdown-list",  // markdown-list | key-value | key-value-numeric | stat-block
                 "tagPattern": "\\(([^)]+)\\)"
             },
             "fields": { ... },          // For key-value type: per-field renderer config
             "display": { ... }          // For numeric-bars: colors, range, showDelta
+        }
+    ],
+    "rules": [
+        {
+            "id": "combat",
+            "name": "Combat & Dice",
+            "icon": "⚔",
+            "enabled": true,            // Default enabled state (user can override)
+            "content": "Rule text injected into AI prompt when enabled..."
         }
     ],
     "injection": {
@@ -187,6 +201,9 @@ Presets define what data to extract and how to display it. JSON format validated
         "includeSchema": true,
         "includeCurrentState": true,
         "stateDepth": 1
+    },
+    "theme": {
+        "accentColor": "#7c6bde"       // Per-preset accent color
     }
 }
 ```
@@ -205,6 +222,54 @@ Presets define what data to extract and how to display it. JSON format validated
 - `character-pills` — comma-separated names as pill buttons
 - `quote-block` — blockquote styling
 - `numeric-badge` — colored positive/negative badge
+
+## Rule Snippets System
+
+Presets can ship with toggleable game rule snippets — categorized instructions injected into the AI prompt. Each snippet appears as a card in the settings panel.
+
+### Data flow:
+1. Preset JSON defines `rules[]` array with `id`, `name`, `icon`, `enabled`, `content`
+2. User toggles rules on/off in settings → stored in `settings.ruleOverrides[presetId][ruleId]`
+3. `prompt.js:buildSystemPrompt()` filters rules by enabled state (override > default)
+4. Enabled rule `content` strings are appended to the system prompt injection
+5. User's custom rules (from `presetRules[presetId]` textarea) are appended after preset rules
+
+### UI in index.js:
+- `renderRuleCards(preset)` — renders toggle cards with expand/collapse for rule content
+- `updateRuleCount(preset)` — updates the "N/M enabled" badge in settings header
+
+## Preset Editor
+
+Full-screen modal for creating and editing presets through the UI, eliminating the need to hand-edit JSON.
+
+### Files:
+- `preset-editor.html` — modal template (two-column layout)
+- `src/ui/preset-editor.js` — editor module (~765 lines)
+
+### Exports:
+```js
+openPresetEditor(preset?, { clone?, onSave? })  // Open editor; clone=true copies built-in presets
+closePresetEditor()                                // Close and cleanup
+importPresetJSON(file)                             // Read .json File, open in editor
+```
+
+### Layout:
+- **Left column**: Preset metadata (name, description, marker prefix, accent color), section list with reorder/edit/delete, section detail editor (ID, match, mode, type, icon, format), field editor with renderer dropdowns
+- **Right column**: Visual field mapper (paste textarea + parse button), detected field cards with section-assignment dropdowns, live preview using actual renderers
+
+### Key behaviors:
+- **Copy-on-edit**: Built-in presets (checked via `isBuiltinPreset()`) are cloned as `{id}-custom` with name `"{Name} (Custom)"` before editing
+- **Visual field mapper**: Parses pasted bot HTML through three strategies — `extractCampaignData()` for YAML blocks, temp DOM + `parseStatBlock()`/`parseKeyValue()` for `<details>` blocks, plain text fallback
+- **Smart renderer guessing**: `guessRenderer()` suggests renderer type from field name (e.g., "Location" → breadcrumb, "Weather" → text-atmosphere)
+- **Live preview**: Renders assigned data into a preview container using `renderWorld()`, `renderInventory()`, `renderFactions()`
+- **Save flow**: `buildPresetFromEditor()` → `validatePreset()` → `saveCustomPreset()` → `onSaveCallback()` (triggers `refreshAfterPresetEdit()` in index.js)
+- **Export/Import**: Download as `.json` file, upload `.json` to open in editor
+
+### Settings integration (index.js):
+- `#cs-btn-edit-preset` — opens editor for active preset (clones if built-in)
+- `#cs-btn-new-preset` — opens blank editor
+- `#cs-btn-import-preset` — triggers hidden file input
+- `refreshAfterPresetEdit(savedPreset)` — repopulates dropdown, re-inits tabs, applies theme, re-parses chat
 
 ## SillyTavern API Usage
 
@@ -297,7 +362,7 @@ CS_EVENTS = {
     accentColor: '#7c6bde',
     showTimeline: true,
     showLocationTracker: true,
-    customPresets: [],
+    customPresets: [],                // Custom presets created via the preset editor
     mechanics: {
         diceEnabled: true,
         encounterEnabled: false,     // Stub — not yet implemented
@@ -307,13 +372,13 @@ CS_EVENTS = {
         stateContext: true,
         outputFormat: 'yaml',        // 'yaml' | 'details' | 'both'
     },
-    presetRules: {},                 // { presetId: "rules text..." }
+    presetRules: {},                 // { presetId: "custom rules text" }
+    ruleOverrides: {},               // { presetId: { ruleId: boolean } } — per-rule enabled/disabled overrides
 }
 ```
 
 ## Known Limitations / Future Work
 
-- **Custom preset editor UI**: Users must edit JSON manually; no in-app preset builder yet
 - **Encounter system**: `encounterEnabled` setting exists but the encounter module is not implemented
 - **Mobile polish**: Bottom sheet mode works but could use gesture support and better sizing
 - **Swipe handling**: Snapshots are per-swipe but there's no UI to navigate between swipe states
