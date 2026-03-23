@@ -71,6 +71,13 @@ function buildSystemPrompt(preset) {
     // Example
     parts.push(buildExampleBlock(preset));
 
+    // Game mechanics rules (user-defined per preset)
+    const settings = getSettings();
+    const rulesText = settings.presetRules?.[preset.id];
+    if (rulesText?.trim()) {
+        parts.push(rulesText.trim());
+    }
+
     return parts.join('\n\n');
 }
 

@@ -16,6 +16,8 @@ import { initTabs, getPane } from './src/ui/tabs.js';
 import { renderInventory } from './src/ui/renderers/inventory.js';
 import { renderWorld } from './src/ui/renderers/world.js';
 import { renderFactions } from './src/ui/renderers/factions.js';
+import { renderLocation } from './src/ui/renderers/location.js';
+import { renderTimeline } from './src/ui/renderers/timeline.js';
 import { initDice, destroyDice } from './src/mechanics/dice.js';
 import { updateSystemPrompt, clearSystemPrompt } from './src/injection/prompt.js';
 import { registerStateInjection, unregisterStateInjection } from './src/injection/state.js';
@@ -81,6 +83,7 @@ jQuery(async () => {
         // 11. Listen for internal state changes to trigger re-renders
         on(CS_EVENTS.SECTION_UPDATED, ({ sectionId }) => {
             renderSection(sectionId);
+            renderBuiltinSections();
         });
 
         console.log(`[${EXTENSION_DISPLAY}] Initialized successfully.`);
@@ -122,6 +125,9 @@ async function loadSettingsPanel() {
         if (preset) {
             initTabs(preset);
             $('#cs-active-preset-name').text(preset.name);
+            // Refresh rules textarea for new preset
+            const rules = getSettings().presetRules?.[presetId] || '';
+            $('#cs-settings-rules').val(rules);
             // Refresh injection with new preset schema
             updateSystemPrompt();
             // Re-parse current chat with new preset
@@ -183,6 +189,16 @@ async function loadSettingsPanel() {
     // Injection: output format
     $('#cs-settings-output-format').val(injection.outputFormat || 'yaml').on('change', function () {
         updateSettings({ injection: { ...settings.injection, outputFormat: $(this).val() } });
+        updateSystemPrompt();
+    });
+
+    // Rules editor textarea
+    const activePresetId = settings.activePreset || 'vigil-falls';
+    const currentRules = settings.presetRules?.[activePresetId] || '';
+    $('#cs-settings-rules').val(currentRules).on('input', function () {
+        const presetId = getSettings().activePreset;
+        const rules = { ...getSettings().presetRules, [presetId]: $(this).val() };
+        updateSettings({ presetRules: rules });
         updateSystemPrompt();
     });
 }
@@ -342,12 +358,35 @@ function reparseChat() {
  * Render all sections based on current state.
  */
 function renderAllSections() {
-    const state = getState();
     const preset = getActivePreset();
     if (!preset) return;
 
     for (const section of preset.sections) {
         renderSection(section.id);
+    }
+
+    renderBuiltinSections();
+}
+
+/**
+ * Render built-in sections (Location, Timeline).
+ */
+function renderBuiltinSections() {
+    const state = getState();
+    const preset = getActivePreset();
+
+    // Location tracker
+    const $locationPane = getPane('_location');
+    if ($locationPane?.length) {
+        const pathField = preset?.sections?.find(s => s.type === 'key-value');
+        const fieldConfig = pathField?.fields?.['Path'] || {};
+        renderLocation(state.locationHistory, fieldConfig, $locationPane);
+    }
+
+    // Session timeline
+    const $timelinePane = getPane('_timeline');
+    if ($timelinePane?.length) {
+        renderTimeline(state.history, preset, $timelinePane);
     }
 }
 
@@ -364,15 +403,19 @@ function renderSection(sectionId) {
     const preset = getActivePreset();
     const sectionConfig = preset?.sections?.find(s => s.id === sectionId) || {};
 
+    // Find previous data from history for delta indicators
+    const state = getState();
+    const previousData = getPreviousData(state, sectionId);
+
     switch (sectionData.type) {
     case 'inventory':
-        renderInventory(sectionData.data, sectionConfig, $pane);
+        renderInventory(sectionData.data, sectionConfig, $pane, previousData);
         break;
     case 'key-value':
         renderWorld(sectionData.data, sectionConfig, $pane);
         break;
     case 'numeric-bars':
-        renderFactions(sectionData.data, sectionConfig, $pane);
+        renderFactions(sectionData.data, sectionConfig, $pane, previousData);
         break;
     default:
         renderWorld(sectionData.data, sectionConfig, $pane);
@@ -382,6 +425,17 @@ function renderSection(sectionId) {
     // Hide empty state, show content
     $('#cs-empty-state').addClass('cs-hidden');
     $('#cs-section-container').removeClass('cs-hidden');
+}
+
+/**
+ * Get the previous data for a section from history (for delta indicators).
+ */
+function getPreviousData(state, sectionId) {
+    if (!state.history?.length) return null;
+    // Find the second-to-last entry for this section
+    const entries = state.history.filter(h => h.sectionId === sectionId);
+    if (entries.length < 2) return null;
+    return entries[entries.length - 2]?.current || null;
 }
 
 /**

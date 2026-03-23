@@ -24,6 +24,7 @@ export const DEFAULT_SETTINGS = {
         stateContext: true,
         outputFormat: 'yaml',  // 'yaml' | 'details' | 'both'
     },
+    presetRules: {},
 };
 
 export const PANEL_POSITIONS = ['right', 'left', 'bottom'];

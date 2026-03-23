@@ -19,6 +19,14 @@ const SECTION_ICONS = {
 let $container = null;
 
 /**
+ * Built-in sections that appear after preset sections.
+ */
+const BUILTIN_SECTIONS = [
+    { id: '_location', label: 'Location', icon: 'map' },
+    { id: '_timeline', label: 'Timeline', icon: 'clock' },
+];
+
+/**
  * Initialize stacked sections from a preset's section definitions.
  */
 export function initTabs(preset) {
@@ -31,35 +39,48 @@ export function initTabs(preset) {
 
     // Create a stacked section for each preset section
     for (const section of preset.sections) {
-        const icon = SECTION_ICONS[section.icon] || SECTION_ICONS.default;
+        createSection(section.id, section.match || section.id, section.icon);
+    }
 
-        const $section = $(`<div class="cs-section" data-section-id="${section.id}"></div>`);
-
-        const $header = $(`
-            <div class="cs-section-header">
-                <span class="cs-section-icon">${icon}</span>
-                <span class="cs-section-title">${section.match || section.id}</span>
-                <span class="cs-section-toggle">▾</span>
-            </div>
-        `);
-
-        const $body = $(`<div class="cs-section-body" data-pane-id="${section.id}"></div>`);
-
-        // Toggle collapse on header click
-        $header.on('click', () => {
-            const isCollapsed = $section.hasClass('cs-section-collapsed');
-            $section.toggleClass('cs-section-collapsed', !isCollapsed);
-            $header.find('.cs-section-toggle').text(isCollapsed ? '▾' : '▸');
-        });
-
-        $section.append($header);
-        $section.append($body);
-        $container.append($section);
+    // Add built-in sections (Location, Timeline)
+    for (const builtin of BUILTIN_SECTIONS) {
+        createSection(builtin.id, builtin.label, builtin.icon, true);
     }
 
     // Show container, hide empty state
     $('#cs-empty-state').addClass('cs-hidden');
     $container.removeClass('cs-hidden');
+}
+
+/**
+ * Create a collapsible section in the panel.
+ */
+function createSection(id, label, iconKey, startCollapsed = false) {
+    const icon = SECTION_ICONS[iconKey] || SECTION_ICONS.default;
+
+    const $section = $(`<div class="cs-section" data-section-id="${id}"></div>`);
+    if (startCollapsed) $section.addClass('cs-section-collapsed');
+
+    const $header = $(`
+        <div class="cs-section-header">
+            <span class="cs-section-icon">${icon}</span>
+            <span class="cs-section-title">${label}</span>
+            <span class="cs-section-toggle">${startCollapsed ? '▸' : '▾'}</span>
+        </div>
+    `);
+
+    const $body = $(`<div class="cs-section-body" data-pane-id="${id}"></div>`);
+
+    // Toggle collapse on header click
+    $header.on('click', () => {
+        const isCollapsed = $section.hasClass('cs-section-collapsed');
+        $section.toggleClass('cs-section-collapsed', !isCollapsed);
+        $header.find('.cs-section-toggle').text(isCollapsed ? '▾' : '▸');
+    });
+
+    $section.append($header);
+    $section.append($body);
+    $container.append($section);
 }
 
 /**
