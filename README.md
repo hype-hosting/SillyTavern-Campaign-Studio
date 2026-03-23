@@ -8,7 +8,7 @@ Campaign Studio creates a **bidirectional data loop** between you and your AI �
 
 - **Automatic data extraction** — Parses `<campaign_data>` YAML blocks from AI responses (with `<details><summary>` fallback for legacy bots)
 - **Dockable side panel** — Right, left, or bottom positioning with slide animations. Dynamically fills the gap between the chat column and viewport edge
-- **Preset system** — JSON-configurable presets define what data to track and how to display it. Ships with 4 built-in presets: Vigil Falls (gothic estate), Forgotten Realms (D&D 5e), Cyberpunk (neon-noir), and Cozy Life (slice-of-life)
+- **Preset system** — JSON-configurable presets define what data to track and how to display it. Ships with 5 built-in presets: Universal (genre-agnostic default), Vigil Falls (gothic estate), Forgotten Realms (D&D 5e), Cyberpunk (neon-noir), and Cozy Life (slice-of-life)
 - **Inventory tracker** — Item lists with tag pills, currency notes, NEW/removed indicators
 - **World state display** — Key-value data with specialized renderers: location breadcrumbs, character pills, atmosphere text, diary quotes
 - **Faction standing bars** — Center-zero bidirectional bars with delta indicators showing change direction and magnitude
@@ -17,8 +17,8 @@ Campaign Studio creates a **bidirectional data loop** between you and your AI �
 - **Dice roller** — Standard RPG dice notation (2d6+3), preset buttons, roll history, context labels
 - **AI prompt injection** — Automatically injects YAML schema instructions and current game state into the AI's context
 - **Toggleable game rules** — Each preset ships with categorized rule snippet cards (combat, inventory, factions, tone, etc.) that you can toggle on/off. Add your own custom rules via a separate textarea
-- **Visual preset editor** — Full-screen modal for creating and editing presets. Paste a sample bot message to auto-detect fields, assign them to sections, and preview the result live — no JSON editing required
-- **Dark glass design** — TimelessTavern-inspired dark palette with serif typography (Cinzel Decorative headings, Cormorant Garamond body), customizable accent colors per preset
+- **Visual preset editor** — Full-screen modal for creating and editing presets. Paste a sample bot message to auto-detect fields, assign them to sections, and preview the result live — no JSON editing required. Includes a rules editor for adding/editing rule snippets and injection config for system prompt tuning
+- **Dark glass design** — König-inspired glassmorphic dark palette with Space Grotesk sans-serif and JetBrains Mono monospace typography, decorative section dividers, noise texture overlays, customizable accent colors per preset
 
 ## Installation
 
@@ -70,8 +70,9 @@ Open the SillyTavern **Extensions** panel (puzzle piece icon) and find the **Cam
 
 | Preset | Genre | Tracks |
 |--------|-------|--------|
+| **Universal** | Genre-agnostic (default) | Inventory, character status (health, conditions, resources, currency), world state (location, time, atmosphere, NPCs, objectives), relationships |
 | **Vigil Falls** | Gothic estate mystery | Items, world state (weather, path, characters, diary), Order standings |
-| **Forgotten Realms** | D&D 5e high fantasy | Inventory, character status (HP, conditions, spell slots), world state, faction standings (Harpers, Zhentarim, etc.) |
+| **Forgotten Realms** | D&D 5e high fantasy | Inventory, character status (HP, Level, XP, Gold, conditions, spell slots), ability scores (STR, DEX, CON, INT, WIS, CHA), world state, faction standings (Harpers, Zhentarim, etc.) |
 | **Cyberpunk** | Neon-noir dystopia | Gear & cyberware, status (HP, humanity, eddies), world state (districts, threat level), reputation (fixers, corpos, gangs) |
 | **Cozy Life** | Modern slice-of-life | Belongings, social world (location, mood, people), vibes (energy, social battery, stress, happiness, hunger) |
 
@@ -130,8 +131,8 @@ The easiest way to create or customize a preset is through the built-in visual e
 3. **Import a file**: Click the **↑ button** to load a `.json` preset file.
 
 The editor has two columns:
-- **Left — Configuration**: Set the preset name, description, marker prefix, and accent color. Add/remove/reorder sections, configure their match patterns, types, and field renderers.
-- **Right — Field Mapper**: Paste a raw bot message (HTML or plain text) and click **Parse Sample**. The extension detects all trackable fields and lets you assign each one to a section with a dropdown. Fields are auto-assigned a renderer based on their name (e.g., "Location" gets breadcrumb, "Weather" gets atmospheric text). A **live preview** at the bottom shows how the data will render in the panel.
+- **Left — Configuration**: Set the preset name, description, marker prefix, and accent color. Add/remove/reorder sections, configure their match patterns, types, field renderers (with separator inputs for breadcrumbs/pills), and display options (colors, range, delta, inverted keys for numeric bars). Below sections: a rules editor for adding/editing/reordering rule snippets, and an injection config panel for system prompt, schema/state toggles, and state depth.
+- **Right — Field Mapper**: Paste a raw bot message (HTML or plain text) and click **Parse Sample**. The extension detects all trackable fields and lets you assign each one to a section with a dropdown. YAML fields are auto-assigned to matching sections when possible. Fields are auto-assigned a renderer based on their name (e.g., "Location" gets breadcrumb, "Weather" gets atmospheric text, "Strength" gets numeric-badge). A **live preview** at the bottom shows how the data will render in the panel.
 
 Click **Save** to validate, persist, and activate the preset. Click **Export** to download the preset as a `.json` file you can share.
 

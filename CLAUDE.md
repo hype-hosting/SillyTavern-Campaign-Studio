@@ -50,15 +50,16 @@ SillyTavern-Campaign-Studio/
 │   ├── manager.js                    # Preset registry — load, register, activate, save, isBuiltinPreset()
 │   ├── schema.js                     # Preset JSON validation
 │   └── builtin/
+│       ├── universal.json            # Genre-agnostic universal preset (default)
 │       ├── vigil-falls.json          # Gothic estate mystery preset
-│       ├── forgotten-realms.json     # D&D 5e high fantasy preset
+│       ├── forgotten-realms.json     # D&D 5e high fantasy preset (with ability scores)
 │       ├── cyberpunk.json            # Neon-noir dystopia preset
 │       └── cozy-life.json            # Slice-of-life preset
 │
 ├── src/ui/
 │   ├── panel.js                      # Panel lifecycle — open/close/dock/position cycling
 │   ├── tabs.js                       # Stacked section controller — creates collapsible sections from preset
-│   ├── preset-editor.js              # Preset editor — full-screen modal with visual field mapper (~765 lines)
+│   ├── preset-editor.js              # Preset editor — full-screen modal with visual field mapper, rules editor, injection config (~900 lines)
 │   └── renderers/
 │       ├── inventory.js              # Renders item lists with tags, currency, NEW/removed indicators
 │       ├── world.js                  # Renders key-value data with specialized sub-renderers (breadcrumb, pills, quote, etc.)
@@ -244,7 +245,7 @@ Full-screen modal for creating and editing presets through the UI, eliminating t
 
 ### Files:
 - `preset-editor.html` — modal template (two-column layout)
-- `src/ui/preset-editor.js` — editor module (~765 lines)
+- `src/ui/preset-editor.js` — editor module (~900 lines)
 
 ### Exports:
 ```js
@@ -254,13 +255,17 @@ importPresetJSON(file)                             // Read .json File, open in e
 ```
 
 ### Layout:
-- **Left column**: Preset metadata (name, description, marker prefix, accent color), section list with reorder/edit/delete, section detail editor (ID, match, mode, type, icon, format), field editor with renderer dropdowns
-- **Right column**: Visual field mapper (paste textarea + parse button), detected field cards with section-assignment dropdowns, live preview using actual renderers
+- **Left column**: Preset metadata (name, description, marker prefix, accent color), section list with reorder/edit/delete, section detail editor (ID, match, mode, type, icon, format, display config for numeric-bars), field editor with renderer dropdowns and separator inputs, rules list with CRUD and rule detail editor, injection config (system prompt, schema/state toggles, state depth)
+- **Right column**: Visual field mapper (paste textarea + parse button), detected field cards with section-assignment dropdowns and auto-assignment from YAML keys, live preview using actual renderers
 
 ### Key behaviors:
-- **Copy-on-edit**: Built-in presets (checked via `isBuiltinPreset()`) are cloned as `{id}-custom` with name `"{Name} (Custom)"` before editing
-- **Visual field mapper**: Parses pasted bot HTML through three strategies — `extractCampaignData()` for YAML blocks, temp DOM + `parseStatBlock()`/`parseKeyValue()` for `<details>` blocks, plain text fallback
-- **Smart renderer guessing**: `guessRenderer()` suggests renderer type from field name (e.g., "Location" → breadcrumb, "Weather" → text-atmosphere)
+- **Copy-on-edit**: Built-in presets (checked via `isBuiltinPreset()`) are cloned as `{id}-custom` with name `"{Name} (Custom)"` before editing. Rules and injection config are preserved during cloning
+- **Visual field mapper**: Parses pasted bot HTML through three strategies — `extractCampaignData()` for YAML blocks, temp DOM + `parseStatBlock()`/`parseKeyValue()` for `<details>` blocks, plain text fallback. All strategies decode HTML entities via `decodeHtmlEntities()` before parsing
+- **Smart renderer guessing**: `guessRenderer()` uses a priority-ordered pattern array to suggest renderer type from field name (e.g., "Location" → breadcrumb, "Weather" → text-atmosphere, "Strength" → numeric-badge, "Conditions" → character-pills)
+- **Auto-assignment**: When parsing YAML blocks, top-level keys are matched against preset section `match` patterns via `findMatchingSection()`, and sub-fields are auto-assigned to the matching section
+- **Rules editor**: Add/edit/reorder/delete rule snippets with icon, name, enabled toggle, and content. Mutual exclusion with section detail — only one detail panel visible at a time
+- **Injection config**: Edit system prompt, toggle include schema / include state, set state depth
+- **Field properties**: Separator input for breadcrumb/character-pills renderers; neutral color, show delta, range min/max, inverted keys for numeric-bars sections
 - **Live preview**: Renders assigned data into a preview container using `renderWorld()`, `renderInventory()`, `renderFactions()`
 - **Save flow**: `buildPresetFromEditor()` → `validatePreset()` → `saveCustomPreset()` → `onSaveCallback()` (triggers `refreshAfterPresetEdit()` in index.js)
 - **Export/Import**: Download as `.json` file, upload `.json` to open in editor
@@ -356,7 +361,7 @@ CS_EVENTS = {
 ```js
 {
     enabled: true,
-    activePreset: 'vigil-falls',
+    activePreset: 'universal',
     panelPosition: 'right',          // 'right' | 'left' | 'bottom'
     panelOpen: false,
     accentColor: '#7c6bde',
