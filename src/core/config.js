@@ -24,6 +24,7 @@ export const DEFAULT_SETTINGS = {
         outputFormat: 'yaml',  // 'yaml' | 'details' | 'both'
     },
     presetRules: {},
+    ruleOverrides: {},  // { [presetId]: { [ruleId]: boolean } }
 };
 
 export const PANEL_POSITIONS = ['right', 'left', 'bottom'];

@@ -125,9 +125,10 @@ async function loadSettingsPanel() {
         if (preset) {
             initTabs(preset);
             $('#cs-active-preset-name').text(preset.name);
-            // Refresh rules textarea for new preset
-            const rules = getSettings().presetRules?.[presetId] || '';
-            $('#cs-settings-rules').val(rules);
+            // Refresh rule cards and custom textarea for new preset
+            renderRuleCards(preset);
+            const customRules = getSettings().presetRules?.[presetId] || '';
+            $('#cs-settings-rules-custom').val(customRules);
             // Refresh injection with new preset schema
             updateSystemPrompt();
             // Re-parse current chat with new preset
@@ -192,15 +193,115 @@ async function loadSettingsPanel() {
         updateSystemPrompt();
     });
 
-    // Rules editor textarea
+    // Rule snippet cards for current preset
+    renderRuleCards(getActivePreset());
+
+    // Custom rules textarea
     const activePresetId = settings.activePreset || 'vigil-falls';
-    const currentRules = settings.presetRules?.[activePresetId] || '';
-    $('#cs-settings-rules').val(currentRules).on('input', function () {
+    const currentCustomRules = settings.presetRules?.[activePresetId] || '';
+    $('#cs-settings-rules-custom').val(currentCustomRules).on('input', function () {
         const presetId = getSettings().activePreset;
         const rules = { ...getSettings().presetRules, [presetId]: $(this).val() };
         updateSettings({ presetRules: rules });
         updateSystemPrompt();
     });
+}
+
+/**
+ * Render rule snippet toggle cards for a preset.
+ * If the preset has no rules[] array, shows a fallback textarea.
+ */
+function renderRuleCards(preset) {
+    const $container = $('#cs-rules-container');
+    $container.empty();
+
+    if (!preset?.rules?.length) {
+        // Fallback for custom presets without snippets — show a plain textarea
+        const presetId = preset?.id || getSettings().activePreset;
+        const legacyRules = getSettings().presetRules?.[presetId] || '';
+        const $fallback = $('<textarea>')
+            .addClass('cs-settings-textarea')
+            .attr({ rows: 6, placeholder: 'Write campaign-specific rules here...' })
+            .val(legacyRules)
+            .on('input', function () {
+                const rules = { ...getSettings().presetRules, [presetId]: $(this).val() };
+                updateSettings({ presetRules: rules });
+                updateSystemPrompt();
+            });
+        $container.append($fallback);
+        $('#cs-rules-count').text('');
+        // Hide custom section since fallback already is a textarea
+        $('.cs-rules-custom-section').addClass('cs-hidden');
+        return;
+    }
+
+    $('.cs-rules-custom-section').removeClass('cs-hidden');
+    const settings = getSettings();
+    const overrides = settings.ruleOverrides?.[preset.id] || {};
+
+    for (const rule of preset.rules) {
+        const isEnabled = overrides[rule.id] !== undefined ? overrides[rule.id] : rule.enabled;
+        const previewText = rule.content.split('\n')[0].substring(0, 80);
+
+        const $card = $('<div>').addClass('cs-rule-card').toggleClass('cs-rule-disabled', !isEnabled);
+        const $header = $('<div>').addClass('cs-rule-header');
+        const $chevron = $('<span>').addClass('cs-rule-chevron').text('\u25B8');
+        const $icon = $('<span>').addClass('cs-rule-icon').text(rule.icon || '\u2022');
+        const $name = $('<span>').addClass('cs-rule-name').text(rule.name);
+        const $toggle = $('<label>').addClass('cs-rule-toggle');
+        const $input = $('<input>').attr('type', 'checkbox').prop('checked', isEnabled);
+        const $track = $('<span>').addClass('cs-rule-toggle-track');
+        const $thumb = $('<span>').addClass('cs-rule-toggle-thumb');
+        $toggle.append($input, $track, $thumb);
+
+        $header.append($chevron, $icon, $name, $toggle);
+        const $preview = $('<div>').addClass('cs-rule-preview').text(previewText + (rule.content.length > 80 ? '...' : ''));
+        const $content = $('<div>').addClass('cs-rule-content').text(rule.content);
+
+        $card.append($header, $preview, $content);
+        $container.append($card);
+
+        // Toggle enable/disable
+        $input.on('change', function (e) {
+            e.stopPropagation();
+            const checked = $(this).prop('checked');
+            $card.toggleClass('cs-rule-disabled', !checked);
+            const currentOverrides = { ...getSettings().ruleOverrides };
+            currentOverrides[preset.id] = { ...(currentOverrides[preset.id] || {}), [rule.id]: checked };
+            updateSettings({ ruleOverrides: currentOverrides });
+            updateSystemPrompt();
+            updateRuleCount(preset);
+        });
+
+        // Prevent toggle click from toggling expansion
+        $toggle.on('click', function (e) {
+            e.stopPropagation();
+        });
+
+        // Expand/collapse on header click
+        $header.on('click', function () {
+            $card.toggleClass('cs-rule-expanded');
+        });
+    }
+
+    updateRuleCount(preset);
+}
+
+/**
+ * Update the "X/Y active" rule count badge.
+ */
+function updateRuleCount(preset) {
+    if (!preset?.rules?.length) {
+        $('#cs-rules-count').text('');
+        return;
+    }
+    const overrides = getSettings().ruleOverrides?.[preset.id] || {};
+    const total = preset.rules.length;
+    const active = preset.rules.filter(r => {
+        const override = overrides[r.id];
+        return override !== undefined ? override : r.enabled;
+    }).length;
+    $('#cs-rules-count').text(`${active}/${total} active`);
 }
 
 /**

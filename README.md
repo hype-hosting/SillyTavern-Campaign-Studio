@@ -8,7 +8,7 @@ Campaign Studio creates a **bidirectional data loop** between you and your AI �
 
 - **Automatic data extraction** — Parses `<campaign_data>` YAML blocks from AI responses (with `<details><summary>` fallback for legacy bots)
 - **Dockable side panel** — Right, left, or bottom positioning with slide animations. Dynamically fills the gap between the chat column and viewport edge
-- **Preset system** — JSON-configurable presets define what data to track and how to display it. Ships with a Vigil Falls campaign preset
+- **Preset system** — JSON-configurable presets define what data to track and how to display it. Ships with 4 built-in presets: Vigil Falls (gothic estate), Forgotten Realms (D&D 5e), Cyberpunk (neon-noir), and Cozy Life (slice-of-life)
 - **Inventory tracker** — Item lists with tag pills, currency notes, NEW/removed indicators
 - **World state display** — Key-value data with specialized renderers: location breadcrumbs, character pills, atmosphere text, diary quotes
 - **Faction standing bars** — Center-zero bidirectional bars with delta indicators showing change direction and magnitude
@@ -16,8 +16,8 @@ Campaign Studio creates a **bidirectional data loop** between you and your AI �
 - **Session timeline** — Scrollable event log showing all state changes (items gained/lost, faction shifts, location moves)
 - **Dice roller** — Standard RPG dice notation (2d6+3), preset buttons, roll history, context labels
 - **AI prompt injection** — Automatically injects YAML schema instructions and current game state into the AI's context
-- **Game mechanics rules editor** — Per-preset textarea for custom rules (e.g., faction standing update formulas) injected into the system prompt
-- **Glassmorphism design** — Dark glass aesthetic with customizable accent color, matching SillyTavern's visual language
+- **Toggleable game rules** — Each preset ships with categorized rule snippet cards (combat, inventory, factions, tone, etc.) that you can toggle on/off. Add your own custom rules via a separate textarea
+- **Dark glass design** — TimelessTavern-inspired dark palette with serif typography (Cinzel Decorative headings, Cormorant Garamond body), customizable accent colors per preset
 
 ## Installation
 
@@ -62,7 +62,18 @@ Open the SillyTavern **Extensions** panel (puzzle piece icon) and find the **Cam
 | **Prompt Injection** | Inject YAML format instructions into the system prompt so the AI knows how to output structured data |
 | **State Context** | Send current game state to the AI before each message generation |
 | **Output Format** | YAML Drawers (recommended), Details Blocks (legacy), or Both |
-| **Game Mechanics Rules** | Free-text rules injected alongside the schema (e.g., faction update formulas) |
+| **Game Rules** | Toggleable rule snippet cards shipped with each preset. Enable/disable individual rules, expand to read them, and add custom rules below |
+
+## Built-in Presets
+
+| Preset | Genre | Tracks |
+|--------|-------|--------|
+| **Vigil Falls** | Gothic estate mystery | Items, world state (weather, path, characters, diary), Order standings |
+| **Forgotten Realms** | D&D 5e high fantasy | Inventory, character status (HP, conditions, spell slots), world state, faction standings (Harpers, Zhentarim, etc.) |
+| **Cyberpunk** | Neon-noir dystopia | Gear & cyberware, status (HP, humanity, eddies), world state (districts, threat level), reputation (fixers, corpos, gangs) |
+| **Cozy Life** | Modern slice-of-life | Belongings, social world (location, mood, people), vibes (energy, social battery, stress, happiness, hunger) |
+
+Each preset includes ready-to-use **game rule snippets** — toggle them on/off in the settings panel. You can also add your own custom rules per preset.
 
 ## How It Works
 
@@ -99,6 +110,8 @@ orders:
 ```
 
 When **Prompt Injection** is enabled, the extension automatically adds format instructions to the system prompt — you don't need to put formatting rules in your character card.
+
+> **Note**: The section IDs in `<campaign_data>` vary by preset. The example above shows Vigil Falls (`items`, `world`, `orders`). Forgotten Realms uses `inventory`, `character`, `world`, `factions`. Cyberpunk uses `gear`, `status`, `world`, `rep`. The AI is told the correct schema automatically.
 
 ### State Injection
 
@@ -168,11 +181,23 @@ Presets are JSON files that define what data to extract and how to display it. P
             }
         }
     ],
+    "rules": [
+        {
+            "id": "combat",
+            "name": "Combat & Dice",
+            "icon": "⚔",
+            "enabled": true,
+            "content": "Rules text injected into the AI prompt when this snippet is enabled..."
+        }
+    ],
     "injection": {
-        "systemPrompt": "Output game state changes inside <campaign_data> tags using YAML...",
+        "systemPrompt": "Base output instruction — track game state using <campaign_data> YAML blocks...",
         "includeSchema": true,
         "includeCurrentState": true,
         "stateDepth": 1
+    },
+    "theme": {
+        "accentColor": "#7c6bde"
     }
 }
 ```
@@ -208,6 +233,20 @@ Presets are JSON files that define what data to extract and how to display it. P
 ### Available Icons
 
 `backpack`, `globe`, `shield`, `scroll`, `clock`, `map`
+
+### Rule Snippets
+
+The `rules` array defines toggleable game mechanic instructions that ship with your preset. Each snippet appears as a card in the settings panel that users can enable/disable.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `id` | string | Unique identifier for the rule |
+| `name` | string | Display name shown on the card |
+| `icon` | string | Emoji icon shown next to the name |
+| `enabled` | boolean | Whether the rule is on by default |
+| `content` | string | The actual rule text injected into the AI prompt |
+
+Users can override the default enabled/disabled state per rule. Their overrides persist across sessions.
 
 ## Dice Roller
 

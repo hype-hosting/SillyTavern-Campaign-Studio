@@ -59,8 +59,31 @@
             }
         }
     ],
+    "rules": [
+        {
+            "id": "tracking",
+            "name": "State Tracking",
+            "icon": "📜",
+            "enabled": true,
+            "content": "When game state changes (inventory, world state, faction standings), output the current state. Include only sections that actually changed in this turn."
+        },
+        {
+            "id": "inventory",
+            "name": "Inventory",
+            "icon": "🎒",
+            "enabled": true,
+            "content": "Track items found, received, used, or lost throughout the estate. Use tags like (equipped), (key), (quest), (consumable). Always output the full current inventory, not just changes."
+        },
+        {
+            "id": "factions",
+            "name": "Order Standing",
+            "icon": "🛡",
+            "enabled": true,
+            "content": "Track standing with the Orders of Vigil Falls. Shift values (-1.0 to 1.0) based on actions, discoveries, alliances, and betrayals within the estate grounds."
+        }
+    ],
     "injection": {
-        "systemPrompt": "When updating game state (inventory changes, world state updates, faction standing shifts), output the current state inside <campaign_data> XML tags using YAML format. Include only sections that changed. Always include the full list for inventory, not just changes.",
+        "systemPrompt": "Track game state using <campaign_data> YAML blocks appended to every reply. Include only sections that changed.",
         "includeSchema": true,
         "includeCurrentState": true,
         "stateDepth": 1

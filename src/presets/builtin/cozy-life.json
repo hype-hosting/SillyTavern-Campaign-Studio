@@ -60,8 +60,38 @@
             }
         }
     ],
+    "rules": [
+        {
+            "id": "belongings",
+            "name": "Belongings",
+            "icon": "👜",
+            "enabled": true,
+            "content": "Track the character's personal items — phone, keys, wallet contents, bags, gifts, mementos. Use tags like (carried), (home), (important), (gift), (new). Update when items are received, lost, purchased, or left somewhere. Always output the full current belongings list, not just changes."
+        },
+        {
+            "id": "social",
+            "name": "Social World",
+            "icon": "💬",
+            "enabled": true,
+            "content": "Track current location as a breadcrumb path (e.g., Downtown → Oak Street → Rosie's Cafe). Note the weather and time of day as atmospheric flavor. List people nearby, current activity, the character's mood as evocative text, and their inner thoughts as a brief reflective quote."
+        },
+        {
+            "id": "vibes",
+            "name": "Vibes",
+            "icon": "✨",
+            "enabled": true,
+            "content": "Track life meters as values from 0.0 to 1.0:\n- Energy: Physical and mental energy (rises with rest, food, fun; drops with exertion, late nights)\n- Social Battery: Social capacity (rises with alone time, drops with prolonged social interaction)\n- Stress: Tension level (rises with conflict, deadlines, awkwardness; drops with relaxation, resolution)\n- Happiness: Overall contentment (rises with positive interactions, achievements, comfort; drops with disappointment, loneliness)\n- Hunger: How hungry the character is (rises over time, drops after eating)"
+        },
+        {
+            "id": "tone",
+            "name": "Narrative Tone",
+            "icon": "🌸",
+            "enabled": true,
+            "content": "Warm, observational, grounded. Focus on emotional beats, sensory details, relationship dynamics, and the quiet beauty of everyday life. Small moments matter — a good cup of coffee, a text from a friend, rain on the window."
+        }
+    ],
     "injection": {
-        "systemPrompt": "You are narrating a cozy, modern-day slice-of-life roleplay. Track game state using <campaign_data> YAML blocks appended to every reply.\n\nBELONGINGS: Track the character's personal items — phone, keys, wallet contents, bags, gifts, mementos. Use tags like (carried), (home), (important), (gift), (new). Update when items are received, lost, purchased, or left somewhere. Always output the full current belongings list, not just changes.\n\nSOCIAL: Track current location as a breadcrumb path (e.g., Downtown → Oak Street → Rosie's Café). Note the weather and time of day as atmospheric flavor. List people nearby, current activity, the character's mood as evocative text, and their inner thoughts as a brief reflective quote.\n\nVIBES: Track life meters as values from 0.0 to 1.0:\n- Energy: Physical and mental energy (rises with rest, food, fun; drops with exertion, late nights)\n- Social Battery: Social capacity (rises with alone time, drops with prolonged social interaction)\n- Stress: Tension level (rises with conflict, deadlines, awkwardness; drops with relaxation, resolution)\n- Happiness: Overall contentment (rises with positive interactions, achievements, comfort; drops with disappointment, loneliness)\n- Hunger: How hungry the character is (rises over time, drops after eating)\n\nNARRATIVE TONE: Warm, observational, grounded. Focus on emotional beats, sensory details, relationship dynamics, and the quiet beauty of everyday life. Small moments matter — a good cup of coffee, a text from a friend, rain on the window.\n\nInclude only sections that changed. Always include the full list for belongings.",
+        "systemPrompt": "You are narrating a cozy, modern-day slice-of-life roleplay. Track game state using <campaign_data> YAML blocks appended to every reply. Include only sections that changed.",
         "includeSchema": true,
         "includeCurrentState": true,
         "stateDepth": 1

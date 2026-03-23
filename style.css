@@ -1089,6 +1089,170 @@ campaign_data {
 }
 
 /* ============================================================
+   RULE SNIPPET CARDS (settings panel)
+   ============================================================ */
+.cs-settings-rules-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.cs-settings-rules-count {
+    font-size: 11px;
+    opacity: 0.5;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.cs-rules-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 8px 0;
+}
+
+.cs-rule-card {
+    background: rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(180, 180, 210, 0.08);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.cs-rule-card:hover {
+    border-color: rgba(180, 180, 210, 0.14);
+}
+
+.cs-rule-card.cs-rule-disabled {
+    opacity: 0.4;
+}
+
+.cs-rule-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.cs-rule-chevron {
+    font-size: 10px;
+    opacity: 0.35;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+    width: 12px;
+    text-align: center;
+}
+
+.cs-rule-card.cs-rule-expanded .cs-rule-chevron {
+    transform: rotate(90deg);
+}
+
+.cs-rule-icon {
+    font-size: 14px;
+    flex-shrink: 0;
+    width: 20px;
+    text-align: center;
+    line-height: 1;
+}
+
+.cs-rule-name {
+    font-size: 12px;
+    font-weight: 500;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cs-rule-toggle {
+    position: relative;
+    width: 32px;
+    height: 18px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.cs-rule-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+.cs-rule-toggle-track {
+    position: absolute;
+    inset: 0;
+    background: rgba(180, 180, 210, 0.12);
+    border-radius: 9px;
+    transition: background 0.2s ease;
+}
+
+.cs-rule-toggle input:checked + .cs-rule-toggle-track {
+    background: rgba(var(--cs-accent-rgb, 124, 107, 222), 0.5);
+}
+
+.cs-rule-toggle-thumb {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 14px;
+    height: 14px;
+    background: #888;
+    border-radius: 50%;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.cs-rule-toggle input:checked ~ .cs-rule-toggle-thumb {
+    transform: translateX(14px);
+    background: var(--cs-accent, #7c6bde);
+}
+
+.cs-rule-preview {
+    font-size: 11px;
+    opacity: 0.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 10px 8px 50px;
+    line-height: 1.3;
+}
+
+.cs-rule-card.cs-rule-expanded .cs-rule-preview {
+    display: none;
+}
+
+.cs-rule-content {
+    display: none;
+    padding: 0 10px 10px 50px;
+    font-size: 11px;
+    line-height: 1.6;
+    opacity: 0.65;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.cs-rule-card.cs-rule-expanded .cs-rule-content {
+    display: block;
+}
+
+.cs-rules-custom-section {
+    margin-top: 8px;
+}
+
+.cs-rules-custom-label {
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    display: block;
+    opacity: 0.7;
+}
+
+.cs-settings-textarea-sm {
+    min-height: 60px;
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 768px) {
