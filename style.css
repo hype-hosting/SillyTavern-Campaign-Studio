@@ -5,20 +5,20 @@
 
 /* --- Design Tokens --- */
 .cs-root {
-    --cs-bg-glass: rgba(19, 17, 28, 0.45);
-    --cs-bg-glass-hover: rgba(19, 17, 28, 0.55);
-    --cs-bg-glass-deep: rgba(10, 10, 18, 0.6);
+    --cs-bg-glass: rgba(19, 17, 28, 0.85);
+    --cs-bg-glass-hover: rgba(19, 17, 28, 0.90);
+    --cs-bg-glass-deep: rgba(10, 10, 18, 0.92);
     --cs-blur: blur(20px) saturate(1.2);
-    --cs-border: rgba(255, 255, 255, 0.08);
-    --cs-border-hover: rgba(255, 255, 255, 0.12);
+    --cs-border: rgba(255, 255, 255, 0.12);
+    --cs-border-hover: rgba(255, 255, 255, 0.18);
     --cs-border-active: rgba(255, 255, 255, 0.18);
     --cs-accent: #7c6bde;
     --cs-accent-rgb: 124, 107, 222;
     --cs-accent-glow: rgba(124, 107, 222, 0.15);
     --cs-accent-glow-strong: rgba(124, 107, 222, 0.3);
     --cs-text-primary: rgba(255, 255, 255, 0.92);
-    --cs-text-secondary: rgba(255, 255, 255, 0.55);
-    --cs-text-muted: rgba(255, 255, 255, 0.30);
+    --cs-text-secondary: rgba(255, 255, 255, 0.65);
+    --cs-text-muted: rgba(255, 255, 255, 0.45);
     --cs-radius: 12px;
     --cs-radius-sm: 8px;
     --cs-radius-xs: 5px;
@@ -36,10 +36,10 @@
 /* --- Panel Base --- */
 .cs-panel {
     position: fixed;
-    top: 0;
+    top: 45px;
     z-index: 1000;
     width: var(--cs-panel-width);
-    height: 100vh;
+    height: calc(100vh - 55px);
     display: flex;
     flex-direction: column;
     background: var(--cs-bg-glass);
@@ -56,9 +56,8 @@
 
 /* --- Panel Positions --- */
 .cs-position-right {
-    right: 0;
-    border-left: 1px solid var(--cs-border);
-    border-radius: var(--cs-radius) 0 0 var(--cs-radius);
+    right: 6px;
+    border-radius: var(--cs-radius);
     transform: translateX(100%);
 }
 
@@ -67,9 +66,8 @@
 }
 
 .cs-position-left {
-    left: 0;
-    border-right: 1px solid var(--cs-border);
-    border-radius: 0 var(--cs-radius) var(--cs-radius) 0;
+    left: 6px;
+    border-radius: var(--cs-radius);
     transform: translateX(-100%);
 }
 
@@ -206,7 +204,7 @@
 }
 
 .cs-section-title {
-    font-size: 10px;
+    font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: var(--cs-text-muted);
