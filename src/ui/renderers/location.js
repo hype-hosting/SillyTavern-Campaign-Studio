@@ -22,8 +22,9 @@ export function renderLocation(locationHistory, fieldConfig, $container) {
     const separator = fieldConfig?.separator || '→';
     const current = locationHistory[locationHistory.length - 1];
 
-    // Current location breadcrumb
+    // Current location breadcrumb with map pin
     const $current = $('<div class="cs-location-current"></div>');
+    $current.append('<span class="cs-location-pin">📍</span>');
     const segments = current.path.split(separator).map(s => s.trim()).filter(Boolean);
 
     for (let i = 0; i < segments.length; i++) {
@@ -50,7 +51,7 @@ export function renderLocation(locationHistory, fieldConfig, $container) {
             const lastSeg = histSegments[histSegments.length - 1] || entry.path;
             const fullPath = histSegments.join(' → ');
 
-            const opacity = Math.max(0.3, 1 - (i * 0.1));
+            const opacity = Math.max(0.25, 1 - (i * 0.12));
             const $entry = $(`
                 <div class="cs-location-history-entry" style="opacity: ${opacity}" title="${sanitizeText(fullPath)}">
                     <span class="cs-location-history-dot"></span>

@@ -22,7 +22,7 @@ export function renderTimeline(history, preset, $container) {
 
     const $header = $('<div class="cs-timeline-header"></div>');
     $header.append(`<span class="cs-timeline-count">${history.length} events</span>`);
-    const $clearBtn = $('<button class="cs-btn cs-btn-sm cs-timeline-clear">Clear</button>');
+    const $clearBtn = $('<button class="cs-btn cs-btn-sm cs-timeline-clear" title="Clear history">Clear</button>');
     $clearBtn.on('click', () => {
         $container.empty();
         $container.html('<div class="cs-empty-section">Timeline cleared</div>');
@@ -43,8 +43,13 @@ export function renderTimeline(history, preset, $container) {
 
         if (!changes.length) continue;
 
+        // Determine dominant change type for dot coloring
+        const dominantType = changes[0]?.type || 'modified';
+        const entryClass = dominantType === 'added' ? 'cs-timeline-added' :
+            dominantType === 'removed' ? 'cs-timeline-removed' : '';
+
         const $entry = $(`
-            <div class="cs-timeline-entry">
+            <div class="cs-timeline-entry ${entryClass}">
                 <div class="cs-timeline-entry-header">
                     <span class="cs-timeline-icon">${icon}</span>
                     <span class="cs-timeline-label">${sanitizeText(label)}</span>

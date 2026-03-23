@@ -31,7 +31,7 @@ export function renderInventory(items, sectionConfig, $container, previousItems 
     // Show removed items briefly (struck-through)
     if (previousItems) {
         for (const name of removedNames) {
-            const $removed = $(`<div class="cs-inventory-item cs-card cs-item-removed"></div>`);
+            const $removed = $(`<div class="cs-inventory-item cs-item-removed"></div>`);
             $removed.append(`<span class="cs-item-name">${sanitizeText(name)}</span>`);
             $removed.append('<span class="cs-delta-badge cs-delta-negative">removed</span>');
             $list.append($removed);
@@ -40,7 +40,7 @@ export function renderInventory(items, sectionConfig, $container, previousItems 
 
     for (const item of items) {
         const isNew = addedNames.has(item.name);
-        const $item = $(`<div class="cs-inventory-item cs-card${isNew ? ' cs-item-new' : ''}"></div>`);
+        const $item = $(`<div class="cs-inventory-item${isNew ? ' cs-item-new' : ''}"></div>`);
 
         // Item name
         const $name = $(`<span class="cs-item-name">${sanitizeText(item.name)}</span>`);

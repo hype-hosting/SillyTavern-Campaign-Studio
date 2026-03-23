@@ -37,29 +37,17 @@ export function renderFactions(data, sectionConfig, $container, previousData = n
     const isUnipolar = min >= 0;
 
     for (const [faction, score] of Object.entries(data)) {
-        const $row = $('<div class="cs-faction-row cs-card"></div>');
+        const $row = $('<div class="cs-faction-row"></div>');
         const isInverted = invertedKeys.includes(faction);
-
-        // Faction name
-        $row.append(`<div class="cs-faction-name">${sanitizeText(faction)}</div>`);
-
-        // Bar container
-        const $barWrap = $('<div class="cs-faction-bar-wrap"></div>');
-        const $bar = $('<div class="cs-faction-bar"></div>');
 
         let fillLeft, fillWidth, color;
 
         if (isUnipolar) {
-            // Unipolar: left-to-right fill (0% = empty, 100% = full)
             const fillPct = Math.min(Math.max(score / max, 0), 1.0) * 100;
             fillLeft = 0;
             fillWidth = fillPct;
-            // Inverted keys use negative color (high = bad), normal use positive
             color = isInverted ? colorNeg : colorPos;
         } else {
-            // Bipolar: center-zero layout
-            $bar.append('<div class="cs-faction-bar-zero"></div>');
-
             const absMax = Math.max(Math.abs(min), Math.abs(max));
             const fillPct = Math.min(Math.abs(score) / absMax, 1.0) * 50;
 
@@ -74,14 +62,13 @@ export function renderFactions(data, sectionConfig, $container, previousData = n
             }
         }
 
-        $bar.append(`<div class="cs-faction-bar-fill" style="left: ${fillLeft}%; width: ${fillWidth}%; background: ${color}"></div>`);
-        $barWrap.append($bar);
-        $row.append($barWrap);
+        // Header row: name + score
+        const $header = $('<div class="cs-faction-row-header"></div>');
+        $header.append(`<div class="cs-faction-name">${sanitizeText(faction)}</div>`);
 
-        // Score value
+        const $scoreGroup = $('<span class="cs-faction-score-group"></span>');
         const sign = !isUnipolar && score > 0 ? '+' : '';
-        const $score = $(`<span class="cs-faction-score" style="color: ${color}">${sign}${score.toFixed(2)}</span>`);
-        $row.append($score);
+        $scoreGroup.append(`<span class="cs-faction-score" style="color: ${color}">${sign}${score.toFixed(2)}</span>`);
 
         // Delta indicator
         if (showDelta && previousData && previousData[faction] !== undefined) {
@@ -89,9 +76,33 @@ export function renderFactions(data, sectionConfig, $container, previousData = n
             if (Math.abs(delta) > 0.001) {
                 const deltaSign = delta > 0 ? '▲' : '▼';
                 const deltaCls = delta > 0 ? 'cs-delta-up' : 'cs-delta-down';
-                $row.append(`<span class="cs-faction-delta ${deltaCls}">${deltaSign}${Math.abs(delta).toFixed(2)}</span>`);
+                $scoreGroup.append(`<span class="cs-faction-delta ${deltaCls}">${deltaSign}${Math.abs(delta).toFixed(2)}</span>`);
             }
         }
+
+        $header.append($scoreGroup);
+        $row.append($header);
+
+        // Bar
+        const $barWrap = $('<div class="cs-faction-bar-wrap"></div>');
+        const $bar = $('<div class="cs-faction-bar"></div>');
+
+        // Tick marks at 25% and 75% for scale reference
+        if (!isUnipolar) {
+            $bar.append('<div class="cs-faction-bar-zero"></div>');
+            $bar.append('<div class="cs-faction-bar-tick" style="left: 25%"></div>');
+            $bar.append('<div class="cs-faction-bar-tick" style="left: 75%"></div>');
+        } else {
+            $bar.append('<div class="cs-faction-bar-tick" style="left: 25%"></div>');
+            $bar.append('<div class="cs-faction-bar-tick" style="left: 50%"></div>');
+            $bar.append('<div class="cs-faction-bar-tick" style="left: 75%"></div>');
+        }
+
+        // Gradient fill
+        const gradientBg = `linear-gradient(90deg, transparent, ${color})`;
+        $bar.append(`<div class="cs-faction-bar-fill" style="left: ${fillLeft}%; width: ${fillWidth}%; background: ${gradientBg}"></div>`);
+        $barWrap.append($bar);
+        $row.append($barWrap);
 
         $list.append($row);
     }

@@ -65,6 +65,7 @@ function createSection(id, label, iconKey, startCollapsed = false) {
         <div class="cs-section-header">
             <span class="cs-section-icon">${icon}</span>
             <span class="cs-section-title">${label}</span>
+            <span class="cs-section-count" data-count-id="${id}"></span>
             <span class="cs-section-toggle">${startCollapsed ? '▸' : '▾'}</span>
         </div>
     `);
@@ -88,6 +89,18 @@ function createSection(id, label, iconKey, startCollapsed = false) {
  */
 export function getPane(sectionId) {
     return $(`[data-pane-id="${sectionId}"]`);
+}
+
+/**
+ * Update the count badge for a section header.
+ * @param {string} sectionId - Section ID
+ * @param {string} text - Count text (e.g., "6 items", "4 factions")
+ */
+export function updateSectionCount(sectionId, text) {
+    const $count = $(`[data-count-id="${sectionId}"]`);
+    if ($count.length) {
+        $count.text(text || '');
+    }
 }
 
 /**
