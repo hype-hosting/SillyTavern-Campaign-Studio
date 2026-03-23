@@ -1843,12 +1843,25 @@ campaign_data {
     -webkit-backdrop-filter: var(--cs-blur);
     border: 1px solid var(--cs-border);
     border-radius: var(--cs-radius);
-    box-shadow: var(--cs-shadow-lg);
+    box-shadow: var(--cs-shadow-lg), inset 0 0 40px rgba(var(--cs-accent-rgb), 0.02);
     color: var(--cs-text-primary);
     font-family: 'Space Grotesk', -apple-system, system-ui, sans-serif;
     font-size: 14px;
     overflow: hidden;
     animation: cs-slide-up 0.25s ease;
+    position: relative;
+}
+
+/* Subtle noise texture overlay */
+.cs-editor-modal::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    border-radius: inherit;
 }
 
 /* --- Editor Header --- */
@@ -1857,9 +1870,21 @@ campaign_data {
     align-items: center;
     gap: 12px;
     padding: 12px 18px;
-    border-bottom: 1px solid var(--cs-border);
+    border-bottom: none;
     background: var(--cs-glass-highlight);
     flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.cs-editor-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 18px;
+    right: 18px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(var(--cs-accent-rgb), 0.25), transparent);
 }
 
 .cs-editor-back {
@@ -1879,9 +1904,10 @@ campaign_data {
 
 .cs-editor-title {
     font-family: 'Space Grotesk', -apple-system, system-ui, sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
     color: var(--cs-text-secondary);
     flex: 1;
     white-space: nowrap;
@@ -1927,6 +1953,8 @@ campaign_data {
     flex: 1;
     min-height: 0;
     overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
 
 .cs-editor-left,
@@ -1956,18 +1984,44 @@ campaign_data {
     border-radius: 2px;
 }
 
-/* --- Section Labels --- */
+/* --- Section Labels (decorative ── LABEL ──) --- */
 .cs-editor-section-label {
-    font-family: 'Space Grotesk', -apple-system, system-ui, sans-serif;
-    font-size: 10px;
-    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.18em;
     color: var(--cs-text-muted);
+    opacity: 0.55;
     margin-bottom: 10px;
+    margin-top: 16px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 0;
+}
+
+.cs-editor-section-label::before,
+.cs-editor-section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(var(--cs-accent-rgb), 0.2), transparent);
+}
+
+.cs-editor-section-label::before {
+    margin-right: 10px;
+}
+
+.cs-editor-section-label::after {
+    margin-left: 10px;
+}
+
+.cs-editor-section-label:first-child {
+    margin-top: 0;
+}
+
+.cs-editor-section-label .cs-editor-add-btn {
+    opacity: 1;
 }
 
 /* --- Form Controls --- */
@@ -2002,6 +2056,7 @@ campaign_data {
 .cs-editor-textarea:focus {
     outline: none;
     border-color: rgba(var(--cs-accent-rgb), 0.5);
+    box-shadow: 0 0 0 1px rgba(var(--cs-accent-rgb), 0.2), 0 0 8px rgba(var(--cs-accent-rgb), 0.05);
 }
 
 .cs-editor-select {
@@ -2057,6 +2112,7 @@ campaign_data {
 }
 .cs-editor-section-card.cs-active {
     border-color: rgba(var(--cs-accent-rgb), 0.4);
+    border-left: 2px solid rgba(var(--cs-accent-rgb), 0.5);
     background: rgba(var(--cs-accent-rgb), 0.08);
 }
 
@@ -2114,23 +2170,33 @@ campaign_data {
 /* --- Section Detail Editor --- */
 .cs-editor-detail {
     padding: 14px;
-    background: var(--cs-bg-card);
-    border: 1px solid var(--cs-border);
+    background: rgba(var(--cs-accent-rgb), 0.015);
+    border: 1px solid rgba(var(--cs-accent-rgb), 0.08);
     border-radius: var(--cs-radius-sm);
     margin-bottom: 16px;
     animation: cs-fade-in 0.15s ease;
 }
 
 .cs-editor-detail-title {
-    font-family: 'Space Grotesk', -apple-system, system-ui, sans-serif;
-    font-size: 10px;
-    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.18em;
     color: var(--cs-text-muted);
     margin-bottom: 12px;
     padding-bottom: 6px;
-    border-bottom: 1px solid var(--cs-border);
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.cs-editor-detail-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    margin-left: 10px;
+    background: linear-gradient(90deg, rgba(var(--cs-accent-rgb), 0.2), transparent);
 }
 
 /* --- Field Editor --- */
@@ -2294,15 +2360,33 @@ campaign_data {
 }
 
 .cs-editor-detected-header {
-    font-family: 'Space Grotesk', -apple-system, system-ui, sans-serif;
-    font-size: 10px;
-    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.18em;
     color: var(--cs-text-muted);
+    opacity: 0.55;
     margin-bottom: 8px;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+}
+
+.cs-editor-detected-header::before,
+.cs-editor-detected-header::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(var(--cs-accent-rgb), 0.2), transparent);
+}
+
+.cs-editor-detected-header::before {
+    margin-right: 10px;
+}
+
+.cs-editor-detected-header::after {
+    margin-left: 10px;
 }
 
 .cs-editor-detected-count {
@@ -2330,6 +2414,7 @@ campaign_data {
 }
 .cs-editor-mapper-field:hover {
     border-color: var(--cs-border-hover);
+    border-left: 2px solid rgba(var(--cs-accent-rgb), 0.3);
 }
 
 .cs-editor-mapper-key {
@@ -2379,20 +2464,32 @@ campaign_data {
 .cs-editor-preview {
     margin-top: 18px;
     padding: 14px;
-    background: var(--cs-bg-card);
-    border: 1px solid var(--cs-border);
+    background: rgba(var(--cs-accent-rgb), 0.015);
+    border: 1px solid rgba(var(--cs-accent-rgb), 0.08);
     border-radius: var(--cs-radius-sm);
     min-height: 100px;
 }
 
 .cs-editor-preview-title {
-    font-family: 'Space Grotesk', -apple-system, system-ui, sans-serif;
-    font-size: 10px;
-    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.18em;
     color: var(--cs-text-muted);
+    opacity: 0.55;
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.cs-editor-preview-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    margin-left: 10px;
+    background: linear-gradient(90deg, rgba(var(--cs-accent-rgb), 0.2), transparent);
 }
 
 .cs-editor-preview-empty {
@@ -2421,6 +2518,139 @@ campaign_data {
     font-size: 12px;
     color: var(--cs-color-negative);
     padding: 2px 0;
+}
+
+/* --- Field Separator Input --- */
+.cs-editor-field-separator {
+    flex-shrink: 0;
+    width: 50px;
+}
+.cs-editor-field-separator input {
+    width: 100%;
+    padding: 3px 6px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--cs-border);
+    border-radius: 3px;
+    color: var(--cs-text-secondary);
+    font-size: 11px;
+    font-family: 'JetBrains Mono', monospace;
+    text-align: center;
+}
+.cs-editor-field-separator input:focus {
+    outline: none;
+    border-color: rgba(var(--cs-accent-rgb), 0.4);
+}
+
+/* --- Rule List (reuses section list pattern) --- */
+.cs-editor-rule-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 16px;
+}
+
+.cs-editor-rule-card {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    background: var(--cs-bg-card);
+    border: 1px solid var(--cs-border);
+    border-radius: var(--cs-radius-sm);
+    cursor: pointer;
+    transition: all var(--cs-transition-fast);
+}
+.cs-editor-rule-card:hover {
+    border-color: var(--cs-border-hover);
+    background: var(--cs-bg-glass-hover);
+}
+.cs-editor-rule-card.cs-active {
+    border-color: rgba(var(--cs-accent-rgb), 0.4);
+    border-left: 2px solid rgba(var(--cs-accent-rgb), 0.5);
+    background: rgba(var(--cs-accent-rgb), 0.08);
+}
+
+.cs-editor-rule-icon {
+    font-size: 16px;
+    width: 24px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.cs-editor-rule-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.cs-editor-rule-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--cs-text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cs-editor-rule-meta {
+    font-size: 10px;
+    color: var(--cs-text-muted);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.cs-editor-rule-enabled-badge {
+    font-size: 9px;
+    font-family: 'JetBrains Mono', monospace;
+    padding: 1px 6px;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+.cs-editor-rule-enabled-badge.cs-enabled {
+    color: var(--cs-color-positive);
+    background: rgba(90, 170, 106, 0.1);
+}
+.cs-editor-rule-enabled-badge.cs-disabled {
+    color: var(--cs-text-muted);
+    background: rgba(122, 122, 154, 0.1);
+}
+
+/* --- Checkbox Styling --- */
+.cs-editor-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--cs-text-secondary);
+    cursor: pointer;
+    padding: 4px 0;
+}
+
+.cs-editor-checkbox-label input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--cs-border-hover);
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+    transition: all var(--cs-transition-fast);
+}
+
+.cs-editor-checkbox-label input[type="checkbox"]:checked {
+    background: rgba(var(--cs-accent-rgb), 0.2);
+    border-color: rgba(var(--cs-accent-rgb), 0.5);
+}
+
+.cs-editor-checkbox-label input[type="checkbox"]:checked::after {
+    content: '\2713';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 11px;
+    color: var(--cs-accent);
 }
 
 /* --- Preset Action Buttons in Settings --- */

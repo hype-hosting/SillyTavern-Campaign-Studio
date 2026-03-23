@@ -31,6 +31,7 @@ const RENDERERS = [
 
 let workingPreset = null;      // The preset being edited (deep clone)
 let selectedSectionId = null;  // Currently selected section for detail editing
+let selectedRuleId = null;     // Currently selected rule for detail editing
 let detectedFields = [];       // Fields found by the mapper
 let isOpen = false;
 let $overlay = null;
@@ -65,6 +66,7 @@ export async function openPresetEditor(preset, options = {}) {
 
     onSaveCallback = options.onSave || null;
     selectedSectionId = null;
+    selectedRuleId = null;
     detectedFields = [];
 
     populateEditor();
@@ -81,6 +83,7 @@ export function closePresetEditor() {
     isOpen = false;
     workingPreset = null;
     selectedSectionId = null;
+    selectedRuleId = null;
     detectedFields = [];
     onSaveCallback = null;
 }
@@ -125,7 +128,7 @@ function wireGlobalEvents() {
         .on('change input', () => syncSectionFromForm());
 
     // Display config sync
-    $('#cs-editor-display-positive, #cs-editor-display-negative')
+    $('#cs-editor-display-positive, #cs-editor-display-negative, #cs-editor-display-neutral, #cs-editor-display-delta, #cs-editor-display-range-min, #cs-editor-display-range-max, #cs-editor-display-inverted')
         .on('change', () => syncSectionFromForm());
 
     // Preset metadata sync
@@ -144,6 +147,29 @@ function wireGlobalEvents() {
         workingPreset.theme = workingPreset.theme || {};
         workingPreset.theme.accentColor = $(this).val();
     });
+
+    // Rule CRUD
+    $('#cs-editor-add-rule').on('click', () => addRule());
+    $('#cs-editor-rule-id, #cs-editor-rule-name, #cs-editor-rule-icon, #cs-editor-rule-enabled, #cs-editor-rule-content')
+        .on('change input', () => syncRuleFromForm());
+
+    // Injection config sync
+    $('#cs-editor-injection-prompt').on('input', function () {
+        workingPreset.injection = workingPreset.injection || {};
+        workingPreset.injection.systemPrompt = $(this).val();
+    });
+    $('#cs-editor-injection-schema').on('change', function () {
+        workingPreset.injection = workingPreset.injection || {};
+        workingPreset.injection.includeSchema = $(this).prop('checked');
+    });
+    $('#cs-editor-injection-state').on('change', function () {
+        workingPreset.injection = workingPreset.injection || {};
+        workingPreset.injection.includeCurrentState = $(this).prop('checked');
+    });
+    $('#cs-editor-injection-depth').on('change', function () {
+        workingPreset.injection = workingPreset.injection || {};
+        workingPreset.injection.stateDepth = parseInt($(this).val(), 10) || 1;
+    });
 }
 
 // ── Populate / Render ──────────────────────────────────────────
@@ -157,9 +183,18 @@ function populateEditor() {
     $('#cs-editor-accent').val(p.theme?.accentColor || '#7c6bde');
 
     renderSectionList();
+    renderRuleList();
     hideDetail();
+    hideRuleDetail();
     hideErrors();
     clearMapper();
+
+    // Populate injection config
+    const inj = p.injection || {};
+    $('#cs-editor-injection-prompt').val(inj.systemPrompt || '');
+    $('#cs-editor-injection-schema').prop('checked', inj.includeSchema !== false);
+    $('#cs-editor-injection-state').prop('checked', inj.includeCurrentState !== false);
+    $('#cs-editor-injection-depth').val(inj.stateDepth ?? 1);
 }
 
 function renderSectionList() {
@@ -209,6 +244,7 @@ function renderSectionList() {
 
 function selectSection(sectionId) {
     selectedSectionId = sectionId;
+    hideRuleDetail(); // Mutual exclusion: only one detail panel at a time
     const section = workingPreset.sections.find(s => s.id === sectionId);
     if (!section) return;
 
@@ -234,7 +270,18 @@ function selectSection(sectionId) {
     if (section.display) {
         $('#cs-editor-display-positive').val(section.display.colorPositive || '#7c6bde');
         $('#cs-editor-display-negative').val(section.display.colorNegative || '#e05555');
+        $('#cs-editor-display-neutral').val(section.display.colorNeutral || '#666666');
+        $('#cs-editor-display-delta').prop('checked', section.display.showDelta !== false);
+        $('#cs-editor-display-inverted').val((section.display.invertedKeys || []).join(', '));
+    } else {
+        $('#cs-editor-display-neutral').val('#666666');
+        $('#cs-editor-display-delta').prop('checked', true);
+        $('#cs-editor-display-inverted').val('');
     }
+    // Range config
+    const range = section.parse?.range || [-1.0, 1.0];
+    $('#cs-editor-display-range-min').val(range[0]);
+    $('#cs-editor-display-range-max').val(range[1]);
 
     // Render fields
     renderFieldEditor(section);
@@ -266,15 +313,28 @@ function createFieldRow(fieldName, config) {
         $select.append($('<option>').val(r.value).text(r.label));
     }
     $select.val(config.renderer || 'text');
+
+    // Separator input (shown for breadcrumb and character-pills)
+    const needsSeparator = ['breadcrumb', 'character-pills'].includes(config.renderer);
+    const $sep = $('<div>').addClass('cs-editor-field-separator').toggleClass('cs-hidden', !needsSeparator);
+    const $sepInput = $('<input>').attr({ type: 'text', placeholder: '\u2192', title: 'Separator' })
+        .val(config.separator || '')
+        .on('change', function () {
+            updateFieldSeparator(fieldName, $(this).val());
+        });
+    $sep.append($sepInput);
+
     $select.on('change', function () {
-        updateFieldRenderer(fieldName, $(this).val());
+        const renderer = $(this).val();
+        updateFieldRenderer(fieldName, renderer);
+        $sep.toggleClass('cs-hidden', !['breadcrumb', 'character-pills'].includes(renderer));
     });
     $renderer.append($select);
 
     const $remove = $('<button>').addClass('cs-editor-field-remove').text('\u2715')
         .on('click', () => removeField(fieldName));
 
-    $row.append($name, $renderer, $remove);
+    $row.append($name, $renderer, $sep, $remove);
     return $row;
 }
 
@@ -316,6 +376,133 @@ function moveSection(index, direction) {
     renderSectionList();
 }
 
+// ── Rule CRUD ──────────────────────────────────────────────────
+
+function renderRuleList() {
+    const $list = $('#cs-editor-rule-list');
+    $list.empty();
+
+    const rules = workingPreset.rules || [];
+    for (let i = 0; i < rules.length; i++) {
+        const rule = rules[i];
+        const isActive = rule.id === selectedRuleId;
+
+        const $card = $('<div>')
+            .addClass('cs-editor-rule-card')
+            .toggleClass('cs-active', isActive)
+            .attr('data-rule-id', rule.id);
+
+        const $icon = $('<span>').addClass('cs-editor-rule-icon').text(rule.icon || '\u25C6');
+        const $info = $('<div>').addClass('cs-editor-rule-info');
+        $info.append(
+            $('<div>').addClass('cs-editor-rule-name').text(rule.name || rule.id),
+        );
+
+        const enabledClass = rule.enabled !== false ? 'cs-enabled' : 'cs-disabled';
+        const enabledText = rule.enabled !== false ? 'on' : 'off';
+        const $badge = $('<span>').addClass(`cs-editor-rule-enabled-badge ${enabledClass}`).text(enabledText);
+
+        const $actions = $('<div>').addClass('cs-editor-section-actions');
+        if (i > 0) {
+            $actions.append(
+                $('<button>').addClass('cs-editor-section-btn').text('\u25B2').attr('title', 'Move up')
+                    .on('click', (e) => { e.stopPropagation(); moveRule(i, -1); }),
+            );
+        }
+        if (i < rules.length - 1) {
+            $actions.append(
+                $('<button>').addClass('cs-editor-section-btn').text('\u25BC').attr('title', 'Move down')
+                    .on('click', (e) => { e.stopPropagation(); moveRule(i, 1); }),
+            );
+        }
+        $actions.append(
+            $('<button>').addClass('cs-editor-section-btn cs-danger').text('\u2715').attr('title', 'Remove')
+                .on('click', (e) => { e.stopPropagation(); removeRule(i); }),
+        );
+
+        $card.append($icon, $info, $badge, $actions);
+        $card.on('click', () => selectRule(rule.id));
+        $list.append($card);
+    }
+}
+
+function selectRule(ruleId) {
+    selectedRuleId = ruleId;
+    hideDetail(); // Mutual exclusion: hide section detail
+    const rules = workingPreset.rules || [];
+    const rule = rules.find(r => r.id === ruleId);
+    if (!rule) return;
+
+    // Highlight in list
+    $('.cs-editor-rule-card').removeClass('cs-active');
+    $(`.cs-editor-rule-card[data-rule-id="${ruleId}"]`).addClass('cs-active');
+
+    // Populate rule detail form
+    $('#cs-editor-rule-detail').removeClass('cs-hidden');
+    $('#cs-editor-rule-detail-title').text(`Editing: ${rule.name || rule.id}`);
+    $('#cs-editor-rule-id').val(rule.id);
+    $('#cs-editor-rule-icon').val(rule.icon || '');
+    $('#cs-editor-rule-name').val(rule.name || '');
+    $('#cs-editor-rule-enabled').prop('checked', rule.enabled !== false);
+    $('#cs-editor-rule-content').val(rule.content || '');
+}
+
+function syncRuleFromForm() {
+    const rules = workingPreset.rules || [];
+    const rule = rules.find(r => r.id === selectedRuleId);
+    if (!rule) return;
+
+    const newId = $('#cs-editor-rule-id').val().trim();
+    if (newId && newId !== rule.id) {
+        selectedRuleId = newId;
+        rule.id = newId;
+    }
+
+    rule.name = $('#cs-editor-rule-name').val().trim();
+    rule.icon = $('#cs-editor-rule-icon').val().trim();
+    rule.enabled = $('#cs-editor-rule-enabled').prop('checked');
+    rule.content = $('#cs-editor-rule-content').val();
+
+    renderRuleList();
+}
+
+function addRule() {
+    workingPreset.rules = workingPreset.rules || [];
+    const idx = workingPreset.rules.length + 1;
+    const newRule = {
+        id: `rule-${idx}`,
+        name: `Rule ${idx}`,
+        icon: '\u{1F4DC}',
+        enabled: true,
+        content: '',
+    };
+    workingPreset.rules.push(newRule);
+    renderRuleList();
+    selectRule(newRule.id);
+}
+
+function removeRule(index) {
+    const rules = workingPreset.rules || [];
+    const removed = rules[index];
+    rules.splice(index, 1);
+    if (selectedRuleId === removed.id) hideRuleDetail();
+    renderRuleList();
+}
+
+function moveRule(index, direction) {
+    const rules = workingPreset.rules || [];
+    const target = index + direction;
+    if (target < 0 || target >= rules.length) return;
+    [rules[index], rules[target]] = [rules[target], rules[index]];
+    renderRuleList();
+}
+
+function hideRuleDetail() {
+    $('#cs-editor-rule-detail').addClass('cs-hidden');
+    selectedRuleId = null;
+    $('.cs-editor-rule-card').removeClass('cs-active');
+}
+
 // ── Field CRUD ─────────────────────────────────────────────────
 
 function addField() {
@@ -355,6 +542,20 @@ function updateFieldRenderer(fieldName, renderer) {
     const section = workingPreset.sections.find(s => s.id === selectedSectionId);
     if (!section?.fields?.[fieldName]) return;
     section.fields[fieldName].renderer = renderer;
+    // Clear separator if renderer doesn't use it
+    if (!['breadcrumb', 'character-pills'].includes(renderer)) {
+        delete section.fields[fieldName].separator;
+    }
+}
+
+function updateFieldSeparator(fieldName, separator) {
+    const section = workingPreset.sections.find(s => s.id === selectedSectionId);
+    if (!section?.fields?.[fieldName]) return;
+    if (separator) {
+        section.fields[fieldName].separator = separator;
+    } else {
+        delete section.fields[fieldName].separator;
+    }
 }
 
 // ── Sync Form → Working Preset ────────────────────────────────
@@ -382,7 +583,23 @@ function syncSectionFromForm() {
         section.display = section.display || {};
         section.display.colorPositive = $('#cs-editor-display-positive').val();
         section.display.colorNegative = $('#cs-editor-display-negative').val();
-        section.display.showDelta = true;
+        section.display.colorNeutral = $('#cs-editor-display-neutral').val();
+        section.display.showDelta = $('#cs-editor-display-delta').prop('checked');
+
+        // Range config
+        section.parse = section.parse || {};
+        section.parse.range = [
+            parseFloat($('#cs-editor-display-range-min').val()) || -1.0,
+            parseFloat($('#cs-editor-display-range-max').val()) || 1.0,
+        ];
+
+        // Inverted keys
+        const invertedStr = $('#cs-editor-display-inverted').val().trim();
+        if (invertedStr) {
+            section.display.invertedKeys = invertedStr.split(',').map(s => s.trim()).filter(Boolean);
+        } else {
+            delete section.display.invertedKeys;
+        }
     }
 
     renderSectionList();
@@ -405,8 +622,18 @@ function parsePreviewInput() {
         if (hasCampaignData) {
             for (const block of blocks) {
                 if (block.data && typeof block.data === 'object') {
-                    for (const [key, value] of Object.entries(block.data)) {
-                        addDetectedField(key, value);
+                    for (const [topKey, topValue] of Object.entries(block.data)) {
+                        // Try to match this top-level key to a section
+                        const matchedSection = findMatchingSection(topKey);
+
+                        if (matchedSection && typeof topValue === 'object' && !Array.isArray(topValue)) {
+                            // Add sub-fields with auto-assignment to matched section
+                            for (const [subKey, subValue] of Object.entries(topValue)) {
+                                addDetectedField(subKey, subValue, matchedSection.id);
+                            }
+                        } else {
+                            addDetectedField(topKey, topValue);
+                        }
                     }
                 }
             }
@@ -466,7 +693,7 @@ function parsePreviewInput() {
     renderLivePreview();
 }
 
-function addDetectedField(key, value) {
+function addDetectedField(key, value, assignedSection = null) {
     // Skip internal fields and duplicates
     if (key.startsWith('_')) return;
     if (detectedFields.some(f => f.key === key)) return;
@@ -475,11 +702,40 @@ function addDetectedField(key, value) {
     if (typeof value === 'object') {
         displayValue = JSON.stringify(value);
     }
-    detectedFields.push({
+    const field = {
         key,
         value: String(displayValue || ''),
-        assignedSection: null,
-    });
+        assignedSection,
+    };
+    detectedFields.push(field);
+
+    // Auto-apply field assignment if pre-assigned
+    if (assignedSection) {
+        applyFieldAssignment(field);
+    }
+}
+
+function findMatchingSection(key) {
+    const normalized = key.toLowerCase().trim();
+    for (const section of workingPreset.sections) {
+        const match = (section.match || '').toLowerCase().trim();
+        if (!match) continue;
+        switch (section.matchMode || 'contains') {
+        case 'exact':
+            if (normalized === match) return section;
+            break;
+        case 'contains':
+            if (normalized.includes(match) || match.includes(normalized)) return section;
+            break;
+        case 'endsWith':
+            if (normalized.endsWith(match)) return section;
+            break;
+        case 'regex':
+            try { if (new RegExp(section.match, 'i').test(key)) return section; } catch { /* ignore */ }
+            break;
+        }
+    }
+    return null;
 }
 
 function renderDetectedFields() {
@@ -551,14 +807,25 @@ function applyFieldAssignment(field) {
     }
 }
 
+const RENDERER_PATTERNS = [
+    { patterns: ['path', 'location', 'route'], renderer: 'breadcrumb' },
+    { patterns: ['npc', 'companion', 'present', 'conditions', 'effects'], renderer: 'character-pills' },
+    { patterns: ['weather', 'atmosphere', 'mood'], renderer: 'text-atmosphere' },
+    { patterns: ['diary', 'journal', 'quote', 'thoughts'], renderer: 'quote-block' },
+    { patterns: ['gold', 'xp', 'hp', 'level', 'health', 'currency', 'score', 'points',
+        'strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma'], renderer: 'numeric-badge' },
+    { patterns: ['objectives', 'quests', 'goals', 'tasks', 'time', 'date', 'spell', 'slots',
+        'resources', 'roll', 'dice', 'scene', 'note'], renderer: 'text' },
+];
+
 function guessRenderer(key, value) {
     const lower = key.toLowerCase();
-    if (lower.includes('path') || lower.includes('location') || lower.includes('route')) return 'breadcrumb';
-    if (lower.includes('character') || lower.includes('npc') || lower.includes('companion') || lower.includes('present')) return 'character-pills';
-    if (lower.includes('weather') || lower.includes('atmosphere') || lower.includes('scene') || lower.includes('mood')) return 'text-atmosphere';
-    if (lower.includes('diary') || lower.includes('journal') || lower.includes('quote') || lower.includes('note')) return 'quote-block';
 
-    // Numeric-looking values
+    for (const { patterns, renderer } of RENDERER_PATTERNS) {
+        if (patterns.some(p => lower.includes(p))) return renderer;
+    }
+
+    // Numeric-looking values fallback
     const num = parseFloat(value);
     if (!isNaN(num) && String(num) === value.trim()) return 'numeric-badge';
 
@@ -716,8 +983,6 @@ function clonePresetForEdit(preset) {
     clone.id = `${preset.id}-custom`;
     clone.name = `${preset.name} (Custom)`;
     clone.author = 'custom';
-    // Remove rules from clone — they're preset-specific and user can add their own
-    delete clone.rules;
     return clone;
 }
 
