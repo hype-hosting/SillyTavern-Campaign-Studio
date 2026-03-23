@@ -1,0 +1,172 @@
+<!-- Campaign Studio — Preset Editor Modal -->
+<div id="cs-editor-overlay" class="cs-root cs-editor-overlay cs-hidden">
+    <div class="cs-editor-modal">
+        <!-- Header -->
+        <div class="cs-editor-header">
+            <button class="cs-editor-back" id="cs-editor-back" title="Close editor">&larr;</button>
+            <span class="cs-editor-title" id="cs-editor-title">Edit Preset</span>
+            <div class="cs-editor-actions">
+                <button class="cs-editor-btn" id="cs-editor-export" title="Export as JSON">Export</button>
+                <button class="cs-editor-btn cs-editor-btn-save" id="cs-editor-save">Save</button>
+            </div>
+        </div>
+
+        <!-- Body: Two Columns -->
+        <div class="cs-editor-body">
+            <!-- Left Column: Configuration -->
+            <div class="cs-editor-left">
+                <!-- Validation Errors -->
+                <div id="cs-editor-errors" class="cs-editor-errors cs-hidden"></div>
+
+                <!-- Preset Metadata -->
+                <div class="cs-editor-section-label">Preset</div>
+                <div class="cs-editor-field">
+                    <label class="cs-editor-field-label">Name</label>
+                    <input type="text" class="cs-editor-input" id="cs-editor-name" placeholder="My Campaign" />
+                </div>
+                <div class="cs-editor-field">
+                    <label class="cs-editor-field-label">Description</label>
+                    <textarea class="cs-editor-textarea" id="cs-editor-description" rows="2" placeholder="Brief description of your campaign..."></textarea>
+                </div>
+                <div class="cs-editor-row">
+                    <div class="cs-editor-field">
+                        <label class="cs-editor-field-label">Marker Prefix</label>
+                        <input type="text" class="cs-editor-input" id="cs-editor-marker" placeholder="&#10038;" maxlength="4" />
+                    </div>
+                    <div class="cs-editor-field">
+                        <label class="cs-editor-field-label">Accent Color</label>
+                        <input type="color" class="cs-editor-input" id="cs-editor-accent" value="#7c6bde" style="padding: 2px; height: 34px;" />
+                    </div>
+                </div>
+
+                <!-- Sections List -->
+                <div class="cs-editor-section-label">
+                    <span>Sections</span>
+                    <button class="cs-editor-add-btn" id="cs-editor-add-section" style="width: auto; margin: 0; padding: 2px 10px; border-style: solid;">+ Add</button>
+                </div>
+                <div id="cs-editor-section-list" class="cs-editor-section-list">
+                    <!-- Dynamically populated -->
+                </div>
+
+                <!-- Section Detail Editor (shown when a section is selected) -->
+                <div id="cs-editor-detail" class="cs-editor-detail cs-hidden">
+                    <div class="cs-editor-detail-title" id="cs-editor-detail-title">Section</div>
+
+                    <div class="cs-editor-row">
+                        <div class="cs-editor-field">
+                            <label class="cs-editor-field-label">ID</label>
+                            <input type="text" class="cs-editor-input" id="cs-editor-sec-id" placeholder="section-id" />
+                        </div>
+                        <div class="cs-editor-field">
+                            <label class="cs-editor-field-label">Icon</label>
+                            <select class="cs-editor-select" id="cs-editor-sec-icon">
+                                <option value="backpack">&#127890; backpack</option>
+                                <option value="globe">&#127758; globe</option>
+                                <option value="shield">&#128737; shield</option>
+                                <option value="scroll">&#128220; scroll</option>
+                                <option value="clock">&#128339; clock</option>
+                                <option value="map">&#128506; map</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="cs-editor-field">
+                        <label class="cs-editor-field-label">Match Pattern</label>
+                        <input type="text" class="cs-editor-input" id="cs-editor-sec-match" placeholder="Text to match in <summary> or YAML key" />
+                    </div>
+
+                    <div class="cs-editor-row">
+                        <div class="cs-editor-field">
+                            <label class="cs-editor-field-label">Match Mode</label>
+                            <select class="cs-editor-select" id="cs-editor-sec-matchmode">
+                                <option value="exact">exact</option>
+                                <option value="contains">contains</option>
+                                <option value="endsWith">endsWith</option>
+                                <option value="regex">regex</option>
+                            </select>
+                        </div>
+                        <div class="cs-editor-field">
+                            <label class="cs-editor-field-label">Type</label>
+                            <select class="cs-editor-select" id="cs-editor-sec-type">
+                                <option value="inventory">inventory</option>
+                                <option value="key-value">key-value</option>
+                                <option value="numeric-bars">numeric-bars</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="cs-editor-field">
+                        <label class="cs-editor-field-label">Parse Format</label>
+                        <select class="cs-editor-select" id="cs-editor-sec-format">
+                            <option value="markdown-list">markdown-list (inventory items)</option>
+                            <option value="key-value">key-value (Key: Value lines)</option>
+                            <option value="key-value-numeric">key-value-numeric (Key: 0.5)</option>
+                            <option value="stat-block">stat-block (emoji-labeled stats)</option>
+                        </select>
+                    </div>
+
+                    <!-- Fields Editor (shown for key-value type) -->
+                    <div id="cs-editor-fields-section" class="cs-hidden">
+                        <div class="cs-editor-section-label" style="margin-top: 12px;">
+                            <span>Fields</span>
+                            <button class="cs-editor-add-btn" id="cs-editor-add-field" style="width: auto; margin: 0; padding: 2px 10px; border-style: solid;">+ Add</button>
+                        </div>
+                        <div id="cs-editor-field-list" class="cs-editor-field-list">
+                            <!-- Dynamically populated -->
+                        </div>
+                    </div>
+
+                    <!-- Display config (shown for numeric-bars type) -->
+                    <div id="cs-editor-display-section" class="cs-hidden">
+                        <div class="cs-editor-section-label" style="margin-top: 12px;">Display</div>
+                        <div class="cs-editor-row">
+                            <div class="cs-editor-field">
+                                <label class="cs-editor-field-label">Positive Color</label>
+                                <input type="color" class="cs-editor-input" id="cs-editor-display-positive" value="#7c6bde" style="padding: 2px; height: 30px;" />
+                            </div>
+                            <div class="cs-editor-field">
+                                <label class="cs-editor-field-label">Negative Color</label>
+                                <input type="color" class="cs-editor-input" id="cs-editor-display-negative" value="#e05555" style="padding: 2px; height: 30px;" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Field Mapper -->
+            <div class="cs-editor-right">
+                <div class="cs-editor-section-label">Field Mapper</div>
+                <p class="cs-editor-mapper-hint">
+                    Paste a sample bot message below to auto-detect trackable fields.
+                </p>
+                <textarea class="cs-editor-mapper-input" id="cs-editor-mapper-input" placeholder="Paste raw bot HTML output here...&#10;&#10;The parser will detect <details> stat blocks,&#10;<campaign_data> YAML blocks, and emoji-labeled fields."></textarea>
+                <div class="cs-editor-parse-bar">
+                    <button class="cs-editor-parse-btn" id="cs-editor-parse-btn">Parse Sample</button>
+                    <span class="cs-editor-parse-status" id="cs-editor-parse-status"></span>
+                </div>
+
+                <!-- Detected Fields -->
+                <div id="cs-editor-detected" class="cs-editor-detected cs-hidden">
+                    <div class="cs-editor-detected-header">
+                        <span>Detected Fields</span>
+                        <span class="cs-editor-detected-count" id="cs-editor-detected-count">0</span>
+                    </div>
+                    <div id="cs-editor-detected-list" class="cs-editor-detected-list">
+                        <!-- Dynamically populated -->
+                    </div>
+                </div>
+
+                <!-- Live Preview -->
+                <div class="cs-editor-preview" id="cs-editor-preview">
+                    <div class="cs-editor-preview-title">Preview</div>
+                    <div class="cs-editor-preview-empty" id="cs-editor-preview-empty">
+                        Parse a sample message or configure sections to see a preview.
+                    </div>
+                    <div class="cs-editor-preview-content cs-root" id="cs-editor-preview-content">
+                        <!-- Rendered preview appears here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

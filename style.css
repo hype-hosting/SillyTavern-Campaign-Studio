@@ -1445,3 +1445,661 @@ campaign_data {
     font-size: 10px;
     padding: 2px 8px;
 }
+
+/* ============================================================
+   Preset Editor — Full-screen modal overlay
+   ============================================================ */
+
+.cs-editor-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: cs-fade-in 0.2s ease;
+}
+
+.cs-editor-modal {
+    width: 95vw;
+    max-width: 1100px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, var(--cs-glass-highlight) 0%, transparent 1px), var(--cs-bg-glass-deep);
+    backdrop-filter: var(--cs-blur);
+    -webkit-backdrop-filter: var(--cs-blur);
+    border: 1px solid var(--cs-border);
+    border-radius: var(--cs-radius);
+    box-shadow: var(--cs-shadow-lg);
+    color: var(--cs-text-primary);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 14px;
+    overflow: hidden;
+    animation: cs-slide-up 0.25s ease;
+}
+
+/* --- Editor Header --- */
+.cs-editor-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--cs-border);
+    background: var(--cs-glass-highlight);
+    flex-shrink: 0;
+}
+
+.cs-editor-back {
+    background: none;
+    border: none;
+    color: var(--cs-text-secondary);
+    cursor: pointer;
+    font-size: 16px;
+    padding: 4px 8px;
+    border-radius: var(--cs-radius-xs);
+    transition: all var(--cs-transition-fast);
+}
+.cs-editor-back:hover {
+    color: var(--cs-text-primary);
+    background: rgba(180, 180, 210, 0.06);
+}
+
+.cs-editor-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--cs-text-secondary);
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cs-editor-actions {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.cs-editor-btn {
+    padding: 6px 14px;
+    border: 1px solid var(--cs-border);
+    border-radius: var(--cs-radius-xs);
+    background: none;
+    color: var(--cs-text-secondary);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all var(--cs-transition-fast);
+}
+.cs-editor-btn:hover {
+    border-color: var(--cs-border-hover);
+    color: var(--cs-text-primary);
+    background: rgba(180, 180, 210, 0.06);
+}
+.cs-editor-btn-save {
+    border-color: rgba(var(--cs-accent-rgb), 0.4);
+    color: var(--cs-accent);
+}
+.cs-editor-btn-save:hover {
+    border-color: rgba(var(--cs-accent-rgb), 0.6);
+    background: rgba(var(--cs-accent-rgb), 0.1);
+    color: var(--cs-text-primary);
+}
+
+/* --- Editor Body (two columns) --- */
+.cs-editor-body {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.cs-editor-left,
+.cs-editor-right {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+}
+
+.cs-editor-left {
+    border-right: 1px solid var(--cs-border);
+    max-width: 440px;
+}
+
+.cs-editor-right {
+    flex: 1.3;
+}
+
+/* Scrollbar styling */
+.cs-editor-left::-webkit-scrollbar,
+.cs-editor-right::-webkit-scrollbar {
+    width: 4px;
+}
+.cs-editor-left::-webkit-scrollbar-thumb,
+.cs-editor-right::-webkit-scrollbar-thumb {
+    background: rgba(180, 180, 210, 0.12);
+    border-radius: 2px;
+}
+
+/* --- Section Labels --- */
+.cs-editor-section-label {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--cs-text-muted);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* --- Form Controls --- */
+.cs-editor-field {
+    margin-bottom: 12px;
+}
+
+.cs-editor-field-label {
+    display: block;
+    font-size: 11px;
+    color: var(--cs-text-muted);
+    margin-bottom: 4px;
+    letter-spacing: 0.04em;
+}
+
+.cs-editor-input,
+.cs-editor-select,
+.cs-editor-textarea {
+    width: 100%;
+    padding: 7px 10px;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--cs-border);
+    border-radius: var(--cs-radius-xs);
+    color: var(--cs-text-primary);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 13px;
+    transition: border-color var(--cs-transition-fast);
+    box-sizing: border-box;
+}
+.cs-editor-input:focus,
+.cs-editor-select:focus,
+.cs-editor-textarea:focus {
+    outline: none;
+    border-color: rgba(var(--cs-accent-rgb), 0.5);
+}
+
+.cs-editor-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%237a7a9a'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 28px;
+    cursor: pointer;
+}
+
+.cs-editor-select option {
+    background: #1a1a2e;
+    color: var(--cs-text-primary);
+}
+
+.cs-editor-textarea {
+    resize: vertical;
+    min-height: 60px;
+    line-height: 1.5;
+}
+
+.cs-editor-row {
+    display: flex;
+    gap: 10px;
+}
+.cs-editor-row > .cs-editor-field {
+    flex: 1;
+}
+
+/* --- Section List --- */
+.cs-editor-section-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 16px;
+}
+
+.cs-editor-section-card {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    background: var(--cs-bg-card);
+    border: 1px solid var(--cs-border);
+    border-radius: var(--cs-radius-sm);
+    cursor: pointer;
+    transition: all var(--cs-transition-fast);
+}
+.cs-editor-section-card:hover {
+    border-color: var(--cs-border-hover);
+    background: var(--cs-bg-glass-hover);
+}
+.cs-editor-section-card.cs-active {
+    border-color: rgba(var(--cs-accent-rgb), 0.4);
+    background: rgba(var(--cs-accent-rgb), 0.08);
+}
+
+.cs-editor-section-icon {
+    font-size: 16px;
+    width: 24px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.cs-editor-section-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.cs-editor-section-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--cs-text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cs-editor-section-meta {
+    font-size: 10px;
+    color: var(--cs-text-muted);
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.cs-editor-section-actions {
+    display: flex;
+    gap: 2px;
+    flex-shrink: 0;
+}
+
+.cs-editor-section-btn {
+    background: none;
+    border: none;
+    color: var(--cs-text-muted);
+    cursor: pointer;
+    padding: 2px 4px;
+    font-size: 12px;
+    border-radius: 3px;
+    transition: all var(--cs-transition-fast);
+}
+.cs-editor-section-btn:hover {
+    color: var(--cs-text-primary);
+    background: rgba(180, 180, 210, 0.08);
+}
+.cs-editor-section-btn.cs-danger:hover {
+    color: var(--cs-color-negative);
+}
+
+/* --- Section Detail Editor --- */
+.cs-editor-detail {
+    padding: 14px;
+    background: var(--cs-bg-card);
+    border: 1px solid var(--cs-border);
+    border-radius: var(--cs-radius-sm);
+    margin-bottom: 16px;
+    animation: cs-fade-in 0.15s ease;
+}
+
+.cs-editor-detail-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--cs-text-muted);
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--cs-border);
+}
+
+/* --- Field Editor --- */
+.cs-editor-field-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.cs-editor-field-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 8px;
+    background: rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--cs-border);
+    border-radius: var(--cs-radius-xs);
+}
+
+.cs-editor-field-name {
+    flex: 1;
+    min-width: 0;
+}
+
+.cs-editor-field-name input {
+    width: 100%;
+    padding: 3px 6px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    color: var(--cs-text-primary);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 13px;
+}
+.cs-editor-field-name input:focus {
+    outline: none;
+    border-color: var(--cs-border-hover);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.cs-editor-field-renderer {
+    flex-shrink: 0;
+    width: 140px;
+}
+.cs-editor-field-renderer select {
+    width: 100%;
+    padding: 3px 6px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--cs-border);
+    border-radius: 3px;
+    color: var(--cs-text-secondary);
+    font-size: 11px;
+    font-family: 'Share Tech Mono', monospace;
+    cursor: pointer;
+}
+.cs-editor-field-renderer select option {
+    background: #1a1a2e;
+}
+
+.cs-editor-field-remove {
+    background: none;
+    border: none;
+    color: var(--cs-text-muted);
+    cursor: pointer;
+    padding: 2px;
+    font-size: 11px;
+    transition: color var(--cs-transition-fast);
+}
+.cs-editor-field-remove:hover {
+    color: var(--cs-color-negative);
+}
+
+.cs-editor-add-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: 100%;
+    padding: 6px;
+    background: none;
+    border: 1px dashed var(--cs-border);
+    border-radius: var(--cs-radius-xs);
+    color: var(--cs-text-muted);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all var(--cs-transition-fast);
+    margin-top: 8px;
+}
+.cs-editor-add-btn:hover {
+    border-color: var(--cs-border-hover);
+    color: var(--cs-text-secondary);
+    background: rgba(180, 180, 210, 0.04);
+}
+
+/* --- Field Mapper (right column) --- */
+.cs-editor-mapper-hint {
+    font-size: 12px;
+    color: var(--cs-text-muted);
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.cs-editor-mapper-input {
+    width: 100%;
+    min-height: 100px;
+    max-height: 180px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--cs-border);
+    border-radius: var(--cs-radius-sm);
+    color: var(--cs-text-secondary);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    line-height: 1.5;
+    resize: vertical;
+    box-sizing: border-box;
+}
+.cs-editor-mapper-input:focus {
+    outline: none;
+    border-color: rgba(var(--cs-accent-rgb), 0.4);
+}
+.cs-editor-mapper-input::placeholder {
+    color: var(--cs-text-muted);
+    opacity: 0.6;
+}
+
+.cs-editor-parse-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.cs-editor-parse-btn {
+    padding: 6px 16px;
+    background: rgba(var(--cs-accent-rgb), 0.12);
+    border: 1px solid rgba(var(--cs-accent-rgb), 0.3);
+    border-radius: var(--cs-radius-xs);
+    color: var(--cs-accent);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--cs-transition-fast);
+}
+.cs-editor-parse-btn:hover {
+    background: rgba(var(--cs-accent-rgb), 0.2);
+    border-color: rgba(var(--cs-accent-rgb), 0.5);
+}
+
+.cs-editor-parse-status {
+    font-size: 11px;
+    color: var(--cs-text-muted);
+    font-family: 'Share Tech Mono', monospace;
+}
+
+/* --- Detected Fields --- */
+.cs-editor-detected {
+    margin-top: 14px;
+}
+
+.cs-editor-detected-header {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--cs-text-muted);
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cs-editor-detected-count {
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--cs-accent);
+}
+
+.cs-editor-detected-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-height: 240px;
+    overflow-y: auto;
+}
+
+.cs-editor-mapper-field {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    background: var(--cs-bg-card);
+    border: 1px solid var(--cs-border);
+    border-radius: var(--cs-radius-xs);
+    transition: border-color var(--cs-transition-fast);
+}
+.cs-editor-mapper-field:hover {
+    border-color: var(--cs-border-hover);
+}
+
+.cs-editor-mapper-key {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--cs-text-primary);
+    min-width: 80px;
+    white-space: nowrap;
+}
+
+.cs-editor-mapper-value {
+    flex: 1;
+    font-size: 11px;
+    color: var(--cs-text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.cs-editor-mapper-arrow {
+    color: var(--cs-text-muted);
+    font-size: 11px;
+    flex-shrink: 0;
+}
+
+.cs-editor-mapper-assign {
+    flex-shrink: 0;
+    width: 120px;
+}
+.cs-editor-mapper-assign select {
+    width: 100%;
+    padding: 3px 6px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--cs-border);
+    border-radius: 3px;
+    color: var(--cs-text-secondary);
+    font-size: 11px;
+    font-family: 'Share Tech Mono', monospace;
+    cursor: pointer;
+}
+.cs-editor-mapper-assign select option {
+    background: #1a1a2e;
+}
+
+/* --- Live Preview --- */
+.cs-editor-preview {
+    margin-top: 18px;
+    padding: 14px;
+    background: var(--cs-bg-card);
+    border: 1px solid var(--cs-border);
+    border-radius: var(--cs-radius-sm);
+    min-height: 100px;
+}
+
+.cs-editor-preview-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--cs-text-muted);
+    margin-bottom: 10px;
+}
+
+.cs-editor-preview-empty {
+    text-align: center;
+    color: var(--cs-text-muted);
+    font-style: italic;
+    font-size: 12px;
+    padding: 20px 0;
+}
+
+.cs-editor-preview-content {
+    /* Rendered sections appear here using existing renderer styles */
+}
+
+/* --- Validation Errors --- */
+.cs-editor-errors {
+    padding: 10px 14px;
+    background: rgba(192, 57, 43, 0.1);
+    border: 1px solid rgba(192, 57, 43, 0.3);
+    border-radius: var(--cs-radius-xs);
+    margin-bottom: 12px;
+    animation: cs-fade-in 0.15s ease;
+}
+
+.cs-editor-error-item {
+    font-size: 12px;
+    color: var(--cs-color-negative);
+    padding: 2px 0;
+}
+
+/* --- Preset Action Buttons in Settings --- */
+.cs-settings-preset-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex: 1;
+}
+.cs-settings-preset-row .cs-settings-select {
+    flex: 1;
+}
+
+.cs-settings-preset-btn {
+    background: none;
+    border: 1px solid var(--cs-border);
+    border-radius: var(--cs-radius-xs);
+    color: var(--cs-text-muted);
+    cursor: pointer;
+    padding: 4px 8px;
+    font-size: 13px;
+    transition: all var(--cs-transition-fast);
+    white-space: nowrap;
+}
+.cs-settings-preset-btn:hover {
+    border-color: var(--cs-border-hover);
+    color: var(--cs-text-primary);
+    background: rgba(180, 180, 210, 0.06);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .cs-editor-modal {
+        width: 100vw;
+        max-width: 100vw;
+        max-height: 100vh;
+        border-radius: 0;
+    }
+    .cs-editor-body {
+        flex-direction: column;
+    }
+    .cs-editor-left {
+        max-width: none;
+        border-right: none;
+        border-bottom: 1px solid var(--cs-border);
+        max-height: 50vh;
+    }
+    .cs-editor-right {
+        flex: 1;
+    }
+}
