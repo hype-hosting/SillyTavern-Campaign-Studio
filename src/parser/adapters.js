@@ -112,6 +112,74 @@ export function parseKeyValue(lines, parseConfig = {}) {
  * @param {object} parseConfig - { separator, range }
  * @returns {object} Map of key → number
  */
+/**
+ * Parse an emoji-labeled stat block into key-value pairs.
+ * Handles formats commonly output by RPG bots:
+ *   "❤️ HP: 25/30"
+ *   "⚔️ STR 14 | 🏃 DEX 16 | 🛡️ CON 14"
+ *   "📋 Conditions: Restrained (Enchanted Rope)"
+ *
+ * Splits pipe-delimited lines, strips emoji prefixes, and parses
+ * each segment as Key: Value or Key Value.
+ *
+ * @param {string[]} lines
+ * @param {object} parseConfig - { pipeSeparator }
+ * @returns {object} Map of key → string value
+ */
+export function parseStatBlock(lines, parseConfig = {}) {
+    const pipeSep = parseConfig.pipeSeparator || '|';
+    const result = {};
+
+    for (const rawLine of lines) {
+        let line = rawLine.trim();
+        // Strip blockquote and list prefixes
+        line = line.replace(/^>\s*/, '');
+        line = line.replace(/^[-*]\s*/, '');
+        line = line.trim();
+
+        if (!line) continue;
+
+        // Split on pipe separator (normalize nbsp U+00A0 around pipes)
+        const segments = line.split(new RegExp(`[\\s\\u00A0]*${escapeRegex(pipeSep)}[\\s\\u00A0]*`));
+
+        for (let segment of segments) {
+            segment = segment.trim();
+            if (!segment) continue;
+
+            // Strip leading emoji / non-letter-digit characters
+            segment = segment.replace(/^[^\p{L}\p{N}]+/u, '').trim();
+            if (!segment) continue;
+
+            // Try Key: Value (colon separator)
+            const colonIdx = segment.indexOf(':');
+            if (colonIdx > 0) {
+                const key = segment.substring(0, colonIdx).trim();
+                const value = segment.substring(colonIdx + 1).trim();
+                if (key) {
+                    result[key] = value;
+                }
+                continue;
+            }
+
+            // Try Key Value where Value is the trailing number/token (e.g., "STR 14")
+            const spaceMatch = segment.match(/^(.+?)\s+([\d+\-][\d.+\-/]*)$/);
+            if (spaceMatch) {
+                result[spaceMatch[1].trim()] = spaceMatch[2].trim();
+                continue;
+            }
+
+            // Fallback: treat entire segment as a standalone label
+            result[segment] = '';
+        }
+    }
+
+    return result;
+}
+
+function escapeRegex(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
 export function parseKeyValueNumeric(lines, parseConfig = {}) {
     const separator = parseConfig.separator || ':';
     const result = {};
