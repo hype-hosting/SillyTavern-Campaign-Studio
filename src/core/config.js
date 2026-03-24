@@ -4,6 +4,20 @@
 
 export const EXTENSION_NAME = 'campaign-studio';
 export const EXTENSION_DISPLAY = 'Campaign Studio';
+export const EXTENSION_PATH = 'scripts/extensions/third-party/SillyTavern-Campaign-Studio';
+
+export const LIMITS = {
+    HISTORY_MAX: 500,
+    LOCATION_HISTORY_MAX: 100,
+    ROLL_HISTORY_MAX: 20,
+    TIMELINE_DISPLAY_MAX: 50,
+};
+
+export const ANIMATION = {
+    PANEL_TRANSITION_MS: 350,
+    DICE_FLASH_COUNT: 8,
+    DICE_FLASH_INTERVAL_MS: 60,
+};
 
 export const DEFAULT_SETTINGS = {
     enabled: true,

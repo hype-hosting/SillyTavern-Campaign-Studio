@@ -7,11 +7,12 @@
 
 import { getSettings, updateSettings } from '../core/persistence.js';
 import { emit, CS_EVENTS } from '../core/events.js';
-import { PANEL_POSITIONS } from '../core/config.js';
+import { PANEL_POSITIONS, ANIMATION } from '../core/config.js';
 
 let $panel = null;
 let $fab = null;
 let isOpen = false;
+let closeTimeoutId = null;
 
 /**
  * Initialize the panel DOM references and event listeners.
@@ -57,6 +58,10 @@ export function initPanel() {
 
 export function openPanel() {
     if (!$panel) return;
+    if (closeTimeoutId) {
+        clearTimeout(closeTimeoutId);
+        closeTimeoutId = null;
+    }
     isOpen = true;
     $panel.removeClass('cs-hidden');
     $panel.addClass('cs-panel-visible');
@@ -70,11 +75,12 @@ export function closePanel() {
     isOpen = false;
     $panel.removeClass('cs-panel-visible');
     // Delay hiding to allow transition
-    setTimeout(() => {
+    closeTimeoutId = setTimeout(() => {
+        closeTimeoutId = null;
         if (!isOpen) {
             $panel.addClass('cs-hidden');
         }
-    }, 350);
+    }, ANIMATION.PANEL_TRANSITION_MS);
     $fab.removeClass('cs-hidden');
     updateSettings({ panelOpen: false });
     emit(CS_EVENTS.PANEL_TOGGLED, { open: false });

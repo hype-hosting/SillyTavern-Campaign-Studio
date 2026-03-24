@@ -5,6 +5,7 @@
 
 import { sanitizeText } from '../../utils/sanitize.js';
 import { diffData } from '../../utils/diff.js';
+import { LIMITS } from '../../core/config.js';
 
 /**
  * Render the session timeline into a container.
@@ -32,8 +33,7 @@ export function renderTimeline(history, preset, $container) {
 
     const $list = $('<div class="cs-timeline-list"></div>');
 
-    // Show last 50 events, most recent first
-    const entries = history.slice(-50).reverse();
+    const entries = history.slice(-LIMITS.TIMELINE_DISPLAY_MAX).reverse();
 
     for (const entry of entries) {
         const sectionDef = preset?.sections?.find(s => s.id === entry.sectionId);
@@ -63,7 +63,8 @@ export function renderTimeline(history, preset, $container) {
         for (const change of changes) {
             const cls = change.type === 'added' ? 'cs-delta-positive' :
                 change.type === 'removed' ? 'cs-delta-negative' : 'cs-timeline-modified';
-            $changes.append(`<div class="cs-timeline-change ${cls}">${change.text}</div>`);
+            const $change = $('<div>').addClass(`cs-timeline-change ${cls}`).text(change.text);
+            $changes.append($change);
         }
 
         $list.append($entry);
@@ -77,6 +78,8 @@ const SECTION_ICONS = {
     globe: '🌍',
     shield: '🛡',
     scroll: '📜',
+    clock: '⏱',
+    map: '🗺',
     default: '◆',
 };
 

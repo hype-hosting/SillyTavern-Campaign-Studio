@@ -821,10 +821,12 @@ const RENDERER_PATTERNS = [
         'resources', 'roll', 'dice', 'scene', 'note'], renderer: 'text' },
 ];
 
+const ENTITY_MAP = { '&amp;': '&', '&lt;': '<', '&gt;': '>', '&quot;': '"', '&#39;': "'", '&#x27;': "'", '&apos;': "'" };
+const ENTITY_REGEX = /&(?:amp|lt|gt|quot|apos|#39|#x27);/g;
+
 function decodeHtmlEntities(str) {
-    const textarea = document.createElement('textarea');
-    textarea.innerHTML = str;
-    return textarea.value;
+    if (!str || !str.includes('&')) return str;
+    return str.replace(ENTITY_REGEX, match => ENTITY_MAP[match] || match);
 }
 
 function guessRenderer(key, value) {

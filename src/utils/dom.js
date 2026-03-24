@@ -2,7 +2,7 @@
  * Campaign Studio — DOM utilities
  */
 
-import { CSS_PREFIX } from '../core/config.js';
+import { CSS_PREFIX, EXTENSION_PATH } from '../core/config.js';
 
 /**
  * Create a namespaced jQuery element.
@@ -29,8 +29,7 @@ export function csEl(tag, className, attrs = {}) {
  * @returns {Promise<jQuery>}
  */
 export async function loadTemplate(templateFile, target) {
-    const extensionPath = '/scripts/extensions/third-party/SillyTavern-Campaign-Studio';
-    const response = await fetch(`${extensionPath}/${templateFile}`);
+    const response = await fetch(`/${EXTENSION_PATH}/${templateFile}`);
     if (!response.ok) {
         throw new Error(`Failed to load template: ${templateFile}`);
     }
