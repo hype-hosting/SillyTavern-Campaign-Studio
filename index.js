@@ -56,6 +56,7 @@ jQuery(async () => {
 
         // 5. Initialize panel UI
         initPanel();
+        $('.cs-btn-refresh').on('click', () => reparseChat());
 
         // 6. Initialize tabs from active preset
         const activePreset = getActivePreset();
