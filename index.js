@@ -3,7 +3,7 @@
  * Bootstrap, SillyTavern event hooks, template loading.
  */
 
-import { EXTENSION_NAME, EXTENSION_DISPLAY } from './src/core/config.js';
+import { EXTENSION_NAME, EXTENSION_DISPLAY, EXTENSION_PATH } from './src/core/config.js';
 import { initSettings, getSettings, updateSettings, saveMessageSnapshot, rebuildStateFromChat } from './src/core/persistence.js';
 import { getState, updateSection, getAllSections, getSection } from './src/core/state.js';
 import { extractBlocks } from './src/parser/engine.js';
@@ -25,7 +25,7 @@ import { registerStateInjection, unregisterStateInjection } from './src/injectio
 import { loadTemplate } from './src/utils/dom.js';
 import { on, CS_EVENTS } from './src/core/events.js';
 
-const EXTENSION_PATH = `scripts/extensions/third-party/SillyTavern-Campaign-Studio`;
+// Extension path is now imported from config.js
 
 // Track which summary texts were parsed per message for collapse
 let lastParsedSummaryTexts = [];
@@ -47,8 +47,9 @@ jQuery(async () => {
         // 2. Load settings panel into ST Extensions drawer
         await loadSettingsPanel();
 
-        // 3. Load presets
+        // 3. Load presets and populate dropdown
         await initPresets();
+        populatePresetDropdown();
 
         // 4. Load panel template into DOM
         await loadTemplate('panel.html', $('body'));
@@ -109,16 +110,8 @@ async function loadSettingsPanel() {
         updateSettings({ enabled: $(this).is(':checked') });
     });
 
-    // Preset dropdown
+    // Preset dropdown — populated later by populatePresetDropdown() after presets load
     const $presetSelect = $('#cs-settings-preset');
-    // Will be populated after presets are loaded — use a short delay
-    setTimeout(() => {
-        $presetSelect.empty();
-        for (const preset of getAllPresets()) {
-            $presetSelect.append(`<option value="${preset.id}">${preset.name}</option>`);
-        }
-        $presetSelect.val(settings.activePreset);
-    }, 500);
 
     $presetSelect.on('change', function () {
         const presetId = $(this).val();
@@ -233,6 +226,19 @@ async function loadSettingsPanel() {
         updateSettings({ presetRules: rules });
         updateSystemPrompt();
     });
+}
+
+/**
+ * Populate the preset dropdown after presets have been loaded.
+ */
+function populatePresetDropdown() {
+    const $presetSelect = $('#cs-settings-preset');
+    const settings = getSettings();
+    $presetSelect.empty();
+    for (const preset of getAllPresets()) {
+        $presetSelect.append(`<option value="${preset.id}">${preset.name}</option>`);
+    }
+    $presetSelect.val(settings.activePreset);
 }
 
 /**
@@ -620,12 +626,8 @@ function refreshAfterPresetEdit(savedPreset) {
     activatePreset(savedPreset.id);
 
     // Repopulate preset dropdown
-    const $presetSelect = $('#cs-settings-preset');
-    $presetSelect.empty();
-    for (const preset of getAllPresets()) {
-        $presetSelect.append(`<option value="${preset.id}">${preset.name}</option>`);
-    }
-    $presetSelect.val(savedPreset.id);
+    populatePresetDropdown();
+    $('#cs-settings-preset').val(savedPreset.id);
 
     // Re-init tabs and panel
     const preset = getActivePreset();

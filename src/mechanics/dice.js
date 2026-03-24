@@ -3,8 +3,11 @@
  * Parses dN+M notation, rolls dice with animation, displays results.
  */
 
+import { LIMITS, ANIMATION } from '../core/config.js';
+
 const rollHistory = [];
 const pendingRolls = [];
+let activeAnimationInterval = null;
 
 /**
  * Consume and clear all pending dice rolls (for injection into AI context).
@@ -71,9 +74,13 @@ export function parseDiceNotation(notation) {
     const match = notation.trim().match(/^(\d*)d(\d+)\s*([+-]\s*\d+)?$/i);
     if (!match) return null;
 
+    const count = parseInt(match[1] || '1', 10);
+    const sides = parseInt(match[2], 10);
+    if (count < 1 || sides < 1) return null;
+
     return {
-        count: parseInt(match[1] || '1', 10),
-        sides: parseInt(match[2], 10),
+        count,
+        sides,
         modifier: match[3] ? parseInt(match[3].replace(/\s/g, ''), 10) : 0,
     };
 }
@@ -113,7 +120,7 @@ export function rollFromNotation(notation, rollContext = null) {
     // Record in history and pending queue
     const entry = { notation, rolls, modifier, total, context: rollContext, timestamp: Date.now() };
     rollHistory.unshift(entry);
-    if (rollHistory.length > 20) rollHistory.pop();
+    if (rollHistory.length > LIMITS.ROLL_HISTORY_MAX) rollHistory.pop();
     pendingRolls.push(entry);
     updateHistory();
 
@@ -123,18 +130,23 @@ export function rollFromNotation(notation, rollContext = null) {
 function animateResult(total, notation, detail) {
     const $result = $('#cs-dice-result .cs-dice-result-value');
 
+    // Clear any in-progress animation
+    if (activeAnimationInterval) {
+        clearInterval(activeAnimationInterval);
+    }
+
     // Quick random flash animation
     let flashes = 0;
-    const maxFlashes = 8;
-    const interval = setInterval(() => {
+    activeAnimationInterval = setInterval(() => {
         const fake = Math.floor(Math.random() * 100) + 1;
         $result.text(fake);
         flashes++;
-        if (flashes >= maxFlashes) {
-            clearInterval(interval);
+        if (flashes >= ANIMATION.DICE_FLASH_COUNT) {
+            clearInterval(activeAnimationInterval);
+            activeAnimationInterval = null;
             showResult(total, detail);
         }
-    }, 60);
+    }, ANIMATION.DICE_FLASH_INTERVAL_MS);
 }
 
 function showResult(total, detail) {
@@ -163,6 +175,10 @@ function updateHistory() {
 }
 
 export function destroyDice() {
+    if (activeAnimationInterval) {
+        clearInterval(activeAnimationInterval);
+        activeAnimationInterval = null;
+    }
     $(document).off('click', '.cs-dice-preset');
     $(document).off('click', '.cs-dice-close');
     $('#cs-dice-roll-btn').off('click');

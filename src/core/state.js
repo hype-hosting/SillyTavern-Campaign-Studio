@@ -3,6 +3,7 @@
  */
 
 import { emit, CS_EVENTS } from './events.js';
+import { LIMITS } from './config.js';
 
 let state = {
     activePreset: null,
@@ -43,7 +44,7 @@ export function updateSection(sectionId, sectionConfig, newData, messageId) {
 
     state.currentMessageId = Math.max(state.currentMessageId, messageId);
 
-    // Record in history
+    // Record in history (cap to prevent unbounded growth)
     state.history.push({
         messageId,
         sectionId,
@@ -51,6 +52,9 @@ export function updateSection(sectionId, sectionConfig, newData, messageId) {
         previous,
         current: newData,
     });
+    if (state.history.length > LIMITS.HISTORY_MAX) {
+        state.history = state.history.slice(-LIMITS.HISTORY_MAX);
+    }
 
     // Track location changes
     if (sectionConfig.type === 'key-value' && newData && newData['Path']) {
@@ -61,6 +65,9 @@ export function updateSection(sectionId, sectionConfig, newData, messageId) {
                 path: newData['Path'],
                 timestamp: newData['Time'] || new Date().toLocaleTimeString(),
             });
+            if (state.locationHistory.length > LIMITS.LOCATION_HISTORY_MAX) {
+                state.locationHistory = state.locationHistory.slice(-LIMITS.LOCATION_HISTORY_MAX);
+            }
         }
     }
 
@@ -96,8 +103,8 @@ export function getSnapshot() {
         activePreset: state.activePreset,
         currentMessageId: state.currentMessageId,
         sections: JSON.parse(JSON.stringify(state.sections)),
-        history: state.history,
-        locationHistory: state.locationHistory,
+        history: [...state.history],
+        locationHistory: [...state.locationHistory],
     };
 }
 

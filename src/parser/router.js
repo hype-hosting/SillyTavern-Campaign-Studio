@@ -113,9 +113,14 @@ function coerceData(data, section) {
  *   - Object with item names as keys
  */
 function coerceInventory(data, section) {
-    const tagPattern = section.parse?.tagPattern
-        ? new RegExp(section.parse.tagPattern, 'g')
-        : /\(([^)]+)\)/g;
+    let tagPattern = /\(([^)]+)\)/g;
+    if (section.parse?.tagPattern) {
+        try {
+            tagPattern = new RegExp(section.parse.tagPattern, 'g');
+        } catch (e) {
+            console.warn(`[Campaign Studio] Invalid tagPattern "${section.parse.tagPattern}":`, e.message);
+        }
+    }
 
     if (Array.isArray(data)) {
         return data.map(item => {

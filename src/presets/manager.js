@@ -6,6 +6,7 @@
 import { validatePreset } from './schema.js';
 import { getSettings, updateSettings } from '../core/persistence.js';
 import { setActivePreset } from '../core/state.js';
+import { EXTENSION_PATH } from '../core/config.js';
 
 const presetRegistry = new Map();
 
@@ -25,7 +26,7 @@ export async function initPresets() {
     for (const presetId of BUILTIN_PRESETS) {
         try {
             const response = await fetch(
-                `/scripts/extensions/third-party/SillyTavern-Campaign-Studio/src/presets/builtin/${presetId}.json`,
+                `/${EXTENSION_PATH}/src/presets/builtin/${presetId}.json`,
             );
             if (response.ok) {
                 const preset = await response.json();
