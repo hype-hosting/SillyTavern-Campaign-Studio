@@ -6,6 +6,7 @@
 
 import { MATCH_MODES } from '../core/config.js';
 import { parseMarkdownList, parseKeyValue, parseKeyValueNumeric, parseStatBlock } from './adapters.js';
+import { routeFieldsToSections } from './field-router.js';
 
 /**
  * Extract all matching <details><summary> blocks from message HTML.
@@ -64,17 +65,64 @@ export function extractBlocks(messageHtml, preset) {
                 summaryText: summary.textContent.trim(),
             });
         } else {
-            unmatchedBlocks.push(details.outerHTML);
+            unmatchedBlocks.push({ element: details, summary, summaryText });
         }
     }
 
-    return { matched, unmatchedBlocks };
+    // Second pass: try extraction sources on unmatched blocks
+    const sources = preset.extraction?.sources;
+    if (sources?.length && unmatchedBlocks.length > 0) {
+        for (const unmatched of unmatchedBlocks) {
+            for (const source of sources) {
+                if (!source.summaryMatch || !source.fieldMap) continue;
+
+                if (matchesSummary(unmatched.summaryText, source.summaryMatch, source.matchMode)) {
+                    const rawContent = extractInnerContent(unmatched.element, unmatched.summary);
+                    const parsed = parseSection(rawContent, { parse: { format: source.format } });
+                    const fieldRouted = routeFieldsToSections(
+                        parsed, source, preset,
+                        unmatched.element.outerHTML,
+                        unmatched.summary.textContent.trim(),
+                    );
+
+                    // Merge field-routed results into matched map
+                    for (const [sectionId, result] of fieldRouted) {
+                        if (matched.has(sectionId)) {
+                            // Merge data into existing section entry
+                            const existing = matched.get(sectionId);
+                            existing.data = mergeData(existing.data, result.data, result.sectionConfig.type);
+                        } else {
+                            matched.set(sectionId, result);
+                        }
+                    }
+                    break; // First matching source wins for this block
+                }
+            }
+        }
+    }
+
+    return { matched, unmatchedBlocks: unmatchedBlocks.map(u => u.element.outerHTML) };
+}
+
+/**
+ * Merge new data into existing section data.
+ */
+function mergeData(existing, incoming, sectionType) {
+    if (sectionType === 'inventory') {
+        // Concatenate inventory arrays
+        return [...(Array.isArray(existing) ? existing : []), ...(Array.isArray(incoming) ? incoming : [])];
+    }
+    // For key-value and numeric-bars, spread merge
+    if (typeof existing === 'object' && typeof incoming === 'object') {
+        return { ...existing, ...incoming };
+    }
+    return incoming;
 }
 
 /**
  * Check if summary text matches a section's match pattern.
  */
-function matchesSummary(summaryText, matchPattern, matchMode) {
+export function matchesSummary(summaryText, matchPattern, matchMode) {
     const mode = matchMode || MATCH_MODES.CONTAINS;
     const lower = summaryText.toLowerCase();
     const pattern = matchPattern.toLowerCase();
@@ -120,7 +168,7 @@ function extractInnerContent(details, summary) {
 /**
  * Route raw content lines to the appropriate parser adapter.
  */
-function parseSection(rawLines, sectionConfig) {
+export function parseSection(rawLines, sectionConfig) {
     const format = sectionConfig.parse?.format || 'key-value';
 
     switch (format) {

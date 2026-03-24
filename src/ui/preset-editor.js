@@ -32,6 +32,7 @@ const RENDERERS = [
 let workingPreset = null;      // The preset being edited (deep clone)
 let selectedSectionId = null;  // Currently selected section for detail editing
 let selectedRuleId = null;     // Currently selected rule for detail editing
+let selectedSourceIdx = null;  // Currently selected extraction source index
 let detectedFields = [];       // Fields found by the mapper
 let isOpen = false;
 let $overlay = null;
@@ -67,6 +68,7 @@ export async function openPresetEditor(preset, options = {}) {
     onSaveCallback = options.onSave || null;
     selectedSectionId = null;
     selectedRuleId = null;
+    selectedSourceIdx = null;
     detectedFields = [];
 
     populateEditor();
@@ -84,6 +86,7 @@ export function closePresetEditor() {
     workingPreset = null;
     selectedSectionId = null;
     selectedRuleId = null;
+    selectedSourceIdx = null;
     detectedFields = [];
     onSaveCallback = null;
 }
@@ -148,6 +151,12 @@ function wireGlobalEvents() {
         workingPreset.theme.accentColor = $(this).val();
     });
 
+    // Extraction source CRUD
+    $('#cs-editor-add-source').on('click', () => addSource());
+    $('#cs-editor-add-fieldmap').on('click', () => addFieldMapping());
+    $('#cs-editor-source-match, #cs-editor-source-matchmode, #cs-editor-source-format')
+        .on('change input', () => syncSourceFromForm());
+
     // Rule CRUD
     $('#cs-editor-add-rule').on('click', () => addRule());
     $('#cs-editor-rule-id, #cs-editor-rule-name, #cs-editor-rule-icon, #cs-editor-rule-enabled, #cs-editor-rule-content')
@@ -183,8 +192,10 @@ function populateEditor() {
     $('#cs-editor-accent').val(p.theme?.accentColor || '#7c6bde');
 
     renderSectionList();
+    renderSourceList();
     renderRuleList();
     hideDetail();
+    hideSourceDetail();
     hideRuleDetail();
     hideErrors();
     clearMapper();
@@ -245,6 +256,7 @@ function renderSectionList() {
 function selectSection(sectionId) {
     selectedSectionId = sectionId;
     hideRuleDetail(); // Mutual exclusion: only one detail panel at a time
+    hideSourceDetail();
     const section = workingPreset.sections.find(s => s.id === sectionId);
     if (!section) return;
 
@@ -429,6 +441,7 @@ function renderRuleList() {
 function selectRule(ruleId) {
     selectedRuleId = ruleId;
     hideDetail(); // Mutual exclusion: hide section detail
+    hideSourceDetail();
     const rules = workingPreset.rules || [];
     const rule = rules.find(r => r.id === ruleId);
     if (!rule) return;
@@ -501,6 +514,216 @@ function hideRuleDetail() {
     $('#cs-editor-rule-detail').addClass('cs-hidden');
     selectedRuleId = null;
     $('.cs-editor-rule-card').removeClass('cs-active');
+}
+
+// ── Extraction Source CRUD ──────────────────────────────────────
+
+function renderSourceList() {
+    const $list = $('#cs-editor-source-list');
+    $list.empty();
+
+    const sources = workingPreset.extraction?.sources || [];
+    for (let i = 0; i < sources.length; i++) {
+        const source = sources[i];
+        const isActive = i === selectedSourceIdx;
+        const fieldCount = source.fieldMap ? Object.keys(source.fieldMap).length : 0;
+
+        const $card = $('<div>')
+            .addClass('cs-editor-source-card')
+            .toggleClass('cs-active', isActive)
+            .attr('data-source-idx', i);
+
+        const $icon = $('<span>').addClass('cs-editor-source-icon').text('\u{1F50D}');
+        const $info = $('<div>').addClass('cs-editor-source-info');
+        $info.append(
+            $('<div>').addClass('cs-editor-source-name').text(source.summaryMatch || 'Untitled Source'),
+            $('<div>').addClass('cs-editor-section-meta').text(
+                `${source.format || 'stat-block'} \u00B7 ${fieldCount} field(s)`,
+            ),
+        );
+
+        const $actions = $('<div>').addClass('cs-editor-section-actions');
+        $actions.append(
+            $('<button>').addClass('cs-editor-section-btn cs-danger').text('\u2715').attr('title', 'Remove')
+                .on('click', (e) => { e.stopPropagation(); removeSource(i); }),
+        );
+
+        $card.append($icon, $info, $actions);
+        $card.on('click', () => selectSource(i));
+        $list.append($card);
+    }
+}
+
+function selectSource(idx) {
+    const sources = workingPreset.extraction?.sources || [];
+    if (idx < 0 || idx >= sources.length) return;
+
+    selectedSourceIdx = idx;
+    hideDetail(); // Mutual exclusion
+    hideRuleDetail();
+
+    const source = sources[idx];
+
+    // Highlight in list
+    $('.cs-editor-source-card').removeClass('cs-active');
+    $(`.cs-editor-source-card[data-source-idx="${idx}"]`).addClass('cs-active');
+
+    // Populate detail form
+    $('#cs-editor-source-detail').removeClass('cs-hidden');
+    $('#cs-editor-source-detail-title').text(`Source: ${source.summaryMatch || 'Untitled'}`);
+    $('#cs-editor-source-match').val(source.summaryMatch || '');
+    $('#cs-editor-source-matchmode').val(source.matchMode || 'contains');
+    $('#cs-editor-source-format').val(source.format || 'stat-block');
+
+    renderFieldMapList(source);
+}
+
+function syncSourceFromForm() {
+    const sources = workingPreset.extraction?.sources || [];
+    if (selectedSourceIdx === null || selectedSourceIdx >= sources.length) return;
+
+    const source = sources[selectedSourceIdx];
+    source.summaryMatch = $('#cs-editor-source-match').val().trim();
+    source.matchMode = $('#cs-editor-source-matchmode').val();
+    source.format = $('#cs-editor-source-format').val();
+
+    $('#cs-editor-source-detail-title').text(`Source: ${source.summaryMatch || 'Untitled'}`);
+    renderSourceList();
+}
+
+function addSource() {
+    workingPreset.extraction = workingPreset.extraction || {};
+    workingPreset.extraction.sources = workingPreset.extraction.sources || [];
+
+    const newSource = {
+        summaryMatch: '',
+        matchMode: 'contains',
+        format: 'stat-block',
+        fieldMap: {},
+    };
+    workingPreset.extraction.sources.push(newSource);
+    renderSourceList();
+    selectSource(workingPreset.extraction.sources.length - 1);
+}
+
+function removeSource(index) {
+    const sources = workingPreset.extraction?.sources || [];
+    sources.splice(index, 1);
+    if (selectedSourceIdx === index) hideSourceDetail();
+    if (sources.length === 0) {
+        delete workingPreset.extraction;
+    }
+    renderSourceList();
+}
+
+function hideSourceDetail() {
+    $('#cs-editor-source-detail').addClass('cs-hidden');
+    selectedSourceIdx = null;
+    $('.cs-editor-source-card').removeClass('cs-active');
+}
+
+// ── Field Map CRUD ──────────────────────────────────────────────
+
+function renderFieldMapList(source) {
+    const $list = $('#cs-editor-fieldmap-list');
+    $list.empty();
+
+    const fieldMap = source.fieldMap || {};
+    const sectionOptions = workingPreset.sections.map(s => ({
+        id: s.id,
+        label: s.match || s.id,
+    }));
+
+    for (const [sourceField, mapping] of Object.entries(fieldMap)) {
+        $list.append(createFieldMapRow(sourceField, mapping, sectionOptions));
+    }
+}
+
+function createFieldMapRow(sourceField, mapping, sectionOptions) {
+    const $row = $('<div>').addClass('cs-editor-fieldmap-row');
+
+    const $source = $('<input>').attr({ type: 'text', placeholder: 'Source field' })
+        .addClass('cs-editor-input cs-editor-fieldmap-source')
+        .val(sourceField);
+
+    const $arrow = $('<span>').addClass('cs-editor-fieldmap-arrow').text('\u2192');
+
+    const $sectionSelect = $('<select>').addClass('cs-editor-select cs-editor-fieldmap-section');
+    $sectionSelect.append($('<option>').val('').text('-- section --'));
+    for (const opt of sectionOptions) {
+        $sectionSelect.append($('<option>').val(opt.id).text(opt.label));
+    }
+    $sectionSelect.val(mapping.section || '');
+
+    const $targetField = $('<input>').attr({ type: 'text', placeholder: 'Target field (optional)' })
+        .addClass('cs-editor-input cs-editor-fieldmap-target')
+        .val(mapping.field || '');
+
+    const $remove = $('<button>').addClass('cs-editor-section-btn cs-danger').text('\u2715')
+        .on('click', () => {
+            removeFieldMapping(sourceField);
+        });
+
+    // Sync on change
+    const syncRow = () => {
+        const sources = workingPreset.extraction?.sources || [];
+        if (selectedSourceIdx === null || selectedSourceIdx >= sources.length) return;
+        const source = sources[selectedSourceIdx];
+        const newSourceField = $source.val().trim();
+        const newSection = $sectionSelect.val();
+        const newTarget = $targetField.val().trim();
+
+        // Remove old key if renamed
+        if (newSourceField !== sourceField && source.fieldMap[sourceField]) {
+            delete source.fieldMap[sourceField];
+        }
+        if (newSourceField && newSection) {
+            source.fieldMap[newSourceField] = { section: newSection };
+            if (newTarget) {
+                source.fieldMap[newSourceField].field = newTarget;
+            }
+        }
+        renderSourceList();
+    };
+
+    $source.on('change', syncRow);
+    $sectionSelect.on('change', syncRow);
+    $targetField.on('change', syncRow);
+
+    $row.append($source, $arrow, $sectionSelect, $targetField, $remove);
+    return $row;
+}
+
+function addFieldMapping() {
+    const sources = workingPreset.extraction?.sources || [];
+    if (selectedSourceIdx === null || selectedSourceIdx >= sources.length) return;
+
+    const source = sources[selectedSourceIdx];
+    source.fieldMap = source.fieldMap || {};
+
+    let name = 'Field';
+    let i = 1;
+    while (source.fieldMap[name]) { name = `Field${++i}`; }
+
+    source.fieldMap[name] = { section: '' };
+
+    const sectionOptions = workingPreset.sections.map(s => ({
+        id: s.id,
+        label: s.match || s.id,
+    }));
+    renderFieldMapList(source);
+}
+
+function removeFieldMapping(sourceField) {
+    const sources = workingPreset.extraction?.sources || [];
+    if (selectedSourceIdx === null || selectedSourceIdx >= sources.length) return;
+
+    const source = sources[selectedSourceIdx];
+    if (source.fieldMap) {
+        delete source.fieldMap[sourceField];
+    }
+    renderFieldMapList(source);
+    renderSourceList();
 }
 
 // ── Field CRUD ─────────────────────────────────────────────────
@@ -940,6 +1163,23 @@ function savePreset() {
     for (const section of workingPreset.sections) {
         if (section.fields && Object.keys(section.fields).length === 0 && section.type !== 'key-value') {
             delete section.fields;
+        }
+    }
+
+    // Clean up extraction sources: remove empty field maps and empty sources
+    if (workingPreset.extraction?.sources) {
+        for (const source of workingPreset.extraction.sources) {
+            if (source.fieldMap) {
+                // Remove entries with empty section assignments
+                for (const [key, mapping] of Object.entries(source.fieldMap)) {
+                    if (!mapping.section) delete source.fieldMap[key];
+                }
+            }
+        }
+        // Remove sources with no summary match
+        workingPreset.extraction.sources = workingPreset.extraction.sources.filter(s => s.summaryMatch);
+        if (workingPreset.extraction.sources.length === 0) {
+            delete workingPreset.extraction;
         }
     }
 

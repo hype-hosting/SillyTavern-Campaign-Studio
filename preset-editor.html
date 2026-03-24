@@ -159,6 +159,56 @@
                     </div>
                 </div>
 
+                <!-- Extraction Sources List -->
+                <div class="cs-editor-section-label">
+                    <span>Extraction Sources</span>
+                    <button class="cs-editor-add-btn" id="cs-editor-add-source" style="width: auto; margin: 0; padding: 2px 10px; border-style: solid;">+ Add</button>
+                </div>
+                <p class="cs-editor-hint">Map fields from existing bot trackers (e.g., stat blocks in &lt;details&gt;) to your sections.</p>
+                <div id="cs-editor-source-list" class="cs-editor-source-list">
+                    <!-- Dynamically populated -->
+                </div>
+
+                <!-- Source Detail Editor (shown when a source is selected) -->
+                <div id="cs-editor-source-detail" class="cs-editor-detail cs-hidden">
+                    <div class="cs-editor-detail-title" id="cs-editor-source-detail-title">Extraction Source</div>
+
+                    <div class="cs-editor-field">
+                        <label class="cs-editor-field-label">Summary Match</label>
+                        <input type="text" class="cs-editor-input" id="cs-editor-source-match" placeholder="e.g. Fate's Ledger" />
+                    </div>
+
+                    <div class="cs-editor-row">
+                        <div class="cs-editor-field">
+                            <label class="cs-editor-field-label">Match Mode</label>
+                            <select class="cs-editor-select" id="cs-editor-source-matchmode">
+                                <option value="contains">contains</option>
+                                <option value="exact">exact</option>
+                                <option value="endsWith">endsWith</option>
+                                <option value="regex">regex</option>
+                            </select>
+                        </div>
+                        <div class="cs-editor-field">
+                            <label class="cs-editor-field-label">Parse Format</label>
+                            <select class="cs-editor-select" id="cs-editor-source-format">
+                                <option value="stat-block">stat-block (emoji stats)</option>
+                                <option value="key-value">key-value (Key: Value)</option>
+                                <option value="key-value-numeric">key-value-numeric</option>
+                                <option value="markdown-list">markdown-list</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Field Map Editor -->
+                    <div class="cs-editor-section-label" style="margin-top: 12px;">
+                        <span>Field Mappings</span>
+                        <button class="cs-editor-add-btn" id="cs-editor-add-fieldmap" style="width: auto; margin: 0; padding: 2px 10px; border-style: solid;">+ Add</button>
+                    </div>
+                    <div id="cs-editor-fieldmap-list" class="cs-editor-fieldmap-list">
+                        <!-- Dynamically populated -->
+                    </div>
+                </div>
+
                 <!-- Rules List -->
                 <div class="cs-editor-section-label">
                     <span>Rules</span>

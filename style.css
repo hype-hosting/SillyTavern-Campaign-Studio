@@ -2613,6 +2613,101 @@ campaign_data {
     background: rgba(122, 122, 154, 0.1);
 }
 
+/* --- Extraction Source List --- */
+.cs-editor-source-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 16px;
+}
+
+.cs-editor-source-card {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    background: var(--cs-bg-card);
+    border: 1px solid var(--cs-border);
+    border-radius: var(--cs-radius-sm);
+    cursor: pointer;
+    transition: all var(--cs-transition-fast);
+}
+.cs-editor-source-card:hover {
+    border-color: var(--cs-border-hover);
+    background: var(--cs-bg-glass-hover);
+}
+.cs-editor-source-card.cs-active {
+    border-color: rgba(var(--cs-accent-rgb), 0.4);
+    border-left: 2px solid rgba(var(--cs-accent-rgb), 0.5);
+    background: rgba(var(--cs-accent-rgb), 0.08);
+}
+
+.cs-editor-source-icon {
+    font-size: 16px;
+    width: 24px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.cs-editor-source-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.cs-editor-source-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--cs-text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cs-editor-hint {
+    font-size: 11px;
+    color: var(--cs-text-muted);
+    margin: 0 0 8px 0;
+    line-height: 1.4;
+}
+
+/* --- Field Map Editor --- */
+.cs-editor-fieldmap-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.cs-editor-fieldmap-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.cs-editor-fieldmap-source {
+    flex: 1;
+    min-width: 80px;
+    max-width: 120px;
+}
+
+.cs-editor-fieldmap-arrow {
+    color: var(--cs-text-muted);
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.cs-editor-fieldmap-section {
+    flex: 1;
+    min-width: 90px;
+}
+
+.cs-editor-fieldmap-target {
+    flex: 1;
+    min-width: 80px;
+    max-width: 120px;
+}
+
 /* --- Checkbox Styling --- */
 .cs-editor-checkbox-label {
     display: flex;
