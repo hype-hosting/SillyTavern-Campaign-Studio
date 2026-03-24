@@ -104,5 +104,49 @@ export function validatePreset(preset) {
         }
     }
 
+    // Optional extraction config
+    if (preset.extraction) {
+        if (preset.extraction.sources !== undefined) {
+            if (!Array.isArray(preset.extraction.sources)) {
+                errors.push('"extraction.sources" must be an array');
+            } else {
+                for (let i = 0; i < preset.extraction.sources.length; i++) {
+                    const source = preset.extraction.sources[i];
+                    const prefix = `extraction.sources[${i}]`;
+
+                    if (!source.summaryMatch || typeof source.summaryMatch !== 'string') {
+                        errors.push(`${prefix}: missing or invalid "summaryMatch"`);
+                    }
+
+                    if (source.format && !VALID_FORMATS.includes(source.format)) {
+                        errors.push(`${prefix}: invalid format "${source.format}"`);
+                    }
+
+                    if (source.matchMode && !VALID_MATCH_MODES.includes(source.matchMode)) {
+                        errors.push(`${prefix}: invalid matchMode "${source.matchMode}"`);
+                    }
+
+                    if (source.summaryMatch && source.matchMode === 'regex') {
+                        try {
+                            new RegExp(source.summaryMatch);
+                        } catch (e) {
+                            errors.push(`${prefix}: invalid summaryMatch regex: ${e.message}`);
+                        }
+                    }
+
+                    if (source.fieldMap !== undefined && (typeof source.fieldMap !== 'object' || Array.isArray(source.fieldMap))) {
+                        errors.push(`${prefix}: "fieldMap" must be an object`);
+                    } else if (source.fieldMap) {
+                        for (const [fieldKey, mapping] of Object.entries(source.fieldMap)) {
+                            if (!mapping.section || typeof mapping.section !== 'string') {
+                                errors.push(`${prefix}.fieldMap["${fieldKey}"]: missing or invalid "section"`);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     return { valid: errors.length === 0, errors };
 }
