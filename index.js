@@ -185,6 +185,12 @@ async function loadSettingsPanel() {
         }
     });
 
+    // Auto-extract toggle
+    $('#cs-settings-auto-extract').prop('checked', settings.mechanics?.autoExtract !== false).on('change', function () {
+        const enabled = $(this).is(':checked');
+        updateSettings({ mechanics: { ...settings.mechanics, autoExtract: enabled } });
+    });
+
     // Injection: system prompt toggle
     const injection = settings.injection || {};
     $('#cs-settings-injection-system').prop('checked', injection.systemPrompt !== false).on('change', function () {
@@ -392,14 +398,23 @@ function handleMessageReceived(messageId) {
         lastHadCampaignData = true;
     }
 
-    // Strategy 2: Fall back to <details><summary> HTML extraction
-    if (!matched || matched.size === 0) {
-        const legacy = extractBlocks(messageText, preset);
-        matched = legacy.matched;
-
-        // Track summary texts for collapse (legacy only)
-        for (const [, result] of matched) {
-            lastParsedSummaryTexts.push(result.summaryText);
+    // Strategy 2: ALWAYS try <details> extraction (not just as fallback)
+    // This handles bot-native trackers like "Fate's Ledger" stat blocks
+    const autoExtract = settings.mechanics?.autoExtract !== false;
+    const legacy = extractBlocks(messageText, preset, { autoExtract });
+    if (legacy.matched.size > 0) {
+        if (!matched) matched = new Map();
+        for (const [sectionId, result] of legacy.matched) {
+            if (!matched.has(sectionId)) {
+                // Only add if YAML didn't already provide this section
+                matched.set(sectionId, result);
+            }
+        }
+        // Track summary texts for collapse
+        for (const [, result] of legacy.matched) {
+            if (result.summaryText) {
+                lastParsedSummaryTexts.push(result.summaryText);
+            }
         }
     }
 
@@ -466,22 +481,33 @@ function reparseChat() {
     const chat = context.chat;
     if (!chat) return;
 
+    const settings = getSettings();
+    const autoExtract = settings.mechanics?.autoExtract !== false;
+
     // Walk through all messages and re-extract
     for (let i = 0; i < chat.length; i++) {
         const message = chat[i];
         if (!message.mes) continue;
 
-        // Try YAML first, then fall back to details
+        // Try YAML first
         let matched;
         const { blocks, hasCampaignData } = extractCampaignData(message.mes);
         if (hasCampaignData) {
             matched = routeBlocks(blocks, preset);
         }
-        if (!matched || matched.size === 0) {
-            const legacy = extractBlocks(message.mes, preset);
-            matched = legacy.matched;
+
+        // ALWAYS also try <details> extraction (handles bot-native trackers)
+        const legacy = extractBlocks(message.mes, preset, { autoExtract });
+        if (legacy.matched.size > 0) {
+            if (!matched) matched = new Map();
+            for (const [sectionId, result] of legacy.matched) {
+                if (!matched.has(sectionId)) {
+                    matched.set(sectionId, result);
+                }
+            }
         }
 
+        if (!matched) continue;
         for (const [sectionId, result] of matched) {
             updateSection(sectionId, result.sectionConfig, result.data, i);
         }

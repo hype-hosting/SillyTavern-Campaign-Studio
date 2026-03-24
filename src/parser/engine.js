@@ -7,15 +7,17 @@
 import { MATCH_MODES } from '../core/config.js';
 import { parseMarkdownList, parseKeyValue, parseKeyValueNumeric, parseStatBlock } from './adapters.js';
 import { routeFieldsToSections } from './field-router.js';
+import { autoRouteUnmatchedBlock } from './auto-router.js';
 
 /**
  * Extract all matching <details><summary> blocks from message HTML.
  *
  * @param {string} messageHtml - The raw HTML of the bot's response
  * @param {object} preset - The active preset configuration
+ * @param {{ autoExtract?: boolean }} options - Extraction options
  * @returns {{ matched: Map<string, object>, unmatchedBlocks: string[] }}
  */
-export function extractBlocks(messageHtml, preset) {
+export function extractBlocks(messageHtml, preset, options = {}) {
     if (!messageHtml || !preset?.sections) {
         return { matched: new Map(), unmatchedBlocks: [] };
     }
@@ -71,8 +73,10 @@ export function extractBlocks(messageHtml, preset) {
 
     // Second pass: try extraction sources on unmatched blocks
     const sources = preset.extraction?.sources;
+    const processedBySource = new Set();
     if (sources?.length && unmatchedBlocks.length > 0) {
-        for (const unmatched of unmatchedBlocks) {
+        for (let i = 0; i < unmatchedBlocks.length; i++) {
+            const unmatched = unmatchedBlocks[i];
             for (const source of sources) {
                 if (!source.summaryMatch || !source.fieldMap) continue;
 
@@ -85,23 +89,54 @@ export function extractBlocks(messageHtml, preset) {
                         unmatched.summary.textContent.trim(),
                     );
 
-                    // Merge field-routed results into matched map
-                    for (const [sectionId, result] of fieldRouted) {
-                        if (matched.has(sectionId)) {
-                            // Merge data into existing section entry
-                            const existing = matched.get(sectionId);
-                            existing.data = mergeData(existing.data, result.data, result.sectionConfig.type);
-                        } else {
-                            matched.set(sectionId, result);
-                        }
-                    }
+                    mergeIntoMatched(matched, fieldRouted);
+                    processedBySource.add(i);
                     break; // First matching source wins for this block
                 }
             }
         }
     }
 
+    // Third pass: auto-route remaining unmatched blocks (zero-config)
+    if (options.autoExtract !== false) {
+        for (let i = 0; i < unmatchedBlocks.length; i++) {
+            if (processedBySource.has(i)) continue;
+
+            const unmatched = unmatchedBlocks[i];
+            const rawContent = extractInnerContent(unmatched.element, unmatched.summary);
+
+            // Try stat-block format first (handles emoji + pipe-delimited)
+            let parsed = parseStatBlock(rawContent, {});
+            if (Object.keys(parsed).length === 0) {
+                parsed = parseKeyValue(rawContent, {});
+            }
+            if (Object.keys(parsed).length === 0) continue;
+
+            const autoRouted = autoRouteUnmatchedBlock(
+                parsed, preset,
+                unmatched.element.outerHTML,
+                unmatched.summary.textContent.trim(),
+            );
+
+            mergeIntoMatched(matched, autoRouted);
+        }
+    }
+
     return { matched, unmatchedBlocks: unmatchedBlocks.map(u => u.element.outerHTML) };
+}
+
+/**
+ * Merge routed results into the matched map.
+ */
+function mergeIntoMatched(matched, routed) {
+    for (const [sectionId, result] of routed) {
+        if (matched.has(sectionId)) {
+            const existing = matched.get(sectionId);
+            existing.data = mergeData(existing.data, result.data, result.sectionConfig.type);
+        } else {
+            matched.set(sectionId, result);
+        }
+    }
 }
 
 /**
