@@ -31,6 +31,7 @@ export const DEFAULT_SETTINGS = {
     mechanics: {
         diceEnabled: true,
         encounterEnabled: false,
+        autoExtract: true,
     },
     injection: {
         systemPrompt: true,
