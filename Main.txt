@@ -1,0 +1,605 @@
+Hype: option 1
+
+Lolth: <!-- §MIDNIGHT -->
+
+You step forward and pick up the scroll. The wax seal is still warm to the touch, stamped with the sigil of the Spider Queen.
+
+"I am the echo you need, Gromph," you say, tucking the scroll into your belt. "Let the Second House hear what you want them to hear."
+
+Gromph inclines his head—a fractional movement and a total dismissal. The conversation is over.
+
+You turn and walk out. Belwar Dissengulp falls into step beside you. The lizard handlers hustle their mounts.
+
+As you descend the spiraling stairs away from the tower, the silence of Sorcere gives way to the city's roar. The bridge back to the main district feels different now; you are walking on a tightrope, and the whole city is looking up to see if you fall.
+
+"You saw something in there," Belwar says quietly. It’s not a question. He saw the way you moved, the precise cut of your hand through the empty air. "The spider-wizard was weaving a net for my mind. You cut the threads."
+
+"He likes to test his tools," you reply, keeping your eyes on the road. "Breaks them to see how sharp they stay."
+
+Belwar grunts, a sound like gravel tumbling.
+
+"I don't like owing debts," he mutters. "Especially not to surface men tangled in spider-webs. But I won't forget you kept your head on your shoulders while I was in the room."
+
+You part ways at the main junction—Belwar toward the trade routes that lead back to Blingdenstone, you toward the spires of Narbondellyn.
+
+The Noble District is different.
+
+The air here smells of expensive incense and stale poison. The architecture is competitive—walls adorned with spider motifs, gates strung with chains of silver, guards wearing the colors of houses that have held power for centuries.
+
+You walk until the street ends at a wall that seems less like a barrier and more like a cliff face.
+
+**House Barrison Del'Armgo.**
+
+The Second House of Menzoberranzan. It is a fortress masquerading as a home. The spires are not slender; they are blocky, crenellated, built for defense and war. Banners of crimson and black hang from every archway, emblazoned with the sigil of the spider—a creature that sits, waits, and strikes.
+
+The guards here are not the bored mercenaries of the outer rings. They are elite infantry—male drow in plate mail etched with protective runes. They hold halberds with tips that glow with faint, green enchantment.
+
+You approach the gate.
+
+"Halt," the captain barks. He is a towering drow, his face a map of old scars, his eyes fanatical. He lowers his visor, revealing a face that looks like it has spent more time scowling than blinking. "The gate is closed to those without invitation."
+
+You stop. The scroll in your belt feels heavy enough to be a stone.
+
+"I am a courier of Sorcere," you announce, your voice clear, projecting over the sounds of the city. "Bearing a private correspondence for Matron Mez'Barris Armgo. From the desk of Archmage Gromph Baenre."
+
+The mention of Gromph works. It always works. The captain hesitates, hand tightening on his halberd. The guards shift, exchanging glances. The First House and the Second House are allies, nominally. But in Menzoberranzan, allies are just enemies you haven't stabbed yet.
+
+"The Archmage uses messengers now," the captain sneers, stepping closer. The metal of his armor clinks. "Usually he sends a spider, or a spell. I see neither."
+
+You are standing ten feet from a gate guarded by zealots. You are a single human with a parchment that contains a lie designed to destroy the house standing behind you.
+
+<div style="margin-top:1.5rem;padding:0.75rem 1.25rem;border:1px solid rgba(180,140,255,0.4);border-left:3px solid rgba(180,140,255,0.9);background:rgba(80,40,120,0.15);border-radius:6px;font-family:Georgia,serif;"><span style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(180,140,255,0.7);">The dice await</span><br><span style="font-size:1.1rem;font-weight:bold;color:rgba(210,180,255,0.95);">🎲 ROLL FOR CHARISMA (DECEPTION)</span><br><span style="font-size:0.85rem;color:rgba(200,170,255,0.75);font-style:italic;">To convince them that the scroll is too dangerous to refuse.</span></div>
+
+Hype: i rolled an 11
+
+Lolth: <div style="margin-top:1rem;padding:1rem 1.5rem;border:1px solid rgba(180,140,255,0.5);background:rgba(60,30,100,0.2);border-radius:8px;text-align:center;font-family:Georgia,serif;"><span style="font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(180,140,255,0.6);">The die has spoken</span><br><span style="font-size:2.5rem;font-weight:bold;color:rgba(220,190,255,1);">11</span><br><span style="font-size:0.9rem;color:rgba(200,170,255,0.8);font-style:italic;">Success</span></div>
+
+<!-- §MIDNIGHT -->
+
+You don't flinch. You don't back down. You let the "gift" in your blood settle, radiating that cold, predatory confidence that marks you as something other than prey.
+
+"The Archmage does not employ spiders to carry messages he requires read," you say meeting the captain's fanatical stare with your own. "If this was poison, it would be gas. If this was a blade, it would be invisible. It is a scroll. That means it needs eyes. And if those eyes aren't Matron Mez'Barris's, Archmage Baenre will know why he wasted his time."
+
+You gesture toward the sealed black wax.
+
+"Open it, and you insult the First House. Kill me, and you insult the First House. Deliver it, and you are obeident."
+
+The logic is brutal, simple, and wrapped in the terrifying authority of Gromph Baenre’s name. The captain’s grip on his halberd tightens, his knuckles white against the haft, but he doesn't advance. He is a soldier. He knows better than to engage in a political assassination without orders.
+
+"Take it," the captain grunts to the guard next to him.
+
+The gate guard approaches you cautiously. He doesn't touch you. He reaches out, pinches the edge of the scroll with his gauntleted fingers, and slides it from your belt. The transfer happens without a brush of skin.
+
+The captain looks at the seal. He looks at the road. The choice is being made for him, and he hates it.
+
+"Inside," he barks, stepping aside and signaling for the iron portcullis to be raised. "You wait in the Antechamber. If you leave the room, you die. If the Matron reads the scroll and orders you executed, we will not hesitate. Do you understand?"
+
+"I understand the Second House perfectly," you reply dryly.
+
+You walk under the raised portcullis.
+
+House Barrison Del'Armgo is a fortress of war. The courtyard is paved with smooth, grey stone, scrubbed clean of even the smallest speck of dust. Everywhere you look, there are soldiers—drilling on the parade grounds, sharpening weapons in the racks, maintaining armor with the obsessive dedication of a society that knows the enemy is already inside the gates.
+
+They stare at you. The hate is palpable—radiant heat from fanatic eyes. A human, inside the Second House. It is a violation of everything they believe in.
+
+You are ushered through a heavy side door and down a corridor lit by glow-orbs mounted in iron skulls.
+
+The Antechamber is a waiting room for undesirables. It is cold, furnished with stone benches and a single, heavy oak table. It has no windows. The only exit is the door the guards close behind you.
+
+You are alone. For now.
+
+A slat in the heavy door slides open—a narrow view of the corridor and an armored face on the other side.
+
+"Wait," the face says. Then the slat slams shut.
+
+You are standing in the heart of the Second House, holding a breath you didn't know you were holding. The "gift" in your blood is humming, sensing the mana in the walls. This place is a battery of defensive enchantment.
+
+Somewhere down the hall, the scroll is being delivered to Matron Mez'Barris Armgo.
+
+Gromph's words echo in your memory: *Watch them tear themselves apart.*
+
+The silence in the room is heavy. Then, faintly, through the thick stone walls, you hear a sound.
+
+It is a shout. Low, commanding. Then a scream—violent and sudden.
+
+It has started.
+
+<div style="margin-top:1.5rem;padding:0.75rem 1.25rem;border:1px solid rgba(180,140,255,0.4);border-left:3px solid rgba(180,140,255,0.9);background:rgba(80,40,120,0.15);border-radius:6px;font-family:Georgia,serif;"><span style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(180,140,255,0.7);">The dice await</span><br><span style="font-size:1.1rem;font-weight:bold;color:rgba(210,180,255,0.95);">🎲 ROLL FOR PERCEPTION</span><br><span style="font-size:0.85rem;color:rgba(200,170,255,0.75);font-style:italic;">To hear how loud the explosion is going to be.</span></div>
+
+Hype: !roll
+
+Lolth: <div style="margin-top:1rem;padding:1rem 1.5rem;border:1px solid rgba(180,140,255,0.5);background:rgba(60,30,100,0.2);border-radius:8px;text-align:center;font-family:Georgia,serif;"><span style="font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(180,140,255,0.6);">The die has spoken</span><br><span style="font-size:2.5rem;font-weight:bold;color:rgba(220,190,255,1);">14</span><br><span style="font-size:0.9rem;color:rgba(200,170,255,0.8);font-style:italic;">Success</span></div>
+
+<!-- §MIDNIGHT -->
+
+The "gift" sharpens your hearing until the stone walls feel like parchment. You listen not just to the scream, but to the echoes that followed.
+
+The scream stopped abruptly. Then came the wet, tearing sound of a knife finding a throat—an intimate, fatal noise that ended a life before it could draw breath. It wasn't the Matron; it was someone standing too close to her.
+
+"Sorcere!" a voice roared through the corridors, distorted by rage and magic. "Gromph sends a spy bearing poison!"
+
+Then the chaotic clatter of armored boots on stone. Orders barked in conflicting directions. "Seal the wing!" "Find the Baenre dog!"
+
+The "gift" flashes red.
+
+The magical hum in the Antechamber shifts pitch. The passive wards—those yellow, benign energies designed to keep vermin out and guests docile—just spiked. They are turning aggressive. It feels like the air itself is hardening, preparing to crush you.
+
+You are no longer a guest. You are a target.
+
+Heavy boots slam into the floorboards outside your door. You hear the rattle of crossbows being cranked—the distinct, clicking sound of mechanical lethality. The slat in the door slides open.
+
+You see a slice of the corridor. It’s crowded with bodies. You see the eyes of a guard captain, wild and bloodshot, staring into the room.
+
+"There!" the captain screams. "He's in there! Kill him before he casts!"
+
+The door handle turns—violently, wrenching the mechanism. They aren't opening it to escort you out. They are opening it to fill the room with bolts.
+
+The "gift" screams *NOW*.
+
+You have a heartbeat before the door swings wide.
+
+<div style="margin-top:1.5rem;padding:0.75rem 1.25rem;border:1px solid rgba(180,140,255,0.4);border-left:3px solid rgba(180,140,255,0.9);background:rgba(80,40,120,0.15);border-radius:6px;font-family:Georgia,serif;"><span style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(180,140,255,0.7);">The dice await</span><br><span style="font-size:1.1rem;font-weight:bold;color:rgba(210,180,255,0.95);">🎲 ROLL FOR INITIATIVE</span><br><span style="font-size:0.85rem;color:rgba(200,170,255,0.75);font-style:italic;">Because the diplomacy is over.</span></div>
+
+Hype: !roll
+
+Lolth: <div style="margin-top:1rem;padding:1rem 1.5rem;border:1px solid rgba(180,140,255,0.5);background:rgba(60,30,100,0.2);border-radius:8px;text-align:center;font-family:Georgia,serif;"><span style="font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(180,140,255,0.6);">The die has spoken</span><br><span style="font-size:2.5rem;font-weight:bold;color:rgba(220,190,255,1);">1</span><br><span style="font-size:0.9rem;color:rgba(200,170,255,0.8);font-style:italic;">Critical Failure</span></div>
+
+<div style="margin-top:1.5rem;padding:1rem 1.5rem;border:1px solid rgba(255,200,100,0.4);border-left:3px solid rgba(255,200,100,0.9);background:rgba(80,60,20,0.15);border-radius:6px;font-family:Georgia,serif;"><span style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,200,100,0.7);">⚖️ The Fateweaver speaks</span><br><span style="font-size:0.95rem;color:rgba(255,230,160,0.95);">And that, dear adventurer, is why we don't assume the floor is our friend. The prescience showed you the gap in the armor, the dodge to take, the victory to claim. Reality, however, had a raised flagstone waiting just for your toe. A spectacular face-plant. The spider is laughing, I assure you.</span></div>
+
+<!-- §MIDNIGHT -->
+
+The "gift" screams *"LEFT."*
+
+Your body tries to obey. Your muscles coil, your balance shifts, you prepare to launch yourself into the roll of a lifetime—a move that would have cleared the doorframe and put you behind the captain's guard before they could twitch a finger.
+
+Then your boot scuffs against a loose flagstone.
+
+It’s a mistake a tavern drunk makes, not a Battle Master with divine intuition. Your ankle snaps sideways. The "gift's" calculation collapses. The trajectory you were aiming for becomes a downward plunge.
+
+The door explodes inward.
+
+You aren't rolling to safety. You are sprawling across the floorboards, your face smacking against the cold stone with bone-ringing force.
+
+"Shoot him!"
+
+The room fills with light.
+
+You lift your head, blinking blood from your eyes, just in time to see three bolts buried deep in</arg_value> wood inches from where your throat *would have been* if you hadn't tripped. If you had executed the dodge perfectly.
+
+The fourth bolt clips your shoulder.
+
+It’s a graze—a stinging, hot line of fire that tears through your armor and nicks the flesh beneath—but the impact sends a shockwave through your system that whites out your vision. You gasp, clutching the wound, and you're still trying to get up when the boots arrive.
+
+They don't give you the chance to stand.
+
+Heavy iron-shod feet slam into your ribs. A gauntleted fist hammers into the back of your neck, driving your face into the stone again. You taste copper and dust. Your weapon is kicked away, clattering into the corner.
+
+"Bag him!" the captain screams. "If he draws a breath that isn't a gasp, kill him!"
+
+Rough hands grab your arms. You feel the bite of rope—thick, enchanted bindings that dig into your wrists. You are hauled up, your feet dragging on the floor, disoriented and bleeding.
+
+The Antechamber spins. The guards are shouting orders, dragging you toward the hallway, but you don't focus on them. You focus on the fact that you are alive, which makes no sense, and that the "gift" is silent, stunned into submission by its own failure.
+
+You are pulled out of the room and marched into the corridor.
+
+The chaos has died down, replaced by a cold, organized fury. Matron Mez'Barris Armgo has not ordered you killed. She has ordered you captured.
+
+That is infinitely worse.
+
+You are dragged through the fortress of the Second House—past training grounds where drills stop to watch the captive surfacer, past dining halls where nobles sneer over their wine—before being thrown into a subterranean level.
+
+The air gets colder. The light changes from orange torchlight to the purple glow of faerzress.
+
+You are shoved into a cell.
+
+It is a room carved from solid rock, with no windows and a single door of iron bars. The only light is a single, dim phosphorescent patch of moss.
+
+The door slams shut. The lock engages with a heavy, final *thud*.
+
+You are sitting on cold stone, your shoulder throbbing where the bolt grazed you, your wrists bound in enchanted rope. You are deep in the heart of House Barrison Del'Armgo.
+
+They have the scroll. They know it was from Gromph. They know he tried to use you to tear them apart. And now, they have the "Disruptor" in a cage.
+
+The silence of the cell is absolute.
+
+Then, a voice comes from the darkness of the adjacent cell—dry, sharp, and irritatingly amused.
+
+"A human," the voice says. "In Menzoberranzan's most expensive kennel. You must have annoyed someone very important."
+
+<div style="margin-top:1.5rem;padding:0.75rem 1.25rem;border:1px solid rgba(180,140,255,0.4);border-left:3px solid rgba(180,140,255,0.9);background:rgba(80,40,120,0.15);border-radius:6px;font-family:Georgia,serif;"><span style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(180,140,255,0.7);">The dice await</span><br><span style="font-size:1.1rem;font-weight:bold;color:rgba(210,180,255,0.95);">🎲 ROLL FOR PERCEPTION</span><br><span style="font-size:0.85rem;color:rgba(200,170,255,0.75);font-style:italic;">To identify your mysterious cellmate.</span></div>
+
+Hype: !roll
+
+Lolth: <div style="margin-top:1rem;padding:1rem 1.5rem;border:1px solid rgba(180,140,255,0.5);background:rgba(60,30,100,0.2);border-radius:8px;text-align:center;font-family:Georgia,serif;"><span style="font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(180,140,255,0.6)">The die has spoken</span><br><span style="font-size:2.5rem;font-weight:bold;color:rgba(220,190,255,1);">7</span><br><span style="font-size:0.9rem;color:rgba(200,170,255,0.8);font-style:italic;">Failure</span></div>
+
+<!-- §MIDNIGHT -->
+
+You blink, trying to clear the blood from your eyelashes. The world swims—a sickening tilt of stone and shadow that refuses to level out. The bolt graze on your shoulder throbs in time with your heartbeat, a hot, demanding rhythm that drowns out the "gift's" usual whisper.
+
+You squint into the darkness of the adjacent cell.
+
+The phosphorescent moss gives barely enough light to outline the bars. You see movement—a shift of fabric against stone—but the details are swallowed by the gloom. You catch the glint of eyes reflecting the faint green glow, pale and watching, but the angle is wrong. You can't tell if it's a drow, a dwarf, or something else wearing a drow's voice.
+
+The voice is smooth, cultured, and entirely unafraid. It lacks the jagged, fanatical edge of the guards upstairs. It sounds like someone who spends a lot of time waiting and has learned to enjoy it.
+
+"Cat got your tongue? Or is it simply that you surface folk don't know how to speak without the sun to warm your throats?" The voice shifts—metal chimes against stone. "I would offer you a hand, but I seem to be short on those at the moment. So to speak."
+
+You slump back against the cold wall of your cell. The ropes binding your wrists are enchanted; they tighten whenever you pull, humming with a nasty, violet light. You are weaponless, bleeding, and trapped in a fortress designed to kill things much harder than you.
+
+The "gift" is recovering, but it's slow. It usually snaps into focus—a map of exits, a sense of where the next strike will fall. Now, it feels like it's waking up from a long nap, groggy and unreliable.
+
+"You're thinking about the scroll," the voice observes, too perceptive for a stranger in the dark. "That was a clumsy piece of work, wasn't it? Gromph is usually more elegant."
+
+You freeze. Your interrogator knew the scroll came from Gromph. That means they are either a spy for the Second House who was told the news, or someone who was already here and watching the chaos unfold.
+
+"Who are you?" you rasp. Your voice sounds raw in the enclosed space.
+
+"Me?" A dry chuckle. "Just an audience member who bought a ticket to the wrong show. And you, my human friend? You are the main attraction. Or the bait."
+
+Silence stretches, filled only by the distant drip of water and the heavy, wet sound of breath in a neighboring throat.
+
+Then, footsteps echo from the corridor outside. Heavier than a guard's. Deliberate.
+
+The voice in the next cell goes quiet instantly.
+
+The heavy iron door at the end of the hall creaks open. Silhouettes resolve in the torchlight—four female drow. The crimson vestments of priestesses. And at their center, a woman wearing armor styled like spider chitin, her face painted with the likeness of a widow's hourglass.
+
+Matron Mez'Barris Armgo.
+
+She stops in front of your cell. She doesn't look through the bars. She looks at the empty space in front of her, as if you are beneath her line of sight.
+
+"Retrieve the thing," she says, her voice cold enough to freeze steam. "I wish to ask it why the First House sent a blunt instrument to shatter my crystal."
+
+Two guards step forward, keys jingling.
+
+<div style="margin-top:1.5rem;padding:0.75rem 1.25rem;border:1px solid rgba(180,140,255,0.4);border-left:3px solid rgba(180,140,255,0.9);background:rgba(80,40,120,0.15);border-radius:6px;font-family:Georgia,serif;"><span style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(180,140,255,0.7);">The dice await</span><br><span style="font-size:1.1rem;font-weight:bold;color:rgba(210,180,255,0.95);">🎲 ROLL FOR CHARISMA (INTIMIDATION)</span><br><span style="font-size:0.85rem;color:rgba(200,170,255,0.75);font-style:italic;">To make the Matron hesitate before opening the door.</span></div> <details><summary>⬡</summary>
+
+```
+<campaign_data>
+inventory:
+  - Enchanted Rope (binding)
+character:
+  Hit Points: 25/30
+  Conditions: Restrained
+  Spell Slots: -
+  Class Resources: Superiority Dice (4/4), Action Surge (1/1)
+  Active Effects: Gift of Prescience (Recovering)
+world:
+  Location: Menzoberranzan -> Narbondellyn -> House Barrison Del'Armgo Dungeon
+  Time: Late Day
+  Weather: N/A (Underground)
+  NPCs Present: Matron Mez'Barris Armgo, Priestesses, Guards, Unknown Prisoner
+  Active Quests: Survive House Barrison Del'Armgo
+  Scene: Interrogation in the dungeon cells
+factions:
+  House Baenre: 0.5
+  House Barrison Del'Armgo: -1.0
+  Bregan D'aerthe: 0.0
+</campaign_data>
+```
+</details>
+
+Hype: !roll
+
+Lolth: <div style="margin-top:1rem;padding:1rem 1.5rem;border:1px solid rgba(180,140,255,0.5);background:rgba(60,30,100,0.2);border-radius:8px;text-align:center;font-family:Georgia,serif;"><span style="font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(180,140,255,0.6);">The die has spoken</span><br><span style="font-size:2.5rem;font-weight:bold;color:rgba(220,190,255,1);">15</span><br><span style="font-size:0.9rem;color:rgba(200,170,255,0.8);font-style:italic;">Success</span></div>
+
+<!-- §MIDNIGHT -->
+
+You don't cower. You don't beg. You pull yourself up against the cold stone, ignoring the screaming protest of your shoulder and the bite of the ropes, until you are sitting upright. Your eyes, green and burning with that unnatural prescience, find hers through the iron bars.
+
+"Your key is the problem, Matron," you say. Your voice is rough, but it carries—cutting through the damp air. "Open that door, and you aren't retrieving a prisoner. You're cutting the one thread keeping your house from tearing itself apart."
+
+The guard's key freezes in the lock. A single metallic click echoes in the silence.
+
+Matron Mez'Barris looks at you. It’s not fear—you are a bloody human in a dungeon cell, and she is the Second House. It is calculation. She is suddenly, violently aware that she doesn't know what you are. Gromph Baenre does not play simple games. If he sent a human to die, there would be poetry involved. If he sent one to live, there would be a reason.
+
+"Gromph sent a bludgeon," she says, her voice smooth, utterly unconvinced but listening. "Not a riddle."
+
+"He sent a catalyst," you correct, leaning your head back against the stone, feigning a relaxation you do not feel. "I am the safety catch, Matron. If you pull me out of this machine to torture me, you might find out exactly why the Archmage wanted you to react exactly the way you did. Was the scroll a lie? Or was it the truth coming a week early? Kill me, and you never know."
+
+The silence stretches, heavy and brittle.
+
+The Matron raises a hand. The guard steps back from the door.
+
+"You are bold for a creature with bolt holes in its shoulder," she murmurs, stepping closer to the bars. The spider motif on her armor seems to crawl in the torchlight. "But boldness is cheap in Menzoberranzan. It is usually the first thing we cut off."
+
+She gestures dismissively. The guards don't open the door, but they raise their crossbows again, aiming through the bars.
+
+"My daughter was in the receiving hall," Mez'Barris says conversationally. "The one who screamed. She is... volatile. Gromph knew that. He knew that accusing the Second House of heresy would make her draw blood before she drew breath. He wanted a body. He wanted a civil war."
+
+Her eyes bore into yours.
+
+"Why didn't she die?" she asks. "Why did the scroll—that accusation, blasphemy meant to shatter my house—fail to kill her? She was standing right over it."
+
+She suspects you did something. That's why she hesitated. She doesn't think you're a warrior; she thinks you're a wizard or an assassin who activated a counter-measure.
+
+The "gift" hums in your blood. This is a pivot point. If you convince her you are powerful enough to be useful, she might not kill you. If you fail, you're decoration.
+
+The voice in the next cell pipes up, irritating and sharp.
+
+"Because, Matron, even a house of spiders can't catch a fly that doesn't exist," the stranger drawls. "Though you're welcome to try."
+
+Mez'Barris ignores him. She is waiting for your answer.
+
+<details style="margin-top:1.5rem;font-family:Georgia,serif;"><summary style="cursor:pointer;padding:0.5rem 0.75rem;background:rgba(40,20,60,0.3);border:1px solid rgba(180,140,255,0.3);border-radius:6px;font-size:0.8rem;letter-spacing:0.1em;color:rgba(200,170,255,0.9);list-style:none;">📜 Fate's Ledger — Hype &nbsp;|&nbsp; ❤️ 25/30</summary><div style="padding:0.75rem 1rem;border:1px solid rgba(180,140,255,0.2);border-top:none;border-radius:0 0 6px 6px;background:rgba(30,15,50,0.3);font-size:0.82rem;color:rgba(200,175,255,0.85);line-height:1.8;">
+❤️ HP: 25/30<br>
+⚔️ STR 14 &nbsp;|&nbsp; 🏃 DEX 16 &nbsp;|&nbsp; 🛡️ CON 14<br>
+🧠 INT 10 &nbsp;|&nbsp; 🌿 WIS 16 &nbsp;|&nbsp; ✨ CHA 14<br>
+📋 Conditions: Restrained (Enchanted Rope)<br>
+🎒 Notable Items: None (Confiscated)<br>
+⭐ Status: Prisoner of House Barrison Del'Armgo, "Disruptor"
+</div></details>
+
+<div style="margin-top:1.5rem;padding:0.75rem 1.25rem;border:1px solid rgba(180,140,255,0.4);border-left:3px solid rgba(180,140,255,0.9);background:rgba(80,40,120,0.15);border-radius:6px;font-family:Georgia,serif;"><span style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(180,140,255,0.7);">The dice await</span><br><span style="font-size:1.1rem;font-weight:bold;color:rgba(210,180,255,0.95);">🎲 ROLL FOR CHARISMA (DECEPTION)</span><br><span style="font-size:0.85rem;color:rgba(200,170,255,0.75);font-style:italic;">To convince her you control the chaos.</span></div>
+
+Hype: !roll
+
+Lolth: <div style="margin-top:1rem;padding:1rem 1.5rem;border:1px solid rgba(180,140,255,0.5);background:rgba(60,30,100,0.2);border-radius:8px;text-align:center;font-family:Georgia,serif;"><span style="font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(180,140,255,0.6);">The die has spoken</span><br><span style="font-size:2.5rem;font-weight:bold;color:rgba(220,190,255,1);">17</span><br><span style="font-size:0.9rem;color:rgba(200,170,255,0.8);font-style:italic;">Strong Success</span></div>
+
+<!-- §MIDNIGHT -->
+
+You look up at her, and for a moment, you let the "gift" bleed into your expression—eyes widening fractionally, pupils dilating as if reading a script written in the air between you.
+
+"The scroll was a thunderclap, Matron," you say, pitching your voice so it carries to the guards at the back of the room. "I was the lightning rod. Gromph predicted the eruption. He just needed to make sure it didn't burn down the whole cavern."
+
+You pause, letting the weight of the implication settle. "If your daughter had died, the First House would have to intervene openly. War with the Ruling Council? No. Gromph sent me to make sure the explosion remained... contained."
+
+Mez'Barris stares at you. The fanaticism in her eyes is overlaid now by a cold, hungry calculation. She is looking at a prisoner and seeing a lever—a tool that can withstand chaos.
+
+"An anchor," she murmurs. She steps closer, her face inches from the bars. "You claim you stopped the scroll from killing her?"
+
+"I claim she is alive because I am here," you reply. You don't blink. "Kill me, Matron, and you remove Gromph's safety catch. I don't know what happens next. But he probably wrote it down in the fine print of my instructions."
+
+It is a magnificent lie.
+
+Mez'Barris draws a sharp, shivering breath. She grips the bars, her knuckles white. She wants to believe you because the alternative—that Gromph simply humiliated her for sport—is intolerable. Believing you are a secret weapon she can steal is a balm to her wounded pride.
+
+She smiles.
+
+It is a terrifying expression—no warmth, only the baring of teeth.
+
+"Leave him," she commands the guard. She turns sharply, her crimson vestments swirling. "Do not untie him. Do not feed him. And if he dies..." She glances back over her shoulder, her eyes boring into yours. "I will be very disappointed in your competence."
+
+She sweeps out of the dungeon, her priestesses following like a cloud of wasps.
+
+The guards exchange uncertain looks, but fear of the Matron outweighs bloodlust. They lower their crossbows and retreat to the hallway, leaving you in the dim, mossy light.
+
+Silence rushes back in.
+
+"Well," says the voice from the next cell. "That was beautifully done. I almost believed it myself, and I know you're lying."
+
+"Shut up," you mutter, leaning your head back. Your shoulder burns, and the ropes are cutting off circulation to your hands.
+
+"Oh, come now. Don't be cross. You just bought yourself... what? A day? Maybe two? Before she realizes you're just a human with a very big mouth and a very lucky scar."
+
+The speaker shuffles against the bars. You see a hand grab them—a slender, elegant Drow hand, missing the middle finger.
+
+"She's going to torture you, you know," the voice continues, casual as discussing the weather. "Not because she thinks you're lying. Because she wants to see if you *break*. If you're really a Gromph-designed safeguard, you should have defenses against pain. If you scream like a human..." He chuckles. "Well. Then we'll see how valuable the First House's 'lightning rod' really is."
+
+"My name is Hype," you say, mostly to hear your own voice.
+
+"Names are for people with a future," the stranger replies dismissively. "I'm a memory. And you, my friend, are currently a rat in a trap that is slowly getting smaller."
+
+A pause. Then, "I've been in this hole for three years. I know the rotation of the guards. I know where the keys are. I know that Mez'Barris keeps a dagger made of demon-glass in her study. What I don't know is... can you fight with those ropes on, or are you just a pretty talker?"
+
+<details style="margin-top:1.5rem;font-family:Georgia,serif;"><summary style="cursor:pointer;padding:0.5rem 0.75rem;background:rgba(40,20,60,0.3);border:1px solid rgba(180,140,255,0.3);border-radius:6px;font-size:0.8rem;letter-spacing:0.1em;color:rgba(200,170,255,0.9);list-style:none;">📜 Fate's Ledger — Hype &nbsp;|&nbsp; ❤️ 25/30</summary><div style="padding:0.75rem 1rem;border:1px solid rgba(180,140,255,0.2);border-top:none;border-radius:0 0 6px 6px;background:rgba(30,15,50,0.3);font-size:0.82rem;color:rgba(200,175,255,0.85);line-height:1.8;">
+❤️ HP: 25/30<br>
+⚔️ STR 14 &nbsp;|&nbsp; 🏃 DEX 16 &nbsp;|&nbsp; 🛡️ CON 14<br>
+🧠 INT 10 &nbsp;|&nbsp; 🌿 WIS 16 &nbsp;|&nbsp; ✨ CHA 14<br>
+📋 Conditions: Restrained (Enchanted Rope)<br>
+🎒 Notable Items: None (Confiscated)<br>
+⭐ Status: Prisoner of House Barrison Del'Armgo - "Valuable Asset" (perceived)
+</div></details>
+
+<div style="margin-top:1.5rem;padding:0.75rem 1.25rem;border:1px solid rgba(180,140,255,0.4);border-left:3px solid rgba(180,140,255,0.9);background:rgba(80,40,120,0.15);border-radius:6px;font-family:Georgia,serif;"><span style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(180,140,255,0.7);">The dice await</span><br><span style="font-size:1.1rem;font-weight:bold;color:rgba(210,180,255,0.95);">🎲 ROLL FOR INSIGHT</span><br><span style="font-size:0.85rem;color:rgba(200,170,255,0.75);font-style:italic;">To gauge the stranger's motive.</span></div>
+
+Hype: !roll
+
+Lolth: <div style="margin-top:1rem;padding:1rem 1.5rem;border:1px solid rgba(180,140,255,0.5);background:rgba(60,30,100,0.2);border-radius:8px;text-align:center;font-family:Georgia,serif;"><span style="font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(180,140,255,0.6);">The die has spoken</span><br><span style="font-size:2.5rem;font-weight:bold;color:rgba(220,190,255,1);">19</span><br><span style="font-size:0.9rem;color:rgba(200,170,255,0.8);font-style:italic;">Strong Success</span></div>
+
+<!-- §MIDNIGHT -->
+
+The "gift" sharpens the dim cell into stark relief. You see the stranger not as a voice, but as a study in calculated malice.
+
+His armor is gone, replaced by rags that were once fine silk, but his bearing—shoulders against the stone, one leg drawn up—is that of a noble waiting for a late servant. You see the missing finger, yes, but you also see the faint, white scars on his wrists and throat. Restraints? No. *Torture*.
+
+He isn't locked up because he's weak. He's locked up because he's DANGEROUS.
+
+His motive hits you with the clarity of a physical blow: He doesn't want freedom. Not primarily. He wants *revenge*. The cold, specific kind of revenge that a drow reserves for his own kin. He hates Matron Mez'Barris not for imprisoning him, but for something deeper—a betrayal, a theft, a humiliation that has rotted him for three years.
+
+He sees you as a weapon she left on the floor of his cage. He is debating whether to use you to escape, or use you to hurt her, or both. He will help you, absolutely, because chaos is the soil where his revenge grows. But if you get in the way of his vengeance, or if the Matron offers him a better deal, he will slide a knife between your ribs without blinking.
+
+He is a predator who has been starved so long he's started to eat his own tail.
+
+"I can fight," you answer, keeping your voice low. "Can you get these ropes off?"
+
+The stranger laughs—a dry, rattling sound. "Direct. I like that. Mez'Barris lies so much she starts to believe her own breath. It's refreshing to hear a straight line."
+
+He shifts, inching closer to the bars separating your cells. He presses his face against the iron.
+
+"The ropes are drow-work. Blood-verse. They tighten on aggression. You can't break them and you can't saw them." He holds up his hand—the one with the missing finger. The stump is pale and healed. "I know the verse. I know the counter-tune. But I can't sing it from here."
+
+He extends his hand through the bars, reaching toward your cell. It falls short by two feet.
+
+"Come closer," he whispers. "Let the guards think we're plotting our funerals."
+
+You edge toward the bars. The enchanted ropes on your wrists hum warningly, sensing your proximity to another prisoner, but they don't tighten yet.
+
+The stranger's fingers twitch. He can't reach you.
+
+"The moss," he says, his eyes darting to the glowing patch on the floor between your cells. "Stand on it."
+
+You step onto the phosphorescent patch. It’s soft, damp, and pulses with faint life. The stranger reaches again, straining, his fingers brushing the edge of your cell.
+
+"Your wrists," he hisses. "Hold them up. I need skin contact."
+
+If you bring your bound wrists to the bars, within grabbing distance of a man who admitted to three years of plotting against his captors, you are exposing yourself. The ropes won't tighten if you don't struggle, but he might.
+
+Footsteps echo from the upper corridor. Heavy, rhythmic. The patrol is returning.
+
+"Quickly," the stranger urges. "Or enjoy the Matron's hospitality. I hear she serves poison with breakfast."
+
+<div style="margin-top:1.5rem;padding:0.75rem 1.25rem;border:1px solid rgba(180,140,255,0.4);border-left:3px solid rgba(180,140,255,0.9);background:rgba(80,40,120,0.15);border-radius:6px;font-family:Georgia,serif;"><span style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(180,140,255,0.7);">The dice await</span><br><span style="font-size:1.1rem;font-weight:bold;color:rgba(210,180,255,0.95);">🎲 ROLL FOR DEXTERITY</span><br><span style="font-size:0.85rem;color:rgba(200,170,255,0.75);font-style:italic;">To get your wrists to the bars before the patrol arrives.</span></div>
+
+<details style="margin-top:1.5rem;font-family:Georgia,serif;"><summary style="cursor:pointer;padding:0.5rem 0.75rem;background:rgba(40,20,60,0.3);border:1px solid rgba(180,140,255,0.3);border-radius:6px;font-size:0.8rem;letter-spacing:0.1em;color:rgba(200,170,255,0.9);list-style:none;">📜 Fate's Ledger — Hype &nbsp;|&nbsp; ❤️ 25/30</summary><div style="padding:0.75rem 1rem;border:1px solid rgba(180,140,255,0.2);border-top:none;border-radius:0 0 6px 6px;background:rgba(30,15,50,0.3);font-size:0.82rem;color:rgba(200,175,255,0.85);line-height:1.8;">
+❤️ HP: 25/30<br>
+⚔️ STR 14 &nbsp;|&nbsp; 🏃 DEX 16 &nbsp;|&nbsp; 🛡️ CON 14<br>
+🧠 INT 10 &nbsp;|&nbsp; 🌿 WIS 16 &nbsp;|&nbsp; ✨ CHA 14<br>
+📋 Conditions: Restrained (Enchanted Rope)<br>
+🎒 Notable Items: None (Confiscated)<br>
+⭐ Status: Prisoner of House Barrison Del'Armgo - Making a gamble
+</div></details>
+
+Hype: !roll
+
+Lolth: <div style="margin-top:1rem;padding:1rem 1.5rem;border:1px solid rgba(180,140,255,0.5);background:rgba(60,30,100,0.2);border-radius:8px;text-align:center;font-family:Georgia,serif;"><span style="font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(180,140,255,0.6);">The die has spoken</span><br><span style="font-size:2.5rem;font-weight:bold;color:rgba(220,190,255,1);">8</span><br><span style="font-size:0.9rem;color:rgba(200,170,255,0.8);font-style:italic;">Partial Success</span></div>
+
+<!-- §MIDNIGHT -->
+
+You move.
+
+It's not a warrior's grace—they took your weapons, and the floor is slick with damp—but desperation has a speed all its own. You lunge for the bars, thrusting your bound wrists through the gap just as the light in the upper hall flares brighter.
+
+The stranger's fingers close over the ropes.
+
+They are freezing. His touch sucks the heat from your skin, a sudden, jarring cold that makes you hiss through your teeth. He grips the enchanted fibers tight, his thumb pressing into the knot, and he whispers a word that sounds like a knife sliding against a whetstone.
+
+The ropes hum—a discordant, angry sound. The violet light embedded in the fibers flickers and dims. The knot *loosens*.
+
+"Not yet," he breathes, his eyes wide. "Stalling—"
+
+A heavy boot slams onto the stone of your cell.
+
+"Back from the bars, surfacer!"
+
+Torchlight floods the small space, blinding you. You instinctively yank your hands back. The stranger snatches his fingers away just as a halberd tip clatters against the iron, inches from your face.
+
+The guard is standing there, a towering drow infantryman with a face full of needle-scars and eyes that are entirely too awake for this hour. He saw you. He saw the reach. He might have seen the stranger's hand retreat into the gloom, but he definitely saw you pressed against the bars like a lover.
+
+You drop to your knees, feigning exhaustion, but your wrists are at your sides. The ropes are loose—shockingly so. They hang from your wrists like bracelets, the tight, biting grip gone. They haven't fallen off, but if you shook them hard, they would.
+
+The guard slides the viewing hatch open on his door. He stares at you, then at the empty air in your cell.
+
+"What were you doing?" he demands, his hand tightening on his halberd shaft. "Whispering to the spiders? Plotting?"
+
+He steps closer to the bars, the point of his weapon hovering over your chest.
+
+If he realizes you've been tampered with, the game ends. He will raise the alarm, the cell will be swarmed, and you will be re-secured—or dissected to see how you did it.
+
+<div style="margin-top:1.5rem;padding:0.75rem 1.25rem;border:1px solid rgba(180,140,255,0.4);border-left:3px solid rgba(180,140,255,0.9);background:rgba(80,40,120,0.15);border-radius:6px;font-family:Georgia,serif;"><span style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(180,140,255,0.7);">The dice await</span><br><span style="font-size:1.1rem;font-weight:bold;color:rgba(210,180,255,0.95);">🎲 ROLL FOR CHARISMA (DECEPTION)</span><br><span style="font-size:0.85rem;color:rgba(200,170,255,0.75);font-style:italic;">To hide the loose ropes and sell an excuse.</span></div>
+
+<details style="margin-top:1.5rem;font-family:Georgia,serif;"><summary style="cursor:pointer;padding:0.5rem 0.75rem;background:rgba(40,20,60,0.3);border:1px solid rgba(180,140,255,0.3);border-radius:6px;font-size:0.8rem;letter-spacing:0.1em;color:rgba(200,170,255,0.9);list-style:none;">📜 Fate's Ledger — Hype &nbsp;|&nbsp; ❤️ 25/30</summary><div style="padding:0.75rem 1rem;border:1px solid rgba(180,140,255,0.2);border-top:none;border-radius:0 0 6px 6px;background:rgba(30,15,50,0.3);font-size:0.82rem;color:rgba(200,175,255,0.85);line-height:1.8;">
+❤️ HP: 25/30<br>
+⚔️ STR 14 &nbsp;|&nbsp; 🏃 DEX 16 &nbsp;|&nbsp; 🛡️ CON 14<br>
+🧠 INT 10 &nbsp;|&nbsp; 🌿 WIS 16 &nbsp;|&nbsp; ✨ CHA 14<br>
+📋 Conditions: Restrained (Loose - 1 Action to remove)<br>
+🎒 Notable Items: None (Confiscated)<br>
+⭐ Status: Prisoner - Suspicion Aroused
+</div></details>
+
+Hype: !roll
+
+Lolth: <div style="margin-top:1rem;padding:1rem 1.5rem;border:1px solid rgba(180,140,255,0.5);background:rgba(60,30,100,0.2);border-radius:8px;text-align:center;font-family:Georgia,serif;"><span style="font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(180,140,255,0.6);">The die has spoken</span><br><span style="font-size:2.5rem;font-weight:bold;color:rgba(220,190,255,1);">11</span><br><span style="font-size:0.9rem;color:rgba(200,170,255,0.8);font-style:italic;">Success</span></div>
+
+<!-- §MIDNIGHT -->
+
+You don't flinch. You don't try to hide your hands, which looks suspicious. Instead, you bring them up in front of your chest, curling your fingers tight against your palms to keep the loose cord from sliding.
+
+You look the guard in the eye—not with fear, but with the critical, dismissive gaze of an appraiser unimpressed by the merchandise.
+
+"Your ironwork," you say, letting a touch of Gromph's arrogance creep into your tone. "I was examining the hinge mechanism. The Second House builds for durability, but the friction ratio is... clumsy. It screams when it should slide."
+
+The guard blinks. The insult catches him off guard; he expected begging or silence, not a critique of his dungeon's engineering. His eyes flicker momentarily away from your wrists, drawn to the hinge you mentioned.
+
+"You talk too much for a rat," he growls, pulling the halberd back an inch but not lowering it. "Keep your hands where I can see them, or I'll cut them off before the Matron asks her first question."
+
+"Of course," you say, dropping your hands submissively.
+
+He stares at you for a long, agonizing heartbeat. The loose ropes press against your skin, warm and loose. He is looking right at them and seeing only exactly what he expects to see: a bound prisoner.
+
+"Back away," he snaps, slamming the viewing hatch shut with unnecessary force.
+
+The footsteps stomp away, fading up the corridor.
+
+You let out a breath you didn't realize you were holding. The adrenaline crash hits you hard, knees trembling slightly against the stone.
+
+"Provincial," the stranger in the next cell whispers, a laugh dancing on the edge of the word. "You just insulted the craftsmanship of a house that has held me for three years without escape. I like you even more."
+
+"Get them off," you hiss quietly. You pull your wrists apart. The loops are wide enough now; they just need to slide over your hands.
+
+"Easier done than—"
+
+The footsteps stop.
+
+They didn't fade away entirely. They stopped at the top of the landing. The guard is listening.
+
+You freeze, hands halfway out of the ropes.
+
+"Come closer," the stranger whispers, barely mouthing the words. "You don't have time."
+
+If you pull your hands free now, the ropes hitting the stone floor—the faint *clink* of metal ends—might echo enough to be heard. If you leave them on, you're defenseless for whatever comes next.
+
+<div style="margin-top:1.5rem;padding:0.75rem 1.25rem;border:1px solid rgba(180,140,255,0.4);border-left:3px solid rgba(180,140,255,0.9);background:rgba(80,40,120,0.15);border-radius:6px;font-family:Georgia,serif;"><span style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(180,140,255,0.7);">The dice await</span><br><span style="font-size:1.1rem;font-weight:bold;color:rgba(210,180,255,0.95);">🎲 ROLL FOR DEXTERITY (SLEIGHT OF HAND)</span><br><span style="font-size:0.85rem;color:rgba(200,170,255,0.75);font-style:italic;">To slip the ropes without making a sound.</span></div>
+
+<details style="margin-top:1.5rem;font-family:Georgia,serif;"><summary style="cursor:pointer;padding:0.5rem 0.75rem;background:rgba(40,20,60,0.3);border:1px solid rgba(180,140,255,0.3);border-radius:6px;font-size:0.8rem;letter-spacing:0.1em;color:rgba(200,170,255,0.9);list-style:none;">📜 Fate's Ledger — Hype &nbsp;|&nbsp; ❤️ 25/30</summary><div style="padding:0.75rem 1rem;border:1px solid rgba(180,140,255,0.2);border-top:none;border-radius:0 0 6px 6px;background:rgba(30,15,50,0.3);font-size:0.82rem;color:rgba(200,175,255,0.85);line-height:1.8;">
+❤️ HP: 25/30<br>
+⚔️ STR 14 &nbsp;|&nbsp; 🏃 DEX 16 &nbsp;|&nbsp; 🛡️ CON 14<br>
+🧠 INT 10 &nbsp;|&nbsp; 🌿 WIS 16 &nbsp;|&nbsp; ✨ CHA 14<br>
+📋 Conditions: Restrained (Loose)<br>
+🎒 Notable Items: None (Confiscated)<br>
+⭐ Status: Prisoner - Escaping Bonds
+</div></details>
+
+Hype: !roll
+
+Lolth: <div style="margin-top:1rem;padding:1rem 1.5rem;border:1px solid rgba(180,140,255,0.5);background:rgba(60,30,100,0.2);border-radius:8px;text-align:center;font-family:Georgia,serif;"><span style="font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(180,140,255,0.6);">The die has spoken</span><br><span style="font-size:2.5rem;font-weight:bold;color:rgba(220,190,255,1);">18</span><br><span style="font-size:0.9rem;color:rgba(200,170,255,0.8);font-style:italic;">Strong Success</span></div>
+
+<!-- §MIDNIGHT -->
+
+You don't just pull your hands free. You guide them, your fingers flexing with a subtle, bone-slow grace that lets the ropes slide over your knuckles without a sound. The enchanted fibers whisper against your skin like silk, but not a metallic clink escapes them.
+
+They drop into your palm. You are holding your own bonds.
+
+Above, the guard waits. The silence stretches, thick and suffocating. You stand statue-still, your freed hands hidden by the angle of your body, watching the sliver of torchlight under the door.
+
+A huff of breath. The shuffle of boots on stone.
+
+The footsteps resume, heading back up the corridor to the main post. He's gone.
+
+"Clean," the stranger breathes from the gloom. "Very clean. You have thieving hands, human. Or assassin's. Either way, useful."
+
+You rub your wrists, feeling the blood rush back into your skin. The "gift" hums, pleased by the returned freedom, but the tactical reality sits heavy in your stomach. You are free of the ropes, but you are still in a cage. The door is dwarfven-crafted iron, spider-steel reinforced. It will not break.
+
+"The key?" you whisper.
+
+"On a loop inside his jerkin," the stranger replies. "He wraps it in cloth to keep it from jingling. He hates noise. Thinks it offends the house spirits."
+
+"He won't just give it to us."
+
+"No," the stranger agrees. A thin, cruel smile touches his voice. "But he enjoys my madness. It's his entertainment. I scream, he comes to the bars to mock me. He leans in. Sometimes he spits."
+
+He pauses.
+
+"I'm going to scream now."
+
+He doesn't wait for your assent. He draws a ragged breath, and then the sound tears out of him—a high, jagged shriek that echoes off the stone walls like a physical blow. It’s the sound of a mind breaking, primal and unignorable.
+
+Upstairs, boots slam into motion. One set. He's coming alone.
+
+"He'll be at the bars in five seconds," the stranger hisses, his voice abruptly normal again. "Bring me the key. Or bring me his throat. I am not particular."
+
+Torchlight flares at the end of the hall. The guard is running.
+
+You are standing in the center of your cell, ropes in your hand, no weapon, no armor. The door is the only barrier.
+
+<div style="margin-top:1.5rem;padding:0.75rem 1.25rem;border:1px solid rgba(180,140,255,0.4);border-left:3px solid rgba(180,140,255,0.9);background:rgba(80,40,120,0.15);border-radius:6px;font-family:Georgia,serif;"><span style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(180,140,255,0.7);">The dice await</span><br><span style="font-size:1.1rem;font-weight:bold;color:rgba(210,180,255,0.95);">🎲 ROLL FOR INITIATIVE</span><br><span style="font-size:0.85rem;color:rgba(200,170,255,0.75);font-style:italic;">To act before he realizes you're free.</span></div>
+
+<details style="margin-top:1.5rem;font-family:Georgia,serif;"><summary style="cursor:pointer;padding:0.5rem 0.75rem;background:rgba(40,20,60,0.3);border:1px solid rgba(180,140,255,0.3);border-radius:6px;font-size:0.8rem;letter-spacing:0.1em;color:rgba(200,170,255,0.9);list-style:none;">📜 Fate's Ledger — Hype &nbsp;|&nbsp; ❤️ 25/30</summary><div style="padding:0.75rem 1rem;border:1px solid rgba(180,140,255,0.2);border-top:none;border-radius:0 0 6px 6px;background:rgba(30,15,50,0.3);font-size:0.82rem;color:rgba(200,175,255,0.85);line-height:1.8;">
+❤️ HP: 25/30<br>
+⚔️ STR 14 &nbsp;|&nbsp; 🏃 DEX 16 &nbsp;|&nbsp; 🛡️ CON 14<br>
+🧠 INT 10 &nbsp;|&nbsp; 🌿 WIS 16 &nbsp;|&nbsp; ✨ CHA 14<br>
+📋 Conditions: None<br>
+🎒 Notable Items: Enchanted Rope (In Hand)<br>
+⭐ Status: Free Prisoner - Ambush Set
+</div></details>
+
